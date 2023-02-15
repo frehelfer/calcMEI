@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol IncomeViewDelegate: AnyObject {
+    func nextButtonPressed()
+}
+
 class IncomeView: UIView {
     
-    // MARK: - Clousures
+    weak var delegate: IncomeViewDelegate?
     
     // MARK: - Properties
     
@@ -55,6 +59,18 @@ class IncomeView: UIView {
         return textField
     }()
     
+    private lazy var nextButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Começar", for: .normal)
+        button.backgroundColor = .systemBlue
+        
+        
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -69,7 +85,7 @@ class IncomeView: UIView {
     // MARK: - SetupView
     
     private func setupView() {
-        backgroundColor = .red
+        backgroundColor = .systemGreen
         configureSubviews()
         configureConstraints()
     }
@@ -79,15 +95,29 @@ class IncomeView: UIView {
         
         servicesStack.addArrangedSubview(servicesLabel)
         servicesStack.addArrangedSubview(servicesTextField)
+        
+        addSubview(nextButton)
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             servicesStack.centerXAnchor.constraint(equalTo: centerXAnchor),
-            servicesStack.centerYAnchor.constraint(equalTo: centerYAnchor)
+            servicesStack.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            // nextButton
+            nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            nextButton.heightAnchor.constraint(equalToConstant: 45),
         ])
     }
     
-    // MARK: - Actions
+    // MARK: - Private Actions
     
+    @objc
+    private func nextButtonPressed() {
+        self.delegate?.nextButtonPressed()
+    }
+    
+    // MARK: - Public Actions
 }

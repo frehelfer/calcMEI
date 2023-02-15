@@ -11,13 +11,11 @@ class ExpensesViewController: UIViewController {
     
     // MARK: - Clousures
     
+    var presentNextScreen: (() -> Void)?
+    
     // MARK: - Properties
     
-    lazy var expensesView: ExpensesView = {
-        let view = ExpensesView()
-        
-        return view
-    }()
+    private var expensesView = ExpensesView()
     
     // MARK: - LifeCycle
     
@@ -28,12 +26,23 @@ class ExpensesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        expensesView.delegate = self
+        setStatusBar(color: .theme.navBar)
+        setupVC()
+    }
+    
+    // MARK: - Private Functions
+    
+    private func setupVC() {
+        let navBar = navigationController?.navigationBar
+        navBar?.prefersLargeTitles = true
+        title = "Despesas Anuais"
     }
 }
 
-// MARK: - Actions
-
-extension ExpensesViewController {
-    
+// MARK: - ExpensesViewDelegate
+extension ExpensesViewController: ExpensesViewDelegate {
+    func nextButtonPressed() {
+        self.presentNextScreen?()
+    }
 }

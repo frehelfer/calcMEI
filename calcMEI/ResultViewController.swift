@@ -13,11 +13,7 @@ class ResultViewController: UIViewController {
     
     // MARK: - Properties
     
-    lazy var resultView: ResultView = {
-        let view = ResultView()
-        
-        return view
-    }()
+    private var resultView = ResultView()
     
     // MARK: - LifeCycle
     
@@ -28,12 +24,21 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        resultView.delegate = self
+        setStatusBar(color: .theme.navBar)
+        setupVC()
+    }
+    
+    // MARK: - Private Functions
+    
+    private func setupVC() {
+        let navBar = navigationController?.navigationBar
+        navBar?.prefersLargeTitles = true
+        title = "Resultado"
     }
 }
 
-// MARK: - Actions
-
-extension ResultViewController {
+// MARK: - ResultViewDelegate
+extension ResultViewController: ResultViewDelegate {
     
 }

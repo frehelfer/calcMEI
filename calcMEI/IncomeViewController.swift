@@ -11,13 +11,11 @@ class IncomeViewController: UIViewController {
     
     // MARK: - Clousures
     
+    var presentNextScreen: (() -> Void)?
+    
     // MARK: - Properties
     
-    lazy var incomeView: IncomeView = {
-        let view = IncomeView()
-        
-        return view
-    }()
+    private var incomeView = IncomeView()
     
     // MARK: - LifeCycle
     
@@ -28,12 +26,23 @@ class IncomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        incomeView.delegate = self
+        setStatusBar(color: .theme.navBar)
+        setupVC()
+    }
+    
+    // MARK: - Private Functions
+    
+    private func setupVC() {
+        let navBar = navigationController?.navigationBar
+        navBar?.prefersLargeTitles = true
+        title = "Receita Anual"
     }
 }
 
-// MARK: - Actions
-
-extension IncomeViewController {
-    
+// MARK: - IncomeViewDelegate
+extension IncomeViewController: IncomeViewDelegate {
+    func nextButtonPressed() {
+        self.presentNextScreen?()
+    }
 }

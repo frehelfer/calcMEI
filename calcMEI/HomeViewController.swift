@@ -11,13 +11,11 @@ class HomeViewController: UIViewController {
 
     // MARK: - Clousures
     
+    var presentNextScreen: (() -> Void)?
+    
     // MARK: - Properties
     
-    lazy var homeView: HomeView = {
-        let view = HomeView()
-
-        return view
-    }()
+    private var homeView = HomeView()
     
     // MARK: - LifeCycle
     
@@ -28,18 +26,23 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        homeView.delegate = self
         setStatusBar(color: .theme.navBar)
-        
+        setupVC()
+    }
+    
+    // MARK: - Private Functions
+    
+    private func setupVC() {
         let navBar = navigationController?.navigationBar
         navBar?.prefersLargeTitles = true
         title = "calcMEI"
-
     }
 }
 
-// MARK: - Actions
-
-extension HomeViewController {
-    
+// MARK: - HomeViewDelegate
+extension HomeViewController: HomeViewDelegate {
+    func nextButtonPressed() {
+        self.presentNextScreen?()
+    }
 }

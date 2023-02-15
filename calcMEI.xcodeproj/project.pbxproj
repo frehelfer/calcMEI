@@ -17,6 +17,10 @@
 		8D4716C7299D80B300079790 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716C6299D80B300079790 /* ResultView.swift */; };
 		8D4716CA299D820400079790 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716C9299D820400079790 /* ExpensesView.swift */; };
 		8D4716CC299D820F00079790 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716CB299D820F00079790 /* ExpensesViewController.swift */; };
+		8D4716CE299D8C0100079790 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716CD299D8C0100079790 /* HomeCoordinator.swift */; };
+		8D4716D0299D8C0D00079790 /* IncomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716CF299D8C0D00079790 /* IncomeCoordinator.swift */; };
+		8D4716D2299D8C1600079790 /* ExpensesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716D1299D8C1600079790 /* ExpensesCoordinator.swift */; };
+		8D4716D4299D973000079790 /* ResultCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716D3299D973000079790 /* ResultCoordinator.swift */; };
 		8D740227299D494E008BFE17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740226299D494E008BFE17 /* AppDelegate.swift */; };
 		8D740229299D494E008BFE17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740228299D494E008BFE17 /* SceneDelegate.swift */; };
 		8D740230299D4950008BFE17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D74022F299D4950008BFE17 /* Assets.xcassets */; };
@@ -36,6 +40,10 @@
 		8D4716C6299D80B300079790 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		8D4716C9299D820400079790 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		8D4716CB299D820F00079790 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
+		8D4716CD299D8C0100079790 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		8D4716CF299D8C0D00079790 /* IncomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeCoordinator.swift; sourceTree = "<group>"; };
+		8D4716D1299D8C1600079790 /* ExpensesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesCoordinator.swift; sourceTree = "<group>"; };
+		8D4716D3299D973000079790 /* ResultCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCoordinator.swift; sourceTree = "<group>"; };
 		8D740223299D494E008BFE17 /* calcMEI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calcMEI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D740226299D494E008BFE17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D740228299D494E008BFE17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +69,10 @@
 			isa = PBXGroup;
 			children = (
 				8D4716AC299D660000079790 /* Coordinator.swift */,
+				8D4716CD299D8C0100079790 /* HomeCoordinator.swift */,
+				8D4716CF299D8C0D00079790 /* IncomeCoordinator.swift */,
+				8D4716D1299D8C1600079790 /* ExpensesCoordinator.swift */,
+				8D4716D3299D973000079790 /* ResultCoordinator.swift */,
 			);
 			name = Coordinator;
 			sourceTree = "<group>";
@@ -232,7 +244,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D4716C5299D80AC00079790 /* ResultViewController.swift in Sources */,
+				8D4716D0299D8C0D00079790 /* IncomeCoordinator.swift in Sources */,
 				8D4716CC299D820F00079790 /* ExpensesViewController.swift in Sources */,
+				8D4716D4299D973000079790 /* ResultCoordinator.swift in Sources */,
+				8D4716CE299D8C0100079790 /* HomeCoordinator.swift in Sources */,
 				8D740227299D494E008BFE17 /* AppDelegate.swift in Sources */,
 				8D4716BF299D800800079790 /* IncomeView.swift in Sources */,
 				8D740242299D4C32008BFE17 /* HomeView.swift in Sources */,
@@ -242,6 +257,7 @@
 				8D4716AD299D660000079790 /* Coordinator.swift in Sources */,
 				8D740229299D494E008BFE17 /* SceneDelegate.swift in Sources */,
 				8D740240299D4C22008BFE17 /* HomeViewController.swift in Sources */,
+				8D4716D2299D8C1600079790 /* ExpensesCoordinator.swift in Sources */,
 				8D4716B2299D75C400079790 /* UIColor+.swift in Sources */,
 				8D4716B4299D7D3400079790 /* UITextField+.swift in Sources */,
 				8D4716CA299D820400079790 /* ExpensesView.swift in Sources */,

@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol ResultViewDelegate: AnyObject {
+    
+}
+
 class ResultView: UIView {
     
-    // MARK: - Clousures
+    weak var delegate: ResultViewDelegate?
     
     // MARK: - Properties
     
@@ -37,13 +41,12 @@ class ResultView: UIView {
     // MARK: - SetupView
     
     private func setupView() {
-        backgroundColor = .red
+        backgroundColor = .systemBlue
         configureSubviews()
         configureConstraints()
     }
     
     private func configureSubviews() {
-        
     }
     
     private func configureConstraints() {
@@ -52,6 +55,7 @@ class ResultView: UIView {
         ])
     }
     
-    // MARK: - Actions
+    // MARK: - Private Actions
     
+    // MARK: - Public Actions
 }

@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol ExpensesViewDelegate: AnyObject {
+    func nextButtonPressed()
+}
+
 class ExpensesView: UIView {
     
-    // MARK: - Clousures
+    weak var delegate: ExpensesViewDelegate?
     
     // MARK: - Properties
     
@@ -21,6 +25,18 @@ class ExpensesView: UIView {
         view.spacing = 10
         view.distribution = .fill
         return view
+    }()
+    
+    private lazy var nextButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Começar", for: .normal)
+        button.backgroundColor = .systemBlue
+        
+        
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+        return button
     }()
     
     // MARK: - Init
@@ -37,21 +53,32 @@ class ExpensesView: UIView {
     // MARK: - SetupView
     
     private func setupView() {
-        backgroundColor = .red
+        backgroundColor = .systemRed
         configureSubviews()
         configureConstraints()
     }
     
     private func configureSubviews() {
-        
+        addSubview(nextButton)
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             
+            // nextButton
+            nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            nextButton.heightAnchor.constraint(equalToConstant: 45),
         ])
     }
     
-    // MARK: - Actions
+    // MARK: - Private Actions
     
+    @objc
+    private func nextButtonPressed() {
+        self.delegate?.nextButtonPressed()
+    }
+    
+    // MARK: - Public Actions
 }
