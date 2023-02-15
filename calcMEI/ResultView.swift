@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  ResultView.swift
 //  calcMEI
 //
 //  Created by Frédéric Helfer on 15/02/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeView: UIView {
+class ResultView: UIView {
     
     // MARK: - Clousures
     
@@ -37,24 +37,21 @@ class HomeView: UIView {
     // MARK: - SetupView
     
     private func setupView() {
-        backgroundColor = .systemBackground
+        backgroundColor = .red
         configureSubviews()
         configureConstraints()
     }
     
     private func configureSubviews() {
-
+        
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
-           
+            
         ])
     }
-}
-
-// MARK: - Actions
-
-extension HomeView {
+    
+    // MARK: - Actions
     
 }

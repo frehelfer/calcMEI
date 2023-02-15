@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  ExpensesViewController.swift
 //  calcMEI
 //
 //  Created by Frédéric Helfer on 15/02/23.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+class ExpensesViewController: UIViewController {
+    
     // MARK: - Clousures
     
     // MARK: - Properties
     
-    lazy var homeView: HomeView = {
-        let view = HomeView()
-
+    lazy var expensesView: ExpensesView = {
+        let view = ExpensesView()
+        
         return view
     }()
     
@@ -23,23 +23,17 @@ class HomeViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        view = homeView
+        view = expensesView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setStatusBar(color: .theme.navBar)
-        
-        let navBar = navigationController?.navigationBar
-        navBar?.prefersLargeTitles = true
-        title = "calcMEI"
-
     }
 }
 
 // MARK: - Actions
 
-extension HomeViewController {
+extension ExpensesViewController {
     
 }
