@@ -53,7 +53,7 @@ class ExpensesView: UIView {
     // MARK: - SetupView
     
     private func setupView() {
-        backgroundColor = .systemRed
+        backgroundColor = .theme.mainBackground
         configureSubviews()
         configureConstraints()
     }

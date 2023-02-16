@@ -13,4 +13,11 @@ extension UIColor {
 
 struct ColorTheme {
     let navBar = UIColor(named: "navBarColor")!
+    
+    let mainBackground = UIColor.secondarySystemBackground
+    let greenBackground1 = UIColor(named: "greenBackground1")!
+    let greenBackground2 = UIColor(named: "greenBackground2")!
+    let greenBackground3 = UIColor(named: "greenBackground3")!
+    
+    let label1 = UIColor(named: "label1")!
 }

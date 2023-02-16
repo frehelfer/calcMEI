@@ -32,6 +32,7 @@ class ResultViewController: UIViewController {
     // MARK: - Private Functions
     
     private func setupVC() {
+        hideKeyboardWhenTappedAround()
         let navBar = navigationController?.navigationBar
         navBar?.prefersLargeTitles = true
         title = "Resultado"

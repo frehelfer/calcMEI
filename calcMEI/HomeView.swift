@@ -64,7 +64,7 @@ class HomeView: UIView {
     // MARK: - SetupView
     
     private func setupView() {
-        backgroundColor = .systemBackground
+        backgroundColor = .theme.mainBackground
         configureSubviews()
         configureConstraints()
     }

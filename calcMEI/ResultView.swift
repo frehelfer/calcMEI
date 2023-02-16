@@ -41,7 +41,7 @@ class ResultView: UIView {
     // MARK: - SetupView
     
     private func setupView() {
-        backgroundColor = .systemBlue
+        backgroundColor = .theme.mainBackground
         configureSubviews()
         configureConstraints()
     }

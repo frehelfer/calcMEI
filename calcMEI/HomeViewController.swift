@@ -34,6 +34,7 @@ class HomeViewController: UIViewController {
     // MARK: - Private Functions
     
     private func setupVC() {
+        hideKeyboardWhenTappedAround()
         let navBar = navigationController?.navigationBar
         navBar?.prefersLargeTitles = true
         title = "calcMEI"

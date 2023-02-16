@@ -34,6 +34,7 @@ class ExpensesViewController: UIViewController {
     // MARK: - Private Functions
     
     private func setupVC() {
+        hideKeyboardWhenTappedAround()
         let navBar = navigationController?.navigationBar
         navBar?.prefersLargeTitles = true
         title = "Despesas Anuais"
