@@ -9,16 +9,21 @@ import UIKit
 
 class IncomeViewController: UIViewController {
     
-    // MARK: - Clousures
-    
-    var presentNextScreen: (() -> Void)?
-    
     // MARK: - Properties
+    private lazy var incomeView: IncomeView = {
+        let homeView = IncomeView()
+        homeView.delegate = self
+        return homeView
+    }()
     
-    private var incomeView = IncomeView()
+    var viewModel: IncomeViewModel? {
+        didSet {
+            viewModel?.viewDelegate = self
+            title = viewModel?.title
+        }
+    }
     
     // MARK: - LifeCycle
-    
     override func loadView() {
         super.loadView()
         view = incomeView
@@ -26,35 +31,20 @@ class IncomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        incomeView.delegate = self
-        
         setStatusBar(color: .theme.navBar)
         setupVC()
     }
     
     // MARK: - Private Functions
-    
     private func setupVC() {
         
         hideKeyboardWhenTappedAround()
         setupKeyboardHiding()
-        
-        let navBar = navigationController?.navigationBar
-        navBar?.prefersLargeTitles = true
-        title = "Receita Bruta Anual"
-
     }
     
     private func setupKeyboardHiding() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-}
-
-// MARK: - UITextFieldDelegate
-extension IncomeViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
     }
 }
 
@@ -85,7 +75,15 @@ extension IncomeViewController {
 
 // MARK: - IncomeViewDelegate
 extension IncomeViewController: IncomeViewDelegate {
+    
     func nextButtonPressed() {
-        self.presentNextScreen?()
+        viewModel?.nextSelected()
     }
+}
+
+// MARK: - IncomeViewModelViewDelegate
+extension IncomeViewController: IncomeViewModelViewDelegate {
+    
+    
+    
 }

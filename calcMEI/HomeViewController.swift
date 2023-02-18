@@ -8,17 +8,22 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    // MARK: - Clousures
-    
-    var presentNextScreen: (() -> Void)?
     
     // MARK: - Properties
+    private lazy var homeView: HomeView = {
+        let homeView = HomeView()
+        homeView.delegate = self
+        return homeView
+    }()
     
-    private var homeView = HomeView()
+    var viewModel: HomeViewModel? {
+        didSet {
+            viewModel?.viewDelegate = self
+            title = viewModel?.title
+        }
+    }
     
     // MARK: - LifeCycle
-    
     override func loadView() {
         super.loadView()
         view = homeView
@@ -26,24 +31,28 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeView.delegate = self
         setStatusBar(color: .theme.navBar)
         setupVC()
     }
     
     // MARK: - Private Functions
-    
     private func setupVC() {
         hideKeyboardWhenTappedAround()
-        let navBar = navigationController?.navigationBar
-        navBar?.prefersLargeTitles = true
-        title = "calcMEI"
     }
 }
 
 // MARK: - HomeViewDelegate
 extension HomeViewController: HomeViewDelegate {
+    
     func nextButtonPressed() {
-        self.presentNextScreen?()
+        viewModel?.startSelected()
     }
+    
+}
+
+// MARK: - HomeViewModelViewDelegate
+extension HomeViewController: HomeViewModelViewDelegate {
+    
+    
+    
 }

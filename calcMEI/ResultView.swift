@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ResultViewDelegate: AnyObject {
-    
+    func nextButtonPressed()
 }
 
 class ResultView: UIView {
@@ -25,6 +25,19 @@ class ResultView: UIView {
         view.spacing = 10
         view.distribution = .fill
         return view
+    }()
+    
+    // Button
+    private lazy var nextButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Começar", for: .normal)
+        button.backgroundColor = .systemBlue
+        
+        
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+        return button
     }()
     
     // MARK: - Init
@@ -47,15 +60,26 @@ class ResultView: UIView {
     }
     
     private func configureSubviews() {
+        addSubview(nextButton)
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             
+            // nextButton
+            nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            nextButton.heightAnchor.constraint(equalToConstant: 45),
         ])
     }
     
     // MARK: - Private Actions
+    
+    @objc
+    private func nextButtonPressed() {
+        delegate?.nextButtonPressed()
+    }
     
     // MARK: - Public Actions
 }

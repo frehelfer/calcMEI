@@ -9,16 +9,21 @@ import UIKit
 
 class ExpensesViewController: UIViewController {
     
-    // MARK: - Clousures
-    
-    var presentNextScreen: (() -> Void)?
-    
     // MARK: - Properties
+    private lazy var expensesView: ExpensesView = {
+        let expensesView = ExpensesView()
+        expensesView.delegate = self
+        return expensesView
+    }()
     
-    private var expensesView = ExpensesView()
+    var viewModel: ExpensesViewModel? {
+        didSet {
+            viewModel?.viewDelegate = self
+            title = viewModel?.title
+        }
+    }
     
     // MARK: - LifeCycle
-    
     override func loadView() {
         super.loadView()
         view = expensesView
@@ -26,24 +31,28 @@ class ExpensesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        expensesView.delegate = self
         setStatusBar(color: .theme.navBar)
         setupVC()
     }
     
     // MARK: - Private Functions
-    
     private func setupVC() {
         hideKeyboardWhenTappedAround()
-        let navBar = navigationController?.navigationBar
-        navBar?.prefersLargeTitles = true
-        title = "Despesas Anuais"
     }
 }
 
 // MARK: - ExpensesViewDelegate
 extension ExpensesViewController: ExpensesViewDelegate {
+    
     func nextButtonPressed() {
-        self.presentNextScreen?()
+        viewModel?.nextSelected()
     }
+    
+}
+
+// MARK: - ExpensesViewModelViewDelegate
+extension ExpensesViewController: ExpensesViewModelViewDelegate {
+    
+    
+    
 }

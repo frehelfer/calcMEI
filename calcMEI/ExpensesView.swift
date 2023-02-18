@@ -27,6 +27,54 @@ class ExpensesView: UIView {
         return view
     }()
     
+    // MARK: - Service properties
+    private lazy var expensesStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 13
+        
+        stackView.backgroundColor = .theme.greenBackground2
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(top: 13, left: 13, bottom: 13, right: 13)
+        
+        stackView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
+        stackView.layer.cornerRadius = 10
+        stackView.layer.borderWidth = 1
+        
+        stackView.layer.shadowColor = UIColor.gray.withAlphaComponent(0.4).cgColor
+        stackView.layer.shadowRadius = 5
+        stackView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        stackView.layer.shadowOpacity = 0.5
+        return stackView
+    }()
+    
+    private lazy var expensesLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.textColor = .theme.label1
+        label.text = "Prestação de Serviços"
+        label.addCharacterSpacing(kernValue: 1.05)
+        return label
+    }()
+    
+    private lazy var expensesTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "R$ 0,00"
+        textField.font = UIFont.preferredFont(forTextStyle: .body)
+        textField.textColor = .theme.label1
+        textField.autocorrectionType = .no
+        textField.textAlignment = .center
+        textField.keyboardType = .numberPad
+        textField.returnKeyType = .next
+        
+        return textField
+    }()
+    
+    // Button
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -59,6 +107,13 @@ class ExpensesView: UIView {
     }
     
     private func configureSubviews() {
+        addSubview(stackView)
+        
+        stackView.addArrangedSubview(expensesStack)
+        
+        expensesStack.addArrangedSubview(expensesLabel)
+        expensesStack.addArrangedSubview(expensesTextField)
+        
         addSubview(nextButton)
     }
     

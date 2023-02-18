@@ -9,14 +9,21 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    // MARK: - Clousures
-    
     // MARK: - Properties
+    private lazy var resultView: ResultView = {
+        let resultView = ResultView()
+        resultView.delegate = self
+        return resultView
+    }()
     
-    private var resultView = ResultView()
+    var viewModel: ResultViewModel? {
+        didSet {
+            viewModel?.viewDelegate = self
+            title = viewModel?.title
+        }
+    }
     
     // MARK: - LifeCycle
-    
     override func loadView() {
         super.loadView()
         view = resultView
@@ -24,22 +31,28 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        resultView.delegate = self
         setStatusBar(color: .theme.navBar)
         setupVC()
     }
     
     // MARK: - Private Functions
-    
     private func setupVC() {
         hideKeyboardWhenTappedAround()
-        let navBar = navigationController?.navigationBar
-        navBar?.prefersLargeTitles = true
-        title = "Resultado"
     }
 }
 
 // MARK: - ResultViewDelegate
 extension ResultViewController: ResultViewDelegate {
+    
+    func nextButtonPressed() {
+        viewModel?.resetSelected()
+    }
+    
+}
+
+// MARK: - ResultViewModelViewDelegate
+extension ResultViewController: ResultViewModelViewDelegate {
+    
+    
     
 }

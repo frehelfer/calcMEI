@@ -237,11 +237,18 @@ class IncomeView: UIView {
             servicesStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             servicesStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            commerceStack.leadingAnchor.constraint(equalTo: servicesStack.leadingAnchor),
-            commerceStack.trailingAnchor.constraint(equalTo: servicesStack.trailingAnchor),
+            servicesTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            servicesTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            transportStack.leadingAnchor.constraint(equalTo: servicesStack.leadingAnchor),
-            transportStack.trailingAnchor.constraint(equalTo: servicesStack.trailingAnchor),
+            commerceStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            commerceStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            commerceTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            commerceTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            
+            transportStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            transportStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            transportTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            transportTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
             // nextButton
             nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),

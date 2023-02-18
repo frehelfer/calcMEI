@@ -18,14 +18,17 @@
 		8D4716CA299D820400079790 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716C9299D820400079790 /* ExpensesView.swift */; };
 		8D4716CC299D820F00079790 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716CB299D820F00079790 /* ExpensesViewController.swift */; };
 		8D4716CE299D8C0100079790 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716CD299D8C0100079790 /* HomeCoordinator.swift */; };
-		8D4716D0299D8C0D00079790 /* IncomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716CF299D8C0D00079790 /* IncomeCoordinator.swift */; };
-		8D4716D2299D8C1600079790 /* ExpensesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716D1299D8C1600079790 /* ExpensesCoordinator.swift */; };
-		8D4716D4299D973000079790 /* ResultCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716D3299D973000079790 /* ResultCoordinator.swift */; };
 		8D4716D7299E666700079790 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716D6299E666700079790 /* Count.swift */; };
 		8D4716DD299E79BB00079790 /* CurrencyFormatter in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4716DC299E79BB00079790 /* CurrencyFormatter */; };
 		8D4716DF299E79BB00079790 /* CurrencyText in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4716DE299E79BB00079790 /* CurrencyText */; };
 		8D4716E2299EBD8E00079790 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716E1299EBD8E00079790 /* UILabel+.swift */; };
 		8D4716E4299EE60E00079790 /* UIResponder+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716E3299EE60E00079790 /* UIResponder+.swift */; };
+		8D4716E6299FB4BC00079790 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716E5299FB4BC00079790 /* BaseNavigationController.swift */; };
+		8D4716E8299FC3BA00079790 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716E7299FC3BA00079790 /* HomeViewModel.swift */; };
+		8D4716EA29A00DAC00079790 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716E929A00DAC00079790 /* RootCoordinator.swift */; };
+		8D4716EC29A0118400079790 /* IncomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716EB29A0118400079790 /* IncomeViewModel.swift */; };
+		8D4716EE29A0434000079790 /* ExpensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716ED29A0434000079790 /* ExpensesViewModel.swift */; };
+		8D4716F029A0486300079790 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716EF29A0486300079790 /* ResultViewModel.swift */; };
 		8D740227299D494E008BFE17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740226299D494E008BFE17 /* AppDelegate.swift */; };
 		8D740229299D494E008BFE17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740228299D494E008BFE17 /* SceneDelegate.swift */; };
 		8D740230299D4950008BFE17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D74022F299D4950008BFE17 /* Assets.xcassets */; };
@@ -46,12 +49,15 @@
 		8D4716C9299D820400079790 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		8D4716CB299D820F00079790 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
 		8D4716CD299D8C0100079790 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		8D4716CF299D8C0D00079790 /* IncomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeCoordinator.swift; sourceTree = "<group>"; };
-		8D4716D1299D8C1600079790 /* ExpensesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesCoordinator.swift; sourceTree = "<group>"; };
-		8D4716D3299D973000079790 /* ResultCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCoordinator.swift; sourceTree = "<group>"; };
 		8D4716D6299E666700079790 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		8D4716E1299EBD8E00079790 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		8D4716E3299EE60E00079790 /* UIResponder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+.swift"; sourceTree = "<group>"; };
+		8D4716E5299FB4BC00079790 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		8D4716E7299FC3BA00079790 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8D4716E929A00DAC00079790 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		8D4716EB29A0118400079790 /* IncomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewModel.swift; sourceTree = "<group>"; };
+		8D4716ED29A0434000079790 /* ExpensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewModel.swift; sourceTree = "<group>"; };
+		8D4716EF29A0486300079790 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		8D740223299D494E008BFE17 /* calcMEI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calcMEI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D740226299D494E008BFE17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D740228299D494E008BFE17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,10 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				8D4716AC299D660000079790 /* Coordinator.swift */,
+				8D4716E929A00DAC00079790 /* RootCoordinator.swift */,
 				8D4716CD299D8C0100079790 /* HomeCoordinator.swift */,
-				8D4716CF299D8C0D00079790 /* IncomeCoordinator.swift */,
-				8D4716D1299D8C1600079790 /* ExpensesCoordinator.swift */,
-				8D4716D3299D973000079790 /* ResultCoordinator.swift */,
 			);
 			name = Coordinator;
 			sourceTree = "<group>";
@@ -102,6 +106,7 @@
 		8D4716B5299D7F5500079790 /* Income */ = {
 			isa = PBXGroup;
 			children = (
+				8D4716EB29A0118400079790 /* IncomeViewModel.swift */,
 				8D4716BC299D800000079790 /* IncomeViewController.swift */,
 				8D4716BE299D800800079790 /* IncomeView.swift */,
 			);
@@ -111,6 +116,7 @@
 		8D4716B7299D7F8A00079790 /* Result */ = {
 			isa = PBXGroup;
 			children = (
+				8D4716EF29A0486300079790 /* ResultViewModel.swift */,
 				8D4716C4299D80AC00079790 /* ResultViewController.swift */,
 				8D4716C6299D80B300079790 /* ResultView.swift */,
 			);
@@ -120,6 +126,7 @@
 		8D4716C8299D81F300079790 /* Expenses */ = {
 			isa = PBXGroup;
 			children = (
+				8D4716ED29A0434000079790 /* ExpensesViewModel.swift */,
 				8D4716CB299D820F00079790 /* ExpensesViewController.swift */,
 				8D4716C9299D820400079790 /* ExpensesView.swift */,
 			);
@@ -137,6 +144,7 @@
 		8D4716D8299E726000079790 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8D4716E5299FB4BC00079790 /* BaseNavigationController.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 		8D74023E299D4C09008BFE17 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8D4716E7299FC3BA00079790 /* HomeViewModel.swift */,
 				8D74023F299D4C22008BFE17 /* HomeViewController.swift */,
 				8D740241299D4C32008BFE17 /* HomeView.swift */,
 			);
@@ -282,21 +291,24 @@
 				8D4716C5299D80AC00079790 /* ResultViewController.swift in Sources */,
 				8D4716D7299E666700079790 /* Count.swift in Sources */,
 				8D4716E2299EBD8E00079790 /* UILabel+.swift in Sources */,
-				8D4716D0299D8C0D00079790 /* IncomeCoordinator.swift in Sources */,
+				8D4716EC29A0118400079790 /* IncomeViewModel.swift in Sources */,
 				8D4716CC299D820F00079790 /* ExpensesViewController.swift in Sources */,
-				8D4716D4299D973000079790 /* ResultCoordinator.swift in Sources */,
+				8D4716E8299FC3BA00079790 /* HomeViewModel.swift in Sources */,
+				8D4716EE29A0434000079790 /* ExpensesViewModel.swift in Sources */,
 				8D4716CE299D8C0100079790 /* HomeCoordinator.swift in Sources */,
 				8D740227299D494E008BFE17 /* AppDelegate.swift in Sources */,
 				8D4716BF299D800800079790 /* IncomeView.swift in Sources */,
 				8D740242299D4C32008BFE17 /* HomeView.swift in Sources */,
 				8D4716C7299D80B300079790 /* ResultView.swift in Sources */,
+				8D4716E6299FB4BC00079790 /* BaseNavigationController.swift in Sources */,
 				8D4716B0299D726500079790 /* UIViewController+.swift in Sources */,
 				8D4716E4299EE60E00079790 /* UIResponder+.swift in Sources */,
+				8D4716EA29A00DAC00079790 /* RootCoordinator.swift in Sources */,
 				8D4716BD299D800000079790 /* IncomeViewController.swift in Sources */,
 				8D4716AD299D660000079790 /* Coordinator.swift in Sources */,
 				8D740229299D494E008BFE17 /* SceneDelegate.swift in Sources */,
+				8D4716F029A0486300079790 /* ResultViewModel.swift in Sources */,
 				8D740240299D4C22008BFE17 /* HomeViewController.swift in Sources */,
-				8D4716D2299D8C1600079790 /* ExpensesCoordinator.swift in Sources */,
 				8D4716B2299D75C400079790 /* UIColor+.swift in Sources */,
 				8D4716B4299D7D3400079790 /* UITextField+.swift in Sources */,
 				8D4716CA299D820400079790 /* ExpensesView.swift in Sources */,
@@ -443,6 +455,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -471,6 +485,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

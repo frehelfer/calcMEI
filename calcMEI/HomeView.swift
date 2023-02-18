@@ -86,7 +86,7 @@ class HomeView: UIView {
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             
             // nextButton
-            nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
             nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             nextButton.heightAnchor.constraint(equalToConstant: 45),
