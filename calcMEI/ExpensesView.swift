@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CurrencyUITextFieldDelegate
+import CurrencyFormatter
 
 protocol ExpensesViewDelegate: AnyObject {
     func nextButtonPressed()
@@ -27,7 +29,7 @@ class ExpensesView: UIView {
         return view
     }()
     
-    // MARK: - Service properties
+    // MARK: - Expenses properties
     private lazy var expensesStack: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,9 +37,9 @@ class ExpensesView: UIView {
         stackView.alignment = .center
         stackView.spacing = 13
         
-        stackView.backgroundColor = .theme.greenBackground2
+        stackView.backgroundColor = .theme.redStackBackground
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 13, left: 13, bottom: 13, right: 13)
+        stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 13, right: 13)
         
         stackView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
         stackView.layer.cornerRadius = 10
@@ -55,8 +57,9 @@ class ExpensesView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .theme.label1
-        label.text = "Prestação de Serviços"
-        label.addCharacterSpacing(kernValue: 1.05)
+        label.text = "Pró-labore, DAS, Mercadorias, Aluguel, Água, Luz e Tel."
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     
@@ -87,11 +90,14 @@ class ExpensesView: UIView {
         return button
     }()
     
+    private var textFieldDelegate: CurrencyUITextFieldDelegate!
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        setupTextFieldWithCurrencyDelegate()
     }
     
     required init?(coder: NSCoder) {
@@ -120,12 +126,38 @@ class ExpensesView: UIView {
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             
+            // stackView
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
+            // expensesStack
+            expensesStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            expensesStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            
+            expensesTextField.widthAnchor.constraint(equalToConstant: 200),
+            
             // nextButton
             nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
             nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             nextButton.heightAnchor.constraint(equalToConstant: 45),
         ])
+    }
+    
+    private func setupTextFieldWithCurrencyDelegate() {
+        let currencyFormatter = CurrencyFormatter {
+            $0.maxValue = 100000000
+            $0.currency = .brazilianReal
+            $0.locale = CurrencyLocale.portugueseBrazil
+            $0.hasDecimals = true
+        }
+        
+        textFieldDelegate = CurrencyUITextFieldDelegate(formatter: currencyFormatter)
+        textFieldDelegate.clearsWhenValueIsZero = true
+        textFieldDelegate.passthroughDelegate = self
+        
+        expensesTextField.delegate = textFieldDelegate
     }
     
     // MARK: - Private Actions
@@ -136,4 +168,16 @@ class ExpensesView: UIView {
     }
     
     // MARK: - Public Actions
+    
+}
+
+extension ExpensesView: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+//        let unformattedValue = textFieldDelegate
+//            .formatter
+//            .unformatted(
+//                string: textField.text ?? "0"
+//            ) ?? "0"
+//        label.text = "Formatted value: \(textField.text ?? "0")"
+    }
 }

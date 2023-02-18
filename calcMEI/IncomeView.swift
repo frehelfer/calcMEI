@@ -24,7 +24,7 @@ class IncomeView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = 40
+        stackView.spacing = 35
 
         return stackView
     }()
@@ -39,7 +39,7 @@ class IncomeView: UIView {
         
         stackView.backgroundColor = .theme.greenBackground2
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 13, left: 13, bottom: 13, right: 13)
+        stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 13, right: 13)
         
         stackView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
         stackView.layer.cornerRadius = 10
@@ -58,7 +58,6 @@ class IncomeView: UIView {
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .theme.label1
         label.text = "Prestação de Serviços"
-        label.addCharacterSpacing(kernValue: 1.05)
         return label
     }()
     
@@ -86,7 +85,7 @@ class IncomeView: UIView {
         
         stackView.backgroundColor = .theme.greenBackground2
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 13, left: 13, bottom: 13, right: 13)
+        stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 13, right: 13)
         
         stackView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
         stackView.layer.cornerRadius = 10
@@ -104,8 +103,9 @@ class IncomeView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .theme.label1
-        label.text = "Prestação de Serviços"
-        label.addCharacterSpacing(kernValue: 1.05)
+        label.text = "Comércio, Indústria e \n Transporte de Cargas"
+        label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
     
@@ -133,7 +133,7 @@ class IncomeView: UIView {
         
         stackView.backgroundColor = .theme.greenBackground2
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 13, left: 13, bottom: 13, right: 13)
+        stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 13, right: 13)
         
         stackView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
         stackView.layer.cornerRadius = 10
@@ -151,8 +151,7 @@ class IncomeView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .theme.label1
-        label.text = "Prestação de Serviços"
-        label.addCharacterSpacing(kernValue: 1.05)
+        label.text = "Transporte de Passageiros"
         return label
     }()
     
@@ -237,22 +236,19 @@ class IncomeView: UIView {
             servicesStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             servicesStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            servicesTextField.leadingAnchor.constraint(equalTo: servicesStack.leadingAnchor, constant: 20),
-            servicesTextField.trailingAnchor.constraint(equalTo: servicesStack.trailingAnchor, constant: -20),
+            servicesTextField.widthAnchor.constraint(equalToConstant: 200),
             
             // commerceStack
             commerceStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             commerceStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            commerceTextField.leadingAnchor.constraint(equalTo: commerceStack.leadingAnchor, constant: 20),
-            commerceTextField.trailingAnchor.constraint(equalTo: commerceStack.trailingAnchor, constant: -20),
+            commerceTextField.widthAnchor.constraint(equalToConstant: 200),
             
             // transportStack
             transportStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             transportStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            transportTextField.leadingAnchor.constraint(equalTo: transportStack.leadingAnchor, constant: 20),
-            transportTextField.trailingAnchor.constraint(equalTo: transportStack.trailingAnchor, constant: -20),
+            transportTextField.widthAnchor.constraint(equalToConstant: 200),
             
             // nextButton
             nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
@@ -299,8 +295,4 @@ extension IncomeView: UITextFieldDelegate {
 //            ) ?? "0"
 //        label.text = "Formatted value: \(textField.text ?? "0")"
     }
-}
-
-extension IncomeView: UIScrollViewDelegate {
-    
 }

@@ -22,7 +22,7 @@ class HomeView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
         view.alignment = .center
-        view.spacing = 10
+        view.spacing = 30
         view.distribution = .fill
         return view
     }()
@@ -31,10 +31,20 @@ class HomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        label.textColor = .label.withAlphaComponent(0.8)
+        label.textColor = .theme.label1
         label.textAlignment = .center
         label.text = "Calculadora Declaração \n IRPF - MEI"
         label.numberOfLines = 0
+        return label
+    }()
+    
+    private lazy var infoLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        label.textColor = .theme.label1.withAlphaComponent(0.8)
+        label.textAlignment = .center
+        label.text = "Ano-Calendário de 2022 - Exercício de 2023"
         return label
     }()
     
@@ -73,6 +83,7 @@ class HomeView: UIView {
         addSubview(mainStackView)
         
         mainStackView.addArrangedSubview(titleLabel)
+        mainStackView.addArrangedSubview(infoLabel)
         
         addSubview(nextButton)
     }
@@ -81,7 +92,7 @@ class HomeView: UIView {
         NSLayoutConstraint.activate([
             
             // mainStackView
-            mainStackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -100),
+            mainStackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -130),
             mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             

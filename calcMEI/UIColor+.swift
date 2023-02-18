@@ -19,5 +19,8 @@ struct ColorTheme {
     let greenBackground2 = UIColor(named: "greenBackground2")!
     let greenBackground3 = UIColor(named: "greenBackground3")!
     
+//    let redBackground = UIColor.systemRed.withAlphaComponent(0.05)
+    let redStackBackground = UIColor.systemRed.withAlphaComponent(0.2)
+    
     let label1 = UIColor(named: "label1")!
 }

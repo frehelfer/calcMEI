@@ -22,7 +22,7 @@ class HomeCoordinator: Coordinator {
     }
     
     func start() {
-        showHome()
+        showIncome()
     }
 }
 
@@ -48,7 +48,8 @@ private extension HomeCoordinator {
     }
     
     func pop() {
-        navigationController.viewControllers = [incomeViewController()]
+        let vc = navigationController.viewControllers[0]
+        navigationController.popToViewController(vc, animated: true)
     }
     
 }
