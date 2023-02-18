@@ -233,22 +233,26 @@ class IncomeView: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 
-            // subStacks
+            // servicesStack
             servicesStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             servicesStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            servicesTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            servicesTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            servicesTextField.leadingAnchor.constraint(equalTo: servicesStack.leadingAnchor, constant: 20),
+            servicesTextField.trailingAnchor.constraint(equalTo: servicesStack.trailingAnchor, constant: -20),
             
+            // commerceStack
             commerceStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             commerceStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            commerceTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            commerceTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
+            commerceTextField.leadingAnchor.constraint(equalTo: commerceStack.leadingAnchor, constant: 20),
+            commerceTextField.trailingAnchor.constraint(equalTo: commerceStack.trailingAnchor, constant: -20),
+            
+            // transportStack
             transportStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             transportStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            transportTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            transportTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            
+            transportTextField.leadingAnchor.constraint(equalTo: transportStack.leadingAnchor, constant: 20),
+            transportTextField.trailingAnchor.constraint(equalTo: transportStack.trailingAnchor, constant: -20),
             
             // nextButton
             nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
