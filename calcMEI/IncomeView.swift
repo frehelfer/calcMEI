@@ -10,7 +10,7 @@ import CurrencyUITextFieldDelegate
 import CurrencyFormatter
 
 protocol IncomeViewDelegate: AnyObject {
-    func nextButtonPressed()
+    func nextButtonPressed(count: Count)
 }
 
 class IncomeView: UIView {
@@ -279,7 +279,18 @@ class IncomeView: UIView {
     
     @objc
     private func nextButtonPressed() {
-        self.delegate?.nextButtonPressed()
+        guard
+            let servicesText = servicesTextField.text,
+            let commerceText = commerceTextField.text,
+            let transportText = transportTextField.text
+        else { return }
+
+        let count = Count(
+            inServiceProvision: servicesText.currencyFormattedToDouble(),
+            inCommerce: commerceText.currencyFormattedToDouble(),
+            inPassengerTransport: transportText.currencyFormattedToDouble())
+        
+        self.delegate?.nextButtonPressed(count: count)
     }
     
     // MARK: - Public Actions

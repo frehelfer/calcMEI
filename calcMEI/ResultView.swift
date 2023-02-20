@@ -22,9 +22,34 @@ class ResultView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
         view.alignment = .center
-        view.spacing = 10
+        view.spacing = 20
         view.distribution = .fill
         return view
+    }()
+    
+    // TODO: Change label names
+    private lazy var receitaBrutaAnual: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var lucroApurado: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var rendimentoIsento: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var rendimentoTributável: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     // Button
@@ -60,11 +85,23 @@ class ResultView: UIView {
     }
     
     private func configureSubviews() {
+        addSubview(stackView)
+        
+        stackView.addArrangedSubview(receitaBrutaAnual)
+        stackView.addArrangedSubview(lucroApurado)
+        stackView.addArrangedSubview(rendimentoIsento)
+        stackView.addArrangedSubview(rendimentoTributável)
+        
         addSubview(nextButton)
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
+            
+            // stackView
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
             // nextButton
             nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
@@ -82,4 +119,11 @@ class ResultView: UIView {
     }
     
     // MARK: - Public Actions
+    
+    public func updateView(with count: Count) {
+        receitaBrutaAnual.text = "Receita Bruta Anual: \(count.receitaBrutaAnual.currencyFormatFromDouble())"
+        lucroApurado.text = "Lucro Apurado: \(count.lucroApurado.currencyFormatFromDouble())"
+        rendimentoIsento.text = "Rendimento Isento: \(count.rendimentoIsento.currencyFormatFromDouble())"
+        rendimentoTributável.text = "Rendimento Tributável: \(count.rendimentoTributável.currencyFormatFromDouble())"
+    }
 }

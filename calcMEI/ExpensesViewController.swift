@@ -51,7 +51,8 @@ class ExpensesViewController: UIViewController {
 // MARK: - ExpensesViewDelegate
 extension ExpensesViewController: ExpensesViewDelegate {
     
-    func nextButtonPressed() {
+    func nextButtonPressed(expenses: Double) {
+        viewModel?.updateCount(expenses: expenses)
         viewModel?.nextSelected()
     }
     

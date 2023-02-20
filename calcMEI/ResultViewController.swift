@@ -35,6 +35,12 @@ class ResultViewController: UIViewController {
         setupVC()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel?.updateViewWithCount()
+    }
+    
     // MARK: - Private Functions
     private func setupVC() {
         hideKeyboardWhenTappedAround()
@@ -53,6 +59,8 @@ extension ResultViewController: ResultViewDelegate {
 // MARK: - ResultViewModelViewDelegate
 extension ResultViewController: ResultViewModelViewDelegate {
     
-    
+    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: Count) {
+        resultView.updateView(with: updateViewWithCount)
+    }
     
 }

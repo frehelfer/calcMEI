@@ -36,15 +36,21 @@ private extension HomeCoordinator {
     }
     
     func showIncome() {
-        navigationController.pushViewController(incomeViewController(), animated: true)
+        navigationController.pushViewController(
+            incomeViewController(),
+            animated: true)
     }
     
-    func showExpenses() {
-        navigationController.pushViewController(expensesViewController(), animated: true)
+    func showExpenses(count: Count) {
+        navigationController.pushViewController(
+            expensesViewController(count: count),
+            animated: true)
     }
     
-    func showResult() {
-        navigationController.pushViewController(resultViewController(), animated: true)
+    func showResult(count: Count) {
+        navigationController.pushViewController(
+            resultViewController(count: count),
+            animated: true)
     }
     
     func pop() {
@@ -81,11 +87,11 @@ private extension HomeCoordinator {
         return viewController
     }
     
-    func expensesViewController() -> UIViewController {
+    func expensesViewController(count: Count) -> UIViewController {
         let viewController = ExpensesViewController()
         
         viewController.viewModel = {
-            let viewModel = ExpensesViewModel()
+            let viewModel = ExpensesViewModel(count: count)
             viewModel.coordinatorDelegate = self
             return viewModel
         }()
@@ -93,11 +99,11 @@ private extension HomeCoordinator {
         return viewController
     }
     
-    func resultViewController() -> UIViewController {
+    func resultViewController(count: Count) -> UIViewController {
         let viewController = ResultViewController()
         
         viewController.viewModel = {
-            let viewModel = ResultViewModel()
+            let viewModel = ResultViewModel(count: count)
             viewModel.coordinatorDelegate = self
             return viewModel
         }()
@@ -119,8 +125,8 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
 // MARK: - IncomeViewModelCoordinatorDelegate
 extension HomeCoordinator: IncomeViewModelCoordinatorDelegate {
     
-    func incomeViewModelDidSelectNext(_ incomeViewModel: IncomeViewModel) {
-        showExpenses()
+    func incomeViewModelDidSelectNext(_ incomeViewModel: IncomeViewModel, count: Count) {
+        showExpenses(count: count)
     }
 
 }
@@ -128,8 +134,8 @@ extension HomeCoordinator: IncomeViewModelCoordinatorDelegate {
 // MARK: - ExpensesViewModelCoordinatorDelegate
 extension HomeCoordinator: ExpensesViewModelCoordinatorDelegate {
     
-    func expensesViewModelDidSelectNext(_ expensesViewModel: ExpensesViewModel) {
-        showResult()
+    func expensesViewModelDidSelectNext(_ expensesViewModel: ExpensesViewModel, count: Count) {
+        showResult(count: count)
     }
 
 }

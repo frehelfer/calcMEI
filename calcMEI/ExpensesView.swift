@@ -10,7 +10,7 @@ import CurrencyUITextFieldDelegate
 import CurrencyFormatter
 
 protocol ExpensesViewDelegate: AnyObject {
-    func nextButtonPressed()
+    func nextButtonPressed(expenses: Double)
 }
 
 class ExpensesView: UIView {
@@ -164,7 +164,11 @@ class ExpensesView: UIView {
     
     @objc
     private func nextButtonPressed() {
-        self.delegate?.nextButtonPressed()
+        guard
+            let expenses = expensesTextField.text
+        else { return }
+        
+        self.delegate?.nextButtonPressed(expenses: expenses.currencyFormattedToDouble())
     }
     
     // MARK: - Public Actions

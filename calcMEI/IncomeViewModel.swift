@@ -8,7 +8,7 @@
 import UIKit
 
 protocol IncomeViewModelCoordinatorDelegate: AnyObject {
-    func incomeViewModelDidSelectNext(_ incomeViewModel: IncomeViewModel)
+    func incomeViewModelDidSelectNext(_ incomeViewModel: IncomeViewModel, count: Count)
 }
 
 protocol IncomeViewModelViewDelegate: AnyObject {
@@ -32,8 +32,8 @@ class IncomeViewModel {
 // MARK: - Navigation
 extension IncomeViewModel {
     
-    func nextSelected() {
-        coordinatorDelegate?.incomeViewModelDidSelectNext(self)
+    func nextSelected(count: Count) {
+        coordinatorDelegate?.incomeViewModelDidSelectNext(self, count: count)
     }
     
 }

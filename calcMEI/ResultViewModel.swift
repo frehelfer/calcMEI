@@ -12,7 +12,7 @@ protocol ResultViewModelCoordinatorDelegate: AnyObject {
 }
 
 protocol ResultViewModelViewDelegate: AnyObject {
-    
+    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: Count)
 }
 
 class ResultViewModel {
@@ -20,12 +20,18 @@ class ResultViewModel {
     weak var coordinatorDelegate: ResultViewModelCoordinatorDelegate?
     weak var viewDelegate: ResultViewModelViewDelegate?
     
-    init() {
-        
+    var count: Count
+    
+    init(count: Count) {
+        self.count = count
     }
     
     var title: String {
         return "Resultado"
+    }
+    
+    public func updateViewWithCount() {
+        viewDelegate?.resultViewModel(self, updateViewWithCount: count)
     }
 }
 

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ExpensesViewModelCoordinatorDelegate: AnyObject {
-    func expensesViewModelDidSelectNext(_ expensesViewModel: ExpensesViewModel)
+    func expensesViewModelDidSelectNext(_ expensesViewModel: ExpensesViewModel, count: Count)
 }
 
 protocol ExpensesViewModelViewDelegate: AnyObject {
@@ -20,12 +20,18 @@ class ExpensesViewModel {
     weak var coordinatorDelegate: ExpensesViewModelCoordinatorDelegate?
     weak var viewDelegate: ExpensesViewModelViewDelegate?
     
-    init() {
-        
+    var count: Count
+    
+    init(count: Count) {
+        self.count = count
     }
     
     var title: String {
         return "Despesas Anuais"
+    }
+    
+    func updateCount(expenses: Double) {
+        self.count.outExpenses = expenses
     }
 }
 
@@ -33,7 +39,7 @@ class ExpensesViewModel {
 extension ExpensesViewModel {
     
     func nextSelected() {
-        coordinatorDelegate?.expensesViewModelDidSelectNext(self)
+        coordinatorDelegate?.expensesViewModelDidSelectNext(self, count: self.count)
     }
     
 }
