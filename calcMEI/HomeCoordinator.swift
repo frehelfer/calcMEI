@@ -22,7 +22,7 @@ class HomeCoordinator: Coordinator {
     }
     
     func start() {
-        showIncome()
+        showHome()
     }
 }
 
