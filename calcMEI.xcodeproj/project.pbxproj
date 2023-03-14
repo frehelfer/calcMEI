@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D09CAE829C0F1B600FB989F /* calcMEITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09CAE729C0F1B600FB989F /* calcMEITests.swift */; };
+		8D09CAF029C0F21500FB989F /* CountTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09CAEF29C0F21400FB989F /* CountTest.swift */; };
+		8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09CAF229C1010F00FB989F /* CountFixture.swift */; };
 		8D4716AD299D660000079790 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AC299D660000079790 /* Coordinator.swift */; };
 		8D4716B0299D726500079790 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AF299D726500079790 /* UIViewController+.swift */; };
 		8D4716B2299D75C400079790 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716B1299D75C400079790 /* UIColor+.swift */; };
@@ -38,7 +41,21 @@
 		8D740242299D4C32008BFE17 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740241299D4C32008BFE17 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8D09CAE929C0F1B600FB989F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D74021B299D494E008BFE17 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D740222299D494E008BFE17;
+			remoteInfo = calcMEI;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		8D09CAE529C0F1B600FB989F /* calcMEITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calcMEITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D09CAE729C0F1B600FB989F /* calcMEITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calcMEITests.swift; sourceTree = "<group>"; };
+		8D09CAEF29C0F21400FB989F /* CountTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountTest.swift; sourceTree = "<group>"; };
+		8D09CAF229C1010F00FB989F /* CountFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountFixture.swift; sourceTree = "<group>"; };
 		8D4716AC299D660000079790 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8D4716AF299D726500079790 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		8D4716B1299D75C400079790 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -71,6 +88,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8D09CAE229C0F1B600FB989F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D740220299D494E008BFE17 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,6 +107,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D09CAE629C0F1B600FB989F /* calcMEITests */ = {
+			isa = PBXGroup;
+			children = (
+				8D09CAF129C100F400FB989F /* Fixture */,
+				8D09CAE729C0F1B600FB989F /* calcMEITests.swift */,
+				8D09CAEF29C0F21400FB989F /* CountTest.swift */,
+			);
+			path = calcMEITests;
+			sourceTree = "<group>";
+		};
+		8D09CAF129C100F400FB989F /* Fixture */ = {
+			isa = PBXGroup;
+			children = (
+				8D09CAF229C1010F00FB989F /* CountFixture.swift */,
+			);
+			path = Fixture;
+			sourceTree = "<group>";
+		};
 		8D4716AB299D65D600079790 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				8D740225299D494E008BFE17 /* calcMEI */,
+				8D09CAE629C0F1B600FB989F /* calcMEITests */,
 				8D740224299D494E008BFE17 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -164,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				8D740223299D494E008BFE17 /* calcMEI.app */,
+				8D09CAE529C0F1B600FB989F /* calcMEITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,6 +261,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8D09CAE429C0F1B600FB989F /* calcMEITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D09CAED29C0F1B600FB989F /* Build configuration list for PBXNativeTarget "calcMEITests" */;
+			buildPhases = (
+				8D09CAE129C0F1B600FB989F /* Sources */,
+				8D09CAE229C0F1B600FB989F /* Frameworks */,
+				8D09CAE329C0F1B600FB989F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D09CAEA29C0F1B600FB989F /* PBXTargetDependency */,
+			);
+			name = calcMEITests;
+			productName = calcMEITests;
+			productReference = 8D09CAE529C0F1B600FB989F /* calcMEITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8D740222299D494E008BFE17 /* calcMEI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D740237299D4950008BFE17 /* Build configuration list for PBXNativeTarget "calcMEI" */;
@@ -248,6 +310,10 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					8D09CAE429C0F1B600FB989F = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 8D740222299D494E008BFE17;
+					};
 					8D740222299D494E008BFE17 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -270,11 +336,19 @@
 			projectRoot = "";
 			targets = (
 				8D740222299D494E008BFE17 /* calcMEI */,
+				8D09CAE429C0F1B600FB989F /* calcMEITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8D09CAE329C0F1B600FB989F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D740221299D494E008BFE17 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +361,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8D09CAE129C0F1B600FB989F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D09CAE829C0F1B600FB989F /* calcMEITests.swift in Sources */,
+				8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */,
+				8D09CAF029C0F21500FB989F /* CountTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D74021F299D494E008BFE17 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,6 +405,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8D09CAEA29C0F1B600FB989F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D740222299D494E008BFE17 /* calcMEI */;
+			targetProxy = 8D09CAE929C0F1B600FB989F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		8D740231299D4950008BFE17 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -333,6 +425,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8D09CAEB29C0F1B600FB989F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fre.calcMEITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/calcMEI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/calcMEI";
+			};
+			name = Debug;
+		};
+		8D09CAEC29C0F1B600FB989F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fre.calcMEITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/calcMEI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/calcMEI";
+			};
+			name = Release;
+		};
 		8D740235299D4950008BFE17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -510,6 +636,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8D09CAED29C0F1B600FB989F /* Build configuration list for PBXNativeTarget "calcMEITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D09CAEB29C0F1B600FB989F /* Debug */,
+				8D09CAEC29C0F1B600FB989F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8D74021E299D494E008BFE17 /* Build configuration list for PBXProject "calcMEI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
