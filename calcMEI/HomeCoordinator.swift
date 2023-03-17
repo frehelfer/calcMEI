@@ -91,7 +91,9 @@ private extension HomeCoordinator {
         let viewController = ExpensesViewController()
         
         viewController.viewModel = {
-            let viewModel = ExpensesViewModel(count: count)
+            let viewModel = ExpensesViewModel(
+                count: count
+            )
             viewModel.coordinatorDelegate = self
             return viewModel
         }()
@@ -103,7 +105,9 @@ private extension HomeCoordinator {
         let viewController = ResultViewController()
         
         viewController.viewModel = {
-            let viewModel = ResultViewModel(count: count)
+            let viewModel = ResultViewModel(
+                count: count
+            )
             viewModel.coordinatorDelegate = self
             return viewModel
         }()

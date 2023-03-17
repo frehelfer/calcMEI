@@ -288,7 +288,8 @@ class IncomeView: UIView {
         let count = Count(
             inServiceProvision: servicesText.currencyFormattedToDouble(),
             inCommerce: commerceText.currencyFormattedToDouble(),
-            inPassengerTransport: transportText.currencyFormattedToDouble())
+            inPassengerTransport: transportText.currencyFormattedToDouble()
+        )
         
         self.delegate?.nextButtonPressed(count: count)
     }

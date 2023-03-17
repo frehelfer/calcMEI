@@ -39,6 +39,9 @@
 		8D740233299D4950008BFE17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D740231299D4950008BFE17 /* LaunchScreen.storyboard */; };
 		8D740240299D4C22008BFE17 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D74023F299D4C22008BFE17 /* HomeViewController.swift */; };
 		8D740242299D4C32008BFE17 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740241299D4C32008BFE17 /* HomeView.swift */; };
+		8D81590A29C4AB5C008B4D20 /* ExpensesViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81590929C4AB5C008B4D20 /* ExpensesViewModel_Tests.swift */; };
+		8D81590D29C4E4D5008B4D20 /* ResultViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81590C29C4E4D5008B4D20 /* ResultViewModel_Tests.swift */; };
+		8D81591029C4E70A008B4D20 /* IncomeViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81590F29C4E70A008B4D20 /* IncomeViewModel_Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		8D740234299D4950008BFE17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D74023F299D4C22008BFE17 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8D740241299D4C32008BFE17 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8D81590929C4AB5C008B4D20 /* ExpensesViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewModel_Tests.swift; sourceTree = "<group>"; };
+		8D81590C29C4E4D5008B4D20 /* ResultViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel_Tests.swift; sourceTree = "<group>"; };
+		8D81590F29C4E70A008B4D20 /* IncomeViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewModel_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 		8D09CAE629C0F1B600FB989F /* calcMEITests */ = {
 			isa = PBXGroup;
 			children = (
+				8D81590329C4A8C4008B4D20 /* Views */,
 				8D09CAF129C100F400FB989F /* Fixture */,
 				8D09CAE729C0F1B600FB989F /* calcMEITests.swift */,
 				8D09CAEF29C0F21400FB989F /* CountTest.swift */,
@@ -258,6 +265,40 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
+		8D81590329C4A8C4008B4D20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D81590E29C4E6F8008B4D20 /* Income */,
+				8D81590829C4AB46008B4D20 /* Expenses */,
+				8D81590B29C4E4A3008B4D20 /* Result */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8D81590829C4AB46008B4D20 /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				8D81590929C4AB5C008B4D20 /* ExpensesViewModel_Tests.swift */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
+		8D81590B29C4E4A3008B4D20 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				8D81590C29C4E4D5008B4D20 /* ResultViewModel_Tests.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		8D81590E29C4E6F8008B4D20 /* Income */ = {
+			isa = PBXGroup;
+			children = (
+				8D81590F29C4E70A008B4D20 /* IncomeViewModel_Tests.swift */,
+			);
+			path = Income;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -366,6 +407,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D09CAE829C0F1B600FB989F /* calcMEITests.swift in Sources */,
+				8D81590A29C4AB5C008B4D20 /* ExpensesViewModel_Tests.swift in Sources */,
+				8D81590D29C4E4D5008B4D20 /* ResultViewModel_Tests.swift in Sources */,
+				8D81591029C4E70A008B4D20 /* IncomeViewModel_Tests.swift in Sources */,
 				8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */,
 				8D09CAF029C0F21500FB989F /* CountTest.swift in Sources */,
 			);
@@ -432,6 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fre.calcMEITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -449,6 +494,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fre.calcMEITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
