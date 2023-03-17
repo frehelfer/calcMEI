@@ -53,7 +53,7 @@ class HomeView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Começar", for: .normal)
         button.backgroundColor = .systemBlue
-        
+        button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
         
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)

@@ -41,6 +41,7 @@
 		8D81590A29C4AB5C008B4D20 /* ExpensesViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81590929C4AB5C008B4D20 /* ExpensesViewModel_Tests.swift */; };
 		8D81590D29C4E4D5008B4D20 /* ResultViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81590C29C4E4D5008B4D20 /* ResultViewModel_Tests.swift */; };
 		8D81591029C4E70A008B4D20 /* IncomeViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81590F29C4E70A008B4D20 /* IncomeViewModel_Tests.swift */; };
+		8D81591329C4EFC2008B4D20 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81591229C4EFC2008B4D20 /* UIButton+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		8D81590929C4AB5C008B4D20 /* ExpensesViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewModel_Tests.swift; sourceTree = "<group>"; };
 		8D81590C29C4E4D5008B4D20 /* ResultViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel_Tests.swift; sourceTree = "<group>"; };
 		8D81590F29C4E70A008B4D20 /* IncomeViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewModel_Tests.swift; sourceTree = "<group>"; };
+		8D81591229C4EFC2008B4D20 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				8D4716B3299D7D3300079790 /* UITextField+.swift */,
 				8D4716E1299EBD8E00079790 /* UILabel+.swift */,
 				8D4716E3299EE60E00079790 /* UIResponder+.swift */,
+				8D81591229C4EFC2008B4D20 /* UIButton+.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				8D4716CC299D820F00079790 /* ExpensesViewController.swift in Sources */,
 				8D4716E8299FC3BA00079790 /* HomeViewModel.swift in Sources */,
 				8D4716F429A3C9EB00079790 /* Currency+.swift in Sources */,
+				8D81591329C4EFC2008B4D20 /* UIButton+.swift in Sources */,
 				8D4716EE29A0434000079790 /* ExpensesViewModel.swift in Sources */,
 				8D4716CE299D8C0100079790 /* HomeCoordinator.swift in Sources */,
 				8D740227299D494E008BFE17 /* AppDelegate.swift in Sources */,
