@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D09CAE829C0F1B600FB989F /* calcMEITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09CAE729C0F1B600FB989F /* calcMEITests.swift */; };
-		8D09CAF029C0F21500FB989F /* CountTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09CAEF29C0F21400FB989F /* CountTest.swift */; };
+		8D09CAF029C0F21500FB989F /* Count_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09CAEF29C0F21400FB989F /* Count_Tests.swift */; };
 		8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09CAF229C1010F00FB989F /* CountFixture.swift */; };
 		8D4716AD299D660000079790 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AC299D660000079790 /* Coordinator.swift */; };
 		8D4716B0299D726500079790 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AF299D726500079790 /* UIViewController+.swift */; };
@@ -56,8 +55,7 @@
 
 /* Begin PBXFileReference section */
 		8D09CAE529C0F1B600FB989F /* calcMEITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calcMEITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D09CAE729C0F1B600FB989F /* calcMEITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calcMEITests.swift; sourceTree = "<group>"; };
-		8D09CAEF29C0F21400FB989F /* CountTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountTest.swift; sourceTree = "<group>"; };
+		8D09CAEF29C0F21400FB989F /* Count_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count_Tests.swift; sourceTree = "<group>"; };
 		8D09CAF229C1010F00FB989F /* CountFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountFixture.swift; sourceTree = "<group>"; };
 		8D4716AC299D660000079790 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8D4716AF299D726500079790 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -116,10 +114,9 @@
 		8D09CAE629C0F1B600FB989F /* calcMEITests */ = {
 			isa = PBXGroup;
 			children = (
+				8D81591129C4E83B008B4D20 /* Model */,
 				8D81590329C4A8C4008B4D20 /* Views */,
 				8D09CAF129C100F400FB989F /* Fixture */,
-				8D09CAE729C0F1B600FB989F /* calcMEITests.swift */,
-				8D09CAEF29C0F21400FB989F /* CountTest.swift */,
 			);
 			path = calcMEITests;
 			sourceTree = "<group>";
@@ -299,6 +296,14 @@
 			path = Income;
 			sourceTree = "<group>";
 		};
+		8D81591129C4E83B008B4D20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D09CAEF29C0F21400FB989F /* Count_Tests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -406,12 +411,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D09CAE829C0F1B600FB989F /* calcMEITests.swift in Sources */,
 				8D81590A29C4AB5C008B4D20 /* ExpensesViewModel_Tests.swift in Sources */,
 				8D81590D29C4E4D5008B4D20 /* ResultViewModel_Tests.swift in Sources */,
 				8D81591029C4E70A008B4D20 /* IncomeViewModel_Tests.swift in Sources */,
 				8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */,
-				8D09CAF029C0F21500FB989F /* CountTest.swift in Sources */,
+				8D09CAF029C0F21500FB989F /* Count_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
