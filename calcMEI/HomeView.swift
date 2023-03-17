@@ -51,7 +51,7 @@ class HomeView: UIView {
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Começar", for: .normal)
+        button.setTitle("Nova consulta", for: .normal)
         button.backgroundColor = .systemBlue
         button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
         

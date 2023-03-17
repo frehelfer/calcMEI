@@ -81,7 +81,7 @@ class ExpensesView: UIView {
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Começar", for: .normal)
+        button.setTitle("Resultado", for: .normal)
         button.backgroundColor = .systemBlue
         button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
         
