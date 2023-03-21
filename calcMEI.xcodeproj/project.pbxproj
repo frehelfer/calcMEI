@@ -45,6 +45,7 @@
 		8DFCAFE329C92AE20053D852 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE229C92AE20053D852 /* SettingsView.swift */; };
 		8DFCAFE529C92AEF0053D852 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */; };
 		8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */; };
+		8DFCAFEA29CA71F40053D852 /* SettingsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		8DFCAFE229C92AE20053D852 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 		8D81590329C4A8C4008B4D20 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8DFCAFE829CA71D80053D852 /* Settings */,
 				8D81590E29C4E6F8008B4D20 /* Income */,
 				8D81590829C4AB46008B4D20 /* Expenses */,
 				8D81590B29C4E4A3008B4D20 /* Result */,
@@ -322,6 +325,14 @@
 				8DFCAFE229C92AE20053D852 /* SettingsView.swift */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		8DFCAFE829CA71D80053D852 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D81590A29C4AB5C008B4D20 /* ExpensesViewModel_Tests.swift in Sources */,
+				8DFCAFEA29CA71F40053D852 /* SettingsViewModel_Tests.swift in Sources */,
 				8D81590D29C4E4D5008B4D20 /* ResultViewModel_Tests.swift in Sources */,
 				8D81591029C4E70A008B4D20 /* IncomeViewModel_Tests.swift in Sources */,
 				8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */,

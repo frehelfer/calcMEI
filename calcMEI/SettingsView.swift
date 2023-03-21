@@ -16,7 +16,6 @@ class SettingsView: UIView {
     weak var delegate: SettingsViewDelegate?
     
     // MARK: - Properties
-    
     private lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -27,8 +26,15 @@ class SettingsView: UIView {
         return view
     }()
     
-    // MARK: - Init
+    private lazy var appVersionInfoLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .theme.label2
+        return label
+    }()
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -39,19 +45,22 @@ class SettingsView: UIView {
     }
     
     // MARK: - SetupView
-    
     private func setupView() {
-        backgroundColor = .red
+        backgroundColor = .theme.mainBackground
         configureSubviews()
         configureConstraints()
     }
     
     private func configureSubviews() {
-        
+        addSubview(appVersionInfoLabel)
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
+            
+            // appVersionInfoLabel
+            appVersionInfoLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            appVersionInfoLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
         ])
     }
@@ -59,5 +68,7 @@ class SettingsView: UIView {
     // MARK: - Private Actions
     
     // MARK: - Public Actions
-    
+    public func updateView(with appVersion: String?) {
+        self.appVersionInfoLabel.text = appVersion
+    }
 }

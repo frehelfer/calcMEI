@@ -27,6 +27,17 @@ class SettingsViewModel {
     var title: String {
         return "Settings"
     }
+    
+    var appVersion: String {
+        guard
+            let versionNumber = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+            let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+        else {
+            return ""
+        }
+        
+        return "v\(versionNumber) \(buildNumber)"
+    }
 }
 
 // MARK: - Navigation

@@ -23,6 +23,7 @@ struct ColorTheme {
     let redStackBackground = UIColor.systemRed.withAlphaComponent(0.2)
     
     let label1 = UIColor(named: "label1")!
+    let label2 = UIColor.secondaryLabel
     
     let buttonHighLight = UIColor.secondarySystemBackground.withAlphaComponent(0.5)
 }
