@@ -9,18 +9,21 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    // MARK: - Clousures
-    
     // MARK: - Properties
-    
-    lazy var settingsView: SettingsView = {
-        let view = SettingsView()
-        
-        return view
+    private lazy var settingsView: SettingsView = {
+        let settingsView = SettingsView()
+        settingsView.delegate = self
+        return settingsView
     }()
     
-    // MARK: - LifeCycle
+    var viewModel: SettingsViewModel? {
+        didSet {
+            viewModel?.viewDelegate = self
+            title = viewModel?.title
+        }
+    }
     
+    // MARK: - LifeCycle
     override func loadView() {
         super.loadView()
         view = settingsView
@@ -32,9 +35,17 @@ class SettingsViewController: UIViewController {
     }
 }
 
-// MARK: - Actions
+// MARK: - SettingsViewController
+extension SettingsViewController: SettingsViewDelegate {
+    
+    
+    
+}
 
-extension SettingsViewController {
+// MARK: - SettingsViewModelViewDelegate
+extension SettingsViewController: SettingsViewModelViewDelegate {
+    
+    
     
 }
 

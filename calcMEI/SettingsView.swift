@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol SettingsViewDelegate: AnyObject {
+    
+}
+
 class SettingsView: UIView {
     
-    // MARK: - Clousures
+    weak var delegate: SettingsViewDelegate?
     
     // MARK: - Properties
     
