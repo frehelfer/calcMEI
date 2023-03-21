@@ -53,6 +53,12 @@ private extension HomeCoordinator {
             animated: true)
     }
     
+    func showSettings() {
+        navigationController.present(
+            settingsViewController(),
+            animated: true)
+    }
+    
     func pop() {
         let vc = navigationController.viewControllers[0]
         navigationController.popToViewController(vc, animated: true)
@@ -115,6 +121,18 @@ private extension HomeCoordinator {
         return viewController
     }
     
+    func settingsViewController() -> UIViewController {
+        let viewController = SettingsViewController()
+        
+        viewController.viewModel = {
+            let viewModel = SettingsViewModel()
+            viewModel.coordinatorDelegate = self
+            return viewModel
+        }()
+        
+        return viewController
+    }
+    
 }
 
 // MARK: - HomeViewModelCoordinatorDelegate
@@ -122,6 +140,10 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
     
     func homeViewModelDidSelectStart(_ homeViewModel: HomeViewModel) {
         showIncome()
+    }
+    
+    func homeViewModelDidSelectSettings(_ homeViewModel: HomeViewModel) {
+        showSettings()
     }
 
 }
@@ -151,5 +173,12 @@ extension HomeCoordinator: ResultViewModelCoordinatorDelegate {
         pop()
     }
 
+}
+
+// MARK: - SettingsViewModelCoordinatorDelegate
+extension HomeCoordinator: SettingsViewModelCoordinatorDelegate {
+    
+    
+    
 }
 

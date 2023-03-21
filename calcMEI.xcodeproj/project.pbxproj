@@ -42,6 +42,9 @@
 		8D81590D29C4E4D5008B4D20 /* ResultViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81590C29C4E4D5008B4D20 /* ResultViewModel_Tests.swift */; };
 		8D81591029C4E70A008B4D20 /* IncomeViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81590F29C4E70A008B4D20 /* IncomeViewModel_Tests.swift */; };
 		8D81591329C4EFC2008B4D20 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81591229C4EFC2008B4D20 /* UIButton+.swift */; };
+		8DFCAFE329C92AE20053D852 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE229C92AE20053D852 /* SettingsView.swift */; };
+		8DFCAFE529C92AEF0053D852 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */; };
+		8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		8D81590C29C4E4D5008B4D20 /* ResultViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel_Tests.swift; sourceTree = "<group>"; };
 		8D81590F29C4E70A008B4D20 /* IncomeViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewModel_Tests.swift; sourceTree = "<group>"; };
 		8D81591229C4EFC2008B4D20 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		8DFCAFE229C92AE20053D852 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +252,7 @@
 		8D74023D299D4BE6008BFE17 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8DFCAFE129C928ED0053D852 /* Settings */,
 				8D4716D8299E726000079790 /* Components */,
 				8D74023E299D4C09008BFE17 /* Home */,
 				8D4716B5299D7F5500079790 /* Income */,
@@ -305,6 +312,16 @@
 				8D09CAEF29C0F21400FB989F /* Count_Tests.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8DFCAFE129C928ED0053D852 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */,
+				8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */,
+				8DFCAFE229C92AE20053D852 /* SettingsView.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,12 +459,15 @@
 				8D4716C7299D80B300079790 /* ResultView.swift in Sources */,
 				8D4716E6299FB4BC00079790 /* BaseNavigationController.swift in Sources */,
 				8D4716B0299D726500079790 /* UIViewController+.swift in Sources */,
+				8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */,
 				8D4716E4299EE60E00079790 /* UIResponder+.swift in Sources */,
 				8D4716EA29A00DAC00079790 /* RootCoordinator.swift in Sources */,
 				8D4716BD299D800000079790 /* IncomeViewController.swift in Sources */,
 				8D4716AD299D660000079790 /* Coordinator.swift in Sources */,
 				8D740229299D494E008BFE17 /* SceneDelegate.swift in Sources */,
+				8DFCAFE329C92AE20053D852 /* SettingsView.swift in Sources */,
 				8D4716F029A0486300079790 /* ResultViewModel.swift in Sources */,
+				8DFCAFE529C92AEF0053D852 /* SettingsViewController.swift in Sources */,
 				8D740240299D4C22008BFE17 /* HomeViewController.swift in Sources */,
 				8D4716B2299D75C400079790 /* UIColor+.swift in Sources */,
 				8D4716B4299D7D3400079790 /* UITextField+.swift in Sources */,

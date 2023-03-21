@@ -38,7 +38,23 @@ class HomeViewController: UIViewController {
     // MARK: - Private Functions
     private func setupVC() {
         hideKeyboardWhenTappedAround()
+        setupNavigationItem()
     }
+    
+    private func setupNavigationItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "gear"),
+            style: .done,
+            target: self,
+            action: #selector(settingsButtonPressed)
+        )
+    }
+    
+    // MARK: - Navigation
+    @objc private func settingsButtonPressed() {
+        viewModel?.settingsSelected()
+    }
+    
 }
 
 // MARK: - HomeViewDelegate
