@@ -42,7 +42,7 @@ class CoreDataManager: CoreDataManaging {
         }
     }
     
-    func perform<T>(fetchRequest: NSFetchRequest<T>) -> [T]? where T : NSFetchRequestResult {
+    func perform<T: NSFetchRequestResult>(fetchRequest: NSFetchRequest<T>) -> [T]? {
         do {
             let result = try viewContext.fetch(fetchRequest)
             return result

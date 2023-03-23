@@ -48,7 +48,8 @@
 		8DFCAFEA29CA71F40053D852 /* SettingsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */; };
 		8DFCAFED29CC797E0053D852 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFEC29CC797E0053D852 /* CoreDataManager.swift */; };
 		8DFCAFF329CC7D5E0053D852 /* calcMEI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF129CC7D5E0053D852 /* calcMEI.xcdatamodeld */; };
-		8DFCAFF529CC84D70053D852 /* CoreDataManager_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF429CC84D70053D852 /* CoreDataManager_Test.swift */; };
+		8DFCAFF529CC84D70053D852 /* CoreDataTestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF429CC84D70053D852 /* CoreDataTestManager.swift */; };
+		8DFCAFF929CC8E8E0053D852 /* ConsultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF829CC8E8E0053D852 /* ConsultService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +105,8 @@
 		8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel_Tests.swift; sourceTree = "<group>"; };
 		8DFCAFEC29CC797E0053D852 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		8DFCAFF229CC7D5E0053D852 /* calcMEI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = calcMEI.xcdatamodel; sourceTree = "<group>"; };
-		8DFCAFF429CC84D70053D852 /* CoreDataManager_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager_Test.swift; sourceTree = "<group>"; };
+		8DFCAFF429CC84D70053D852 /* CoreDataTestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestManager.swift; sourceTree = "<group>"; };
+		8DFCAFF829CC8E8E0053D852 /* ConsultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,7 +359,7 @@
 		8DFCAFEE29CC7B820053D852 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				8DFCAFF429CC84D70053D852 /* CoreDataManager_Test.swift */,
+				8DFCAFF429CC84D70053D852 /* CoreDataTestManager.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -365,6 +367,7 @@
 		8DFCAFF629CC85E00053D852 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8DFCAFF829CC8E8E0053D852 /* ConsultService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -489,7 +492,7 @@
 				8D81591029C4E70A008B4D20 /* IncomeViewModel_Tests.swift in Sources */,
 				8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */,
 				8D09CAF029C0F21500FB989F /* Count_Tests.swift in Sources */,
-				8DFCAFF529CC84D70053D852 /* CoreDataManager_Test.swift in Sources */,
+				8DFCAFF529CC84D70053D852 /* CoreDataTestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +508,7 @@
 				8D4716CC299D820F00079790 /* ExpensesViewController.swift in Sources */,
 				8D4716E8299FC3BA00079790 /* HomeViewModel.swift in Sources */,
 				8D4716F429A3C9EB00079790 /* Currency+.swift in Sources */,
+				8DFCAFF929CC8E8E0053D852 /* ConsultService.swift in Sources */,
 				8D81591329C4EFC2008B4D20 /* UIButton+.swift in Sources */,
 				8D4716EE29A0434000079790 /* ExpensesViewModel.swift in Sources */,
 				8D4716CE299D8C0100079790 /* HomeCoordinator.swift in Sources */,

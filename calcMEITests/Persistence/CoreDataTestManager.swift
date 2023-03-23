@@ -7,7 +7,7 @@
 
 import CoreData
 
-class CoreDataManager {
+class CoreDataTestManager {
     
     private lazy var persistentContainer: NSPersistentContainer = {
         
