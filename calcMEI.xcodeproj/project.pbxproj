@@ -46,6 +46,9 @@
 		8DFCAFE529C92AEF0053D852 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */; };
 		8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */; };
 		8DFCAFEA29CA71F40053D852 /* SettingsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */; };
+		8DFCAFED29CC797E0053D852 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFEC29CC797E0053D852 /* CoreDataManager.swift */; };
+		8DFCAFF329CC7D5E0053D852 /* calcMEI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF129CC7D5E0053D852 /* calcMEI.xcdatamodeld */; };
+		8DFCAFF529CC84D70053D852 /* CoreDataManager_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF429CC84D70053D852 /* CoreDataManager_Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,9 @@
 		8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel_Tests.swift; sourceTree = "<group>"; };
+		8DFCAFEC29CC797E0053D852 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		8DFCAFF229CC7D5E0053D852 /* calcMEI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = calcMEI.xcdatamodel; sourceTree = "<group>"; };
+		8DFCAFF429CC84D70053D852 /* CoreDataManager_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager_Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 		8D09CAE629C0F1B600FB989F /* calcMEITests */ = {
 			isa = PBXGroup;
 			children = (
+				8DFCAFEE29CC7B820053D852 /* Persistence */,
 				8D81591129C4E83B008B4D20 /* Model */,
 				8D81590329C4A8C4008B4D20 /* Views */,
 				8D09CAF129C100F400FB989F /* Fixture */,
@@ -197,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				8D4716D6299E666700079790 /* Count.swift */,
+				8DFCAFF129CC7D5E0053D852 /* calcMEI.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -232,6 +240,8 @@
 			children = (
 				8D740226299D494E008BFE17 /* AppDelegate.swift */,
 				8D740228299D494E008BFE17 /* SceneDelegate.swift */,
+				8DFCAFEB29CC79720053D852 /* Persistence */,
+				8DFCAFF629CC85E00053D852 /* Services */,
 				8D4716D5299E65F400079790 /* Model */,
 				8D4716AE299D725100079790 /* Extensions */,
 				8D74023B299D4BC1008BFE17 /* Files */,
@@ -333,6 +343,29 @@
 				8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		8DFCAFEB29CC79720053D852 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCAFEC29CC797E0053D852 /* CoreDataManager.swift */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
+		8DFCAFEE29CC7B820053D852 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCAFF429CC84D70053D852 /* CoreDataManager_Test.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		8DFCAFF629CC85E00053D852 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,6 +481,7 @@
 				8D81591029C4E70A008B4D20 /* IncomeViewModel_Tests.swift in Sources */,
 				8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */,
 				8D09CAF029C0F21500FB989F /* Count_Tests.swift in Sources */,
+				8DFCAFF529CC84D70053D852 /* CoreDataManager_Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D4716C5299D80AC00079790 /* ResultViewController.swift in Sources */,
+				8DFCAFF329CC7D5E0053D852 /* calcMEI.xcdatamodeld in Sources */,
 				8D4716D7299E666700079790 /* Count.swift in Sources */,
 				8D4716E2299EBD8E00079790 /* UILabel+.swift in Sources */,
 				8D4716EC29A0118400079790 /* IncomeViewModel.swift in Sources */,
@@ -473,6 +508,7 @@
 				8D4716B0299D726500079790 /* UIViewController+.swift in Sources */,
 				8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */,
 				8D4716E4299EE60E00079790 /* UIResponder+.swift in Sources */,
+				8DFCAFED29CC797E0053D852 /* CoreDataManager.swift in Sources */,
 				8D4716EA29A00DAC00079790 /* RootCoordinator.swift in Sources */,
 				8D4716BD299D800000079790 /* IncomeViewController.swift in Sources */,
 				8D4716AD299D660000079790 /* Coordinator.swift in Sources */,
@@ -774,6 +810,19 @@
 			productName = CurrencyText;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		8DFCAFF129CC7D5E0053D852 /* calcMEI.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8DFCAFF229CC7D5E0053D852 /* calcMEI.xcdatamodel */,
+			);
+			currentVersion = 8DFCAFF229CC7D5E0053D852 /* calcMEI.xcdatamodel */;
+			path = calcMEI.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8D74021B299D494E008BFE17 /* Project object */;
 }
