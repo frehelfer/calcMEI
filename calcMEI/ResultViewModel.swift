@@ -9,6 +9,7 @@ import UIKit
 
 protocol ResultViewModelCoordinatorDelegate: AnyObject {
     func resultViewModelDidSelectReset(_ resultViewModel: ResultViewModel)
+    func resultViewModelDidSelectSaveConsult(_ resultViewModel: ResultViewModel, count: Count)
 }
 
 protocol ResultViewModelViewDelegate: AnyObject {
@@ -40,6 +41,10 @@ extension ResultViewModel {
     
     func resetSelected() {
         coordinatorDelegate?.resultViewModelDidSelectReset(self)
+    }
+    
+    func saveConsultSelected() {
+        coordinatorDelegate?.resultViewModelDidSelectSaveConsult(self, count: count)
     }
     
 }

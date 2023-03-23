@@ -54,6 +54,10 @@ extension ResultViewController: ResultViewDelegate {
         viewModel?.resetSelected()
     }
     
+    func saveButtonPressed() {
+        viewModel?.saveConsultSelected()
+    }
+    
 }
 
 // MARK: - ResultViewModelViewDelegate

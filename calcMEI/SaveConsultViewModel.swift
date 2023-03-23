@@ -20,8 +20,13 @@ class SaveConsultViewModel {
     weak var coordinatorDelegate: SaveConsultViewModelCoordinatorDelegate?
     weak var viewDelegate: SaveConsultViewDelegate?
     
-    init() {
-        
+    private let consultService: ConsultService
+    
+    var count: Count
+    
+    init(consultService: ConsultService, count: Count) {
+        self.consultService = consultService
+        self.count = count
     }
     
 }

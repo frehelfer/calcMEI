@@ -9,6 +9,7 @@ import UIKit
 
 protocol ResultViewDelegate: AnyObject {
     func nextButtonPressed()
+    func saveButtonPressed()
 }
 
 class ResultView: UIView {
@@ -52,7 +53,19 @@ class ResultView: UIView {
         return label
     }()
     
-    // Button
+    // Buttons
+    private lazy var saveButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Salvar Consulta", for: .normal)
+        button.backgroundColor = .systemGreen
+        button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
+        
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -93,6 +106,7 @@ class ResultView: UIView {
         stackView.addArrangedSubview(rendimentoTributável)
         
         addSubview(nextButton)
+        addSubview(saveButton)
     }
     
     private func configureConstraints() {
@@ -108,10 +122,21 @@ class ResultView: UIView {
             nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             nextButton.heightAnchor.constraint(equalToConstant: 45),
+            
+            // saveButton
+            saveButton.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20),
+            saveButton.leadingAnchor.constraint(equalTo: nextButton.leadingAnchor),
+            saveButton.trailingAnchor.constraint(equalTo: nextButton.trailingAnchor),
+            saveButton.heightAnchor.constraint(equalToConstant: 45),
         ])
     }
     
     // MARK: - Private Actions
+
+    @objc
+    private func saveButtonPressed() {
+        delegate?.saveButtonPressed()
+    }
     
     @objc
     private func nextButtonPressed() {
