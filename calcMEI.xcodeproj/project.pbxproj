@@ -46,6 +46,12 @@
 		8DFCAFE529C92AEF0053D852 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */; };
 		8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */; };
 		8DFCAFEA29CA71F40053D852 /* SettingsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */; };
+		8DFCAFED29CC797E0053D852 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFEC29CC797E0053D852 /* CoreDataManager.swift */; };
+		8DFCAFF329CC7D5E0053D852 /* calcMEI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF129CC7D5E0053D852 /* calcMEI.xcdatamodeld */; };
+		8DFCAFF529CC84D70053D852 /* CoreDataTestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF429CC84D70053D852 /* CoreDataTestManager.swift */; };
+		8DFCAFF929CC8E8E0053D852 /* LocalConsultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF829CC8E8E0053D852 /* LocalConsultService.swift */; };
+		8DFCAFFC29CCBC140053D852 /* CalcMEI_SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFFB29CCBC140053D852 /* CalcMEI_SDK.swift */; };
+		8DFCB00229CCC1540053D852 /* LocalConsultService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00129CCC1540053D852 /* LocalConsultService_Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +105,12 @@
 		8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel_Tests.swift; sourceTree = "<group>"; };
+		8DFCAFEC29CC797E0053D852 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		8DFCAFF229CC7D5E0053D852 /* calcMEI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = calcMEI.xcdatamodel; sourceTree = "<group>"; };
+		8DFCAFF429CC84D70053D852 /* CoreDataTestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestManager.swift; sourceTree = "<group>"; };
+		8DFCAFF829CC8E8E0053D852 /* LocalConsultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConsultService.swift; sourceTree = "<group>"; };
+		8DFCAFFB29CCBC140053D852 /* CalcMEI_SDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcMEI_SDK.swift; sourceTree = "<group>"; };
+		8DFCB00129CCC1540053D852 /* LocalConsultService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConsultService_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +136,8 @@
 		8D09CAE629C0F1B600FB989F /* calcMEITests */ = {
 			isa = PBXGroup;
 			children = (
+				8DFCAFFD29CCC0E30053D852 /* SDK */,
+				8DFCAFFE29CCC0E90053D852 /* Services */,
 				8D81591129C4E83B008B4D20 /* Model */,
 				8D81590329C4A8C4008B4D20 /* Views */,
 				8D09CAF129C100F400FB989F /* Fixture */,
@@ -197,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				8D4716D6299E666700079790 /* Count.swift */,
+				8DFCAFF129CC7D5E0053D852 /* calcMEI.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -232,6 +247,7 @@
 			children = (
 				8D740226299D494E008BFE17 /* AppDelegate.swift */,
 				8D740228299D494E008BFE17 /* SceneDelegate.swift */,
+				8DFCAFFA29CCBBB40053D852 /* SDK */,
 				8D4716D5299E65F400079790 /* Model */,
 				8D4716AE299D725100079790 /* Extensions */,
 				8D74023B299D4BC1008BFE17 /* Files */,
@@ -333,6 +349,66 @@
 				8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		8DFCAFEB29CC79720053D852 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCAFEC29CC797E0053D852 /* CoreDataManager.swift */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
+		8DFCAFEE29CC7B820053D852 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCAFF429CC84D70053D852 /* CoreDataTestManager.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		8DFCAFF629CC85E00053D852 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCAFF829CC8E8E0053D852 /* LocalConsultService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		8DFCAFF729CC86D00053D852 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCB00129CCC1540053D852 /* LocalConsultService_Tests.swift */,
+			);
+			name = Services;
+			path = ../Services;
+			sourceTree = "<group>";
+		};
+		8DFCAFFA29CCBBB40053D852 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCAFFB29CCBC140053D852 /* CalcMEI_SDK.swift */,
+				8DFCAFEB29CC79720053D852 /* Persistence */,
+				8DFCAFF629CC85E00053D852 /* Services */,
+			);
+			name = SDK;
+			sourceTree = "<group>";
+		};
+		8DFCAFFD29CCC0E30053D852 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCAFEE29CC7B820053D852 /* Persistence */,
+				8DFCAFF729CC86D00053D852 /* Services */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		8DFCAFFE29CCC0E90053D852 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			path = SDK/Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,12 +518,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DFCB00229CCC1540053D852 /* LocalConsultService_Tests.swift in Sources */,
 				8D81590A29C4AB5C008B4D20 /* ExpensesViewModel_Tests.swift in Sources */,
 				8DFCAFEA29CA71F40053D852 /* SettingsViewModel_Tests.swift in Sources */,
 				8D81590D29C4E4D5008B4D20 /* ResultViewModel_Tests.swift in Sources */,
 				8D81591029C4E70A008B4D20 /* IncomeViewModel_Tests.swift in Sources */,
 				8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */,
 				8D09CAF029C0F21500FB989F /* Count_Tests.swift in Sources */,
+				8DFCAFF529CC84D70053D852 /* CoreDataTestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,12 +534,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D4716C5299D80AC00079790 /* ResultViewController.swift in Sources */,
+				8DFCAFF329CC7D5E0053D852 /* calcMEI.xcdatamodeld in Sources */,
 				8D4716D7299E666700079790 /* Count.swift in Sources */,
 				8D4716E2299EBD8E00079790 /* UILabel+.swift in Sources */,
 				8D4716EC29A0118400079790 /* IncomeViewModel.swift in Sources */,
 				8D4716CC299D820F00079790 /* ExpensesViewController.swift in Sources */,
 				8D4716E8299FC3BA00079790 /* HomeViewModel.swift in Sources */,
 				8D4716F429A3C9EB00079790 /* Currency+.swift in Sources */,
+				8DFCAFF929CC8E8E0053D852 /* LocalConsultService.swift in Sources */,
 				8D81591329C4EFC2008B4D20 /* UIButton+.swift in Sources */,
 				8D4716EE29A0434000079790 /* ExpensesViewModel.swift in Sources */,
 				8D4716CE299D8C0100079790 /* HomeCoordinator.swift in Sources */,
@@ -473,9 +553,11 @@
 				8D4716B0299D726500079790 /* UIViewController+.swift in Sources */,
 				8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */,
 				8D4716E4299EE60E00079790 /* UIResponder+.swift in Sources */,
+				8DFCAFED29CC797E0053D852 /* CoreDataManager.swift in Sources */,
 				8D4716EA29A00DAC00079790 /* RootCoordinator.swift in Sources */,
 				8D4716BD299D800000079790 /* IncomeViewController.swift in Sources */,
 				8D4716AD299D660000079790 /* Coordinator.swift in Sources */,
+				8DFCAFFC29CCBC140053D852 /* CalcMEI_SDK.swift in Sources */,
 				8D740229299D494E008BFE17 /* SceneDelegate.swift in Sources */,
 				8DFCAFE329C92AE20053D852 /* SettingsView.swift in Sources */,
 				8D4716F029A0486300079790 /* ResultViewModel.swift in Sources */,
@@ -774,6 +856,19 @@
 			productName = CurrencyText;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		8DFCAFF129CC7D5E0053D852 /* calcMEI.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8DFCAFF229CC7D5E0053D852 /* calcMEI.xcdatamodel */,
+			);
+			currentVersion = 8DFCAFF229CC7D5E0053D852 /* calcMEI.xcdatamodel */;
+			path = calcMEI.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8D74021B299D494E008BFE17 /* Project object */;
 }

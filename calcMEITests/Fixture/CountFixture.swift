@@ -10,15 +10,21 @@ import Foundation
 @testable import calcMEI
 
 extension Count {
-    static func fixture(
-        inServiceProvision: Double = 0,
-        inCommerce: Double = 0,
-        inPassengerTransport: Double = 0,
-        outExpenses: Double = 0
+    static func makeCount(
+        id: UUID = UUID(),
+        date: Date = Date(),
+        name: String? = UUID().uuidString,
+        hasToDeclare: Bool = Bool.random(),
+        inServiceProvision: Double = Double.random(in: 0..<30_000),
+        inCommerce: Double = Double.random(in: 0..<30_000),
+        inPassengerTransport: Double = Double.random(in: 0..<30_000),
+        outExpenses: Double = Double.random(in: 0..<30_000)
     ) -> Count {
-        .init(
-            id: UUID(),
-            date: Date(),
+        Count(
+            id: id,
+            date: date,
+            name: name,
+            hasToDeclare: hasToDeclare,
             inServiceProvision: inServiceProvision,
             inCommerce: inCommerce,
             inPassengerTransport: inPassengerTransport,
