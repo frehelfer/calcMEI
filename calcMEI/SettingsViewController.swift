@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController {
     private lazy var settingsView: SettingsView = {
         let settingsView = SettingsView()
         settingsView.delegate = self
+        settingsView.updateView(with: viewModel?.appVersion)
         return settingsView
     }()
     
