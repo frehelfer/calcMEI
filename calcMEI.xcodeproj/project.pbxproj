@@ -131,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				8DFCAFEE29CC7B820053D852 /* Persistence */,
+				8DFCAFF729CC86D00053D852 /* Services */,
 				8D81591129C4E83B008B4D20 /* Model */,
 				8D81590329C4A8C4008B4D20 /* Views */,
 				8D09CAF129C100F400FB989F /* Fixture */,
@@ -366,6 +367,13 @@
 			children = (
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		8DFCAFF729CC86D00053D852 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
