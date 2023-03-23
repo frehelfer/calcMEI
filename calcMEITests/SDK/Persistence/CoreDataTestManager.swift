@@ -6,8 +6,9 @@
 //
 
 import CoreData
+import calcMEI
 
-class CoreDataTestManager {
+class CoreDataTestManager: CoreDataManaging {
     
     private lazy var persistentContainer: NSPersistentContainer = {
         

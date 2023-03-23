@@ -16,9 +16,11 @@ class HomeCoordinator: Coordinator {
     weak var delegate: HomeCoordinatorDelegate?
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
+    private let calcMEI_SDK: CalcMEI_SDK
     
-    required init(navigationController: UINavigationController) {
+    required init(navigationController: UINavigationController, calcMEI_SDK: CalcMEI_SDK) {
         self.navigationController = navigationController
+        self.calcMEI_SDK = calcMEI_SDK
     }
     
     func start() {

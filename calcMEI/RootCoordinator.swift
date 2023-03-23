@@ -11,9 +11,11 @@ class RootCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
+    private let calcMEI_SDK: CalcMEI_SDK
     
-    required init(navigationController: UINavigationController) {
+    required init(navigationController: UINavigationController, calcMEI_SDK: CalcMEI_SDK) {
         self.navigationController = navigationController
+        self.calcMEI_SDK = calcMEI_SDK
     }
     
     func start() {
@@ -34,7 +36,12 @@ private extension RootCoordinator {
 private extension RootCoordinator {
     
     func homeCoordinator() -> Coordinator {
-        let homeCoordinator = HomeCoordinator(navigationController: self.navigationController)
+        
+        let homeCoordinator = HomeCoordinator(
+            navigationController: self.navigationController,
+            calcMEI_SDK: self.calcMEI_SDK
+        )
+        
         homeCoordinator.delegate = self
         return homeCoordinator
     }

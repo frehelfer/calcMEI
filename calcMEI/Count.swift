@@ -10,6 +10,8 @@ import Foundation
 struct Count: Identifiable {
     var id = UUID()
     var date = Date()
+    var name: String?
+    var hasToDeclare: Bool = false
     
     var inServiceProvision: Double = 0
     var inCommerce: Double = 0

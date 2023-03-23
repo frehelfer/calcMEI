@@ -8,8 +8,10 @@
 import Foundation
 import CoreData
 
-public protocol ConsultService {
-    
+protocol ConsultService {
+    func createConsult(count: Count)
+    func deleteConsult(consult: Consult)
+    func fetchConsults() -> [Consult]?
 }
 
 class LocalConsultService: ConsultService {
@@ -20,11 +22,11 @@ class LocalConsultService: ConsultService {
         self.coreDataManager = coreDataManager
     }
     
-    func addNewConsult(count: Count, name: String, hasToDeclare: Bool) {
+    func createConsult(count: Count) {
         let newConsult = Consult(context: coreDataManager.viewContext)
         newConsult.id = count.id
-        newConsult.name = name
-        newConsult.hasToDeclare = hasToDeclare
+        newConsult.name = count.name
+        newConsult.hasToDeclare = count.hasToDeclare
         newConsult.date = count.date
         newConsult.inServiceProvision = count.inServiceProvision
         newConsult.inCommerce = count.inCommerce
@@ -46,23 +48,22 @@ class LocalConsultService: ConsultService {
         coreDataManager.saveContext()
     }
     
-    // DOnt need it? I can fetch directly in the array, in the view model.
-//    func fetchConsults(completion: () -> [Consult]?) {
-//        guard let consults = coreDataManager.perform(fetchRequest: allConsults) else { return }
-//
-//    }
+    func fetchConsults() -> [Consult]? {
+        if let consults = coreDataManager.perform(fetchRequest: allConsults) {
+            return consults
+        }
+        
+        return nil
+    }
     
-    // later maybe?
-//    func updateConsult() {
-//
-//    }
 }
 
 // MARK: - Fetch Requests
-extension LocalConsultService {
-    
+private extension LocalConsultService {
+
     var allConsults: NSFetchRequest<Consult> {
         let fetchRequest: NSFetchRequest<Consult> = Consult.fetchRequest()
         return fetchRequest
     }
+    
 }
