@@ -26,23 +26,83 @@ class SaveConsultView: UIView {
         return view
     }()
     
-    private lazy var label: UILabel = {
+    private lazy var nameTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Insira um nome para a consulta"
+        return textField
+    }()
+    
+    private lazy var inServiceProvision: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Sua consulta"
         return label
     }()
     
+    private lazy var inCommerce: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var inPassengerTransport: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var outExpenses: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
+    
+    private lazy var receitaBrutaAnual: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var lucroApurado: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var rendimentoIsento: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var rendimentoTributável: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
+    
+    private lazy var hasToDeclare: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
+    
     // Buttons
-    private lazy var backButton: UIButton = {
+    private lazy var saveConsultButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "xmark"), for: .normal)
-        button.backgroundColor = .systemGray
+        button.setTitle("Salvar", for: .normal)
+        button.backgroundColor = .systemGreen
         button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
         
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(saveConsultButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -64,33 +124,68 @@ class SaveConsultView: UIView {
     }
     
     private func configureSubviews() {
-//        addSubview(backButton)
-//        addSubview(stackView)
+        addSubview(stackView)
         
+        stackView.addArrangedSubview(nameTextField)
+        
+        stackView.addArrangedSubview(inServiceProvision)
+        stackView.addArrangedSubview(inCommerce)
+        stackView.addArrangedSubview(inPassengerTransport)
+        
+        stackView.addArrangedSubview(outExpenses)
+        
+        stackView.addArrangedSubview(receitaBrutaAnual)
+        stackView.addArrangedSubview(lucroApurado)
+        stackView.addArrangedSubview(rendimentoIsento)
+        stackView.addArrangedSubview(rendimentoTributável)
+        
+        stackView.addArrangedSubview(hasToDeclare)
+        
+        addSubview(saveConsultButton)
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             
-            // backButton
-//            backButton.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-//            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-//            backButton.heightAnchor.constraint(equalToConstant: 35),
-//            backButton.widthAnchor.constraint(equalToConstant: 35),
-//            
-//            // stackView
-//            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-//            stackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-//            stackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            // stackView
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            
+            // saveConsultButton
+            saveConsultButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
+            saveConsultButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            saveConsultButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            saveConsultButton.heightAnchor.constraint(equalToConstant: 45),
+            
         ])
     }
     
     // MARK: - Private Actions
-    
     @objc
-    private func backButtonPressed() {
+    private func saveConsultButtonPressed() {
+        
+        print(#function)
     }
     
     // MARK: - Public Actions
+    public func updateView(with count: Count) {
+        inServiceProvision.text = "Prestação de Serviços: \(count.inServiceProvision.currencyFormatFromDouble())"
+        inCommerce.text = "Comércio: \(count.inCommerce.currencyFormatFromDouble())"
+        inPassengerTransport.text = "Transporte de Passageiros: \(count.inPassengerTransport.currencyFormatFromDouble())"
+        
+        outExpenses.text = "Despesas Anuais: \(count.outExpenses.currencyFormatFromDouble())"
+        
+        receitaBrutaAnual.text = "Receita Bruta Anual: \(count.receitaBrutaAnual.currencyFormatFromDouble())"
+        lucroApurado.text = "Lucro Apurado: \(count.lucroApurado.currencyFormatFromDouble())"
+        rendimentoIsento.text = "Rendimento Isento: \(count.rendimentoIsento.currencyFormatFromDouble())"
+        rendimentoTributável.text = "Rendimento Tributável: \(count.rendimentoTributável.currencyFormatFromDouble())"
+        
+        hasToDeclare.text = hasToDeclareString(count.hasToDeclare)
+        
+        func hasToDeclareString(_ hasToDeclare: Bool) -> String {
+            hasToDeclare ? "Precisa Declarar: Sim" : "Precisa Declarar: Não"
+        }
+    }
     
 }

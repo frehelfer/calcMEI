@@ -11,14 +11,12 @@ struct Count: Identifiable {
     var id = UUID()
     var date = Date()
     var name: String?
-    var hasToDeclare: Bool = false
     
     var inServiceProvision: Double = 0
     var inCommerce: Double = 0
     var inPassengerTransport: Double = 0
     
     var outExpenses: Double = 0
-    
     
     // TODO: Change variable names
     
@@ -36,5 +34,9 @@ struct Count: Identifiable {
     
     var rendimentoTributável: Double {
         lucroApurado - rendimentoIsento
+    }
+    
+    var hasToDeclare: Bool {
+        rendimentoTributável >= 28559.70
     }
 }

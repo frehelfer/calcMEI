@@ -35,6 +35,11 @@ class SaveConsultViewController: UIViewController {
         setStatusBar(color: .theme.navBar)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.updateViewWithCount()
+    }
+    
     // MARK: - Private Functions
     private func setupVC() {
         hideKeyboardWhenTappedAround()
@@ -62,6 +67,16 @@ extension SaveConsultViewController {
 
 // MARK: - SaveConsultViewDelegate
 extension SaveConsultViewController: SaveConsultViewDelegate {
+    
+    
+}
+
+// MARK: - SaveConsultViewModelViewDelegate
+extension SaveConsultViewController: SaveConsultViewModelViewDelegate {
+    
+    func saveConsultViewModel(_ saveConsultViewModel: SaveConsultViewModel, updateViewWithCount: Count) {
+        saveConsultView.updateView(with: updateViewWithCount)
+    }
     
 }
 
