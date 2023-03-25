@@ -29,6 +29,10 @@ class SaveConsultViewModel {
         self.count = count
     }
     
+    var title: String {
+        return "Salvar Consulta"
+    }
+    
 }
 
 // MARK: - Navigation

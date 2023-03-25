@@ -63,7 +63,7 @@ private extension HomeCoordinator {
     
     func showSaveConsult(count: Count) {
         navigationController.present(
-            saveConsultViewController(count: count),
+            UINavigationController(rootViewController: saveConsultViewController(count: count)),
             animated: true
         )
     }
