@@ -38,6 +38,7 @@ class LocalConsultService: ConsultService {
         newConsult.rendimentoTributavel = count.rendimentoTributável
         
         coreDataManager.saveContext()
+        print("Created new consult for: \(count.name)")
     }
     
     func deleteConsult(consult: Consult) {

@@ -68,6 +68,11 @@ extension SaveConsultViewController {
 // MARK: - SaveConsultViewDelegate
 extension SaveConsultViewController: SaveConsultViewDelegate {
     
+    func saveButtonPressed(with name: String) {
+        viewModel?.updateCount(countName: name)
+        viewModel?.saveConsult()
+        viewModel?.saveSelected()
+    }
     
 }
 

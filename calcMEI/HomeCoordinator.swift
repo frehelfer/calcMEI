@@ -213,7 +213,10 @@ extension HomeCoordinator: SettingsViewModelCoordinatorDelegate {
 // MARK: -
 extension HomeCoordinator: SaveConsultViewModelCoordinatorDelegate {
     
-    
+    func saveConsultViewModelDidSelectSave(_ saveConsultViewModel: SaveConsultViewModel) {
+        navigationController.dismiss(animated: true)
+        pop()
+    }
     
 }
 

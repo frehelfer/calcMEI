@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SaveConsultViewDelegate: AnyObject {
-    
+    func saveButtonPressed(with name: String)
 }
 
 class SaveConsultView: UIView {
@@ -29,7 +29,17 @@ class SaveConsultView: UIView {
     private lazy var nameTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Insira um nome para a consulta"
+        textField.placeholder = "Insira um nome para sua consulta"
+        textField.returnKeyType = .done
+        textField.keyboardType = .default
+        textField.backgroundColor = .systemGray5
+        textField.layer.cornerRadius = 10
+        textField.layer.shadowColor = UIColor.gray.withAlphaComponent(0.4).cgColor
+        textField.layer.shadowRadius = 5
+        textField.layer.shadowOffset = CGSize(width: 5, height: 5)
+        textField.layer.shadowOpacity = 0.5
+        textField.setLeftPaddingPoints(11)
+        textField.delegate = self
         return textField
     }()
     
@@ -102,7 +112,7 @@ class SaveConsultView: UIView {
         button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
         
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(saveConsultButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -148,9 +158,14 @@ class SaveConsultView: UIView {
         NSLayoutConstraint.activate([
             
             // stackView
-            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            
+            // nameTextField
+            nameTextField.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            nameTextField.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            nameTextField.heightAnchor.constraint(equalToConstant: 42),
             
             // saveConsultButton
             saveConsultButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
@@ -163,9 +178,14 @@ class SaveConsultView: UIView {
     
     // MARK: - Private Actions
     @objc
-    private func saveConsultButtonPressed() {
-        
+    private func saveButtonPressed() {
         print(#function)
+        guard
+            let name = nameTextField.text
+        else { return }
+        
+        delegate?.saveButtonPressed(with: name)
+        
     }
     
     // MARK: - Public Actions
@@ -187,5 +207,11 @@ class SaveConsultView: UIView {
             hasToDeclare ? "Precisa Declarar: Sim" : "Precisa Declarar: Não"
         }
     }
+    
+}
+
+extension SaveConsultView: UITextFieldDelegate {
+    
+    
     
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SaveConsultViewModelCoordinatorDelegate: AnyObject {
-    
+    func saveConsultViewModelDidSelectSave(_ saveConsultViewModel: SaveConsultViewModel)
 }
 
 protocol SaveConsultViewModelViewDelegate: AnyObject {
@@ -36,11 +36,21 @@ class SaveConsultViewModel {
     public func updateViewWithCount() {
         viewDelegate?.saveConsultViewModel(self, updateViewWithCount: count)
     }
+    
+    public func updateCount(countName: String) {
+        count.name = countName
+    }
+    
+    public func saveConsult() {
+        consultService.createConsult(count: count)
+    }
 }
 
 // MARK: - Navigation
 extension SaveConsultViewModel {
     
-    
+    func saveSelected() {
+        coordinatorDelegate?.saveConsultViewModelDidSelectSave(self)
+    }
     
 }
