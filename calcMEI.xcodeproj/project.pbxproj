@@ -42,6 +42,12 @@
 		8D81590D29C4E4D5008B4D20 /* ResultViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81590C29C4E4D5008B4D20 /* ResultViewModel_Tests.swift */; };
 		8D81591029C4E70A008B4D20 /* IncomeViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81590F29C4E70A008B4D20 /* IncomeViewModel_Tests.swift */; };
 		8D81591329C4EFC2008B4D20 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81591229C4EFC2008B4D20 /* UIButton+.swift */; };
+		8D8A790B29D32B7800C7A127 /* ConsultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A790A29D32B7800C7A127 /* ConsultsViewModel.swift */; };
+		8D8A790D29D32B8500C7A127 /* ConsultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A790C29D32B8500C7A127 /* ConsultsViewController.swift */; };
+		8D8A790F29D32B8C00C7A127 /* ConsultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A790E29D32B8B00C7A127 /* ConsultsView.swift */; };
+		8D8A791229D32BAA00C7A127 /* ConsultsViewController_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A791129D32BAA00C7A127 /* ConsultsViewController_Tests.swift */; };
+		8D8A791729D32CBA00C7A127 /* ConsultsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A791629D32CBA00C7A127 /* ConsultsViewModel_Tests.swift */; };
+		8D8A791A29D338BE00C7A127 /* ConsultServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A791929D338BE00C7A127 /* ConsultServiceSpy.swift */; };
 		8DFCAFE329C92AE20053D852 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE229C92AE20053D852 /* SettingsView.swift */; };
 		8DFCAFE529C92AEF0053D852 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */; };
 		8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */; };
@@ -105,6 +111,12 @@
 		8D81590C29C4E4D5008B4D20 /* ResultViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel_Tests.swift; sourceTree = "<group>"; };
 		8D81590F29C4E70A008B4D20 /* IncomeViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewModel_Tests.swift; sourceTree = "<group>"; };
 		8D81591229C4EFC2008B4D20 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		8D8A790A29D32B7800C7A127 /* ConsultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultsViewModel.swift; sourceTree = "<group>"; };
+		8D8A790C29D32B8500C7A127 /* ConsultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultsViewController.swift; sourceTree = "<group>"; };
+		8D8A790E29D32B8B00C7A127 /* ConsultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultsView.swift; sourceTree = "<group>"; };
+		8D8A791129D32BAA00C7A127 /* ConsultsViewController_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultsViewController_Tests.swift; sourceTree = "<group>"; };
+		8D8A791629D32CBA00C7A127 /* ConsultsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultsViewModel_Tests.swift; sourceTree = "<group>"; };
+		8D8A791929D338BE00C7A127 /* ConsultServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultServiceSpy.swift; sourceTree = "<group>"; };
 		8DFCAFE229C92AE20053D852 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -144,6 +156,7 @@
 		8D09CAE629C0F1B600FB989F /* calcMEITests */ = {
 			isa = PBXGroup;
 			children = (
+				8D8A791829D338A900C7A127 /* Helpers */,
 				8DFCAFFD29CCC0E30053D852 /* SDK */,
 				8DFCAFFE29CCC0E90053D852 /* Services */,
 				8D81591129C4E83B008B4D20 /* Model */,
@@ -285,6 +298,7 @@
 				8D4716C8299D81F300079790 /* Expenses */,
 				8D4716B7299D7F8A00079790 /* Result */,
 				8DFCB00629CCDBEA0053D852 /* SaveConsult */,
+				8D8A790929D32B6B00C7A127 /* Consults */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -307,6 +321,7 @@
 				8D81590829C4AB46008B4D20 /* Expenses */,
 				8D81590B29C4E4A3008B4D20 /* Result */,
 				8DFCB00D29CE63000053D852 /* SaveConsult */,
+				8D8A791029D32B9300C7A127 /* Consults */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +356,33 @@
 				8D09CAEF29C0F21400FB989F /* Count_Tests.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8D8A790929D32B6B00C7A127 /* Consults */ = {
+			isa = PBXGroup;
+			children = (
+				8D8A790A29D32B7800C7A127 /* ConsultsViewModel.swift */,
+				8D8A790C29D32B8500C7A127 /* ConsultsViewController.swift */,
+				8D8A790E29D32B8B00C7A127 /* ConsultsView.swift */,
+			);
+			name = Consults;
+			sourceTree = "<group>";
+		};
+		8D8A791029D32B9300C7A127 /* Consults */ = {
+			isa = PBXGroup;
+			children = (
+				8D8A791129D32BAA00C7A127 /* ConsultsViewController_Tests.swift */,
+				8D8A791629D32CBA00C7A127 /* ConsultsViewModel_Tests.swift */,
+			);
+			path = Consults;
+			sourceTree = "<group>";
+		};
+		8D8A791829D338A900C7A127 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8D8A791929D338BE00C7A127 /* ConsultServiceSpy.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8DFCAFE129C928ED0053D852 /* Settings */ = {
@@ -551,10 +593,13 @@
 				8DFCAFEA29CA71F40053D852 /* SettingsViewModel_Tests.swift in Sources */,
 				8D81590D29C4E4D5008B4D20 /* ResultViewModel_Tests.swift in Sources */,
 				8D81591029C4E70A008B4D20 /* IncomeViewModel_Tests.swift in Sources */,
+				8D8A791229D32BAA00C7A127 /* ConsultsViewController_Tests.swift in Sources */,
 				8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */,
 				8D09CAF029C0F21500FB989F /* Count_Tests.swift in Sources */,
 				8DFCAFF529CC84D70053D852 /* CoreDataTestManager.swift in Sources */,
+				8D8A791729D32CBA00C7A127 /* ConsultsViewModel_Tests.swift in Sources */,
 				8DFCB00F29CE63200053D852 /* SaveConsultViewModel_Tests.swift in Sources */,
+				8D8A791A29D338BE00C7A127 /* ConsultServiceSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,8 +614,10 @@
 				8DFCB00C29CCDC120053D852 /* SaveConsultViewModel.swift in Sources */,
 				8D4716E2299EBD8E00079790 /* UILabel+.swift in Sources */,
 				8D4716EC29A0118400079790 /* IncomeViewModel.swift in Sources */,
+				8D8A790D29D32B8500C7A127 /* ConsultsViewController.swift in Sources */,
 				8D4716CC299D820F00079790 /* ExpensesViewController.swift in Sources */,
 				8D4716E8299FC3BA00079790 /* HomeViewModel.swift in Sources */,
+				8D8A790F29D32B8C00C7A127 /* ConsultsView.swift in Sources */,
 				8D4716F429A3C9EB00079790 /* Currency+.swift in Sources */,
 				8DFCAFF929CC8E8E0053D852 /* LocalConsultService.swift in Sources */,
 				8D81591329C4EFC2008B4D20 /* UIButton+.swift in Sources */,
@@ -581,6 +628,7 @@
 				8D4716BF299D800800079790 /* IncomeView.swift in Sources */,
 				8D740242299D4C32008BFE17 /* HomeView.swift in Sources */,
 				8D4716C7299D80B300079790 /* ResultView.swift in Sources */,
+				8D8A790B29D32B7800C7A127 /* ConsultsViewModel.swift in Sources */,
 				8D4716E6299FB4BC00079790 /* BaseNavigationController.swift in Sources */,
 				8D4716B0299D726500079790 /* UIViewController+.swift in Sources */,
 				8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */,

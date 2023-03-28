@@ -68,6 +68,13 @@ private extension HomeCoordinator {
         )
     }
     
+    func showConsults() {
+        navigationController.pushViewController(
+            consultsViewController(),
+            animated: true
+        )
+    }
+    
     func pop() {
         let vc = navigationController.viewControllers[0]
         navigationController.popToViewController(vc, animated: true)
@@ -157,6 +164,20 @@ private extension HomeCoordinator {
         return viewController
     }
     
+    func consultsViewController() -> UIViewController {
+        let viewController = ConsultsViewController()
+        
+        viewController.viewModel = {
+            let viewModel = ConsultsViewModel(
+                consultService: calcMEI_SDK.consultService
+            )
+            viewModel.coordinatorDelegate = self
+            return viewModel
+        }()
+        
+        return viewController
+    }
+    
 }
 
 // MARK: - HomeViewModelCoordinatorDelegate
@@ -168,6 +189,10 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
     
     func homeViewModelDidSelectSettings(_ homeViewModel: HomeViewModel) {
         showSettings()
+    }
+    
+    func homeViewModelDidSelectConsults(_ homeViewModel: HomeViewModel) {
+        showConsults()
     }
 
 }
@@ -220,3 +245,9 @@ extension HomeCoordinator: SaveConsultViewModelCoordinatorDelegate {
     
 }
 
+// MARK: -
+extension HomeCoordinator: ConsultsViewModelCoordinatorDelegate {
+    
+    
+    
+}
