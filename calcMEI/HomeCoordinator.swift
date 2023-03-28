@@ -248,6 +248,8 @@ extension HomeCoordinator: SaveConsultViewModelCoordinatorDelegate {
 // MARK: -
 extension HomeCoordinator: ConsultsViewModelCoordinatorDelegate {
     
-    
-    
+    func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModel) {
+        showIncome()
+    }
+
 }

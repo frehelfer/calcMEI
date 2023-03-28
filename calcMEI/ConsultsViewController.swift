@@ -32,7 +32,7 @@ class ConsultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupVC()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +41,22 @@ class ConsultsViewController: UIViewController {
     }
     
     // MARK: - Private Functions
+    private func setupVC() {
+        setStatusBar(color: .theme.navBar)
+        setupNavigationItem()
+    }
+    
+    private func setupNavigationItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            style: .plain,
+            target: self,
+            action: #selector(newConsultPressed))
+    }
+    
+    @objc private func newConsultPressed() {
+        viewModel?.newConsultSelected()
+    }
 }
 
 // MARK: - ConsultsViewDelegate

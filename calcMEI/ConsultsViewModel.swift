@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ConsultsViewModelCoordinatorDelegate: AnyObject{
-    
+    func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModel)
 }
 
 protocol ConsultsViewModelViewDelegate: AnyObject {
@@ -42,6 +42,15 @@ class ConsultsViewModel {
             // Como seria o cálculo? Nem precisaria salvar as computed properties
             self.consults = consults
         }
+    }
+    
+}
+
+// MARK: - Navigation
+extension ConsultsViewModel {
+    
+    func newConsultSelected() {
+        coordinatorDelegate?.consultsViewModelDidSelectNewConsult(self)
     }
     
 }
