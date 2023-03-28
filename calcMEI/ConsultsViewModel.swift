@@ -9,6 +9,7 @@ import UIKit
 
 protocol ConsultsViewModelCoordinatorDelegate: AnyObject{
     func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModel)
+    func consultsViewModelDidSelectDetail(_ consultsViewModel: ConsultsViewModel, consult: Consult)
 }
 
 protocol ConsultsViewModelViewDelegate: AnyObject {
@@ -41,8 +42,8 @@ class ConsultsViewModel {
         }
     }
     
-    func remove(at index: Int) {
-        let consult = consults.remove(at: index)
+    func remove(at index: IndexPath) {
+        let consult = consults.remove(at: index.row)
         consultService.deleteConsult(consult: consult)
     }
     
@@ -53,6 +54,10 @@ extension ConsultsViewModel {
     
     func newConsultSelected() {
         coordinatorDelegate?.consultsViewModelDidSelectNewConsult(self)
+    }
+    
+    func detailSelected(consult: Consult) {
+        coordinatorDelegate?.consultsViewModelDidSelectDetail(self, consult: consult)
     }
     
 }

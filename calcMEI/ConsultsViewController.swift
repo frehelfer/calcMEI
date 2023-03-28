@@ -92,13 +92,15 @@ extension ConsultsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            viewModel?.remove(at: indexPath.row)
+            viewModel?.remove(at: indexPath)
             consultsView.deleteTableViewRow(at: [indexPath])
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        if let consult = viewModel?.consults[indexPath.row] {        
+            viewModel?.detailSelected(consult: consult)
+        }
     }
     
 }

@@ -49,6 +49,9 @@
 		8D8A791729D32CBA00C7A127 /* ConsultsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A791629D32CBA00C7A127 /* ConsultsViewModel_Tests.swift */; };
 		8D8A791A29D338BE00C7A127 /* ConsultServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A791929D338BE00C7A127 /* ConsultServiceSpy.swift */; };
 		8D8A791D29D364D700C7A127 /* ConsultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A791C29D364D700C7A127 /* ConsultTableViewCell.swift */; };
+		8D8A792129D3855300C7A127 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792029D3855300C7A127 /* DetailView.swift */; };
+		8D8A792329D3856500C7A127 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792229D3856500C7A127 /* DetailViewController.swift */; };
+		8D8A792529D3856E00C7A127 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792429D3856E00C7A127 /* DetailViewModel.swift */; };
 		8DFCAFE329C92AE20053D852 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE229C92AE20053D852 /* SettingsView.swift */; };
 		8DFCAFE529C92AEF0053D852 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */; };
 		8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */; };
@@ -119,6 +122,9 @@
 		8D8A791629D32CBA00C7A127 /* ConsultsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultsViewModel_Tests.swift; sourceTree = "<group>"; };
 		8D8A791929D338BE00C7A127 /* ConsultServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultServiceSpy.swift; sourceTree = "<group>"; };
 		8D8A791C29D364D700C7A127 /* ConsultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultTableViewCell.swift; sourceTree = "<group>"; };
+		8D8A792029D3855300C7A127 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		8D8A792229D3856500C7A127 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8D8A792429D3856E00C7A127 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		8DFCAFE229C92AE20053D852 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -301,6 +307,7 @@
 				8D4716B7299D7F8A00079790 /* Result */,
 				8DFCB00629CCDBEA0053D852 /* SaveConsult */,
 				8D8A790929D32B6B00C7A127 /* Consults */,
+				8D8A791E29D3852800C7A127 /* Detail */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -394,6 +401,16 @@
 				8D8A791C29D364D700C7A127 /* ConsultTableViewCell.swift */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		8D8A791E29D3852800C7A127 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8D8A792429D3856E00C7A127 /* DetailViewModel.swift */,
+				8D8A792229D3856500C7A127 /* DetailViewController.swift */,
+				8D8A792029D3855300C7A127 /* DetailView.swift */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		8DFCAFE129C928ED0053D852 /* Settings */ = {
@@ -620,12 +637,14 @@
 			files = (
 				8DFCB00A29CCDC070053D852 /* SaveConsultViewController.swift in Sources */,
 				8D4716C5299D80AC00079790 /* ResultViewController.swift in Sources */,
+				8D8A792529D3856E00C7A127 /* DetailViewModel.swift in Sources */,
 				8DFCAFF329CC7D5E0053D852 /* calcMEI.xcdatamodeld in Sources */,
 				8D4716D7299E666700079790 /* Count.swift in Sources */,
 				8DFCB00C29CCDC120053D852 /* SaveConsultViewModel.swift in Sources */,
 				8D4716E2299EBD8E00079790 /* UILabel+.swift in Sources */,
 				8D4716EC29A0118400079790 /* IncomeViewModel.swift in Sources */,
 				8D8A790D29D32B8500C7A127 /* ConsultsViewController.swift in Sources */,
+				8D8A792129D3855300C7A127 /* DetailView.swift in Sources */,
 				8D8A791D29D364D700C7A127 /* ConsultTableViewCell.swift in Sources */,
 				8D4716CC299D820F00079790 /* ExpensesViewController.swift in Sources */,
 				8D4716E8299FC3BA00079790 /* HomeViewModel.swift in Sources */,
@@ -644,6 +663,7 @@
 				8D4716E6299FB4BC00079790 /* BaseNavigationController.swift in Sources */,
 				8D4716B0299D726500079790 /* UIViewController+.swift in Sources */,
 				8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */,
+				8D8A792329D3856500C7A127 /* DetailViewController.swift in Sources */,
 				8D4716E4299EE60E00079790 /* UIResponder+.swift in Sources */,
 				8DFCAFED29CC797E0053D852 /* CoreDataManager.swift in Sources */,
 				8D4716EA29A00DAC00079790 /* RootCoordinator.swift in Sources */,
