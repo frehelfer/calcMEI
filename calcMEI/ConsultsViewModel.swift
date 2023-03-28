@@ -22,11 +22,7 @@ class ConsultsViewModel {
     
     private let consultService: ConsultService
     
-    private(set) var consults: [Consult] = [] {
-        didSet {
-            viewDelegate?.consultsViewModel(self, didUpdateConsults: consults)
-        }
-    }
+    private(set) var consults: [Consult] = []
     
     init(consultService: ConsultService) {
         self.consultService = consultService
@@ -41,7 +37,13 @@ class ConsultsViewModel {
             // Fazer um MAP aqui?
             // Como seria o cálculo? Nem precisaria salvar as computed properties
             self.consults = consults
+            viewDelegate?.consultsViewModel(self, didUpdateConsults: consults)
         }
+    }
+    
+    func remove(at index: Int) {
+        let consult = consults.remove(at: index)
+        consultService.deleteConsult(consult: consult)
     }
     
 }

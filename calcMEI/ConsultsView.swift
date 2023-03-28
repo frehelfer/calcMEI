@@ -7,25 +7,9 @@
 
 import UIKit
 
-protocol ConsultsViewDelegate: AnyObject {
-    
-}
-
 class ConsultsView: UIView {
     
-    weak var delegate: ConsultsViewDelegate?
-    
     // MARK: - Properties
-    private lazy var stackView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .vertical
-        view.alignment = .center
-        view.spacing = 10
-        view.distribution = .fill
-        return view
-    }()
-    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -76,5 +60,9 @@ class ConsultsView: UIView {
     
     public func reloadTableViewData() {
         tableView.reloadData()
+    }
+    
+    public func deleteTableViewRow(at rows: [IndexPath]) {
+        tableView.deleteRows(at: rows, with: .fade)
     }
 }

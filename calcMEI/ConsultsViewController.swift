@@ -12,7 +12,6 @@ class ConsultsViewController: UIViewController {
     // MARK: - Properties
     lazy var consultsView: ConsultsView = {
         let view = ConsultsView()
-        view.delegate = self
         view.setupView(delegate: self, dataSource: self)
         return view
     }()
@@ -59,13 +58,6 @@ class ConsultsViewController: UIViewController {
     }
 }
 
-// MARK: - ConsultsViewDelegate
-extension ConsultsViewController: ConsultsViewDelegate {
-    
-    
-    
-}
-
 // MARK: - SaveConsultViewModelViewDelegate
 extension ConsultsViewController: ConsultsViewModelViewDelegate {
     
@@ -76,7 +68,7 @@ extension ConsultsViewController: ConsultsViewModelViewDelegate {
 }
 
 // MARK: - UITableViewDataSource
-extension ConsultsViewController: UITableViewDataSource, UITableViewDelegate {
+extension ConsultsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.consults.count ?? 0
@@ -91,6 +83,22 @@ extension ConsultsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
+    }
+    
+}
+
+// MARK: - UITableViewDelegate
+extension ConsultsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel?.remove(at: indexPath.row)
+            consultsView.deleteTableViewRow(at: [indexPath])
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //
     }
     
 }

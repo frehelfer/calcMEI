@@ -72,6 +72,9 @@ private extension ConsultsViewModel_Tests {
         
         var calledMethods = [Methods]()
         
+        func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModel) {
+            calledMethods.append(.saveConsultViewModelDidSelectSave)
+        }
         
     }
 }
