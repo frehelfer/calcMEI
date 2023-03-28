@@ -13,6 +13,7 @@ class ConsultsViewController: UIViewController {
     lazy var consultsView: ConsultsView = {
         let view = ConsultsView()
         view.delegate = self
+        view.setupView(delegate: self, dataSource: self)
         return view
     }()
     
@@ -38,13 +39,8 @@ class ConsultsViewController: UIViewController {
         super.viewDidLoad()
         viewModel?.loadConsults()
     }
-}
-
-// MARK: - Actions
-extension ConsultsViewController {
- 
     
-    
+    // MARK: - Private Functions
 }
 
 // MARK: - ConsultsViewDelegate
@@ -58,7 +54,27 @@ extension ConsultsViewController: ConsultsViewDelegate {
 extension ConsultsViewController: ConsultsViewModelViewDelegate {
     
     func consultsViewModel(_ consultsViewModel: ConsultsViewModel, didUpdateConsults: [Consult]) {
-        // TODO: send data to view or update tableView on SELF
+        consultsView.reloadTableViewData()
+    }
+    
+}
+
+// MARK: - UITableViewDataSource
+extension ConsultsViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.consults.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ConsultTableViewCell.identifier, for: indexPath) as! ConsultTableViewCell
+        let consult = viewModel?.consults[indexPath.row]
+        cell.setupCell(with: consult)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
     }
     
 }

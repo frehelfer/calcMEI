@@ -22,7 +22,7 @@ class ConsultsViewModel {
     
     private let consultService: ConsultService
     
-    private var consults: [Consult] = [] {
+    private(set) var consults: [Consult] = [] {
         didSet {
             viewDelegate?.consultsViewModel(self, didUpdateConsults: consults)
         }
