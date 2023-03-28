@@ -52,6 +52,10 @@
 		8DFCAFF929CC8E8E0053D852 /* LocalConsultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF829CC8E8E0053D852 /* LocalConsultService.swift */; };
 		8DFCAFFC29CCBC140053D852 /* CalcMEI_SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFFB29CCBC140053D852 /* CalcMEI_SDK.swift */; };
 		8DFCB00229CCC1540053D852 /* LocalConsultService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00129CCC1540053D852 /* LocalConsultService_Tests.swift */; };
+		8DFCB00829CCDBFE0053D852 /* SaveConsultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00729CCDBFE0053D852 /* SaveConsultView.swift */; };
+		8DFCB00A29CCDC070053D852 /* SaveConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00929CCDC070053D852 /* SaveConsultViewController.swift */; };
+		8DFCB00C29CCDC120053D852 /* SaveConsultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00B29CCDC120053D852 /* SaveConsultViewModel.swift */; };
+		8DFCB00F29CE63200053D852 /* SaveConsultViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00E29CE63200053D852 /* SaveConsultViewModel_Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +115,10 @@
 		8DFCAFF829CC8E8E0053D852 /* LocalConsultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConsultService.swift; sourceTree = "<group>"; };
 		8DFCAFFB29CCBC140053D852 /* CalcMEI_SDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcMEI_SDK.swift; sourceTree = "<group>"; };
 		8DFCB00129CCC1540053D852 /* LocalConsultService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConsultService_Tests.swift; sourceTree = "<group>"; };
+		8DFCB00729CCDBFE0053D852 /* SaveConsultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultView.swift; sourceTree = "<group>"; };
+		8DFCB00929CCDC070053D852 /* SaveConsultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultViewController.swift; sourceTree = "<group>"; };
+		8DFCB00B29CCDC120053D852 /* SaveConsultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultViewModel.swift; sourceTree = "<group>"; };
+		8DFCB00E29CE63200053D852 /* SaveConsultViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultViewModel_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +284,7 @@
 				8D4716B5299D7F5500079790 /* Income */,
 				8D4716C8299D81F300079790 /* Expenses */,
 				8D4716B7299D7F8A00079790 /* Result */,
+				8DFCB00629CCDBEA0053D852 /* SaveConsult */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -297,6 +306,7 @@
 				8D81590E29C4E6F8008B4D20 /* Income */,
 				8D81590829C4AB46008B4D20 /* Expenses */,
 				8D81590B29C4E4A3008B4D20 /* Result */,
+				8DFCB00D29CE63000053D852 /* SaveConsult */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -409,6 +419,24 @@
 			);
 			name = Services;
 			path = SDK/Services;
+			sourceTree = "<group>";
+		};
+		8DFCB00629CCDBEA0053D852 /* SaveConsult */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCB00B29CCDC120053D852 /* SaveConsultViewModel.swift */,
+				8DFCB00929CCDC070053D852 /* SaveConsultViewController.swift */,
+				8DFCB00729CCDBFE0053D852 /* SaveConsultView.swift */,
+			);
+			name = SaveConsult;
+			sourceTree = "<group>";
+		};
+		8DFCB00D29CE63000053D852 /* SaveConsult */ = {
+			isa = PBXGroup;
+			children = (
+				8DFCB00E29CE63200053D852 /* SaveConsultViewModel_Tests.swift */,
+			);
+			path = SaveConsult;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,6 +554,7 @@
 				8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */,
 				8D09CAF029C0F21500FB989F /* Count_Tests.swift in Sources */,
 				8DFCAFF529CC84D70053D852 /* CoreDataTestManager.swift in Sources */,
+				8DFCB00F29CE63200053D852 /* SaveConsultViewModel_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,9 +562,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DFCB00A29CCDC070053D852 /* SaveConsultViewController.swift in Sources */,
 				8D4716C5299D80AC00079790 /* ResultViewController.swift in Sources */,
 				8DFCAFF329CC7D5E0053D852 /* calcMEI.xcdatamodeld in Sources */,
 				8D4716D7299E666700079790 /* Count.swift in Sources */,
+				8DFCB00C29CCDC120053D852 /* SaveConsultViewModel.swift in Sources */,
 				8D4716E2299EBD8E00079790 /* UILabel+.swift in Sources */,
 				8D4716EC29A0118400079790 /* IncomeViewModel.swift in Sources */,
 				8D4716CC299D820F00079790 /* ExpensesViewController.swift in Sources */,
@@ -545,6 +576,7 @@
 				8D81591329C4EFC2008B4D20 /* UIButton+.swift in Sources */,
 				8D4716EE29A0434000079790 /* ExpensesViewModel.swift in Sources */,
 				8D4716CE299D8C0100079790 /* HomeCoordinator.swift in Sources */,
+				8DFCB00829CCDBFE0053D852 /* SaveConsultView.swift in Sources */,
 				8D740227299D494E008BFE17 /* AppDelegate.swift in Sources */,
 				8D4716BF299D800800079790 /* IncomeView.swift in Sources */,
 				8D740242299D4C32008BFE17 /* HomeView.swift in Sources */,
@@ -765,9 +797,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fre.calcMEI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -795,9 +830,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fre.calcMEI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
