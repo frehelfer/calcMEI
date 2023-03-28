@@ -37,7 +37,21 @@ class DetailViewController: UIViewController {
     // MARK: - Private Functions
     private func setupVC() {
         setStatusBar(color: .theme.navBar)
+        setupNavigationItem()
     }
+    
+    private func setupNavigationItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "trash"),
+            style: .plain,
+            target: self,
+            action: #selector(deletePressed))
+    }
+    
+    @objc private func deletePressed() {
+        viewModel?.deleteSelected()
+    }
+    
 }
 // MARK: - DetailViewDelegate
 extension DetailViewController: DetailViewDelegate {

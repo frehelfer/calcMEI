@@ -7,12 +7,17 @@
 
 import Foundation
 
+protocol DetailViewModelCoordinatorDelegate: AnyObject {
+    func detailViewModelDidSelectDismiss(_ detailViewModel: DetailViewModel)
+}
+
 protocol DetailViewModelViewDelegate: AnyObject {
     
 }
 
 class DetailViewModel {
 
+    weak var coordinatorDelegate: DetailViewModelCoordinatorDelegate?
     weak var viewDelegate: DetailViewModelViewDelegate?
     
     private let consultService: ConsultService
@@ -26,6 +31,11 @@ class DetailViewModel {
     
     var title: String {
         consult.name ?? ""
+    }
+    
+    func deleteSelected() {
+        consultService.deleteConsult(consult: consult)
+        coordinatorDelegate?.detailViewModelDidSelectDismiss(self)
     }
     
 }
