@@ -10,6 +10,7 @@ import UIKit
 protocol HomeViewModelCoordinatorDelegate: AnyObject {
     func homeViewModelDidSelectStart(_ homeViewModel: HomeViewModel)
     func homeViewModelDidSelectSettings(_ homeViewModel: HomeViewModel)
+    func homeViewModelDidSelectConsults(_ homeViewModel: HomeViewModel)
 }
 
 protocol HomeViewModelViewDelegate: AnyObject {
@@ -39,6 +40,10 @@ extension HomeViewModel {
     
     func settingsSelected() {
         coordinatorDelegate?.homeViewModelDidSelectSettings(self)
+    }
+    
+    func consultsSelected() {
+        coordinatorDelegate?.homeViewModelDidSelectConsults(self)
     }
     
 }

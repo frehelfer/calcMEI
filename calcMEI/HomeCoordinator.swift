@@ -68,8 +68,22 @@ private extension HomeCoordinator {
         )
     }
     
-    func pop() {
-        let vc = navigationController.viewControllers[0]
+    func showConsults() {
+        navigationController.pushViewController(
+            consultsViewController(),
+            animated: true
+        )
+    }
+    
+    func showDetail(consult: Consult) {
+        navigationController.pushViewController(
+            detailViewController(consult: consult),
+            animated: true
+        )
+    }
+    
+    func pop(index: Int = 0) {
+        let vc = navigationController.viewControllers[index]
         navigationController.popToViewController(vc, animated: true)
     }
     
@@ -157,6 +171,35 @@ private extension HomeCoordinator {
         return viewController
     }
     
+    func consultsViewController() -> UIViewController {
+        let viewController = ConsultsViewController()
+        
+        viewController.viewModel = {
+            let viewModel = ConsultsViewModel(
+                consultService: calcMEI_SDK.consultService
+            )
+            viewModel.coordinatorDelegate = self
+            return viewModel
+        }()
+        
+        return viewController
+    }
+    
+    func detailViewController(consult: Consult) -> UIViewController {
+        let viewController = DetailViewController()
+        
+        viewController.viewModel = {
+            let viewModel = DetailViewModel(
+                consultService: calcMEI_SDK.consultService,
+                consult: consult
+            )
+            viewModel.coordinatorDelegate = self
+            return viewModel
+        }()
+        
+        return viewController
+    }
+    
 }
 
 // MARK: - HomeViewModelCoordinatorDelegate
@@ -168,6 +211,10 @@ extension HomeCoordinator: HomeViewModelCoordinatorDelegate {
     
     func homeViewModelDidSelectSettings(_ homeViewModel: HomeViewModel) {
         showSettings()
+    }
+    
+    func homeViewModelDidSelectConsults(_ homeViewModel: HomeViewModel) {
+        showConsults()
     }
 
 }
@@ -210,7 +257,7 @@ extension HomeCoordinator: SettingsViewModelCoordinatorDelegate {
     
 }
 
-// MARK: -
+// MARK: - SaveConsultViewModelCoordinatorDelegate
 extension HomeCoordinator: SaveConsultViewModelCoordinatorDelegate {
     
     func saveConsultViewModelDidSelectSave(_ saveConsultViewModel: SaveConsultViewModel) {
@@ -220,3 +267,24 @@ extension HomeCoordinator: SaveConsultViewModelCoordinatorDelegate {
     
 }
 
+// MARK: - ConsultsViewModelCoordinatorDelegate
+extension HomeCoordinator: ConsultsViewModelCoordinatorDelegate {
+    
+    func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModel) {
+        showIncome()
+    }
+    
+    func consultsViewModelDidSelectDetail(_ consultsViewModel: ConsultsViewModel, consult: Consult) {
+        showDetail(consult: consult)
+    }
+
+}
+
+// MARK: - DetailViewModelCoordinatorDelegate
+extension HomeCoordinator: DetailViewModelCoordinatorDelegate {
+    
+    func detailViewModelDidSelectDismiss(_ detailViewModel: DetailViewModel) {
+        pop(index: 1)
+    }
+    
+}

@@ -9,6 +9,7 @@ import UIKit
 
 protocol HomeViewDelegate: AnyObject {
     func nextButtonPressed()
+    func consultsButtonPressed()
 }
 
 class HomeView: UIView {
@@ -48,6 +49,18 @@ class HomeView: UIView {
         return label
     }()
     
+    private lazy var consultsButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Consultas salvas", for: .normal)
+        button.backgroundColor = .systemBlue
+        button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
+        
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(consultsButtonPressed), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -85,6 +98,7 @@ class HomeView: UIView {
         mainStackView.addArrangedSubview(titleLabel)
         mainStackView.addArrangedSubview(infoLabel)
         
+        addSubview(consultsButton)
         addSubview(nextButton)
     }
     
@@ -95,6 +109,12 @@ class HomeView: UIView {
             mainStackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -130),
             mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            
+            // nextButton
+            consultsButton.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20),
+            consultsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            consultsButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            consultsButton.heightAnchor.constraint(equalToConstant: 45),
             
             // nextButton
             nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
@@ -108,7 +128,12 @@ class HomeView: UIView {
     
     @objc
     private func nextButtonPressed() {
-        self.delegate?.nextButtonPressed()
+        delegate?.nextButtonPressed()
+    }
+    
+    @objc
+    private func consultsButtonPressed() {
+        delegate?.consultsButtonPressed()
     }
     
     // MARK: - Public Actions

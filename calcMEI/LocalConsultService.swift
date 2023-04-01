@@ -38,7 +38,7 @@ class LocalConsultService: ConsultService {
         newConsult.rendimentoTributavel = count.rendimentoTributável
         
         coreDataManager.saveContext()
-        print("Created new consult for: \(count.name)")
+        print(#function)
     }
     
     func deleteConsult(consult: Consult) {
@@ -47,10 +47,12 @@ class LocalConsultService: ConsultService {
         context.delete(consult)
         
         coreDataManager.saveContext()
+        print(#function)
     }
     
     func fetchConsults() -> [Consult]? {
         if let consults = coreDataManager.perform(fetchRequest: allConsults) {
+            print(#function)
             return consults
         }
         

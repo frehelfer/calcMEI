@@ -12,7 +12,7 @@ final class SaveConsultViewModel_Tests: XCTestCase {
     
     private let viewControllerSpy = SaveConsultViewControllerSpy()
     private let coordinatorSpy = HomeCoordinatorSpy()
-    private let consultServiceSpy = LocalConsultServiceSpy()
+    private let consultServiceSpy = ConsultServiceSpy()
     
     func test_saveConsultViewModel_title_shouldNotBeEmpty() {
         let sut = makeSUT()
@@ -56,6 +56,8 @@ final class SaveConsultViewModel_Tests: XCTestCase {
         XCTAssertEqual(coordinatorSpy.calledMethods, [.saveConsultViewModelDidSelectSave])
     }
     
+    // MARK: - Helpers
+    
     private func makeSUT() -> SaveConsultViewModel {
         let consultService = consultServiceSpy
         let count = Count.makeCount()
@@ -67,52 +69,31 @@ final class SaveConsultViewModel_Tests: XCTestCase {
 
 }
 
-class SaveConsultViewControllerSpy: SaveConsultViewModelViewDelegate {
-    enum Methods {
-        case saveConsultViewModel
+private extension SaveConsultViewModel_Tests {
+    
+    class SaveConsultViewControllerSpy: SaveConsultViewModelViewDelegate {
+        enum Methods {
+            case saveConsultViewModel
+        }
+        
+        var calledMethods = [Methods]()
+        
+        func saveConsultViewModel(_ saveConsultViewModel: calcMEI.SaveConsultViewModel, updateViewWithCount: calcMEI.Count) {
+            calledMethods.append(.saveConsultViewModel)
+        }
+        
     }
     
-    var calledMethods = [Methods]()
-    
-    func saveConsultViewModel(_ saveConsultViewModel: calcMEI.SaveConsultViewModel, updateViewWithCount: calcMEI.Count) {
-        calledMethods.append(.saveConsultViewModel)
+    class HomeCoordinatorSpy: SaveConsultViewModelCoordinatorDelegate {
+        enum Methods {
+            case saveConsultViewModelDidSelectSave
+        }
+        
+        var calledMethods = [Methods]()
+        
+        func saveConsultViewModelDidSelectSave(_ saveConsultViewModel: calcMEI.SaveConsultViewModel) {
+            calledMethods.append(.saveConsultViewModelDidSelectSave)
+        }
+        
     }
-    
-}
-
-class HomeCoordinatorSpy: SaveConsultViewModelCoordinatorDelegate {
-    enum Methods {
-        case saveConsultViewModelDidSelectSave
-    }
-    
-    var calledMethods = [Methods]()
-    
-    func saveConsultViewModelDidSelectSave(_ saveConsultViewModel: calcMEI.SaveConsultViewModel) {
-        calledMethods.append(.saveConsultViewModelDidSelectSave)
-    }
-
-}
-
-class LocalConsultServiceSpy: ConsultService {
-    enum Methods {
-        case createConsult
-        case deleteConsult
-        case fetchConsults
-    }
-    
-    var calledMethods = [Methods]()
-    
-    func createConsult(count: calcMEI.Count) {
-        calledMethods.append(.createConsult)
-    }
-    
-    func deleteConsult(consult: calcMEI.Consult) {
-        calledMethods.append(.deleteConsult)
-    }
-    
-    func fetchConsults() -> [calcMEI.Consult]? {
-        calledMethods.append(.fetchConsults)
-        return nil
-    }
-    
 }

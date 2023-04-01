@@ -64,6 +64,10 @@ extension HomeViewController: HomeViewDelegate {
         viewModel?.startSelected()
     }
     
+    func consultsButtonPressed() {
+        viewModel?.consultsSelected()
+    }
+    
 }
 
 // MARK: - HomeViewModelViewDelegate
