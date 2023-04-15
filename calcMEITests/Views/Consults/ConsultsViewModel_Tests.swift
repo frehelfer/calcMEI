@@ -68,13 +68,18 @@ private extension ConsultsViewModel_Tests {
     
     class HomeCoordinatorSpy: ConsultsViewModelCoordinatorDelegate {
         enum Methods {
-            case saveConsultViewModelDidSelectSave
+            case consultsViewModelDidSelectNewConsult
+            case consultsViewModelDidSelectDetail
         }
         
         var calledMethods = [Methods]()
         
         func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModel) {
-            calledMethods.append(.saveConsultViewModelDidSelectSave)
+            calledMethods.append(.consultsViewModelDidSelectNewConsult)
+        }
+        
+        func consultsViewModelDidSelectDetail(_ consultsViewModel: ConsultsViewModel, consult: Consult) {
+            calledMethods.append(.consultsViewModelDidSelectDetail)
         }
         
     }

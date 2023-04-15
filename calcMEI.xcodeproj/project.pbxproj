@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D09CAF029C0F21500FB989F /* Count_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09CAEF29C0F21400FB989F /* Count_Tests.swift */; };
-		8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09CAF229C1010F00FB989F /* CountFixture.swift */; };
 		8D15EB5A29E6F30000943E7F /* CalcMEI_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 8D15EB5929E6F30000943E7F /* CalcMEI_Core */; };
+		8D3562FA29EB6B79008D92D7 /* CountFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3562F929EB6B79008D92D7 /* CountFixture.swift */; };
+		8D3562FD29EB6CD5008D92D7 /* ConsultServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3562FC29EB6CD5008D92D7 /* ConsultServiceSpy.swift */; };
 		8D4716AD299D660000079790 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AC299D660000079790 /* Coordinator.swift */; };
 		8D4716B0299D726500079790 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AF299D726500079790 /* UIViewController+.swift */; };
 		8D4716B2299D75C400079790 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716B1299D75C400079790 /* UIColor+.swift */; };
@@ -47,7 +47,6 @@
 		8D8A790F29D32B8C00C7A127 /* ConsultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A790E29D32B8B00C7A127 /* ConsultsView.swift */; };
 		8D8A791229D32BAA00C7A127 /* ConsultsViewController_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A791129D32BAA00C7A127 /* ConsultsViewController_Tests.swift */; };
 		8D8A791729D32CBA00C7A127 /* ConsultsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A791629D32CBA00C7A127 /* ConsultsViewModel_Tests.swift */; };
-		8D8A791A29D338BE00C7A127 /* ConsultServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A791929D338BE00C7A127 /* ConsultServiceSpy.swift */; };
 		8D8A791D29D364D700C7A127 /* ConsultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A791C29D364D700C7A127 /* ConsultTableViewCell.swift */; };
 		8D8A792129D3855300C7A127 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792029D3855300C7A127 /* DetailView.swift */; };
 		8D8A792329D3856500C7A127 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792229D3856500C7A127 /* DetailViewController.swift */; };
@@ -56,8 +55,6 @@
 		8DFCAFE529C92AEF0053D852 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */; };
 		8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */; };
 		8DFCAFEA29CA71F40053D852 /* SettingsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */; };
-		8DFCAFF529CC84D70053D852 /* CoreDataTestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF429CC84D70053D852 /* CoreDataTestManager.swift */; };
-		8DFCB00229CCC1540053D852 /* LocalConsultService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00129CCC1540053D852 /* LocalConsultService_Tests.swift */; };
 		8DFCB00829CCDBFE0053D852 /* SaveConsultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00729CCDBFE0053D852 /* SaveConsultView.swift */; };
 		8DFCB00A29CCDC070053D852 /* SaveConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00929CCDC070053D852 /* SaveConsultViewController.swift */; };
 		8DFCB00C29CCDC120053D852 /* SaveConsultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00B29CCDC120053D852 /* SaveConsultViewModel.swift */; };
@@ -76,9 +73,9 @@
 
 /* Begin PBXFileReference section */
 		8D09CAE529C0F1B600FB989F /* calcMEITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calcMEITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D09CAEF29C0F21400FB989F /* Count_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count_Tests.swift; sourceTree = "<group>"; };
-		8D09CAF229C1010F00FB989F /* CountFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountFixture.swift; sourceTree = "<group>"; };
 		8D15EB5729E6E6E800943E7F /* CalcMEI_Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CalcMEI_Core; path = ../CalcMEI_Core; sourceTree = "<group>"; };
+		8D3562F929EB6B79008D92D7 /* CountFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountFixture.swift; sourceTree = "<group>"; };
+		8D3562FC29EB6CD5008D92D7 /* ConsultServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultServiceSpy.swift; sourceTree = "<group>"; };
 		8D4716AC299D660000079790 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8D4716AF299D726500079790 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		8D4716B1299D75C400079790 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -116,7 +113,6 @@
 		8D8A790E29D32B8B00C7A127 /* ConsultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultsView.swift; sourceTree = "<group>"; };
 		8D8A791129D32BAA00C7A127 /* ConsultsViewController_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultsViewController_Tests.swift; sourceTree = "<group>"; };
 		8D8A791629D32CBA00C7A127 /* ConsultsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultsViewModel_Tests.swift; sourceTree = "<group>"; };
-		8D8A791929D338BE00C7A127 /* ConsultServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultServiceSpy.swift; sourceTree = "<group>"; };
 		8D8A791C29D364D700C7A127 /* ConsultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultTableViewCell.swift; sourceTree = "<group>"; };
 		8D8A792029D3855300C7A127 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		8D8A792229D3856500C7A127 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -125,8 +121,6 @@
 		8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel_Tests.swift; sourceTree = "<group>"; };
-		8DFCAFF429CC84D70053D852 /* CoreDataTestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestManager.swift; sourceTree = "<group>"; };
-		8DFCB00129CCC1540053D852 /* LocalConsultService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConsultService_Tests.swift; sourceTree = "<group>"; };
 		8DFCB00729CCDBFE0053D852 /* SaveConsultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultView.swift; sourceTree = "<group>"; };
 		8DFCB00929CCDC070053D852 /* SaveConsultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultViewController.swift; sourceTree = "<group>"; };
 		8DFCB00B29CCDC120053D852 /* SaveConsultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultViewModel.swift; sourceTree = "<group>"; };
@@ -157,21 +151,11 @@
 		8D09CAE629C0F1B600FB989F /* calcMEITests */ = {
 			isa = PBXGroup;
 			children = (
-				8D8A791829D338A900C7A127 /* Helpers */,
-				8DFCAFFD29CCC0E30053D852 /* SDK */,
-				8D81591129C4E83B008B4D20 /* Model */,
+				8D3562FB29EB6CC7008D92D7 /* Helpers */,
+				8D3562F829EB6AD4008D92D7 /* Fixture */,
 				8D81590329C4A8C4008B4D20 /* Views */,
-				8D09CAF129C100F400FB989F /* Fixture */,
 			);
 			path = calcMEITests;
-			sourceTree = "<group>";
-		};
-		8D09CAF129C100F400FB989F /* Fixture */ = {
-			isa = PBXGroup;
-			children = (
-				8D09CAF229C1010F00FB989F /* CountFixture.swift */,
-			);
-			path = Fixture;
 			sourceTree = "<group>";
 		};
 		8D15EB5829E6F30000943E7F /* Frameworks */ = {
@@ -179,6 +163,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D3562F829EB6AD4008D92D7 /* Fixture */ = {
+			isa = PBXGroup;
+			children = (
+				8D3562F929EB6B79008D92D7 /* CountFixture.swift */,
+			);
+			path = Fixture;
+			sourceTree = "<group>";
+		};
+		8D3562FB29EB6CC7008D92D7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8D3562FC29EB6CD5008D92D7 /* ConsultServiceSpy.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8D4716AB299D65D600079790 /* Coordinator */ = {
@@ -349,14 +349,6 @@
 			path = Income;
 			sourceTree = "<group>";
 		};
-		8D81591129C4E83B008B4D20 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8D09CAEF29C0F21400FB989F /* Count_Tests.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		8D8A790929D32B6B00C7A127 /* Consults */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,14 +367,6 @@
 				8D8A791629D32CBA00C7A127 /* ConsultsViewModel_Tests.swift */,
 			);
 			path = Consults;
-			sourceTree = "<group>";
-		};
-		8D8A791829D338A900C7A127 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				8D8A791929D338BE00C7A127 /* ConsultServiceSpy.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		8D8A791B29D364BA00C7A127 /* Cell */ = {
@@ -419,32 +403,6 @@
 				8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */,
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		8DFCAFEE29CC7B820053D852 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				8DFCAFF429CC84D70053D852 /* CoreDataTestManager.swift */,
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
-		8DFCAFF729CC86D00053D852 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				8DFCB00129CCC1540053D852 /* LocalConsultService_Tests.swift */,
-			);
-			name = Services;
-			path = ../Services;
-			sourceTree = "<group>";
-		};
-		8DFCAFFD29CCC0E30053D852 /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				8DFCAFEE29CC7B820053D852 /* Persistence */,
-				8DFCAFF729CC86D00053D852 /* Services */,
-			);
-			path = SDK;
 			sourceTree = "<group>";
 		};
 		8DFCB00629CCDBEA0053D852 /* SaveConsult */ = {
@@ -573,18 +531,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DFCB00229CCC1540053D852 /* LocalConsultService_Tests.swift in Sources */,
 				8D81590A29C4AB5C008B4D20 /* ExpensesViewModel_Tests.swift in Sources */,
 				8DFCAFEA29CA71F40053D852 /* SettingsViewModel_Tests.swift in Sources */,
 				8D81590D29C4E4D5008B4D20 /* ResultViewModel_Tests.swift in Sources */,
 				8D81591029C4E70A008B4D20 /* IncomeViewModel_Tests.swift in Sources */,
 				8D8A791229D32BAA00C7A127 /* ConsultsViewController_Tests.swift in Sources */,
-				8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */,
-				8D09CAF029C0F21500FB989F /* Count_Tests.swift in Sources */,
-				8DFCAFF529CC84D70053D852 /* CoreDataTestManager.swift in Sources */,
+				8D3562FD29EB6CD5008D92D7 /* ConsultServiceSpy.swift in Sources */,
+				8D3562FA29EB6B79008D92D7 /* CountFixture.swift in Sources */,
 				8D8A791729D32CBA00C7A127 /* ConsultsViewModel_Tests.swift in Sources */,
 				8DFCB00F29CE63200053D852 /* SaveConsultViewModel_Tests.swift in Sources */,
-				8D8A791A29D338BE00C7A127 /* ConsultServiceSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -79,7 +79,7 @@ private extension SaveConsultViewModel_Tests {
         
         var calledMethods = [Methods]()
         
-        func saveConsultViewModel(_ saveConsultViewModel: calcMEI.SaveConsultViewModel, updateViewWithCount: calcMEI.Count) {
+        func saveConsultViewModel(_ saveConsultViewModel: calcMEI.SaveConsultViewModel, updateViewWithCount: Count) {
             calledMethods.append(.saveConsultViewModel)
         }
         

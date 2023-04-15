@@ -7,7 +7,6 @@
 
 import Foundation
 import CalcMEI_Core
-@testable import calcMEI
 
 extension Count {
     static func makeCount(

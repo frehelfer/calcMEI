@@ -6,9 +6,9 @@
 //
 
 import Foundation
-@testable import calcMEI
+import CalcMEI_Core
 
-class ConsultServiceSpy: ConsultService {
+class ConsultServiceSpy: ConsultServiceProtocol {
     enum Methods {
         case createConsult
         case deleteConsult
@@ -17,15 +17,15 @@ class ConsultServiceSpy: ConsultService {
     
     var calledMethods: [Methods] = []
     
-    func createConsult(count: calcMEI.Count) {
+    func createConsult(count: Count) {
         calledMethods.append(.createConsult)
     }
     
-    func deleteConsult(consult: calcMEI.Consult) {
+    func deleteConsult(consult: Consult) {
         calledMethods.append(.deleteConsult)
     }
     
-    func fetchConsults() -> [calcMEI.Consult]? {
+    func fetchConsults() -> [Consult]? {
         calledMethods.append(.fetchConsults)
         return nil
     }
