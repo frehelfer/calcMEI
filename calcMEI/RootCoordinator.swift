@@ -6,16 +6,17 @@
 //
 
 import UIKit
+import CalcMEI_Core
 
 class RootCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
-    private let calcMEI_SDK: CalcMEI_SDK
+    private let calcMEI_core: CalcMEI_Core
     
-    required init(navigationController: UINavigationController, calcMEI_SDK: CalcMEI_SDK) {
+    required init(navigationController: UINavigationController, calcMEI_core: CalcMEI_Core) {
         self.navigationController = navigationController
-        self.calcMEI_SDK = calcMEI_SDK
+        self.calcMEI_core = calcMEI_core
     }
     
     func start() {
@@ -39,7 +40,7 @@ private extension RootCoordinator {
         
         let homeCoordinator = HomeCoordinator(
             navigationController: self.navigationController,
-            calcMEI_SDK: self.calcMEI_SDK
+            calcMEI_core: self.calcMEI_core
         )
         
         homeCoordinator.delegate = self

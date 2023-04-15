@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CalcMEI_Core
 
 protocol ResultViewDelegate: AnyObject {
     func nextButtonPressed()

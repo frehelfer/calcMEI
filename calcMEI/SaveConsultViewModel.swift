@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CalcMEI_Core
 
 protocol SaveConsultViewModelCoordinatorDelegate: AnyObject {
     func saveConsultViewModelDidSelectSave(_ saveConsultViewModel: SaveConsultViewModel)
@@ -20,11 +21,11 @@ class SaveConsultViewModel {
     weak var coordinatorDelegate: SaveConsultViewModelCoordinatorDelegate?
     weak var viewDelegate: SaveConsultViewModelViewDelegate?
     
-    private let consultService: ConsultService
+    private let consultService: ConsultServiceProtocol
     
     var count: Count
     
-    init(consultService: ConsultService, count: Count) {
+    init(consultService: ConsultServiceProtocol, count: Count) {
         self.consultService = consultService
         self.count = count
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CalcMEI_Core
 
 protocol SaveConsultViewDelegate: AnyObject {
     func saveButtonPressed(with name: String)

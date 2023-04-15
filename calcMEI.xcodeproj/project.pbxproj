@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8D09CAF029C0F21500FB989F /* Count_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09CAEF29C0F21400FB989F /* Count_Tests.swift */; };
 		8D09CAF329C1010F00FB989F /* CountFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D09CAF229C1010F00FB989F /* CountFixture.swift */; };
+		8D15EB5A29E6F30000943E7F /* CalcMEI_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 8D15EB5929E6F30000943E7F /* CalcMEI_Core */; };
 		8D4716AD299D660000079790 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AC299D660000079790 /* Coordinator.swift */; };
 		8D4716B0299D726500079790 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AF299D726500079790 /* UIViewController+.swift */; };
 		8D4716B2299D75C400079790 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716B1299D75C400079790 /* UIColor+.swift */; };
@@ -20,7 +21,6 @@
 		8D4716CA299D820400079790 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716C9299D820400079790 /* ExpensesView.swift */; };
 		8D4716CC299D820F00079790 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716CB299D820F00079790 /* ExpensesViewController.swift */; };
 		8D4716CE299D8C0100079790 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716CD299D8C0100079790 /* HomeCoordinator.swift */; };
-		8D4716D7299E666700079790 /* Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716D6299E666700079790 /* Count.swift */; };
 		8D4716DD299E79BB00079790 /* CurrencyFormatter in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4716DC299E79BB00079790 /* CurrencyFormatter */; };
 		8D4716DF299E79BB00079790 /* CurrencyText in Frameworks */ = {isa = PBXBuildFile; productRef = 8D4716DE299E79BB00079790 /* CurrencyText */; };
 		8D4716E2299EBD8E00079790 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716E1299EBD8E00079790 /* UILabel+.swift */; };
@@ -56,11 +56,7 @@
 		8DFCAFE529C92AEF0053D852 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */; };
 		8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */; };
 		8DFCAFEA29CA71F40053D852 /* SettingsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */; };
-		8DFCAFED29CC797E0053D852 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFEC29CC797E0053D852 /* CoreDataManager.swift */; };
-		8DFCAFF329CC7D5E0053D852 /* calcMEI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF129CC7D5E0053D852 /* calcMEI.xcdatamodeld */; };
 		8DFCAFF529CC84D70053D852 /* CoreDataTestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF429CC84D70053D852 /* CoreDataTestManager.swift */; };
-		8DFCAFF929CC8E8E0053D852 /* LocalConsultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFF829CC8E8E0053D852 /* LocalConsultService.swift */; };
-		8DFCAFFC29CCBC140053D852 /* CalcMEI_SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFFB29CCBC140053D852 /* CalcMEI_SDK.swift */; };
 		8DFCB00229CCC1540053D852 /* LocalConsultService_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00129CCC1540053D852 /* LocalConsultService_Tests.swift */; };
 		8DFCB00829CCDBFE0053D852 /* SaveConsultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00729CCDBFE0053D852 /* SaveConsultView.swift */; };
 		8DFCB00A29CCDC070053D852 /* SaveConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00929CCDC070053D852 /* SaveConsultViewController.swift */; };
@@ -82,6 +78,7 @@
 		8D09CAE529C0F1B600FB989F /* calcMEITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calcMEITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D09CAEF29C0F21400FB989F /* Count_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count_Tests.swift; sourceTree = "<group>"; };
 		8D09CAF229C1010F00FB989F /* CountFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountFixture.swift; sourceTree = "<group>"; };
+		8D15EB5729E6E6E800943E7F /* CalcMEI_Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CalcMEI_Core; path = ../CalcMEI_Core; sourceTree = "<group>"; };
 		8D4716AC299D660000079790 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8D4716AF299D726500079790 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		8D4716B1299D75C400079790 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -93,7 +90,6 @@
 		8D4716C9299D820400079790 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		8D4716CB299D820F00079790 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
 		8D4716CD299D8C0100079790 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		8D4716D6299E666700079790 /* Count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Count.swift; sourceTree = "<group>"; };
 		8D4716E1299EBD8E00079790 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		8D4716E3299EE60E00079790 /* UIResponder+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+.swift"; sourceTree = "<group>"; };
 		8D4716E5299FB4BC00079790 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -129,11 +125,7 @@
 		8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel_Tests.swift; sourceTree = "<group>"; };
-		8DFCAFEC29CC797E0053D852 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		8DFCAFF229CC7D5E0053D852 /* calcMEI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = calcMEI.xcdatamodel; sourceTree = "<group>"; };
 		8DFCAFF429CC84D70053D852 /* CoreDataTestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestManager.swift; sourceTree = "<group>"; };
-		8DFCAFF829CC8E8E0053D852 /* LocalConsultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConsultService.swift; sourceTree = "<group>"; };
-		8DFCAFFB29CCBC140053D852 /* CalcMEI_SDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcMEI_SDK.swift; sourceTree = "<group>"; };
 		8DFCB00129CCC1540053D852 /* LocalConsultService_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConsultService_Tests.swift; sourceTree = "<group>"; };
 		8DFCB00729CCDBFE0053D852 /* SaveConsultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultView.swift; sourceTree = "<group>"; };
 		8DFCB00929CCDC070053D852 /* SaveConsultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D15EB5A29E6F30000943E7F /* CalcMEI_Core in Frameworks */,
 				8D4716DF299E79BB00079790 /* CurrencyText in Frameworks */,
 				8D4716DD299E79BB00079790 /* CurrencyFormatter in Frameworks */,
 			);
@@ -166,7 +159,6 @@
 			children = (
 				8D8A791829D338A900C7A127 /* Helpers */,
 				8DFCAFFD29CCC0E30053D852 /* SDK */,
-				8DFCAFFE29CCC0E90053D852 /* Services */,
 				8D81591129C4E83B008B4D20 /* Model */,
 				8D81590329C4A8C4008B4D20 /* Views */,
 				8D09CAF129C100F400FB989F /* Fixture */,
@@ -180,6 +172,13 @@
 				8D09CAF229C1010F00FB989F /* CountFixture.swift */,
 			);
 			path = Fixture;
+			sourceTree = "<group>";
+		};
+		8D15EB5829E6F30000943E7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8D4716AB299D65D600079790 /* Coordinator */ = {
@@ -236,15 +235,6 @@
 			name = Expenses;
 			sourceTree = "<group>";
 		};
-		8D4716D5299E65F400079790 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8D4716D6299E666700079790 /* Count.swift */,
-				8DFCAFF129CC7D5E0053D852 /* calcMEI.xcdatamodeld */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		8D4716D8299E726000079790 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,7 +248,9 @@
 			children = (
 				8D740225299D494E008BFE17 /* calcMEI */,
 				8D09CAE629C0F1B600FB989F /* calcMEITests */,
+				8D15EB5729E6E6E800943E7F /* CalcMEI_Core */,
 				8D740224299D494E008BFE17 /* Products */,
+				8D15EB5829E6F30000943E7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -276,8 +268,6 @@
 			children = (
 				8D740226299D494E008BFE17 /* AppDelegate.swift */,
 				8D740228299D494E008BFE17 /* SceneDelegate.swift */,
-				8DFCAFFA29CCBBB40053D852 /* SDK */,
-				8D4716D5299E65F400079790 /* Model */,
 				8D4716AE299D725100079790 /* Extensions */,
 				8D74023B299D4BC1008BFE17 /* Files */,
 				8D74023D299D4BE6008BFE17 /* Views */,
@@ -431,28 +421,12 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		8DFCAFEB29CC79720053D852 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				8DFCAFEC29CC797E0053D852 /* CoreDataManager.swift */,
-			);
-			name = Persistence;
-			sourceTree = "<group>";
-		};
 		8DFCAFEE29CC7B820053D852 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
 				8DFCAFF429CC84D70053D852 /* CoreDataTestManager.swift */,
 			);
 			path = Persistence;
-			sourceTree = "<group>";
-		};
-		8DFCAFF629CC85E00053D852 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				8DFCAFF829CC8E8E0053D852 /* LocalConsultService.swift */,
-			);
-			name = Services;
 			sourceTree = "<group>";
 		};
 		8DFCAFF729CC86D00053D852 /* Services */ = {
@@ -464,16 +438,6 @@
 			path = ../Services;
 			sourceTree = "<group>";
 		};
-		8DFCAFFA29CCBBB40053D852 /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				8DFCAFFB29CCBC140053D852 /* CalcMEI_SDK.swift */,
-				8DFCAFEB29CC79720053D852 /* Persistence */,
-				8DFCAFF629CC85E00053D852 /* Services */,
-			);
-			name = SDK;
-			sourceTree = "<group>";
-		};
 		8DFCAFFD29CCC0E30053D852 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,14 +445,6 @@
 				8DFCAFF729CC86D00053D852 /* Services */,
 			);
 			path = SDK;
-			sourceTree = "<group>";
-		};
-		8DFCAFFE29CCC0E90053D852 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Services;
-			path = SDK/Services;
 			sourceTree = "<group>";
 		};
 		8DFCB00629CCDBEA0053D852 /* SaveConsult */ = {
@@ -546,6 +502,7 @@
 			packageProductDependencies = (
 				8D4716DC299E79BB00079790 /* CurrencyFormatter */,
 				8D4716DE299E79BB00079790 /* CurrencyText */,
+				8D15EB5929E6F30000943E7F /* CalcMEI_Core */,
 			);
 			productName = calcMEI;
 			productReference = 8D740223299D494E008BFE17 /* calcMEI.app */;
@@ -638,8 +595,6 @@
 				8DFCB00A29CCDC070053D852 /* SaveConsultViewController.swift in Sources */,
 				8D4716C5299D80AC00079790 /* ResultViewController.swift in Sources */,
 				8D8A792529D3856E00C7A127 /* DetailViewModel.swift in Sources */,
-				8DFCAFF329CC7D5E0053D852 /* calcMEI.xcdatamodeld in Sources */,
-				8D4716D7299E666700079790 /* Count.swift in Sources */,
 				8DFCB00C29CCDC120053D852 /* SaveConsultViewModel.swift in Sources */,
 				8D4716E2299EBD8E00079790 /* UILabel+.swift in Sources */,
 				8D4716EC29A0118400079790 /* IncomeViewModel.swift in Sources */,
@@ -650,7 +605,6 @@
 				8D4716E8299FC3BA00079790 /* HomeViewModel.swift in Sources */,
 				8D8A790F29D32B8C00C7A127 /* ConsultsView.swift in Sources */,
 				8D4716F429A3C9EB00079790 /* Currency+.swift in Sources */,
-				8DFCAFF929CC8E8E0053D852 /* LocalConsultService.swift in Sources */,
 				8D81591329C4EFC2008B4D20 /* UIButton+.swift in Sources */,
 				8D4716EE29A0434000079790 /* ExpensesViewModel.swift in Sources */,
 				8D4716CE299D8C0100079790 /* HomeCoordinator.swift in Sources */,
@@ -665,11 +619,9 @@
 				8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */,
 				8D8A792329D3856500C7A127 /* DetailViewController.swift in Sources */,
 				8D4716E4299EE60E00079790 /* UIResponder+.swift in Sources */,
-				8DFCAFED29CC797E0053D852 /* CoreDataManager.swift in Sources */,
 				8D4716EA29A00DAC00079790 /* RootCoordinator.swift in Sources */,
 				8D4716BD299D800000079790 /* IncomeViewController.swift in Sources */,
 				8D4716AD299D660000079790 /* Coordinator.swift in Sources */,
-				8DFCAFFC29CCBC140053D852 /* CalcMEI_SDK.swift in Sources */,
 				8D740229299D494E008BFE17 /* SceneDelegate.swift in Sources */,
 				8DFCAFE329C92AE20053D852 /* SettingsView.swift in Sources */,
 				8D4716F029A0486300079790 /* ResultViewModel.swift in Sources */,
@@ -963,6 +915,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8D15EB5929E6F30000943E7F /* CalcMEI_Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CalcMEI_Core;
+		};
 		8D4716DC299E79BB00079790 /* CurrencyFormatter */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */;
@@ -974,19 +930,6 @@
 			productName = CurrencyText;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		8DFCAFF129CC7D5E0053D852 /* calcMEI.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				8DFCAFF229CC7D5E0053D852 /* calcMEI.xcdatamodel */,
-			);
-			currentVersion = 8DFCAFF229CC7D5E0053D852 /* calcMEI.xcdatamodel */;
-			path = calcMEI.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 8D74021B299D494E008BFE17 /* Project object */;
 }

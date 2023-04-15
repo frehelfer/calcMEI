@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CalcMEI_Core
 
 protocol ExpensesViewModelCoordinatorDelegate: AnyObject {
     func expensesViewModelDidSelectNext(_ expensesViewModel: ExpensesViewModel, count: Count)

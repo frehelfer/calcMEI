@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CalcMEI_Core
 
 protocol ConsultsViewModelCoordinatorDelegate: AnyObject{
     func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModel)
@@ -21,11 +22,11 @@ class ConsultsViewModel {
     weak var coordinatorDelegate: ConsultsViewModelCoordinatorDelegate?
     weak var viewDelegate: ConsultsViewModelViewDelegate?
     
-    private let consultService: ConsultService
+    private let consultService: ConsultServiceProtocol
     
     private(set) var consults: [Consult] = []
     
-    init(consultService: ConsultService) {
+    init(consultService: ConsultServiceProtocol) {
         self.consultService = consultService
     }
     

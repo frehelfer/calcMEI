@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import CalcMEI_Core
 @testable import calcMEI
 
 extension Count {

@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import CalcMEI_Core
 @testable import calcMEI
 
 final class ConsultsViewModel_Tests: XCTestCase {

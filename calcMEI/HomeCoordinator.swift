@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CalcMEI_Core
 
 protocol HomeCoordinatorDelegate: AnyObject {
     // add any func to rootCoordinator
@@ -16,11 +17,11 @@ class HomeCoordinator: Coordinator {
     weak var delegate: HomeCoordinatorDelegate?
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
-    private let calcMEI_SDK: CalcMEI_SDK
+    private let calcMEI_core: CalcMEI_Core
     
-    required init(navigationController: UINavigationController, calcMEI_SDK: CalcMEI_SDK) {
+    required init(navigationController: UINavigationController, calcMEI_core: CalcMEI_Core) {
         self.navigationController = navigationController
-        self.calcMEI_SDK = calcMEI_SDK
+        self.calcMEI_core = calcMEI_core
     }
     
     func start() {
@@ -161,7 +162,7 @@ private extension HomeCoordinator {
         
         viewController.viewModel = {
             let viewModel = SaveConsultViewModel(
-                consultService: calcMEI_SDK.consultService,
+                consultService: calcMEI_core.consultService,
                 count: count
             )
             viewModel.coordinatorDelegate = self
@@ -176,7 +177,7 @@ private extension HomeCoordinator {
         
         viewController.viewModel = {
             let viewModel = ConsultsViewModel(
-                consultService: calcMEI_SDK.consultService
+                consultService: calcMEI_core.consultService
             )
             viewModel.coordinatorDelegate = self
             return viewModel
@@ -190,7 +191,7 @@ private extension HomeCoordinator {
         
         viewController.viewModel = {
             let viewModel = DetailViewModel(
-                consultService: calcMEI_SDK.consultService,
+                consultService: calcMEI_core.consultService,
                 consult: consult
             )
             viewModel.coordinatorDelegate = self

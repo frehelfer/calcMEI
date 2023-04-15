@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import CalcMEI_Core
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var rootCoordinator: Coordinator?
     
-    var calcMEI_SDK: CalcMEI_SDK = CalcMEI_SDK()
+    var calcMEI_core: CalcMEI_Core = CalcMEI_Core()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -31,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         rootCoordinator = RootCoordinator(
             navigationController: navigationController,
-            calcMEI_SDK: calcMEI_SDK
+            calcMEI_core: calcMEI_core
         )
         rootCoordinator?.start()
     }

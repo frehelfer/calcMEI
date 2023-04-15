@@ -51,8 +51,8 @@ class IncomeViewController: UIViewController {
 // MARK: - IncomeViewDelegate
 extension IncomeViewController: IncomeViewDelegate {
     
-    func nextButtonPressed(count: Count) {
-        viewModel?.nextSelected(count: count)
+    func nextButtonPressed(incomeData: IncomeViewModel.IncomeData) {
+        viewModel?.nextSelected(incomeData: incomeData)
     }
 }
 

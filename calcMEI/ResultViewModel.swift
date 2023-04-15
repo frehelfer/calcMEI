@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CalcMEI_Core
 
 protocol ResultViewModelCoordinatorDelegate: AnyObject {
     func resultViewModelDidSelectReset(_ resultViewModel: ResultViewModel)
@@ -31,7 +32,7 @@ class ResultViewModel {
         return "Resultado"
     }
     
-    public func updateViewWithCount() {
+    func updateViewWithCount() {
         viewDelegate?.resultViewModel(self, updateViewWithCount: count)
     }
 }
