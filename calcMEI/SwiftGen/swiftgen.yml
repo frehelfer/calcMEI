@@ -1,0 +1,16 @@
+
+xcassets:
+  inputs: ../Resources/
+  outputs:
+    templateName: swift5
+    output: Assets.swift
+    params:
+        enumName: A
+    
+strings:
+  inputs: ../Resources/
+  outputs:
+    templateName: structured-swift5
+    output: Strings.swift
+    params:
+        enumName: S
