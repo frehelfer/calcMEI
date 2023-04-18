@@ -26,9 +26,7 @@ class HomeViewModel {
         
     }
     
-    var title: String {
-        return "calcMEI"
-    }
+    var title: String = S.Home.title
 }
 
 // MARK: - Navigation

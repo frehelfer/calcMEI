@@ -10,13 +10,30 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum S {
-  /// funcinou
-  internal static let testdae = S.tr("Localizable", "testdae", fallback: "funcinou")
-  /// Localizable.strings
-  ///   calcMEI
-  /// 
-  ///   Created by Frédéric Helfer on 17/04/23.
-  internal static let title = S.tr("Localizable", "title", fallback: "Home")
+  internal enum Home {
+    /// Localizable.strings
+    ///   calcMEI
+    /// 
+    ///   Created by Frédéric Helfer on 17/04/23.
+    internal static let title = S.tr("Localizable", "Home.Title", fallback: "calcMEI")
+    internal enum InfoLabel {
+      /// Ano-Calendário de 2022 - Exercício de 2023
+      internal static let text = S.tr("Localizable", "Home.InfoLabel.Text", fallback: "Ano-Calendário de 2022 - Exercício de 2023")
+    }
+    internal enum NewConsultButton {
+      /// Nova consulta
+      internal static let title = S.tr("Localizable", "Home.NewConsultButton.Title", fallback: "Nova consulta")
+    }
+    internal enum SavedConsultsButton {
+      /// Consultas salvas
+      internal static let title = S.tr("Localizable", "Home.SavedConsultsButton.Title", fallback: "Consultas salvas")
+    }
+    internal enum TitleLabel {
+      /// Calculadora Declaração 
+      ///  IRPF - MEI
+      internal static let text = S.tr("Localizable", "Home.TitleLabel.Text", fallback: "Calculadora Declaração \n IRPF - MEI")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

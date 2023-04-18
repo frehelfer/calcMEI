@@ -34,7 +34,7 @@ class HomeView: UIView {
         label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         label.textColor = A.Colors.labelPrimary.color
         label.textAlignment = .center
-        label.text = "Calculadora Declaração \n IRPF - MEI"
+        label.text = S.Home.TitleLabel.text
         label.numberOfLines = 0
         return label
     }()
@@ -45,31 +45,31 @@ class HomeView: UIView {
         label.font = UIFont.systemFont(ofSize: 16, weight: .light)
         label.textColor = A.Colors.labelSecondary.color
         label.textAlignment = .center
-        label.text = "Ano-Calendário de 2022 - Exercício de 2023"
+        label.text = S.Home.InfoLabel.text
         return label
     }()
     
-    private lazy var consultsButton: UIButton = {
+    private lazy var savedConsultsButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Consultas salvas", for: .normal)
+        button.setTitle(S.Home.SavedConsultsButton.title, for: .normal)
         button.backgroundColor = A.Colors.buttonBlue.color
         button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(consultsButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(savedConsultsButtonPressed), for: .touchUpInside)
         return button
     }()
     
-    private lazy var nextButton: UIButton = {
+    private lazy var newConsultButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Nova consulta", for: .normal)
+        button.setTitle(S.Home.NewConsultButton.title, for: .normal)
         button.backgroundColor = A.Colors.buttonBlue.color
         button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(newConsultButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -98,8 +98,8 @@ class HomeView: UIView {
         mainStackView.addArrangedSubview(titleLabel)
         mainStackView.addArrangedSubview(infoLabel)
         
-        addSubview(consultsButton)
-        addSubview(nextButton)
+        addSubview(savedConsultsButton)
+        addSubview(newConsultButton)
     }
     
     private func configureConstraints() {
@@ -110,29 +110,29 @@ class HomeView: UIView {
             mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             
-            // nextButton
-            consultsButton.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20),
-            consultsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            consultsButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            consultsButton.heightAnchor.constraint(equalToConstant: 45),
+            // savedConsultsButton
+            savedConsultsButton.bottomAnchor.constraint(equalTo: newConsultButton.topAnchor, constant: -20),
+            savedConsultsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            savedConsultsButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            savedConsultsButton.heightAnchor.constraint(equalToConstant: 45),
             
-            // nextButton
-            nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
-            nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            nextButton.heightAnchor.constraint(equalToConstant: 45),
+            // newConsultButton
+            newConsultButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
+            newConsultButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            newConsultButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            newConsultButton.heightAnchor.constraint(equalToConstant: 45),
         ])
     }
     
     // MARK: - Private Actions
     
     @objc
-    private func nextButtonPressed() {
+    private func newConsultButtonPressed() {
         delegate?.nextButtonPressed()
     }
     
     @objc
-    private func consultsButtonPressed() {
+    private func savedConsultsButtonPressed() {
         delegate?.consultsButtonPressed()
     }
     

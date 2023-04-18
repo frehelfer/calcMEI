@@ -6,6 +6,9 @@
   
 */
 
-// teste
-"title" = "Home";
-"testdae"= "funcinou";
+// Home Screen
+"Home.Title" = "calcMEI";
+"Home.TitleLabel.Text" = "Calculadora Declaração \n IRPF - MEI";
+"Home.InfoLabel.Text" = "Ano-Calendário de 2022 - Exercício de 2023";
+"Home.SavedConsultsButton.Title" = "Consultas salvas";
+"Home.NewConsultButton.Title" = "Nova consulta";
