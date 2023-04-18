@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStatusBar(color: .theme.navBar)
+        setStatusBar(color: A.Colors.navBar.color)
         setupVC()
     }
     

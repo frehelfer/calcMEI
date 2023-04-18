@@ -33,7 +33,7 @@ class SaveConsultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupVC()
-        setStatusBar(color: .theme.navBar)
+        setStatusBar(color: A.Colors.navBar.color)
     }
     
     override func viewWillAppear(_ animated: Bool) {

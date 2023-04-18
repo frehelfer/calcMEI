@@ -109,8 +109,8 @@ class SaveConsultView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Salvar", for: .normal)
-        button.backgroundColor = .systemGreen
-        button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
+        button.backgroundColor = A.Colors.green.color
+        button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
@@ -129,7 +129,7 @@ class SaveConsultView: UIView {
     
     // MARK: - SetupView
     private func setupView() {
-        backgroundColor = .theme.mainBackground
+        backgroundColor = A.Colors.background.color
         configureSubviews()
         configureConstraints()
     }

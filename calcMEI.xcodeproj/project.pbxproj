@@ -18,7 +18,6 @@
 		8D3562FD29EB6CD5008D92D7 /* ConsultServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3562FC29EB6CD5008D92D7 /* ConsultServiceSpy.swift */; };
 		8D4716AD299D660000079790 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AC299D660000079790 /* Coordinator.swift */; };
 		8D4716B0299D726500079790 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AF299D726500079790 /* UIViewController+.swift */; };
-		8D4716B2299D75C400079790 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716B1299D75C400079790 /* UIColor+.swift */; };
 		8D4716B4299D7D3400079790 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716B3299D7D3300079790 /* UITextField+.swift */; };
 		8D4716BD299D800000079790 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716BC299D800000079790 /* IncomeViewController.swift */; };
 		8D4716BF299D800800079790 /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716BE299D800800079790 /* IncomeView.swift */; };
@@ -89,7 +88,6 @@
 		8D3562FC29EB6CD5008D92D7 /* ConsultServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultServiceSpy.swift; sourceTree = "<group>"; };
 		8D4716AC299D660000079790 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8D4716AF299D726500079790 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
-		8D4716B1299D75C400079790 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		8D4716B3299D7D3300079790 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		8D4716BC299D800000079790 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		8D4716BE299D800800079790 /* IncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 			children = (
 				8D4716AF299D726500079790 /* UIViewController+.swift */,
 				8D4716F329A3C9EB00079790 /* Currency+.swift */,
-				8D4716B1299D75C400079790 /* UIColor+.swift */,
 				8D4716B3299D7D3300079790 /* UITextField+.swift */,
 				8D4716E1299EBD8E00079790 /* UILabel+.swift */,
 				8D4716E3299EE60E00079790 /* UIResponder+.swift */,
@@ -633,7 +630,6 @@
 				8D4716F029A0486300079790 /* ResultViewModel.swift in Sources */,
 				8DFCAFE529C92AEF0053D852 /* SettingsViewController.swift in Sources */,
 				8D740240299D4C22008BFE17 /* HomeViewController.swift in Sources */,
-				8D4716B2299D75C400079790 /* UIColor+.swift in Sources */,
 				8D4716B4299D7D3400079790 /* UITextField+.swift in Sources */,
 				8D4716CA299D820400079790 /* ExpensesView.swift in Sources */,
 			);

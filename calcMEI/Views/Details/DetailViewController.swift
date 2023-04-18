@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
     
     // MARK: - Private Functions
     private func setupVC() {
-        setStatusBar(color: .theme.navBar)
+        setStatusBar(color: A.Colors.navBar.color)
         setupNavigationItem()
     }
     

@@ -37,7 +37,7 @@ class IncomeView: UIView {
         stackView.alignment = .center
         stackView.spacing = 13
         
-        stackView.backgroundColor = .theme.greenBackground2
+        stackView.backgroundColor = A.Colors.green50.color
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 13, right: 13)
         
@@ -56,7 +56,7 @@ class IncomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.textColor = .theme.label1
+        label.textColor = A.Colors.labelPrimary.color
         label.text = "Prestação de Serviços"
         return label
     }()
@@ -66,7 +66,7 @@ class IncomeView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "R$ 0,00"
         textField.font = UIFont.preferredFont(forTextStyle: .body)
-        textField.textColor = .theme.label1
+        textField.textColor = A.Colors.labelPrimary.color
         textField.autocorrectionType = .no
         textField.textAlignment = .center
         textField.keyboardType = .numberPad
@@ -83,7 +83,7 @@ class IncomeView: UIView {
         stackView.alignment = .center
         stackView.spacing = 13
         
-        stackView.backgroundColor = .theme.greenBackground2
+        stackView.backgroundColor = A.Colors.green50.color
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 13, right: 13)
         
@@ -102,7 +102,7 @@ class IncomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.textColor = .theme.label1
+        label.textColor = A.Colors.labelPrimary.color
         label.text = "Comércio, Indústria e \n Transporte de Cargas"
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -114,7 +114,7 @@ class IncomeView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "R$ 0,00"
         textField.font = UIFont.preferredFont(forTextStyle: .body)
-        textField.textColor = .theme.label1
+        textField.textColor = A.Colors.labelPrimary.color
         textField.autocorrectionType = .no
         textField.textAlignment = .center
         textField.keyboardType = .numberPad
@@ -131,7 +131,7 @@ class IncomeView: UIView {
         stackView.alignment = .center
         stackView.spacing = 13
         
-        stackView.backgroundColor = .theme.greenBackground2
+        stackView.backgroundColor = A.Colors.green50.color
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 13, right: 13)
         
@@ -150,7 +150,7 @@ class IncomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.textColor = .theme.label1
+        label.textColor = A.Colors.labelPrimary.color
         label.text = "Transporte de Passageiros"
         return label
     }()
@@ -160,7 +160,7 @@ class IncomeView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "R$ 0,00"
         textField.font = UIFont.preferredFont(forTextStyle: .body)
-        textField.textColor = .theme.label1
+        textField.textColor = A.Colors.labelPrimary.color
         textField.autocorrectionType = .no
         textField.textAlignment = .center
         textField.keyboardType = .numberPad
@@ -175,8 +175,8 @@ class IncomeView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Próximo", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
+        button.backgroundColor = A.Colors.buttonBlue.color
+        button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
@@ -200,7 +200,7 @@ class IncomeView: UIView {
     // MARK: - SetupView
     
     private func setupView() {
-        backgroundColor = .theme.mainBackground
+        backgroundColor = A.Colors.background.color
         configureSubviews()
         configureConstraints()
     }

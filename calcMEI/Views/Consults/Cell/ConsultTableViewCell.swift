@@ -63,7 +63,7 @@ class ConsultTableViewCell: UITableViewCell {
     // MARK: - SetupCell
     private func setupView() {
         selectionStyle = .none
-        backgroundColor = .theme.mainBackground
+        backgroundColor = A.Colors.background.color
         configureSubviews()
         configureConstraints()
     }

@@ -14,6 +14,7 @@ class ConsultsView: UIView {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(ConsultTableViewCell.self, forCellReuseIdentifier: ConsultTableViewCell.identifier)
+        tableView.backgroundColor = A.Colors.background.color
         return tableView
     }()
     
@@ -29,7 +30,7 @@ class ConsultsView: UIView {
     
     // MARK: - SetupView
     private func setupView() {
-        backgroundColor = .theme.mainBackground
+        backgroundColor = A.Colors.background.color
         configureSubviews()
         configureConstraints()
     }

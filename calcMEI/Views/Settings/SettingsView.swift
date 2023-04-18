@@ -30,7 +30,7 @@ class SettingsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .theme.label2
+        label.textColor = A.Colors.labelSecondary.color
         return label
     }()
     
@@ -46,7 +46,7 @@ class SettingsView: UIView {
     
     // MARK: - SetupView
     private func setupView() {
-        backgroundColor = .theme.mainBackground
+        backgroundColor = A.Colors.background.color
         configureSubviews()
         configureConstraints()
     }

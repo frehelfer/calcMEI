@@ -59,8 +59,8 @@ class ResultView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Salvar Consulta", for: .normal)
-        button.backgroundColor = .systemGreen
-        button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
+        button.backgroundColor = A.Colors.green.color
+        button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
@@ -71,8 +71,8 @@ class ResultView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Início", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
+        button.backgroundColor = A.Colors.buttonBlue.color
+        button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
@@ -93,7 +93,7 @@ class ResultView: UIView {
     // MARK: - SetupView
     
     private func setupView() {
-        backgroundColor = .theme.mainBackground
+        backgroundColor = A.Colors.background.color
         configureSubviews()
         configureConstraints()
     }

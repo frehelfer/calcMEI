@@ -32,7 +32,7 @@ class HomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        label.textColor = .theme.label1
+        label.textColor = A.Colors.labelPrimary.color
         label.textAlignment = .center
         label.text = "Calculadora Declaração \n IRPF - MEI"
         label.numberOfLines = 0
@@ -43,7 +43,7 @@ class HomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .light)
-        label.textColor = .theme.label1.withAlphaComponent(0.8)
+        label.textColor = A.Colors.labelSecondary.color
         label.textAlignment = .center
         label.text = "Ano-Calendário de 2022 - Exercício de 2023"
         return label
@@ -53,8 +53,8 @@ class HomeView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Consultas salvas", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
+        button.backgroundColor = A.Colors.buttonBlue.color
+        button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(consultsButtonPressed), for: .touchUpInside)
@@ -65,8 +65,8 @@ class HomeView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Nova consulta", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
+        button.backgroundColor = A.Colors.buttonBlue.color
+        button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
@@ -87,7 +87,7 @@ class HomeView: UIView {
     // MARK: - SetupView
     
     private func setupView() {
-        backgroundColor = .theme.mainBackground
+        backgroundColor = A.Colors.background.color
         configureSubviews()
         configureConstraints()
     }

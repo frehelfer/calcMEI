@@ -37,7 +37,7 @@ class ExpensesView: UIView {
         stackView.alignment = .center
         stackView.spacing = 13
         
-        stackView.backgroundColor = .theme.redStackBackground
+        stackView.backgroundColor = A.Colors.red50.color
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 13, right: 13)
         
@@ -56,7 +56,7 @@ class ExpensesView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.textColor = .theme.label1
+        label.textColor = A.Colors.labelPrimary.color
         label.text = "Pró-labore, DAS, Mercadorias, Aluguel, Água, Luz e Tel."
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -68,7 +68,7 @@ class ExpensesView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "R$ 0,00"
         textField.font = UIFont.preferredFont(forTextStyle: .body)
-        textField.textColor = .theme.label1
+        textField.textColor = A.Colors.labelPrimary.color
         textField.autocorrectionType = .no
         textField.textAlignment = .center
         textField.keyboardType = .numberPad
@@ -82,8 +82,8 @@ class ExpensesView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Resultado", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.setBackgroundColor(.theme.buttonHighLight, for: .highlighted)
+        button.backgroundColor = A.Colors.buttonBlue.color
+        button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
@@ -107,7 +107,7 @@ class ExpensesView: UIView {
     // MARK: - SetupView
     
     private func setupView() {
-        backgroundColor = .theme.mainBackground
+        backgroundColor = A.Colors.background.color
         configureSubviews()
         configureConstraints()
     }
