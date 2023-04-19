@@ -35,6 +35,9 @@
 "SaveConsult.NameTextField.PlaceHolder" = "Insira um nome para sua consulta";
 "SaveConsult.SaveConsultButton.Title" = "Salvar";
 
+// Consults Screen
+"Consults.Title" = "Consultas Salvas";
+
 
 
 // TextField Geral

@@ -10,6 +10,10 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum S {
+  internal enum Consults {
+    /// Consultas Salvas
+    internal static let title = S.tr("Localizable", "Consults.Title", fallback: "Consultas Salvas")
+  }
   internal enum Expenses {
     /// Despesas Anuais
     internal static let title = S.tr("Localizable", "Expenses.Title", fallback: "Despesas Anuais")

@@ -30,9 +30,7 @@ class ConsultsViewModel {
         self.consultService = consultService
     }
     
-    var title: String {
-        return "Consultas Salvas"
-    }
+    var title: String = S.Consults.title
     
     func loadConsults() {
         if let consults = consultService.fetchConsults() {
