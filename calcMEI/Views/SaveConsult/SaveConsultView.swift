@@ -30,7 +30,7 @@ class SaveConsultView: UIView {
     private lazy var nameTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Insira um nome para sua consulta"
+        textField.placeholder = S.SaveConsult.NameTextField.placeHolder
         textField.returnKeyType = .done
         textField.keyboardType = .default
         textField.backgroundColor = .systemGray5
@@ -108,7 +108,7 @@ class SaveConsultView: UIView {
     private lazy var saveConsultButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Salvar", for: .normal)
+        button.setTitle(S.SaveConsult.SaveConsultButton.title, for: .normal)
         button.backgroundColor = A.Colors.green.color
         button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         

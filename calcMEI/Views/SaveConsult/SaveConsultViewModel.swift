@@ -30,9 +30,7 @@ class SaveConsultViewModel {
         self.count = count
     }
     
-    var title: String {
-        return "Salvar Consulta"
-    }
+    var title: String = S.SaveConsult.title
     
     public func updateViewWithCount() {
         viewDelegate?.saveConsultViewModel(self, updateViewWithCount: count)

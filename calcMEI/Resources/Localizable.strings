@@ -30,5 +30,12 @@
 "Result.SaveButton.Title" = "Salvar Consulta";
 "Result.PopButton.Title" = "Início";
 
+// SaveConsult Screen
+"SaveConsult.Title" = "Salvar Consulta";
+"SaveConsult.NameTextField.PlaceHolder" = "Insira um nome para sua consulta";
+"SaveConsult.SaveConsultButton.Title" = "Salvar";
+
+
+
 // TextField Geral
 "TextField.MoneyPlaceHolder.Text" = "R$ 0,00";
