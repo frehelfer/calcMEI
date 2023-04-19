@@ -25,6 +25,10 @@
 "Expenses.ExpensesLabel.Text" = "Pró-labore, DAS, Mercadorias, Aluguel, Água, Luz e Tel.";
 "Expenses.NextButton.Title" = "Resultado";
 
+// Result Screen
+"Result.Title" = "Resultado";
+"Result.SaveButton.Title" = "Salvar Consulta";
+"Result.PopButton.Title" = "Início";
 
 // TextField Geral
 "TextField.MoneyPlaceHolder.Text" = "R$ 0,00";

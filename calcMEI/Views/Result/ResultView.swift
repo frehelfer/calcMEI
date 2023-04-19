@@ -58,7 +58,7 @@ class ResultView: UIView {
     private lazy var saveButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Salvar Consulta", for: .normal)
+        button.setTitle(S.Result.SaveButton.title, for: .normal)
         button.backgroundColor = A.Colors.green.color
         button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
@@ -67,15 +67,15 @@ class ResultView: UIView {
         return button
     }()
     
-    private lazy var nextButton: UIButton = {
+    private lazy var popButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Início", for: .normal)
+        button.setTitle(S.Result.PopButton.title, for: .normal)
         button.backgroundColor = A.Colors.buttonBlue.color
         button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(popButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -106,7 +106,7 @@ class ResultView: UIView {
         stackView.addArrangedSubview(rendimentoIsento)
         stackView.addArrangedSubview(rendimentoTributável)
         
-        addSubview(nextButton)
+        addSubview(popButton)
         addSubview(saveButton)
     }
     
@@ -118,16 +118,16 @@ class ResultView: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            // nextButton
-            nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
-            nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            nextButton.heightAnchor.constraint(equalToConstant: 45),
+            // popButton
+            popButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
+            popButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            popButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            popButton.heightAnchor.constraint(equalToConstant: 45),
             
             // saveButton
-            saveButton.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20),
-            saveButton.leadingAnchor.constraint(equalTo: nextButton.leadingAnchor),
-            saveButton.trailingAnchor.constraint(equalTo: nextButton.trailingAnchor),
+            saveButton.bottomAnchor.constraint(equalTo: popButton.topAnchor, constant: -20),
+            saveButton.leadingAnchor.constraint(equalTo: popButton.leadingAnchor),
+            saveButton.trailingAnchor.constraint(equalTo: popButton.trailingAnchor),
             saveButton.heightAnchor.constraint(equalToConstant: 45),
         ])
     }
@@ -140,7 +140,7 @@ class ResultView: UIView {
     }
     
     @objc
-    private func nextButtonPressed() {
+    private func popButtonPressed() {
         delegate?.nextButtonPressed()
     }
     

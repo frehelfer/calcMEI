@@ -28,9 +28,7 @@ class ResultViewModel {
         self.count = count
     }
     
-    var title: String {
-        return "Resultado"
-    }
+    var title: String = S.Result.title
     
     func updateViewWithCount() {
         viewDelegate?.resultViewModel(self, updateViewWithCount: count)

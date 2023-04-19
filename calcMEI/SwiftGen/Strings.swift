@@ -67,6 +67,18 @@ internal enum S {
       internal static let text = S.tr("Localizable", "Income.TransportLabel.Text", fallback: "Transporte de Passageiros")
     }
   }
+  internal enum Result {
+    /// Resultado
+    internal static let title = S.tr("Localizable", "Result.Title", fallback: "Resultado")
+    internal enum PopButton {
+      /// Início
+      internal static let title = S.tr("Localizable", "Result.PopButton.Title", fallback: "Início")
+    }
+    internal enum SaveButton {
+      /// Salvar Consulta
+      internal static let title = S.tr("Localizable", "Result.SaveButton.Title", fallback: "Salvar Consulta")
+    }
+  }
   internal enum TextField {
     internal enum MoneyPlaceHolder {
       /// R$ 0,00
