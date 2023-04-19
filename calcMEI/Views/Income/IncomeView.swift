@@ -57,14 +57,14 @@ class IncomeView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = A.Colors.labelPrimary.color
-        label.text = "Prestação de Serviços"
+        label.text = S.Income.ServicesLabel.text
         return label
     }()
     
     private lazy var servicesTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "R$ 0,00"
+        textField.placeholder = S.TextField.MoneyPlaceHolder.text
         textField.font = UIFont.preferredFont(forTextStyle: .body)
         textField.textColor = A.Colors.labelPrimary.color
         textField.autocorrectionType = .no
@@ -103,7 +103,7 @@ class IncomeView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = A.Colors.labelPrimary.color
-        label.text = "Comércio, Indústria e \n Transporte de Cargas"
+        label.text = S.Income.CommerceLabel.text
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -112,7 +112,7 @@ class IncomeView: UIView {
     private lazy var commerceTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "R$ 0,00"
+        textField.placeholder = S.TextField.MoneyPlaceHolder.text
         textField.font = UIFont.preferredFont(forTextStyle: .body)
         textField.textColor = A.Colors.labelPrimary.color
         textField.autocorrectionType = .no
@@ -151,14 +151,14 @@ class IncomeView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = A.Colors.labelPrimary.color
-        label.text = "Transporte de Passageiros"
+        label.text = S.Income.TransportLabel.text
         return label
     }()
     
     private lazy var transportTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "R$ 0,00"
+        textField.placeholder = S.TextField.MoneyPlaceHolder.text
         textField.font = UIFont.preferredFont(forTextStyle: .body)
         textField.textColor = A.Colors.labelPrimary.color
         textField.autocorrectionType = .no
@@ -174,7 +174,7 @@ class IncomeView: UIView {
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Próximo", for: .normal)
+        button.setTitle(S.Income.NextButton.title, for: .normal)
         button.backgroundColor = A.Colors.buttonBlue.color
         button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         

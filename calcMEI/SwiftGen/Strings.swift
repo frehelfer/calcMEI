@@ -34,6 +34,33 @@ internal enum S {
       internal static let text = S.tr("Localizable", "Home.TitleLabel.Text", fallback: "Calculadora Declaração \n IRPF - MEI")
     }
   }
+  internal enum Income {
+    /// Receita Bruta Anual
+    internal static let title = S.tr("Localizable", "Income.Title", fallback: "Receita Bruta Anual")
+    internal enum CommerceLabel {
+      /// Comércio, Indústria e 
+      ///  Transporte de Cargas
+      internal static let text = S.tr("Localizable", "Income.CommerceLabel.Text", fallback: "Comércio, Indústria e \n Transporte de Cargas")
+    }
+    internal enum NextButton {
+      /// Próximo
+      internal static let title = S.tr("Localizable", "Income.NextButton.Title", fallback: "Próximo")
+    }
+    internal enum ServicesLabel {
+      /// Prestação de Serviços
+      internal static let text = S.tr("Localizable", "Income.ServicesLabel.Text", fallback: "Prestação de Serviços")
+    }
+    internal enum TransportLabel {
+      /// Transporte de Passageiros
+      internal static let text = S.tr("Localizable", "Income.TransportLabel.Text", fallback: "Transporte de Passageiros")
+    }
+  }
+  internal enum TextField {
+    internal enum MoneyPlaceHolder {
+      /// R$ 0,00
+      internal static let text = S.tr("Localizable", "TextField.MoneyPlaceHolder.Text", fallback: "R$ 0,00")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

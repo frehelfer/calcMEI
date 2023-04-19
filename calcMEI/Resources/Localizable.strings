@@ -12,3 +12,13 @@
 "Home.InfoLabel.Text" = "Ano-Calendário de 2022 - Exercício de 2023";
 "Home.SavedConsultsButton.Title" = "Consultas salvas";
 "Home.NewConsultButton.Title" = "Nova consulta";
+
+// Income Screen
+"Income.Title" = "Receita Bruta Anual";
+"Income.ServicesLabel.Text" = "Prestação de Serviços";
+"Income.CommerceLabel.Text" = "Comércio, Indústria e \n Transporte de Cargas";
+"Income.TransportLabel.Text" = "Transporte de Passageiros";
+"Income.NextButton.Title" = "Próximo";
+
+// TextField Geral
+"TextField.MoneyPlaceHolder.Text" = "R$ 0,00";

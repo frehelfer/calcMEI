@@ -25,9 +25,7 @@ class IncomeViewModel {
         
     }
     
-    var title: String {
-        return "Receita Bruta Anual"
-    }
+    var title: String = S.Income.title
 }
 
 // MARK: - Navigation
