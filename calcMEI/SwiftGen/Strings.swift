@@ -10,6 +10,18 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum S {
+  internal enum Expenses {
+    /// Despesas Anuais
+    internal static let title = S.tr("Localizable", "Expenses.Title", fallback: "Despesas Anuais")
+    internal enum ExpensesLabel {
+      /// Pró-labore, DAS, Mercadorias, Aluguel, Água, Luz e Tel.
+      internal static let text = S.tr("Localizable", "Expenses.ExpensesLabel.Text", fallback: "Pró-labore, DAS, Mercadorias, Aluguel, Água, Luz e Tel.")
+    }
+    internal enum NextButton {
+      /// Resultado
+      internal static let title = S.tr("Localizable", "Expenses.NextButton.Title", fallback: "Resultado")
+    }
+  }
   internal enum Home {
     /// Localizable.strings
     ///   calcMEI

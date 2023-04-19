@@ -20,5 +20,11 @@
 "Income.TransportLabel.Text" = "Transporte de Passageiros";
 "Income.NextButton.Title" = "Próximo";
 
+// Expenses Screen
+"Expenses.Title" = "Despesas Anuais";
+"Expenses.ExpensesLabel.Text" = "Pró-labore, DAS, Mercadorias, Aluguel, Água, Luz e Tel.";
+"Expenses.NextButton.Title" = "Resultado";
+
+
 // TextField Geral
 "TextField.MoneyPlaceHolder.Text" = "R$ 0,00";

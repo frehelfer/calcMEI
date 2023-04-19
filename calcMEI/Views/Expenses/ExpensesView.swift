@@ -57,7 +57,7 @@ class ExpensesView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = A.Colors.labelPrimary.color
-        label.text = "Pró-labore, DAS, Mercadorias, Aluguel, Água, Luz e Tel."
+        label.text = S.Expenses.ExpensesLabel.text
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
@@ -66,7 +66,7 @@ class ExpensesView: UIView {
     private lazy var expensesTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "R$ 0,00"
+        textField.placeholder = S.TextField.MoneyPlaceHolder.text
         textField.font = UIFont.preferredFont(forTextStyle: .body)
         textField.textColor = A.Colors.labelPrimary.color
         textField.autocorrectionType = .no
@@ -81,7 +81,7 @@ class ExpensesView: UIView {
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Resultado", for: .normal)
+        button.setTitle(S.Expenses.NextButton.title, for: .normal)
         button.backgroundColor = A.Colors.buttonBlue.color
         button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
