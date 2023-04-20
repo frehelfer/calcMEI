@@ -36,6 +36,18 @@ internal enum S {
       /// Ano-Calendário de 2022 - Exercício de 2023
       internal static let text = S.tr("Localizable", "Home.InfoLabel.Text", fallback: "Ano-Calendário de 2022 - Exercício de 2023")
     }
+    internal enum LawLabel {
+      /// http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?naoPublicado=&idAto=123534&visao=anotado
+      internal static let url = S.tr("Localizable", "Home.LawLabel.Url", fallback: "http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?naoPublicado=&idAto=123534&visao=anotado")
+      internal enum First {
+        /// Conforme Instrução Normativa 
+        internal static let text = S.tr("Localizable", "Home.LawLabel.First.Text", fallback: "Conforme Instrução Normativa ")
+      }
+      internal enum Second {
+        /// RFB n.2077
+        internal static let text = S.tr("Localizable", "Home.LawLabel.Second.Text", fallback: "RFB n.2077")
+      }
+    }
     internal enum NewConsultButton {
       /// Nova consulta
       internal static let title = S.tr("Localizable", "Home.NewConsultButton.Title", fallback: "Nova consulta")
@@ -45,9 +57,15 @@ internal enum S {
       internal static let title = S.tr("Localizable", "Home.SavedConsultsButton.Title", fallback: "Consultas salvas")
     }
     internal enum TitleLabel {
-      /// Calculadora Declaração 
-      ///  IRPF - MEI
-      internal static let text = S.tr("Localizable", "Home.TitleLabel.Text", fallback: "Calculadora Declaração \n IRPF - MEI")
+      internal enum FirstLine {
+        /// Calculadora Declaração
+        internal static let text = S.tr("Localizable", "Home.TitleLabel.FirstLine.Text", fallback: "Calculadora Declaração")
+      }
+      internal enum SecondLine {
+        /// 
+        ///  IRPF - MEI
+        internal static let text = S.tr("Localizable", "Home.TitleLabel.SecondLine.Text", fallback: "\n IRPF - MEI")
+      }
     }
   }
   internal enum Income {

@@ -8,8 +8,12 @@
 
 // Home Screen
 "Home.Title" = "calcMEI";
-"Home.TitleLabel.Text" = "Calculadora Declaração \n IRPF - MEI";
+"Home.TitleLabel.FirstLine.Text" = "Calculadora Declaração";
+"Home.TitleLabel.SecondLine.Text" = "\n IRPF - MEI";
 "Home.InfoLabel.Text" = "Ano-Calendário de 2022 - Exercício de 2023";
+"Home.LawLabel.First.Text" = "Conforme Instrução Normativa ";
+"Home.LawLabel.Second.Text" = "RFB n.2077";
+"Home.LawLabel.Url" = "http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?naoPublicado=&idAto=123534&visao=anotado";
 "Home.SavedConsultsButton.Title" = "Consultas salvas";
 "Home.NewConsultButton.Title" = "Nova consulta";
 
