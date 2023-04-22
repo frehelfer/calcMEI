@@ -17,16 +17,27 @@ class IncomeView: UIView {
     
     weak var delegate: IncomeViewDelegate?
     
-    // MARK: - Main Properties
+    private let cornerRadius: CGFloat = 18
     
+    // MARK: - Properties
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = 35
-
+        stackView.spacing = 32
         return stackView
+    }()
+    
+    private lazy var infoLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.textColor = A.Colors.labelPrimary.color.withAlphaComponent(0.9)
+        label.text = S.Income.InfoLabel.text
+        return label
     }()
     
     // MARK: - Service properties
@@ -34,28 +45,38 @@ class IncomeView: UIView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.spacing = 13
         
-        stackView.backgroundColor = A.Colors.green50.color
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 13, right: 13)
-        
-        stackView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
-        stackView.layer.cornerRadius = 10
+        stackView.layer.borderColor = A.Colors.green.color.withAlphaComponent(0.1).cgColor
+        stackView.layer.cornerRadius = cornerRadius
         stackView.layer.borderWidth = 1
         
-        stackView.layer.shadowColor = UIColor.gray.withAlphaComponent(0.4).cgColor
+        stackView.layer.shadowColor = A.Colors.shadowMedium.color.cgColor
         stackView.layer.shadowRadius = 5
         stackView.layer.shadowOffset = CGSize(width: 5, height: 5)
         stackView.layer.shadowOpacity = 0.5
         return stackView
     }()
     
+    private lazy var servicesLabelView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = A.Colors.green25.color
+        view.modifyCornerRadius(corner: .top, radius: cornerRadius)
+        return view
+    }()
+    
+    private lazy var servicesTextFieldView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = A.Colors.green50.color
+        view.modifyCornerRadius(corner: .bottom, radius: cornerRadius)
+        return view
+    }()
+    
     private lazy var servicesLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.textColor = A.Colors.labelPrimary.color
         label.text = S.Income.ServicesLabel.text
         return label
@@ -65,13 +86,11 @@ class IncomeView: UIView {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = S.TextField.MoneyPlaceHolder.text
-        textField.font = UIFont.preferredFont(forTextStyle: .body)
+        textField.font = UIFont.monospacedSystemFont(ofSize: 16, weight: .regular)
         textField.textColor = A.Colors.labelPrimary.color
-        textField.autocorrectionType = .no
-        textField.textAlignment = .center
         textField.keyboardType = .numberPad
         textField.returnKeyType = .next
-        
+        textField.textAlignment = .center
         return textField
     }()
     
@@ -186,7 +205,6 @@ class IncomeView: UIView {
     private var textFieldDelegate: CurrencyUITextFieldDelegate!
     
     // MARK: - Init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -198,7 +216,6 @@ class IncomeView: UIView {
     }
     
     // MARK: - SetupView
-    
     private func setupView() {
         backgroundColor = A.Colors.background.color
         configureSubviews()
@@ -208,16 +225,25 @@ class IncomeView: UIView {
     private func configureSubviews() {
         addSubview(stackView)
         
+        // main stack view
+        stackView.addArrangedSubview(infoLabel)
         stackView.addArrangedSubview(servicesStack)
         stackView.addArrangedSubview(commerceStack)
         stackView.addArrangedSubview(transportStack)
         
-        servicesStack.addArrangedSubview(servicesLabel)
-        servicesStack.addArrangedSubview(servicesTextField)
-
+        // services
+        servicesStack.addArrangedSubview(servicesLabelView)
+        servicesStack.addArrangedSubview(servicesTextFieldView)
+        
+        servicesLabelView.addSubview(servicesLabel)
+        servicesTextFieldView.addSubview(servicesTextField)
+        
+        // commerce
         commerceStack.addArrangedSubview(commerceLabel)
         commerceStack.addArrangedSubview(commerceTextField)
         
+        
+        // transport
         transportStack.addArrangedSubview(transportLabel)
         transportStack.addArrangedSubview(transportTextField)
         
@@ -228,15 +254,25 @@ class IncomeView: UIView {
         NSLayoutConstraint.activate([
             
             // stackView
-            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
 
             // servicesStack
-            servicesStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            servicesStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            servicesLabelView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            servicesLabelView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            servicesTextField.widthAnchor.constraint(equalToConstant: 200),
+            servicesTextFieldView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            servicesTextFieldView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            
+            servicesLabel.topAnchor.constraint(equalTo: servicesLabelView.topAnchor, constant: 20),
+            servicesLabel.bottomAnchor.constraint(equalTo: servicesLabelView.bottomAnchor, constant: -13),
+            servicesLabel.centerXAnchor.constraint(equalTo: servicesLabelView.centerXAnchor),
+            
+            servicesTextField.topAnchor.constraint(equalTo: servicesTextFieldView.topAnchor, constant: 13),
+            servicesTextField.bottomAnchor.constraint(equalTo: servicesTextFieldView.bottomAnchor, constant: -13),
+            servicesTextField.leadingAnchor.constraint(equalTo: servicesTextFieldView.leadingAnchor),
+            servicesTextField.trailingAnchor.constraint(equalTo: servicesTextFieldView.trailingAnchor, constant: -10),
             
             // commerceStack
             commerceStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
@@ -276,7 +312,6 @@ class IncomeView: UIView {
     }
     
     // MARK: - Private Actions
-    
     @objc
     private func nextButtonPressed() {
         guard
@@ -295,7 +330,6 @@ class IncomeView: UIView {
     }
     
     // MARK: - Public Actions
-
 }
 
 extension IncomeView: UITextFieldDelegate {

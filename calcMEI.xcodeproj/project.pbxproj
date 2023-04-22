@@ -55,6 +55,9 @@
 		8D8A792129D3855300C7A127 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792029D3855300C7A127 /* DetailView.swift */; };
 		8D8A792329D3856500C7A127 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792229D3856500C7A127 /* DetailViewController.swift */; };
 		8D8A792529D3856E00C7A127 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792429D3856E00C7A127 /* DetailViewModel.swift */; };
+		8DE7C7F529F2EFC800161DFC /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7C7F429F2EFC800161DFC /* UIView+.swift */; };
+		8DE7C7F729F376E400161DFC /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7C7F629F376E400161DFC /* Container.swift */; };
+		8DE7C7FB29F40CBE00161DFC /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7C7FA29F40CBE00161DFC /* ContainerView.swift */; };
 		8DFCAFE329C92AE20053D852 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE229C92AE20053D852 /* SettingsView.swift */; };
 		8DFCAFE529C92AEF0053D852 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */; };
 		8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */; };
@@ -125,6 +128,9 @@
 		8D8A792029D3855300C7A127 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		8D8A792229D3856500C7A127 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8D8A792429D3856E00C7A127 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		8DE7C7F429F2EFC800161DFC /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		8DE7C7F629F376E400161DFC /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Container.swift; path = calcMEI/Views/Components/Container.swift; sourceTree = SOURCE_ROOT; };
+		8DE7C7FA29F40CBE00161DFC /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		8DFCAFE229C92AE20053D852 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 				8D4716E1299EBD8E00079790 /* UILabel+.swift */,
 				8D4716E3299EE60E00079790 /* UIResponder+.swift */,
 				8D81591229C4EFC2008B4D20 /* UIButton+.swift */,
+				8DE7C7F429F2EFC800161DFC /* UIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -230,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				8D4716E5299FB4BC00079790 /* BaseNavigationController.swift */,
+				8DE7C7FA29F40CBE00161DFC /* ContainerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 				8D4716EB29A0118400079790 /* IncomeViewModel.swift */,
 				8D4716BC299D800000079790 /* IncomeViewController.swift */,
 				8D4716BE299D800800079790 /* IncomeView.swift */,
+				8DE7C7F629F376E400161DFC /* Container.swift */,
 			);
 			path = Income;
 			sourceTree = "<group>";
@@ -597,6 +606,7 @@
 				8D4716C5299D80AC00079790 /* ResultViewController.swift in Sources */,
 				8D8A792529D3856E00C7A127 /* DetailViewModel.swift in Sources */,
 				8DFCB00C29CCDC120053D852 /* SaveConsultViewModel.swift in Sources */,
+				8DE7C7F529F2EFC800161DFC /* UIView+.swift in Sources */,
 				8D4716E2299EBD8E00079790 /* UILabel+.swift in Sources */,
 				8D4716EC29A0118400079790 /* IncomeViewModel.swift in Sources */,
 				8D8A790D29D32B8500C7A127 /* ConsultsViewController.swift in Sources */,
@@ -610,6 +620,7 @@
 				8D81591329C4EFC2008B4D20 /* UIButton+.swift in Sources */,
 				8D4716EE29A0434000079790 /* ExpensesViewModel.swift in Sources */,
 				8D4716CE299D8C0100079790 /* HomeCoordinator.swift in Sources */,
+				8DE7C7FB29F40CBE00161DFC /* ContainerView.swift in Sources */,
 				8DFCB00829CCDBFE0053D852 /* SaveConsultView.swift in Sources */,
 				8D036C4129EDE1E90079F4B1 /* Assets.swift in Sources */,
 				8D740227299D494E008BFE17 /* AppDelegate.swift in Sources */,
@@ -632,6 +643,7 @@
 				8D740240299D4C22008BFE17 /* HomeViewController.swift in Sources */,
 				8D4716B4299D7D3400079790 /* UITextField+.swift in Sources */,
 				8D4716CA299D820400079790 /* ExpensesView.swift in Sources */,
+				8DE7C7F729F376E400161DFC /* Container.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

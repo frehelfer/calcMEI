@@ -19,6 +19,11 @@ class ExpensesView: UIView {
     
     // MARK: - Properties
     
+    private lazy var stack = ContainerView(
+        text: S.Expenses.ExpensesLabel.text,
+        colorType: .red
+    )
+    
     private lazy var stackView: UIStackView = {
         let view = UIStackView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -98,6 +103,7 @@ class ExpensesView: UIView {
         super.init(frame: frame)
         setupView()
         setupTextFieldWithCurrencyDelegate()
+//        self.isUserInteractionEnabled = true
     }
     
     required init?(coder: NSCoder) {
@@ -115,10 +121,11 @@ class ExpensesView: UIView {
     private func configureSubviews() {
         addSubview(stackView)
         
-        stackView.addArrangedSubview(expensesStack)
+//        stackView.addArrangedSubview(expensesStack)
+        stackView.addArrangedSubview(stack)
         
-        expensesStack.addArrangedSubview(expensesLabel)
-        expensesStack.addArrangedSubview(expensesTextField)
+//        expensesStack.addArrangedSubview(expensesLabel)
+//        expensesStack.addArrangedSubview(expensesTextField)
         
         addSubview(nextButton)
     }
@@ -131,11 +138,14 @@ class ExpensesView: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            // expensesStack
-            expensesStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            expensesStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            stack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            stack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            expensesTextField.widthAnchor.constraint(equalToConstant: 200),
+            // expensesStack
+//            expensesStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+//            expensesStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+//
+//            expensesTextField.widthAnchor.constraint(equalToConstant: 200),
             
             // nextButton
             nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),

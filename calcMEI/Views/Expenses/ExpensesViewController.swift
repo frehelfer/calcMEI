@@ -33,6 +33,7 @@ class ExpensesViewController: UIViewController {
         super.viewDidLoad()
         setStatusBar(color: A.Colors.navBar.color)
         setupVC()
+//        view.isUserInteractionEnabled = true
     }
     
     // MARK: - Private Functions

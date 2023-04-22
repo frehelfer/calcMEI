@@ -42,6 +42,7 @@ internal enum A {
     internal static let red25 = ColorAsset(name: "Red25")
     internal static let red50 = ColorAsset(name: "Red50")
     internal static let red75 = ColorAsset(name: "Red75")
+    internal static let shadowMedium = ColorAsset(name: "ShadowMedium")
   }
   internal enum Images {
   }
