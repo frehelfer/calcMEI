@@ -18,7 +18,6 @@ class IncomeViewController: UIViewController {
     
     var viewModel: IncomeViewModel? {
         didSet {
-            viewModel?.viewDelegate = self
             title = viewModel?.title
         }
     }
@@ -37,7 +36,6 @@ class IncomeViewController: UIViewController {
     
     // MARK: - Private Functions
     private func setupVC() {
-        
         hideKeyboardWhenTappedAround()
         setupKeyboardHiding()
     }
@@ -54,11 +52,4 @@ extension IncomeViewController: IncomeViewDelegate {
     func nextButtonPressed(incomeData: IncomeViewModel.IncomeData) {
         viewModel?.nextSelected(incomeData: incomeData)
     }
-}
-
-// MARK: - IncomeViewModelViewDelegate
-extension IncomeViewController: IncomeViewModelViewDelegate {
-    
-    
-    
 }

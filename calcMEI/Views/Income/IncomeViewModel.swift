@@ -12,14 +12,9 @@ protocol IncomeViewModelCoordinatorDelegate: AnyObject {
     func incomeViewModelDidSelectNext(_ incomeViewModel: IncomeViewModel, count: Count)
 }
 
-protocol IncomeViewModelViewDelegate: AnyObject {
-    
-}
-
 class IncomeViewModel {
     
     weak var coordinatorDelegate: IncomeViewModelCoordinatorDelegate?
-    weak var viewDelegate: IncomeViewModelViewDelegate?
     
     init() {
         
