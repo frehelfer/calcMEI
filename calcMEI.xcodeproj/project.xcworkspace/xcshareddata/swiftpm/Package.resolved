@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "calcmei_core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/frehelfer/CalcMEI_Core",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f88f6750e5e92743da50d153819039016450ee22"
+      }
+    },
+    {
       "identity" : "currencytext",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/marinofelipe/CurrencyText",

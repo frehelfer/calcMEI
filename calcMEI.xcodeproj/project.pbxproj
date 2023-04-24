@@ -13,7 +13,6 @@
 		8D036C3D29EDDFEC0079F4B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D036C3C29EDDFEC0079F4B1 /* Images.xcassets */; };
 		8D036C3F29EDE1DA0079F4B1 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D036C3E29EDE1DA0079F4B1 /* Strings.swift */; };
 		8D036C4129EDE1E90079F4B1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D036C4029EDE1E90079F4B1 /* Assets.swift */; };
-		8D15EB5A29E6F30000943E7F /* CalcMEI_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 8D15EB5929E6F30000943E7F /* CalcMEI_Core */; };
 		8D3562FA29EB6B79008D92D7 /* CountFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3562F929EB6B79008D92D7 /* CountFixture.swift */; };
 		8D3562FD29EB6CD5008D92D7 /* ConsultServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3562FC29EB6CD5008D92D7 /* ConsultServiceSpy.swift */; };
 		8D4716AD299D660000079790 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AC299D660000079790 /* Coordinator.swift */; };
@@ -37,6 +36,7 @@
 		8D4716EE29A0434000079790 /* ExpensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716ED29A0434000079790 /* ExpensesViewModel.swift */; };
 		8D4716F029A0486300079790 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716EF29A0486300079790 /* ResultViewModel.swift */; };
 		8D4716F429A3C9EB00079790 /* Currency+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716F329A3C9EB00079790 /* Currency+.swift */; };
+		8D53D8FE29F74BEF0052F495 /* CalcMEI_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 8D53D8FD29F74BEF0052F495 /* CalcMEI_Core */; };
 		8D740227299D494E008BFE17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740226299D494E008BFE17 /* AppDelegate.swift */; };
 		8D740229299D494E008BFE17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740228299D494E008BFE17 /* SceneDelegate.swift */; };
 		8D740233299D4950008BFE17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D740231299D4950008BFE17 /* LaunchScreen.storyboard */; };
@@ -85,7 +85,6 @@
 		8D036C3E29EDE1DA0079F4B1 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		8D036C4029EDE1E90079F4B1 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		8D09CAE529C0F1B600FB989F /* calcMEITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calcMEITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D15EB5729E6E6E800943E7F /* CalcMEI_Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CalcMEI_Core; path = ../CalcMEI_Core; sourceTree = "<group>"; };
 		8D3562F929EB6B79008D92D7 /* CountFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountFixture.swift; sourceTree = "<group>"; };
 		8D3562FC29EB6CD5008D92D7 /* ConsultServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultServiceSpy.swift; sourceTree = "<group>"; };
 		8D4716AC299D660000079790 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -107,7 +106,6 @@
 		8D4716ED29A0434000079790 /* ExpensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewModel.swift; sourceTree = "<group>"; };
 		8D4716EF29A0486300079790 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		8D4716F329A3C9EB00079790 /* Currency+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+.swift"; sourceTree = "<group>"; };
-		8D53D8F829F749570052F495 /* CalcMEI_Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CalcMEI_Core; path = ../CalcMEI_Core; sourceTree = "<group>"; };
 		8D740223299D494E008BFE17 /* calcMEI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calcMEI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D740226299D494E008BFE17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D740228299D494E008BFE17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,7 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D15EB5A29E6F30000943E7F /* CalcMEI_Core in Frameworks */,
+				8D53D8FE29F74BEF0052F495 /* CalcMEI_Core in Frameworks */,
 				8D4716DF299E79BB00079790 /* CurrencyText in Frameworks */,
 				8D4716DD299E79BB00079790 /* CurrencyFormatter in Frameworks */,
 			);
@@ -356,7 +354,6 @@
 		8D53D8F729F749570052F495 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				8D53D8F829F749570052F495 /* CalcMEI_Core */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -367,7 +364,6 @@
 				8D53D8F729F749570052F495 /* Packages */,
 				8D740225299D494E008BFE17 /* calcMEI */,
 				8D09CAE629C0F1B600FB989F /* calcMEITests */,
-				8D15EB5729E6E6E800943E7F /* CalcMEI_Core */,
 				8D740224299D494E008BFE17 /* Products */,
 				8D15EB5829E6F30000943E7F /* Frameworks */,
 			);
@@ -497,7 +493,7 @@
 			packageProductDependencies = (
 				8D4716DC299E79BB00079790 /* CurrencyFormatter */,
 				8D4716DE299E79BB00079790 /* CurrencyText */,
-				8D15EB5929E6F30000943E7F /* CalcMEI_Core */,
+				8D53D8FD29F74BEF0052F495 /* CalcMEI_Core */,
 			);
 			productName = calcMEI;
 			productReference = 8D740223299D494E008BFE17 /* calcMEI.app */;
@@ -533,6 +529,7 @@
 			mainGroup = 8D74021A299D494E008BFE17;
 			packageReferences = (
 				8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */,
+				8D53D8FC29F74BEF0052F495 /* XCRemoteSwiftPackageReference "CalcMEI_Core" */,
 			);
 			productRefGroup = 8D740224299D494E008BFE17 /* Products */;
 			projectDirPath = "";
@@ -938,13 +935,17 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		8D53D8FC29F74BEF0052F495 /* XCRemoteSwiftPackageReference "CalcMEI_Core" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/frehelfer/CalcMEI_Core";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8D15EB5929E6F30000943E7F /* CalcMEI_Core */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CalcMEI_Core;
-		};
 		8D4716DC299E79BB00079790 /* CurrencyFormatter */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */;
@@ -954,6 +955,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */;
 			productName = CurrencyText;
+		};
+		8D53D8FD29F74BEF0052F495 /* CalcMEI_Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D53D8FC29F74BEF0052F495 /* XCRemoteSwiftPackageReference "CalcMEI_Core" */;
+			productName = CalcMEI_Core;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
