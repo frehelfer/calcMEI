@@ -12,14 +12,9 @@ protocol ExpensesViewModelCoordinatorDelegate: AnyObject {
     func expensesViewModelDidSelectNext(_ expensesViewModel: ExpensesViewModel, count: Count)
 }
 
-protocol ExpensesViewModelViewDelegate: AnyObject {
-    
-}
-
 class ExpensesViewModel {
     
     weak var coordinatorDelegate: ExpensesViewModelCoordinatorDelegate?
-    weak var viewDelegate: ExpensesViewModelViewDelegate?
     
     var count: Count
     
@@ -27,9 +22,7 @@ class ExpensesViewModel {
         self.count = count
     }
     
-    var title: String {
-        return "Despesas Anuais"
-    }
+    var title: String = S.Expenses.title
     
     func updateCount(expenses: Double) {
         self.count.outExpenses = expenses

@@ -18,7 +18,6 @@ class ExpensesViewController: UIViewController {
     
     var viewModel: ExpensesViewModel? {
         didSet {
-            viewModel?.viewDelegate = self
             title = viewModel?.title
         }
     }
@@ -33,12 +32,10 @@ class ExpensesViewController: UIViewController {
         super.viewDidLoad()
         setStatusBar(color: A.Colors.navBar.color)
         setupVC()
-//        view.isUserInteractionEnabled = true
     }
     
     // MARK: - Private Functions
     private func setupVC() {
-        
         hideKeyboardWhenTappedAround()
         setupKeyboardHiding()
     }
@@ -56,12 +53,5 @@ extension ExpensesViewController: ExpensesViewDelegate {
         viewModel?.updateCount(expenses: expenses)
         viewModel?.nextSelected()
     }
-    
-}
-
-// MARK: - ExpensesViewModelViewDelegate
-extension ExpensesViewController: ExpensesViewModelViewDelegate {
-    
-    
     
 }
