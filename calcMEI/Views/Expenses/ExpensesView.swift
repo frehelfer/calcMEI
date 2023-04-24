@@ -75,8 +75,8 @@ class ExpensesView: UIView {
             
             // stackView
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
             expensesFormContainer.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             expensesFormContainer.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
