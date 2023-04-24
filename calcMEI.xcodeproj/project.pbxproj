@@ -107,6 +107,7 @@
 		8D4716ED29A0434000079790 /* ExpensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewModel.swift; sourceTree = "<group>"; };
 		8D4716EF29A0486300079790 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		8D4716F329A3C9EB00079790 /* Currency+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+.swift"; sourceTree = "<group>"; };
+		8D53D8F829F749570052F495 /* CalcMEI_Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CalcMEI_Core; path = ../CalcMEI_Core; sourceTree = "<group>"; };
 		8D740223299D494E008BFE17 /* calcMEI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calcMEI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D740226299D494E008BFE17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D740228299D494E008BFE17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -352,9 +353,18 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		8D53D8F729F749570052F495 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				8D53D8F829F749570052F495 /* CalcMEI_Core */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		8D74021A299D494E008BFE17 = {
 			isa = PBXGroup;
 			children = (
+				8D53D8F729F749570052F495 /* Packages */,
 				8D740225299D494E008BFE17 /* calcMEI */,
 				8D09CAE629C0F1B600FB989F /* calcMEITests */,
 				8D15EB5729E6E6E800943E7F /* CalcMEI_Core */,
