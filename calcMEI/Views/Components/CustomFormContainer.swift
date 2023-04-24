@@ -9,18 +9,17 @@ import UIKit
 import CurrencyUITextFieldDelegate
 import CurrencyFormatter
 
-class ContainerView: UIView {
+class CustomFormContainer: UIView {
     
     // MARK: - Properties
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
+        let stackView = UIStackView(arrangedSubviews: [labelView, textFieldView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        
-//        stackView.layer.borderColor = A.Colors.green.color.withAlphaComponent(0.1).cgColor
+
         stackView.layer.cornerRadius = cornerRadius
         stackView.layer.borderWidth = 1
-        
+
         stackView.layer.shadowColor = A.Colors.shadowMedium.color.cgColor
         stackView.layer.shadowRadius = 5
         stackView.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -31,7 +30,6 @@ class ContainerView: UIView {
     private lazy var labelView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = A.Colors.green25.color
         view.modifyCornerRadius(corner: .top, radius: cornerRadius)
         return view
     }()
@@ -39,7 +37,6 @@ class ContainerView: UIView {
     private lazy var textFieldView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = A.Colors.green50.color
         view.modifyCornerRadius(corner: .bottom, radius: cornerRadius)
         return view
     }()
@@ -51,11 +48,10 @@ class ContainerView: UIView {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = A.Colors.labelPrimary.color
-//        label.text = S.Income.ServicesLabel.text
         return label
     }()
     
-    private lazy var categoryTextField: UITextField = {
+    private let categoryTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = S.TextField.MoneyPlaceHolder.text
@@ -64,7 +60,6 @@ class ContainerView: UIView {
         textField.keyboardType = .numberPad
         textField.returnKeyType = .next
         textField.textAlignment = .center
-        textField.backgroundColor = .red
         return textField
     }()
     
@@ -84,7 +79,6 @@ class ContainerView: UIView {
             labelView.backgroundColor = A.Colors.green25.color
             textFieldView.backgroundColor = A.Colors.green50.color
             
-            
         case .red:
             self.stackView.layer.borderColor = A.Colors.red.color.withAlphaComponent(0.1).cgColor
             labelView.backgroundColor = A.Colors.red25.color
@@ -92,11 +86,7 @@ class ContainerView: UIView {
             
         }
         
-//        self.isUserInteractionEnabled = true
-        
         setupView()
-        
-//        setupTapGestureRecognizer()
     }
     
     required init?(coder: NSCoder) {
@@ -104,7 +94,6 @@ class ContainerView: UIView {
     }
     
     // MARK: - SetupView
-    
     private func setupView() {
         configureSubviews()
         configureConstraints()
@@ -113,10 +102,6 @@ class ContainerView: UIView {
     
     private func configureSubviews() {
         addSubview(stackView)
-        
-        // services
-        stackView.addArrangedSubview(labelView)
-        stackView.addArrangedSubview(textFieldView)
         
         labelView.addSubview(categoryLabel)
         textFieldView.addSubview(categoryTextField)
@@ -127,19 +112,20 @@ class ContainerView: UIView {
             
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+
             labelView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             labelView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            
+
             textFieldView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             textFieldView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            
+
             categoryLabel.topAnchor.constraint(equalTo: labelView.topAnchor, constant: 20),
             categoryLabel.bottomAnchor.constraint(equalTo: labelView.bottomAnchor, constant: -13),
             categoryLabel.leadingAnchor.constraint(equalTo: labelView.leadingAnchor, constant: 15),
             categoryLabel.trailingAnchor.constraint(equalTo: labelView.trailingAnchor, constant: -15),
-            categoryLabel.centerXAnchor.constraint(equalTo: labelView.centerXAnchor),
-            
+
             categoryTextField.topAnchor.constraint(equalTo: textFieldView.topAnchor, constant: 13),
             categoryTextField.bottomAnchor.constraint(equalTo: textFieldView.bottomAnchor, constant: -13),
             categoryTextField.leadingAnchor.constraint(equalTo: textFieldView.leadingAnchor),
@@ -155,29 +141,19 @@ class ContainerView: UIView {
             $0.locale = CurrencyLocale.portugueseBrazil
             $0.hasDecimals = true
         }
-        
+
         textFieldDelegate = CurrencyUITextFieldDelegate(formatter: currencyFormatter)
         textFieldDelegate.clearsWhenValueIsZero = true
-        textFieldDelegate.passthroughDelegate = self
-        
+//        textFieldDelegate.passthroughDelegate = self
+
         categoryTextField.delegate = textFieldDelegate
     }
     
-//    private func setupTapGestureRecognizer() {
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-//        self.addGestureRecognizer(tapGesture)
-//    }
-//
-//    @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
-//        // When the custom view is tapped, make the UITextField the first responder
-//        self.categoryTextField.becomeFirstResponder()
-//    }
-    
     // MARK: - Public Actions
-    func getTextFieldValue() -> Double? {
+    func getTextFieldValue() -> String? {
         guard let value = categoryTextField.text else { return nil }
         
-        return Double(value)
+        return value
     }
     
     enum ColorType {
@@ -185,16 +161,3 @@ class ContainerView: UIView {
         case red
     }
 }
-
-extension ContainerView: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-//        let unformattedValue = textFieldDelegate
-//            .formatter
-//            .unformatted(
-//                string: textField.text ?? "0"
-//            ) ?? "0"
-//        label.text = "Formatted value: \(textField.text ?? "0")"
-    }
-}
-
-
