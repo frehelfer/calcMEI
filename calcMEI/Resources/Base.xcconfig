@@ -1,0 +1,20 @@
+//
+//  Config.xcconfig
+//  calcMEI
+//
+//  Created by Frédéric Helfer on 25/04/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APP_NAME = calcMEI
+
+ANO_EXERCICIO = 2023
+ANO_CALENDARIO = 2022
+
+RENDIMENTO_ISENTO_SERVICO = 0.32
+RENDIMENTO_ISENTO_COMERCIO = 0.08
+RENDIMENTO_ISENTO_TRANSPORTE = 0.16
+
+RENDIMENTO_TRIBUTAVEL_LIMITE = 28559.70

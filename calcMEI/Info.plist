@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ANO_CALENDARIO</key>
+	<string>$(ANO_CALENDARIO)</string>
+	<key>ANO_EXERCICIO</key>
+	<string>$(ANO_EXERCICIO)</string>
+	<key>RENDIMENTO_ISENTO_COMERCIO</key>
+	<string>$(RENDIMENTO_ISENTO_COMERCIO)</string>
+	<key>RENDIMENTO_ISENTO_SERVICO</key>
+	<string>$(RENDIMENTO_ISENTO_SERVICO)</string>
+	<key>RENDIMENTO_ISENTO_TRANSPORTE</key>
+	<string>$(RENDIMENTO_ISENTO_TRANSPORTE)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
