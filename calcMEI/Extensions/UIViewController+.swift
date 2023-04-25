@@ -9,24 +9,12 @@ import UIKit
 
 extension UIViewController {
     
-    // MARK: - Set navBar Color
-    func setStatusBar(color: UIColor) {
-        let statusBarSize = UIApplication.shared.statusBarFrame.size
-        let frame = CGRect(origin: .zero, size: statusBarSize)
-        let statusbarView = UIView(frame: frame)
-        
-        statusbarView.backgroundColor = color
-        view.addSubview(statusbarView)
-    }
-    
     func setTabBarImage(imageName: String, title: String) {
         let configuration = UIImage.SymbolConfiguration(scale: .large)
         let image = UIImage(systemName: imageName, withConfiguration: configuration)
         tabBarItem = UITabBarItem(title: title, image: image, tag: 0)
     }
-    
 
-    
     // MARK: - Alert
     func presentAlert(title: String, message : String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -49,9 +37,7 @@ extension UIViewController {
         view.endEditing(true)
     }
     
-    
     // MARK: - Keyboard + Show/Hide
-    
     @objc func keyboardWillShow(sender: NSNotification) {
         guard let userInfo = sender.userInfo,
               let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,

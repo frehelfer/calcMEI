@@ -32,8 +32,7 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStatusBar(color: A.Colors.navBar.color)
-        setupVC()
+        hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,9 +42,6 @@ class ResultViewController: UIViewController {
     }
     
     // MARK: - Private Functions
-    private func setupVC() {
-        hideKeyboardWhenTappedAround()
-    }
 }
 
 // MARK: - ResultViewDelegate

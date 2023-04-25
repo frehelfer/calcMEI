@@ -31,16 +31,11 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStatusBar(color: A.Colors.navBar.color)
-        setupVC()
-    }
-    
-    // MARK: - Private Functions
-    private func setupVC() {
         hideKeyboardWhenTappedAround()
         setupNavigationItem()
     }
     
+    // MARK: - Private Functions
     private func setupNavigationItem() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "gear"),

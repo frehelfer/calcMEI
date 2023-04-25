@@ -31,15 +31,10 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupVC()
-    }
-    
-    // MARK: - Private Functions
-    private func setupVC() {
-        setStatusBar(color: A.Colors.navBar.color)
         setupNavigationItem()
     }
     
+    // MARK: - Private Functions
     private func setupNavigationItem() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "trash"),

@@ -32,7 +32,7 @@ class ConsultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupVC()
+        setupNavigationItem()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,11 +41,6 @@ class ConsultsViewController: UIViewController {
     }
     
     // MARK: - Private Functions
-    private func setupVC() {
-        setStatusBar(color: A.Colors.navBar.color)
-        setupNavigationItem()
-    }
-    
     private func setupNavigationItem() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "plus"),

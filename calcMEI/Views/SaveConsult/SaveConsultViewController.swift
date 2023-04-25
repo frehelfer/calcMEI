@@ -32,8 +32,8 @@ class SaveConsultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupVC()
-        setStatusBar(color: A.Colors.navBar.color)
+        hideKeyboardWhenTappedAround()
+        setupNavigationItem()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,11 +42,6 @@ class SaveConsultViewController: UIViewController {
     }
     
     // MARK: - Private Functions
-    private func setupVC() {
-        hideKeyboardWhenTappedAround()
-        setupNavigationItem()
-    }
-    
     private func setupNavigationItem() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "xmark"),
