@@ -1,0 +1,3 @@
+[submodule "CalcMEI_Core"]
+	path = CalcMEI_Core
+	url = https://github.com/frehelfer/CalcMEI_Core

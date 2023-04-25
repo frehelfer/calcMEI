@@ -36,7 +36,6 @@
 		8D4716EE29A0434000079790 /* ExpensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716ED29A0434000079790 /* ExpensesViewModel.swift */; };
 		8D4716F029A0486300079790 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716EF29A0486300079790 /* ResultViewModel.swift */; };
 		8D4716F429A3C9EB00079790 /* Currency+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716F329A3C9EB00079790 /* Currency+.swift */; };
-		8D53D8FE29F74BEF0052F495 /* CalcMEI_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 8D53D8FD29F74BEF0052F495 /* CalcMEI_Core */; };
 		8D740227299D494E008BFE17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740226299D494E008BFE17 /* AppDelegate.swift */; };
 		8D740229299D494E008BFE17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740228299D494E008BFE17 /* SceneDelegate.swift */; };
 		8D740233299D4950008BFE17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D740231299D4950008BFE17 /* LaunchScreen.storyboard */; };
@@ -150,7 +149,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D53D8FE29F74BEF0052F495 /* CalcMEI_Core in Frameworks */,
 				8D4716DF299E79BB00079790 /* CurrencyText in Frameworks */,
 				8D4716DD299E79BB00079790 /* CurrencyFormatter in Frameworks */,
 			);
@@ -351,17 +349,9 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		8D53D8F729F749570052F495 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		8D74021A299D494E008BFE17 = {
 			isa = PBXGroup;
 			children = (
-				8D53D8F729F749570052F495 /* Packages */,
 				8D740225299D494E008BFE17 /* calcMEI */,
 				8D09CAE629C0F1B600FB989F /* calcMEITests */,
 				8D740224299D494E008BFE17 /* Products */,
@@ -493,7 +483,6 @@
 			packageProductDependencies = (
 				8D4716DC299E79BB00079790 /* CurrencyFormatter */,
 				8D4716DE299E79BB00079790 /* CurrencyText */,
-				8D53D8FD29F74BEF0052F495 /* CalcMEI_Core */,
 			);
 			productName = calcMEI;
 			productReference = 8D740223299D494E008BFE17 /* calcMEI.app */;
@@ -529,7 +518,6 @@
 			mainGroup = 8D74021A299D494E008BFE17;
 			packageReferences = (
 				8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */,
-				8D53D8FC29F74BEF0052F495 /* XCRemoteSwiftPackageReference "CalcMEI_Core" */,
 			);
 			productRefGroup = 8D740224299D494E008BFE17 /* Products */;
 			projectDirPath = "";
@@ -935,14 +923,6 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		8D53D8FC29F74BEF0052F495 /* XCRemoteSwiftPackageReference "CalcMEI_Core" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/frehelfer/CalcMEI_Core";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -955,11 +935,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */;
 			productName = CurrencyText;
-		};
-		8D53D8FD29F74BEF0052F495 /* CalcMEI_Core */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8D53D8FC29F74BEF0052F495 /* XCRemoteSwiftPackageReference "CalcMEI_Core" */;
-			productName = CalcMEI_Core;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
