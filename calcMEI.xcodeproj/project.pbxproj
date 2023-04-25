@@ -54,6 +54,7 @@
 		8D8A792129D3855300C7A127 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792029D3855300C7A127 /* DetailView.swift */; };
 		8D8A792329D3856500C7A127 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792229D3856500C7A127 /* DetailViewController.swift */; };
 		8D8A792529D3856E00C7A127 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792429D3856E00C7A127 /* DetailViewModel.swift */; };
+		8DC48AED29F81E5900594A46 /* CalcMEI_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC48AEC29F81E5900594A46 /* CalcMEI_Core */; };
 		8DE7C7F529F2EFC800161DFC /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7C7F429F2EFC800161DFC /* UIView+.swift */; };
 		8DE7C7FB29F40CBE00161DFC /* CustomFormContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7C7FA29F40CBE00161DFC /* CustomFormContainer.swift */; };
 		8DFCAFE329C92AE20053D852 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE229C92AE20053D852 /* SettingsView.swift */; };
@@ -83,7 +84,7 @@
 		8D036C3C29EDDFEC0079F4B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8D036C3E29EDE1DA0079F4B1 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		8D036C4029EDE1E90079F4B1 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
-		8D09CAE529C0F1B600FB989F /* calcMEITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calcMEITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D09CAE529C0F1B600FB989F /* calcMEITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = calcMEITests.xctest; path = "/Users/frederichelfer/Documents/_iOS/calcMEI-app/calcMEI/build/Debug-iphoneos/calcMEITests.xctest"; sourceTree = "<absolute>"; };
 		8D3562F929EB6B79008D92D7 /* CountFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountFixture.swift; sourceTree = "<group>"; };
 		8D3562FC29EB6CD5008D92D7 /* ConsultServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultServiceSpy.swift; sourceTree = "<group>"; };
 		8D4716AC299D660000079790 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -105,7 +106,7 @@
 		8D4716ED29A0434000079790 /* ExpensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewModel.swift; sourceTree = "<group>"; };
 		8D4716EF29A0486300079790 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		8D4716F329A3C9EB00079790 /* Currency+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+.swift"; sourceTree = "<group>"; };
-		8D740223299D494E008BFE17 /* calcMEI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calcMEI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D740223299D494E008BFE17 /* calcMEI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = calcMEI.app; path = "/Users/frederichelfer/Documents/_iOS/calcMEI-app/calcMEI/build/Debug-iphoneos/calcMEI.app"; sourceTree = "<absolute>"; };
 		8D740226299D494E008BFE17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D740228299D494E008BFE17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8D740232299D4950008BFE17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		8D8A792029D3855300C7A127 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		8D8A792229D3856500C7A127 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8D8A792429D3856E00C7A127 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		8DC48AEB29F81A2600594A46 /* CalcMEI_Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CalcMEI_Core; sourceTree = "<group>"; };
 		8DE7C7F429F2EFC800161DFC /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		8DE7C7FA29F40CBE00161DFC /* CustomFormContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFormContainer.swift; sourceTree = "<group>"; };
 		8DFCAFE229C92AE20053D852 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DC48AED29F81E5900594A46 /* CalcMEI_Core in Frameworks */,
 				8D4716DF299E79BB00079790 /* CurrencyText in Frameworks */,
 				8D4716DD299E79BB00079790 /* CurrencyFormatter in Frameworks */,
 			);
@@ -326,13 +329,6 @@
 			path = calcMEITests;
 			sourceTree = "<group>";
 		};
-		8D15EB5829E6F30000943E7F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		8D3562F829EB6AD4008D92D7 /* Fixture */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,18 +350,8 @@
 			children = (
 				8D740225299D494E008BFE17 /* calcMEI */,
 				8D09CAE629C0F1B600FB989F /* calcMEITests */,
-				8D740224299D494E008BFE17 /* Products */,
-				8D15EB5829E6F30000943E7F /* Frameworks */,
+				8DC48AEB29F81A2600594A46 /* CalcMEI_Core */,
 			);
-			sourceTree = "<group>";
-		};
-		8D740224299D494E008BFE17 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8D740223299D494E008BFE17 /* calcMEI.app */,
-				8D09CAE529C0F1B600FB989F /* calcMEITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		8D740225299D494E008BFE17 /* calcMEI */ = {
@@ -483,6 +469,7 @@
 			packageProductDependencies = (
 				8D4716DC299E79BB00079790 /* CurrencyFormatter */,
 				8D4716DE299E79BB00079790 /* CurrencyText */,
+				8DC48AEC29F81E5900594A46 /* CalcMEI_Core */,
 			);
 			productName = calcMEI;
 			productReference = 8D740223299D494E008BFE17 /* calcMEI.app */;
@@ -519,7 +506,7 @@
 			packageReferences = (
 				8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */,
 			);
-			productRefGroup = 8D740224299D494E008BFE17 /* Products */;
+			productRefGroup = 8D74021A299D494E008BFE17;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -935,6 +922,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */;
 			productName = CurrencyText;
+		};
+		8DC48AEC29F81E5900594A46 /* CalcMEI_Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CalcMEI_Core;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
