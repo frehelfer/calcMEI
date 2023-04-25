@@ -17,11 +17,9 @@ class IncomeView: UIView {
     
     weak var delegate: IncomeViewDelegate?
     
-    private let cornerRadius: CGFloat = 18
-    
     // MARK: - Properties
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView()
+        let stackView = UIStackView(arrangedSubviews: [infoLabel, servicesFormContainer, commerceFormContainer, transportFormContainer])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -41,153 +39,19 @@ class IncomeView: UIView {
     }()
     
     // MARK: - Service properties
-    private lazy var servicesStack: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        
-        stackView.layer.borderColor = A.Colors.green.color.withAlphaComponent(0.1).cgColor
-        stackView.layer.cornerRadius = cornerRadius
-        stackView.layer.borderWidth = 1
-        
-        stackView.layer.shadowColor = A.Colors.shadowMedium.color.cgColor
-        stackView.layer.shadowRadius = 5
-        stackView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        stackView.layer.shadowOpacity = 0.5
-        return stackView
-    }()
-    
-    private lazy var servicesLabelView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = A.Colors.green25.color
-        view.modifyCornerRadius(corner: .top, radius: cornerRadius)
-        return view
-    }()
-    
-    private lazy var servicesTextFieldView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = A.Colors.green50.color
-        view.modifyCornerRadius(corner: .bottom, radius: cornerRadius)
-        return view
-    }()
-    
-    private lazy var servicesLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        label.textColor = A.Colors.labelPrimary.color
-        label.text = S.Income.ServicesLabel.text
-        return label
-    }()
-    
-    private lazy var servicesTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = S.TextField.MoneyPlaceHolder.text
-        textField.font = UIFont.monospacedSystemFont(ofSize: 16, weight: .regular)
-        textField.textColor = A.Colors.labelPrimary.color
-        textField.keyboardType = .numberPad
-        textField.returnKeyType = .next
-        textField.textAlignment = .center
-        return textField
+    private lazy var servicesFormContainer: CustomFormContainer = {
+        CustomFormContainer(text: S.Income.ServicesLabel.text, colorType: .green)
     }()
     
     // // MARK: - Commerce properties
-    private lazy var commerceStack: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.spacing = 13
-        
-        stackView.backgroundColor = A.Colors.green50.color
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 13, right: 13)
-        
-        stackView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
-        stackView.layer.cornerRadius = 10
-        stackView.layer.borderWidth = 1
-        
-        stackView.layer.shadowColor = UIColor.gray.withAlphaComponent(0.4).cgColor
-        stackView.layer.shadowRadius = 5
-        stackView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        stackView.layer.shadowOpacity = 0.5
-        return stackView
-    }()
-    
-    private lazy var commerceLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.textColor = A.Colors.labelPrimary.color
-        label.text = S.Income.CommerceLabel.text
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private lazy var commerceTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = S.TextField.MoneyPlaceHolder.text
-        textField.font = UIFont.preferredFont(forTextStyle: .body)
-        textField.textColor = A.Colors.labelPrimary.color
-        textField.autocorrectionType = .no
-        textField.textAlignment = .center
-        textField.keyboardType = .numberPad
-        textField.returnKeyType = .next
-        
-        return textField
+    private lazy var commerceFormContainer: CustomFormContainer = {
+        CustomFormContainer(text: S.Income.CommerceLabel.text, colorType: .green)
     }()
     
     // // MARK: - Transport properties
-    private lazy var transportStack: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.spacing = 13
-        
-        stackView.backgroundColor = A.Colors.green50.color
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 13, right: 13)
-        
-        stackView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
-        stackView.layer.cornerRadius = 10
-        stackView.layer.borderWidth = 1
-        
-        stackView.layer.shadowColor = UIColor.gray.withAlphaComponent(0.4).cgColor
-        stackView.layer.shadowRadius = 5
-        stackView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        stackView.layer.shadowOpacity = 0.5
-        return stackView
+    private lazy var transportFormContainer: CustomFormContainer = {
+        CustomFormContainer(text: S.Income.TransportLabel.text, colorType: .green)
     }()
-    
-    private lazy var transportLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.textColor = A.Colors.labelPrimary.color
-        label.text = S.Income.TransportLabel.text
-        return label
-    }()
-    
-    private lazy var transportTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = S.TextField.MoneyPlaceHolder.text
-        textField.font = UIFont.preferredFont(forTextStyle: .body)
-        textField.textColor = A.Colors.labelPrimary.color
-        textField.autocorrectionType = .no
-        textField.textAlignment = .center
-        textField.keyboardType = .numberPad
-        textField.returnKeyType = .next
-        
-        return textField
-    }()
-    
     
     // nextButton
     private lazy var nextButton: UIButton = {
@@ -202,13 +66,10 @@ class IncomeView: UIView {
         return button
     }()
     
-    private var textFieldDelegate: CurrencyUITextFieldDelegate!
-    
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        setupTextFieldWithCurrencyDelegate()
     }
     
     required init?(coder: NSCoder) {
@@ -224,29 +85,6 @@ class IncomeView: UIView {
     
     private func configureSubviews() {
         addSubview(stackView)
-        
-        // main stack view
-        stackView.addArrangedSubview(infoLabel)
-        stackView.addArrangedSubview(servicesStack)
-        stackView.addArrangedSubview(commerceStack)
-        stackView.addArrangedSubview(transportStack)
-        
-        // services
-        servicesStack.addArrangedSubview(servicesLabelView)
-        servicesStack.addArrangedSubview(servicesTextFieldView)
-        
-        servicesLabelView.addSubview(servicesLabel)
-        servicesTextFieldView.addSubview(servicesTextField)
-        
-        // commerce
-        commerceStack.addArrangedSubview(commerceLabel)
-        commerceStack.addArrangedSubview(commerceTextField)
-        
-        
-        // transport
-        transportStack.addArrangedSubview(transportLabel)
-        transportStack.addArrangedSubview(transportTextField)
-        
         addSubview(nextButton)
     }
     
@@ -257,34 +95,15 @@ class IncomeView: UIView {
             stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-
-            // servicesStack
-            servicesLabelView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            servicesLabelView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            servicesTextFieldView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            servicesTextFieldView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            servicesFormContainer.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            servicesFormContainer.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            servicesLabel.topAnchor.constraint(equalTo: servicesLabelView.topAnchor, constant: 20),
-            servicesLabel.bottomAnchor.constraint(equalTo: servicesLabelView.bottomAnchor, constant: -13),
-            servicesLabel.centerXAnchor.constraint(equalTo: servicesLabelView.centerXAnchor),
+            commerceFormContainer.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            commerceFormContainer.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
-            servicesTextField.topAnchor.constraint(equalTo: servicesTextFieldView.topAnchor, constant: 13),
-            servicesTextField.bottomAnchor.constraint(equalTo: servicesTextFieldView.bottomAnchor, constant: -13),
-            servicesTextField.leadingAnchor.constraint(equalTo: servicesTextFieldView.leadingAnchor),
-            servicesTextField.trailingAnchor.constraint(equalTo: servicesTextFieldView.trailingAnchor, constant: -10),
-            
-            // commerceStack
-            commerceStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            commerceStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            
-            commerceTextField.widthAnchor.constraint(equalToConstant: 200),
-            
-            // transportStack
-            transportStack.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            transportStack.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            
-            transportTextField.widthAnchor.constraint(equalToConstant: 200),
+            transportFormContainer.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            transportFormContainer.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
             // nextButton
             nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
@@ -294,30 +113,13 @@ class IncomeView: UIView {
         ])
     }
     
-    private func setupTextFieldWithCurrencyDelegate() {
-        let currencyFormatter = CurrencyFormatter {
-            $0.maxValue = 100000000
-            $0.currency = .brazilianReal
-            $0.locale = CurrencyLocale.portugueseBrazil
-            $0.hasDecimals = true
-        }
-        
-        textFieldDelegate = CurrencyUITextFieldDelegate(formatter: currencyFormatter)
-        textFieldDelegate.clearsWhenValueIsZero = true
-        textFieldDelegate.passthroughDelegate = self
-        
-        servicesTextField.delegate = textFieldDelegate
-        commerceTextField.delegate = textFieldDelegate
-        transportTextField.delegate = textFieldDelegate
-    }
-    
     // MARK: - Private Actions
     @objc
     private func nextButtonPressed() {
         guard
-            let servicesText = servicesTextField.text,
-            let commerceText = commerceTextField.text,
-            let transportText = transportTextField.text
+            let servicesText = servicesFormContainer.getTextFieldValue(),
+            let commerceText = commerceFormContainer.getTextFieldValue(),
+            let transportText = transportFormContainer.getTextFieldValue()
         else { return }
 
         let incomeData = IncomeViewModel.IncomeData(
@@ -330,15 +132,4 @@ class IncomeView: UIView {
     }
     
     // MARK: - Public Actions
-}
-
-extension IncomeView: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-//        let unformattedValue = textFieldDelegate
-//            .formatter
-//            .unformatted(
-//                string: textField.text ?? "0"
-//            ) ?? "0"
-//        label.text = "Formatted value: \(textField.text ?? "0")"
-    }
 }
