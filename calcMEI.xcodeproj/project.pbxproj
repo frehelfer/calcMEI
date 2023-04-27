@@ -832,7 +832,7 @@
 				DEVELOPMENT_TEAM = T68CB4R9H5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = calcMEI/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "calcMEI-Dev";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -869,7 +869,7 @@
 				DEVELOPMENT_TEAM = T68CB4R9H5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = calcMEI/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
+				INFOPLIST_KEY_CFBundleDisplayName = "calcMEI-Dev";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

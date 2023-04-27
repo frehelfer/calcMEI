@@ -12,6 +12,8 @@
 	<string>$(RENDIMENTO_ISENTO_SERVICO)</string>
 	<key>RENDIMENTO_ISENTO_TRANSPORTE</key>
 	<string>$(RENDIMENTO_ISENTO_TRANSPORTE)</string>
+	<key>RENDIMENTO_TRIBUTAVEL_LIMITE</key>
+	<string>$(RENDIMENTO_TRIBUTAVEL_LIMITE)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
