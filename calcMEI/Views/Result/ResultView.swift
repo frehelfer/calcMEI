@@ -150,6 +150,6 @@ class ResultView: UIView {
         receitaBrutaAnual.text = "Receita Bruta Anual: \(count.receitaBrutaAnual.currencyFormatFromDouble())"
         lucroApurado.text = "Lucro Apurado: \(count.lucroApurado.currencyFormatFromDouble())"
         rendimentoIsento.text = "Rendimento Isento: \(count.rendimentoIsento.currencyFormatFromDouble())"
-        rendimentoTributável.text = "Rendimento Tributável: \(count.rendimentoTributável.currencyFormatFromDouble())"
+        rendimentoTributável.text = "Rendimento Tributável: \(count.rendimentoTributavel.currencyFormatFromDouble())"
     }
 }
