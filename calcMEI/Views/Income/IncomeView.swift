@@ -19,7 +19,7 @@ class IncomeView: UIView {
     
     // MARK: - Properties
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [infoLabel, servicesFormContainer, commerceFormContainer, transportFormContainer])
+        let stackView = UIStackView(arrangedSubviews: [servicesFormContainer, commerceFormContainer, transportFormContainer])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -27,30 +27,28 @@ class IncomeView: UIView {
         return stackView
     }()
     
-    private lazy var infoLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.textColor = A.Colors.labelPrimary.color.withAlphaComponent(0.9)
-        label.text = S.Income.InfoLabel.text
-        return label
-    }()
-    
-    // MARK: - Service properties
     private lazy var servicesFormContainer: CustomFormContainer = {
-        CustomFormContainer(text: S.Income.ServicesLabel.text, colorType: .green)
+        let view = CustomFormContainer(
+            text: S.Income.ServicesLabel.text,
+            colorType: .green
+        )
+        return view
     }()
     
-    // // MARK: - Commerce properties
     private lazy var commerceFormContainer: CustomFormContainer = {
-        CustomFormContainer(text: S.Income.CommerceLabel.text, colorType: .green)
+        let view = CustomFormContainer(
+            text: S.Income.CommerceLabel.text,
+            colorType: .green
+        )
+        return view
     }()
     
-    // // MARK: - Transport properties
     private lazy var transportFormContainer: CustomFormContainer = {
-        CustomFormContainer(text: S.Income.TransportLabel.text, colorType: .green)
+        let view = CustomFormContainer(
+            text: S.Income.TransportLabel.text,
+            colorType: .green
+        )
+        return view
     }()
     
     // nextButton
@@ -92,7 +90,7 @@ class IncomeView: UIView {
         NSLayoutConstraint.activate([
             
             // stackView
-            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
+            stackView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor, constant: -40),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
@@ -130,6 +128,4 @@ class IncomeView: UIView {
         
         self.delegate?.nextButtonPressed(incomeData: incomeData)
     }
-    
-    // MARK: - Public Actions
 }

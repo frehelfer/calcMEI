@@ -88,10 +88,6 @@ internal enum S {
       /// Transporte de Passageiros
       internal static let text = S.tr("Localizable", "Income.TransportLabel.Text", fallback: "Transporte de Passageiros")
     }
-    internal enum InfoLabel {
-      /// Insira abaixo os valores recebidos em cada categoria.
-      internal static let text = S.tr("Localizable", "Income.infoLabel.Text", fallback: "Insira abaixo os valores recebidos em cada categoria.")
-    }
   }
   internal enum Result {
     /// Resultado

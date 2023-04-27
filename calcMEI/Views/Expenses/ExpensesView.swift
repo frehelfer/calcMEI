@@ -18,17 +18,20 @@ class ExpensesView: UIView {
     weak var delegate: ExpensesViewDelegate?
     
     // MARK: - Properties
-    private lazy var expensesFormContainer: CustomFormContainer = {
-        CustomFormContainer(text: S.Expenses.ExpensesLabel.text, colorType: .red)
-    }()
-    
     private lazy var stackView: UIStackView = {
-        let view = UIStackView()
+        let view = UIStackView(arrangedSubviews: [expensesFormContainer])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
         view.alignment = .center
-        view.spacing = 10
-        view.distribution = .fill
+        view.spacing = 32
+        return view
+    }()
+    
+    private lazy var expensesFormContainer: CustomFormContainer = {
+        let view = CustomFormContainer(
+            text: S.Expenses.ExpensesLabel.text,
+            colorType: .red
+        )
         return view
     }()
     
@@ -64,9 +67,6 @@ class ExpensesView: UIView {
     
     private func configureSubviews() {
         addSubview(stackView)
-        
-        stackView.addArrangedSubview(expensesFormContainer)
-        
         addSubview(nextButton)
     }
     
@@ -74,7 +74,7 @@ class ExpensesView: UIView {
         NSLayoutConstraint.activate([
             
             // stackView
-            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -10),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             

@@ -19,7 +19,6 @@
 
 // Income Screen
 "Income.Title" = "Receita Bruta Anual";
-"Income.infoLabel.Text" = "Insira abaixo os valores recebidos em cada categoria.";
 "Income.ServicesLabel.Text" = "Prestação de Serviços";
 "Income.CommerceLabel.Text" = "Comércio, Indústria e \n Transporte de Cargas";
 "Income.TransportLabel.Text" = "Transporte de Passageiros";
