@@ -81,3 +81,15 @@ extension SaveConsultViewController: SaveConsultViewModelViewDelegate {
     
 }
 
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+@available(iOS 13.0, *)
+struct SaveConsultViewController_Preview: PreviewProvider {
+  static var previews: some View {
+      UIViewControllerPreview {
+          SaveConsultViewController()
+      }
+  }
+}
+#endif

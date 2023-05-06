@@ -15,6 +15,8 @@
 		8D036C4129EDE1E90079F4B1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D036C4029EDE1E90079F4B1 /* Assets.swift */; };
 		8D3562FA29EB6B79008D92D7 /* CountFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3562F929EB6B79008D92D7 /* CountFixture.swift */; };
 		8D3562FD29EB6CD5008D92D7 /* ConsultServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3562FC29EB6CD5008D92D7 /* ConsultServiceSpy.swift */; };
+		8D3AF01929FB0E2800976763 /* UIViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3AF01829FB0E2800976763 /* UIViewControllerPreview.swift */; };
+		8D3AF01B29FB181200976763 /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3AF01A29FB181200976763 /* UIViewPreview.swift */; };
 		8D4716AD299D660000079790 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AC299D660000079790 /* Coordinator.swift */; };
 		8D4716B0299D726500079790 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716AF299D726500079790 /* UIViewController+.swift */; };
 		8D4716B4299D7D3400079790 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716B3299D7D3300079790 /* UITextField+.swift */; };
@@ -87,6 +89,8 @@
 		8D036C4029EDE1E90079F4B1 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		8D3562F929EB6B79008D92D7 /* CountFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountFixture.swift; sourceTree = "<group>"; };
 		8D3562FC29EB6CD5008D92D7 /* ConsultServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultServiceSpy.swift; sourceTree = "<group>"; };
+		8D3AF01829FB0E2800976763 /* UIViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPreview.swift; sourceTree = "<group>"; };
+		8D3AF01A29FB181200976763 /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
 		8D4716AC299D660000079790 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8D4716AF299D726500079790 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		8D4716B3299D7D3300079790 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
@@ -430,6 +434,8 @@
 			isa = PBXGroup;
 			children = (
 				8DC48AF629F866C700594A46 /* Configuration.swift */,
+				8D3AF01829FB0E2800976763 /* UIViewControllerPreview.swift */,
+				8D3AF01A29FB181200976763 /* UIViewPreview.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -602,8 +608,10 @@
 			files = (
 				8DFCB00A29CCDC070053D852 /* SaveConsultViewController.swift in Sources */,
 				8D4716C5299D80AC00079790 /* ResultViewController.swift in Sources */,
+				8D3AF01929FB0E2800976763 /* UIViewControllerPreview.swift in Sources */,
 				8D8A792529D3856E00C7A127 /* DetailViewModel.swift in Sources */,
 				8DFCB00C29CCDC120053D852 /* SaveConsultViewModel.swift in Sources */,
+				8D3AF01B29FB181200976763 /* UIViewPreview.swift in Sources */,
 				8DE7C7F529F2EFC800161DFC /* UIView+.swift in Sources */,
 				8D4716E2299EBD8E00079790 /* UILabel+.swift in Sources */,
 				8D4716EC29A0118400079790 /* IncomeViewModel.swift in Sources */,
