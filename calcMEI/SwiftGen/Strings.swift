@@ -17,9 +17,17 @@ internal enum S {
   internal enum Expenses {
     /// Despesas Anuais
     internal static let title = S.tr("Localizable", "Expenses.Title", fallback: "Despesas Anuais")
-    internal enum ExpensesLabel {
-      /// Pró-labore, DAS, Mercadorias, Aluguel, Água, Luz e Tel.
-      internal static let text = S.tr("Localizable", "Expenses.ExpensesLabel.Text", fallback: "Pró-labore, DAS, Mercadorias, Aluguel, Água, Luz e Tel.")
+    internal enum ExpensesContainer {
+      internal enum Description {
+        /// Essas despesas podem ser deduzidas do lucro da empresa, reduzindo assim a base de cálculo do imposto. Para isso, é necessário que as despesas estejam comprovadas por meio de nota fiscal e/ou recibo.
+        /// 
+        ///  As duas despesas mais comuns são o Pró-labore e o DAS, pago mensalmente por todo dono de uma MEI.
+        internal static let text = S.tr("Localizable", "Expenses.ExpensesContainer.Description.Text", fallback: "Essas despesas podem ser deduzidas do lucro da empresa, reduzindo assim a base de cálculo do imposto. Para isso, é necessário que as despesas estejam comprovadas por meio de nota fiscal e/ou recibo.\n\n As duas despesas mais comuns são o Pró-labore e o DAS, pago mensalmente por todo dono de uma MEI.")
+      }
+      internal enum Title {
+        /// Pró-labore, DAS, Mercadorias, Aluguel, Água, Luz e Tel.
+        internal static let text = S.tr("Localizable", "Expenses.ExpensesContainer.Title.Text", fallback: "Pró-labore, DAS, Mercadorias, Aluguel, Água, Luz e Tel.")
+      }
     }
     internal enum NextButton {
       /// Resultado

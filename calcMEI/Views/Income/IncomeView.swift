@@ -29,7 +29,7 @@ class IncomeView: UIView {
     
     private lazy var servicesFormContainer: CustomFormContainer = {
         let view = CustomFormContainer(
-            text: S.Income.ServicesLabel.text,
+            title: S.Income.ServicesLabel.text,
             colorType: .green
         )
         return view
@@ -37,7 +37,7 @@ class IncomeView: UIView {
     
     private lazy var commerceFormContainer: CustomFormContainer = {
         let view = CustomFormContainer(
-            text: S.Income.CommerceLabel.text,
+            title: S.Income.CommerceLabel.text,
             colorType: .green
         )
         return view
@@ -45,7 +45,7 @@ class IncomeView: UIView {
     
     private lazy var transportFormContainer: CustomFormContainer = {
         let view = CustomFormContainer(
-            text: S.Income.TransportLabel.text,
+            title: S.Income.TransportLabel.text,
             colorType: .green
         )
         return view

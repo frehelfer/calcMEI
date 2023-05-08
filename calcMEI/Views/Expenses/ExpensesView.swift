@@ -29,7 +29,8 @@ class ExpensesView: UIView {
     
     private lazy var expensesFormContainer: CustomFormContainer = {
         let view = CustomFormContainer(
-            text: S.Expenses.ExpensesLabel.text,
+            title: S.Expenses.ExpensesContainer.Title.text,
+            description: S.Expenses.ExpensesContainer.Description.text,
             colorType: .red
         )
         return view
