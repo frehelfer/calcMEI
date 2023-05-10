@@ -13,6 +13,14 @@ internal enum S {
   internal enum Consults {
     /// Consultas Salvas
     internal static let title = S.tr("Localizable", "Consults.Title", fallback: "Consultas Salvas")
+    internal enum EmptyTitleLabel {
+      /// Nenhuma consulta salva
+      internal static let text = S.tr("Localizable", "Consults.EmptyTitleLabel.text", fallback: "Nenhuma consulta salva")
+    }
+    internal enum NewConsultButton {
+      /// Comece aqui
+      internal static let title = S.tr("Localizable", "Consults.NewConsultButton.title", fallback: "Comece aqui")
+    }
   }
   internal enum Expenses {
     /// Despesas Anuais

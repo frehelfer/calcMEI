@@ -15,6 +15,7 @@ protocol ConsultsViewModelCoordinatorDelegate: AnyObject{
 
 protocol ConsultsViewModelViewDelegate: AnyObject {
     func consultsViewModel(_ consultsViewModel: ConsultsViewModel, didUpdateConsults: [Consult])
+    func consultsViewModelHasNoConsults(_ consultsViewModel: ConsultsViewModel)
 }
 
 class ConsultsViewModel {
@@ -33,12 +34,12 @@ class ConsultsViewModel {
     var title: String = S.Consults.title
     
     func loadConsults() {
-        if let consults = consultService.fetchConsults() {
-            // Fazer um MAP aqui?
-            // Como seria o cálculo? Nem precisaria salvar as computed properties
-            self.consults = consults
-            viewDelegate?.consultsViewModel(self, didUpdateConsults: consults)
+        guard let consults = consultService.fetchConsults(), !consults.isEmpty else {
+            viewDelegate?.consultsViewModelHasNoConsults(self)
+            return
         }
+        self.consults = consults
+        viewDelegate?.consultsViewModel(self, didUpdateConsults: consults)
     }
     
     func remove(at index: IndexPath) {

@@ -42,7 +42,8 @@
 
 // Consults Screen
 "Consults.Title" = "Consultas Salvas";
-
+"Consults.EmptyTitleLabel.text" = "Nenhuma consulta salva";
+"Consults.NewConsultButton.title" = "Comece aqui";
 
 
 // TextField Geral

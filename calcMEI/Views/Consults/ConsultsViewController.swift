@@ -13,6 +13,7 @@ class ConsultsViewController: UIViewController {
     // MARK: - Properties
     lazy var consultsView: ConsultsView = {
         let view = ConsultsView()
+        view.delegate = self
         view.setupView(delegate: self, dataSource: self)
         return view
     }()
@@ -54,11 +55,24 @@ class ConsultsViewController: UIViewController {
     }
 }
 
-// MARK: - SaveConsultViewModelViewDelegate
+// MARK: - ConsultsViewDelegate
+extension ConsultsViewController: ConsultsViewDelegate {
+    
+    func newConsultButtonPressed() {
+        viewModel?.newConsultSelected()
+    }
+    
+}
+
+// MARK: - ConsultsViewModelViewDelegate
 extension ConsultsViewController: ConsultsViewModelViewDelegate {
     
     func consultsViewModel(_ consultsViewModel: ConsultsViewModel, didUpdateConsults: [Consult]) {
         consultsView.reloadTableViewData()
+    }
+    
+    func consultsViewModelHasNoConsults(_ consultsViewModel: ConsultsViewModel) {
+        consultsView.showEmptyView()
     }
     
 }
@@ -90,6 +104,12 @@ extension ConsultsViewController: UITableViewDelegate {
         if editingStyle == .delete {
             viewModel?.remove(at: indexPath)
             consultsView.deleteTableViewRow(at: [indexPath])
+            
+            if let consults = viewModel?.consults, consults.isEmpty {
+                UIView.animate(withDuration: 0.7) {
+                    self.consultsView.showEmptyView()
+                }
+            }
         }
     }
     
