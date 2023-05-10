@@ -58,7 +58,7 @@ private extension HomeCoordinator {
     
     func showSettings() {
         navigationController.present(
-            settingsViewController(),
+            UINavigationController(rootViewController: settingsViewController()),
             animated: true)
     }
     

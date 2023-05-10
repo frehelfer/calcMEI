@@ -7,23 +7,15 @@
 
 import UIKit
 
-protocol SettingsViewDelegate: AnyObject {
-    
-}
-
 class SettingsView: UIView {
     
-    weak var delegate: SettingsViewDelegate?
-    
     // MARK: - Properties
-    private lazy var stackView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .vertical
-        view.alignment = .center
-        view.spacing = 10
-        view.distribution = .fill
-        return view
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
+        tableView.backgroundColor = .clear
+        return tableView
     }()
     
     private lazy var appVersionInfoLabel: UILabel = {
@@ -52,14 +44,21 @@ class SettingsView: UIView {
     }
     
     private func configureSubviews() {
+        addSubview(tableView)
         addSubview(appVersionInfoLabel)
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             
+            // tableView
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: appVersionInfoLabel.bottomAnchor, constant: -20),
+            
             // appVersionInfoLabel
-            appVersionInfoLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            appVersionInfoLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             appVersionInfoLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
         ])
@@ -68,7 +67,16 @@ class SettingsView: UIView {
     // MARK: - Private Actions
     
     // MARK: - Public Actions
-    public func updateView(with appVersion: String?) {
+    func setupView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
+    }
+    
+    func reloadTableViewData() {
+        tableView.reloadData()
+    }
+    
+    func updateView(with appVersion: String?) {
         self.appVersionInfoLabel.text = appVersion
     }
 }

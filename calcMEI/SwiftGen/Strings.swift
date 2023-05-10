@@ -129,6 +129,10 @@ internal enum S {
       internal static let title = S.tr("Localizable", "SaveConsult.SaveConsultButton.Title", fallback: "Salvar")
     }
   }
+  internal enum Settings {
+    /// Configurações
+    internal static let title = S.tr("Localizable", "Settings.Title", fallback: "Configurações")
+  }
   internal enum TextField {
     internal enum MoneyPlaceHolder {
       /// R$ 0,00

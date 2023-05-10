@@ -45,6 +45,9 @@
 "Consults.EmptyTitleLabel.text" = "Nenhuma consulta salva";
 "Consults.NewConsultButton.title" = "Comece aqui";
 
+// Settings Screen
+"Settings.Title" = "Configurações";
+
 
 // TextField Geral
 "TextField.MoneyPlaceHolder.Text" = "R$ 0,00";
