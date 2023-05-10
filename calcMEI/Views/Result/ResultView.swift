@@ -27,6 +27,20 @@ class ResultView: UIView {
         return tableView
     }()
     
+    private let saveTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Insira um nome para salvar sua consulta"
+        textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        textField.textColor = A.Colors.labelPrimary.color
+        textField.setLeftPaddingPoints(13)
+        textField.layer.cornerRadius = 10
+        textField.layer.borderColor = UIColor.systemGray3.cgColor
+        textField.layer.borderWidth = 1
+        textField.backgroundColor = A.Colors.labelSecondary.color.withAlphaComponent(0.05)
+        return textField
+    }()
+    
     // Buttons
     private lazy var saveButton: UIButton = {
         let button = UIButton()
@@ -72,6 +86,7 @@ class ResultView: UIView {
     private func configureSubviews() {
         addSubview(tableView)
         addSubview(popButton)
+        addSubview(saveTextField)
         addSubview(saveButton)
     }
     
@@ -84,8 +99,14 @@ class ResultView: UIView {
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.heightAnchor.constraint(equalToConstant: 320),
             
+            // saveTextField
+            saveTextField.bottomAnchor.constraint(equalTo: saveButton.topAnchor, constant: -10),
+            saveTextField.leadingAnchor.constraint(equalTo: popButton.leadingAnchor),
+            saveTextField.trailingAnchor.constraint(equalTo: popButton.trailingAnchor),
+            saveTextField.heightAnchor.constraint(equalToConstant: 50),
+            
             // saveButto
-            saveButton.bottomAnchor.constraint(equalTo: popButton.topAnchor, constant: -15),
+            saveButton.bottomAnchor.constraint(equalTo: popButton.topAnchor, constant: -22),
             saveButton.leadingAnchor.constraint(equalTo: popButton.leadingAnchor),
             saveButton.trailingAnchor.constraint(equalTo: popButton.trailingAnchor),
             saveButton.heightAnchor.constraint(equalToConstant: 45),

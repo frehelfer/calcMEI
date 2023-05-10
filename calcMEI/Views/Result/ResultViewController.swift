@@ -34,6 +34,7 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
+        setupKeyboardHiding()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +44,10 @@ class ResultViewController: UIViewController {
     }
     
     // MARK: - Private Functions
+    private func setupKeyboardHiding() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 }
 
 extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
