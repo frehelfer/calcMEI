@@ -14,7 +14,7 @@ protocol ResultViewModelCoordinatorDelegate: AnyObject {
 }
 
 protocol ResultViewModelViewDelegate: AnyObject {
-    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: Count)
+    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: [ResultViewModel.NestedResult])
 }
 
 class ResultViewModel {
@@ -23,6 +23,7 @@ class ResultViewModel {
     weak var viewDelegate: ResultViewModelViewDelegate?
     
     private var count: Count
+    var data: [NestedResult] = []
     
     init(count: Count) {
         self.count = count
@@ -32,7 +33,36 @@ class ResultViewModel {
     
     func updateViewWithCount() {
         calculateAll()
-        viewDelegate?.resultViewModel(self, updateViewWithCount: count)
+        
+        for i in 0..<5 {
+            var new = NestedResult()
+            switch i {
+            case 0:
+                new.title = "Precisa Declarar:"
+                new.result = count.hasToDeclare ? "Sim" : "Não"
+                new.resultColor = count.hasToDeclare ? A.Colors.red.color : A.Colors.green.color
+            case 1:
+                new.title = "Receita Bruta Anual:"
+                new.result = count.receitaBrutaAnual.currencyFormatFromDouble()
+            case 2:
+                new.title = "Lucro Apurado:"
+                new.result = count.lucroApurado.currencyFormatFromDouble()
+            case 3:
+                new.title = "Rendimento Isento:"
+                new.result = count.rendimentoIsento.currencyFormatFromDouble()
+                new.resultColor = count.rendimentoIsento > 0 ? A.Colors.green.color : nil
+            case 4:
+                new.title = "Rendimento Tributável:"
+                new.result = count.rendimentoTributavel.currencyFormatFromDouble()
+                new.resultColor = count.rendimentoTributavel > 0 ? count.rendimentoTributavel > Configuration.rendimentoTributavelLimite ? A.Colors.red.color : A.Colors.green.color : nil
+            default:
+                break
+            }
+            
+            data.append(new)
+        }
+        
+        viewDelegate?.resultViewModel(self, updateViewWithCount: data)
     }
 }
 
@@ -83,6 +113,17 @@ extension ResultViewModel {
     
     func saveConsultSelected() {
         coordinatorDelegate?.resultViewModelDidSelectSaveConsult(self, count: count)
+    }
+    
+}
+
+// MARK: - Nested Type
+extension ResultViewModel {
+    
+    struct NestedResult {
+        var title: String? = nil
+        var result: String? = nil
+        var resultColor: UIColor? = nil
     }
     
 }

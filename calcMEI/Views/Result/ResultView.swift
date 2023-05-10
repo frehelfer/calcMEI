@@ -18,40 +18,13 @@ class ResultView: UIView {
     weak var delegate: ResultViewDelegate?
     
     // MARK: - Properties
-    
-    private lazy var stackView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .vertical
-        view.alignment = .center
-        view.spacing = 20
-        view.distribution = .fill
-        return view
-    }()
-    
-    // TODO: Change label names
-    private lazy var receitaBrutaAnual: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private lazy var lucroApurado: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private lazy var rendimentoIsento: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private lazy var rendimentoTributável: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(ResultTableViewCell.self, forCellReuseIdentifier: ResultTableViewCell.identifier)
+        tableView.backgroundColor = .clear
+        tableView.isScrollEnabled = false
+        return tableView
     }()
     
     // Buttons
@@ -80,7 +53,6 @@ class ResultView: UIView {
     }()
     
     // MARK: - Init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -91,7 +63,6 @@ class ResultView: UIView {
     }
     
     // MARK: - SetupView
-    
     private func setupView() {
         backgroundColor = A.Colors.background.color
         configureSubviews()
@@ -99,13 +70,7 @@ class ResultView: UIView {
     }
     
     private func configureSubviews() {
-        addSubview(stackView)
-        
-        stackView.addArrangedSubview(receitaBrutaAnual)
-        stackView.addArrangedSubview(lucroApurado)
-        stackView.addArrangedSubview(rendimentoIsento)
-        stackView.addArrangedSubview(rendimentoTributável)
-        
+        addSubview(tableView)
         addSubview(popButton)
         addSubview(saveButton)
     }
@@ -113,27 +78,27 @@ class ResultView: UIView {
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             
-            // stackView
-            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            // tableView
+            tableView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -10),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.heightAnchor.constraint(equalToConstant: 320),
+            
+            // saveButto
+            saveButton.bottomAnchor.constraint(equalTo: popButton.topAnchor, constant: -15),
+            saveButton.leadingAnchor.constraint(equalTo: popButton.leadingAnchor),
+            saveButton.trailingAnchor.constraint(equalTo: popButton.trailingAnchor),
+            saveButton.heightAnchor.constraint(equalToConstant: 45),
             
             // popButton
             popButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
             popButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             popButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             popButton.heightAnchor.constraint(equalToConstant: 45),
-            
-            // saveButton
-            saveButton.bottomAnchor.constraint(equalTo: popButton.topAnchor, constant: -20),
-            saveButton.leadingAnchor.constraint(equalTo: popButton.leadingAnchor),
-            saveButton.trailingAnchor.constraint(equalTo: popButton.trailingAnchor),
-            saveButton.heightAnchor.constraint(equalToConstant: 45),
         ])
     }
     
     // MARK: - Private Actions
-
     @objc
     private func saveButtonPressed() {
         delegate?.saveButtonPressed()
@@ -145,11 +110,25 @@ class ResultView: UIView {
     }
     
     // MARK: - Public Actions
+    func setupView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
+    }
     
-    public func updateView(with count: Count) {
-        receitaBrutaAnual.text = "Receita Bruta Anual: \(count.receitaBrutaAnual.currencyFormatFromDouble())"
-        lucroApurado.text = "Lucro Apurado: \(count.lucroApurado.currencyFormatFromDouble())"
-        rendimentoIsento.text = "Rendimento Isento: \(count.rendimentoIsento.currencyFormatFromDouble())"
-        rendimentoTributável.text = "Rendimento Tributável: \(count.rendimentoTributavel.currencyFormatFromDouble())"
+    func reloadTableView() {
+        tableView.reloadData()
     }
 }
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+@available(iOS 13.0, *)
+struct ResultView_Preview: PreviewProvider {
+  static var previews: some View {
+      UIViewPreview {
+          ResultView()
+      }
+  }
+}
+#endif
