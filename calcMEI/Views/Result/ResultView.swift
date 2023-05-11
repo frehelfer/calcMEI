@@ -10,7 +10,7 @@ import CalcMEI_Core
 
 protocol ResultViewDelegate: AnyObject {
     func nextButtonPressed()
-    func saveButtonPressed()
+    func saveButtonPressed(_ text: String)
 }
 
 class ResultView: UIView {
@@ -122,7 +122,11 @@ class ResultView: UIView {
     // MARK: - Private Actions
     @objc
     private func saveButtonPressed() {
-        delegate?.saveButtonPressed()
+        guard let text = saveTextField.text, !text.isEmpty else {
+            return
+        }
+        
+        delegate?.saveButtonPressed(text)
     }
     
     @objc

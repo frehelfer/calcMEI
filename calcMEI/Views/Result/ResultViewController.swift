@@ -79,8 +79,8 @@ extension ResultViewController: ResultViewDelegate {
         viewModel?.resetSelected()
     }
     
-    func saveButtonPressed() {
-        viewModel?.saveConsultSelected()
+    func saveButtonPressed(_ text: String) {
+        viewModel?.saveConsultSelected(text)
     }
     
 }

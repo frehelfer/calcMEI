@@ -10,7 +10,6 @@ import CalcMEI_Core
 
 protocol ResultViewModelCoordinatorDelegate: AnyObject {
     func resultViewModelDidSelectReset(_ resultViewModel: ResultViewModel)
-    func resultViewModelDidSelectSaveConsult(_ resultViewModel: ResultViewModel, count: Count)
     func resultViewModelDidSelectItemDetail(_ resultViewModel: ResultViewModel, resultItem: ResultViewModel.ResultItem)
 }
 
@@ -23,10 +22,12 @@ class ResultViewModel {
     weak var coordinatorDelegate: ResultViewModelCoordinatorDelegate?
     weak var viewDelegate: ResultViewModelViewDelegate?
     
+    private let consultService: ConsultServiceProtocol
     private var count: Count
 
-    init(count: Count) {
+    init(count: Count, consultService: ConsultServiceProtocol) {
         self.count = count
+        self.consultService = consultService
     }
     
     var resultItems: [ResultItem] = [] {
@@ -125,8 +126,11 @@ extension ResultViewModel {
         coordinatorDelegate?.resultViewModelDidSelectReset(self)
     }
     
-    func saveConsultSelected() {
-        coordinatorDelegate?.resultViewModelDidSelectSaveConsult(self, count: count)
+    func saveConsultSelected(_ text: String) {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        count.name = trimmed
+        consultService.createConsult(count: count)
+        coordinatorDelegate?.resultViewModelDidSelectReset(self)
     }
     
 }

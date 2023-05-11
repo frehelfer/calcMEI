@@ -136,7 +136,8 @@ private extension HomeCoordinator {
         
         viewController.viewModel = {
             let viewModel = ResultViewModel(
-                count: count
+                count: count,
+                consultService: calcMEI_core.consultService
             )
             viewModel.coordinatorDelegate = self
             return viewModel
@@ -241,12 +242,12 @@ extension HomeCoordinator: ExpensesViewModelCoordinatorDelegate {
 // MARK: - ResultViewModelCoordinatorDelegate
 extension HomeCoordinator: ResultViewModelCoordinatorDelegate {
     
-    func resultViewModelDidSelectReset(_ resultViewModel: ResultViewModel) {
-        pop()
+    func resultViewModelDidSelectItemDetail(_ resultViewModel: ResultViewModel, resultItem: ResultViewModel.ResultItem) {
+//        showSaveConsult(count: count)
     }
     
-    func resultViewModelDidSelectSaveConsult(_ resultViewModel: ResultViewModel, count: Count) {
-        showSaveConsult(count: count)
+    func resultViewModelDidSelectReset(_ resultViewModel: ResultViewModel) {
+        pop()
     }
 
 }
