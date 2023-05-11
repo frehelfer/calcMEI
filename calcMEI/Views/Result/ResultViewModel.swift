@@ -51,24 +51,34 @@ class ResultViewModel {
             ResultItem(
                 title: "Receita Bruta Anual:",
                 result: count.receitaBrutaAnual.currencyFormatFromDouble(),
-                description: "a"
+                description: "É a soma de todos os valores recebidos ao longo do ano."
             ),
             ResultItem(
                 title: "Lucro Apurado:",
                 result: count.lucroApurado.currencyFormatFromDouble(),
-                description: "a"
+                description: "O Lucro Apurado é a Receita Bruta menos as despesas do ano."
             ),
             ResultItem(
                 title: "Rendimento Isento:",
                 result: count.rendimentoIsento.currencyFormatFromDouble(),
                 resultColor: count.rendimentoIsento > 0 ? A.Colors.green.color : nil,
-                description: "a"
+                description: """
+                Para cada categoria de MEI existe uma parcela isenta de tributação, sendo:
+                
+                32% - Prestação de Serviços.
+                8% - Comércio, Indústria e Transporte de Cargas.
+                16% - Transporte de Passageiros.
+                """
             ),
             ResultItem(
                 title: "Rendimento Tributável:",
                 result: count.rendimentoTributavel.currencyFormatFromDouble(),
                 resultColor: count.rendimentoTributavel > 0 ? count.rendimentoTributavel > Configuration.rendimentoTributavelLimite ? A.Colors.red.color : A.Colors.green.color : nil,
-                description: "a"
+                description: """
+                O Rendimento Tributável é o valor considerado para saber se você deve ou não pagar o imposto de renda pessoa física. Para chegar nessa conta deve se fazer o Lucro Apurado menos o Rendimento Isento.
+
+                Se o valor ficar acima de \(Configuration.rendimentoTributavelLimite.currencyFormatFromDouble()), você é obrigado a declarar o IRPF.
+                """
             )
         ]
         

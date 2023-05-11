@@ -66,9 +66,9 @@
 		8DFCAFE529C92AEF0053D852 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */; };
 		8DFCAFE729C92AF80053D852 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */; };
 		8DFCAFEA29CA71F40053D852 /* SettingsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */; };
-		8DFCB00829CCDBFE0053D852 /* SaveConsultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00729CCDBFE0053D852 /* SaveConsultView.swift */; };
-		8DFCB00A29CCDC070053D852 /* SaveConsultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00929CCDC070053D852 /* SaveConsultViewController.swift */; };
-		8DFCB00C29CCDC120053D852 /* SaveConsultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00B29CCDC120053D852 /* SaveConsultViewModel.swift */; };
+		8DFCB00829CCDBFE0053D852 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00729CCDBFE0053D852 /* ItemDetailView.swift */; };
+		8DFCB00A29CCDC070053D852 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00929CCDC070053D852 /* ItemDetailViewController.swift */; };
+		8DFCB00C29CCDC120053D852 /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00B29CCDC120053D852 /* ItemDetailViewModel.swift */; };
 		8DFCB00F29CE63200053D852 /* SaveConsultViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFCB00E29CE63200053D852 /* SaveConsultViewModel_Tests.swift */; };
 /* End PBXBuildFile section */
 
@@ -146,9 +146,9 @@
 		8DFCAFE429C92AEF0053D852 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8DFCAFE629C92AF80053D852 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8DFCAFE929CA71F40053D852 /* SettingsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel_Tests.swift; sourceTree = "<group>"; };
-		8DFCB00729CCDBFE0053D852 /* SaveConsultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultView.swift; sourceTree = "<group>"; };
-		8DFCB00929CCDC070053D852 /* SaveConsultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultViewController.swift; sourceTree = "<group>"; };
-		8DFCB00B29CCDC120053D852 /* SaveConsultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultViewModel.swift; sourceTree = "<group>"; };
+		8DFCB00729CCDBFE0053D852 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		8DFCB00929CCDC070053D852 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		8DFCB00B29CCDC120053D852 /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
 		8DFCB00E29CE63200053D852 /* SaveConsultViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveConsultViewModel_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -301,9 +301,9 @@
 		8D036C4D29EE062D0079F4B1 /* SaveConsult */ = {
 			isa = PBXGroup;
 			children = (
-				8DFCB00B29CCDC120053D852 /* SaveConsultViewModel.swift */,
-				8DFCB00929CCDC070053D852 /* SaveConsultViewController.swift */,
-				8DFCB00729CCDBFE0053D852 /* SaveConsultView.swift */,
+				8DFCB00B29CCDC120053D852 /* ItemDetailViewModel.swift */,
+				8DFCB00929CCDC070053D852 /* ItemDetailViewController.swift */,
+				8DFCB00729CCDBFE0053D852 /* ItemDetailView.swift */,
 			);
 			path = SaveConsult;
 			sourceTree = "<group>";
@@ -628,11 +628,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DFCB00A29CCDC070053D852 /* SaveConsultViewController.swift in Sources */,
+				8DFCB00A29CCDC070053D852 /* ItemDetailViewController.swift in Sources */,
 				8D4716C5299D80AC00079790 /* ResultViewController.swift in Sources */,
 				8D3AF01929FB0E2800976763 /* UIViewControllerPreview.swift in Sources */,
 				8D8A792529D3856E00C7A127 /* DetailViewModel.swift in Sources */,
-				8DFCB00C29CCDC120053D852 /* SaveConsultViewModel.swift in Sources */,
+				8DFCB00C29CCDC120053D852 /* ItemDetailViewModel.swift in Sources */,
 				8D3AF01B29FB181200976763 /* UIViewPreview.swift in Sources */,
 				8DE7C7F529F2EFC800161DFC /* UIView+.swift in Sources */,
 				8D4716E2299EBD8E00079790 /* UILabel+.swift in Sources */,
@@ -650,7 +650,7 @@
 				8D4716CE299D8C0100079790 /* HomeCoordinator.swift in Sources */,
 				8D9023912A0C177000A61E9C /* SettingsTableViewCell.swift in Sources */,
 				8DE7C7FB29F40CBE00161DFC /* CustomFormContainer.swift in Sources */,
-				8DFCB00829CCDBFE0053D852 /* SaveConsultView.swift in Sources */,
+				8DFCB00829CCDBFE0053D852 /* ItemDetailView.swift in Sources */,
 				8D036C4129EDE1E90079F4B1 /* Assets.swift in Sources */,
 				8D740227299D494E008BFE17 /* AppDelegate.swift in Sources */,
 				8D4716BF299D800800079790 /* IncomeView.swift in Sources */,

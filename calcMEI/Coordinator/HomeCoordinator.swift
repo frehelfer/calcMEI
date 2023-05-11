@@ -62,9 +62,9 @@ private extension HomeCoordinator {
             animated: true)
     }
     
-    func showSaveConsult(count: Count) {
-        navigationController.present(
-            UINavigationController(rootViewController: saveConsultViewController(count: count)),
+    func showItemDetail(itemDetail: ResultViewModel.ResultItem) {
+        navigationController.pushViewController(
+            itemDetailViewController(itemDetail: itemDetail),
             animated: true
         )
     }
@@ -158,15 +158,13 @@ private extension HomeCoordinator {
         return viewController
     }
     
-    func saveConsultViewController(count: Count) -> UIViewController {
-        let viewController = SaveConsultViewController()
+    func itemDetailViewController(itemDetail: ResultViewModel.ResultItem) -> UIViewController {
+        let viewController = ItemDetailViewController()
         
         viewController.viewModel = {
-            let viewModel = SaveConsultViewModel(
-                consultService: calcMEI_core.consultService,
-                count: count
+            let viewModel = ItemDetailViewModel(
+                itemDetail: itemDetail
             )
-            viewModel.coordinatorDelegate = self
             return viewModel
         }()
         
@@ -243,7 +241,7 @@ extension HomeCoordinator: ExpensesViewModelCoordinatorDelegate {
 extension HomeCoordinator: ResultViewModelCoordinatorDelegate {
     
     func resultViewModelDidSelectItemDetail(_ resultViewModel: ResultViewModel, resultItem: ResultViewModel.ResultItem) {
-//        showSaveConsult(count: count)
+        showItemDetail(itemDetail: resultItem)
     }
     
     func resultViewModelDidSelectReset(_ resultViewModel: ResultViewModel) {
@@ -256,16 +254,6 @@ extension HomeCoordinator: ResultViewModelCoordinatorDelegate {
 extension HomeCoordinator: SettingsViewModelCoordinatorDelegate {
     
     
-    
-}
-
-// MARK: - SaveConsultViewModelCoordinatorDelegate
-extension HomeCoordinator: SaveConsultViewModelCoordinatorDelegate {
-    
-    func saveConsultViewModelDidSelectSave(_ saveConsultViewModel: SaveConsultViewModel) {
-        navigationController.dismiss(animated: true)
-        pop()
-    }
     
 }
 

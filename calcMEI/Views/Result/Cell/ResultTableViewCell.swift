@@ -23,7 +23,7 @@ class ResultTableViewCell: UITableViewCell {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         label.textColor = A.Colors.labelPrimary.color
         return label
     }()
@@ -31,7 +31,7 @@ class ResultTableViewCell: UITableViewCell {
     private lazy var resultLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = A.Colors.labelSecondary.color
         return label
     }()
@@ -41,7 +41,7 @@ class ResultTableViewCell: UITableViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(systemName: "chevron.right")
         image.contentMode = .scaleAspectFill
-        image.tintColor = A.Colors.labelSecondary.color.withAlphaComponent(0.7)
+        image.tintColor = A.Colors.labelSecondary.color.withAlphaComponent(0.8)
         return image
     }()
     
@@ -59,8 +59,7 @@ class ResultTableViewCell: UITableViewCell {
     
     // MARK: - SetupCell
     private func setupView() {
-        selectionStyle = .none
-        backgroundColor = A.Colors.blue50.color
+        backgroundColor = A.Colors.blue50.color.withAlphaComponent(0.8)
         configureSubviews()
         configureConstraints()
     }
