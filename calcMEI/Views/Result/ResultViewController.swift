@@ -39,7 +39,6 @@ class ResultViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
         viewModel?.updateViewWithCount()
     }
     
@@ -53,18 +52,22 @@ class ResultViewController: UIViewController {
 extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.data.count ?? 0
+        viewModel?.resultItems.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as? ResultTableViewCell
-        let data = viewModel?.data[indexPath.row]
+        let data = viewModel?.resultItems[indexPath.row]
         cell?.setupCell(data: data)
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         55
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.didSelectRow(indexPath: indexPath)
     }
     
 }
@@ -85,7 +88,7 @@ extension ResultViewController: ResultViewDelegate {
 // MARK: - ResultViewModelViewDelegate
 extension ResultViewController: ResultViewModelViewDelegate {
     
-    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: [ResultViewModel.NestedResult]) {
+    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: [ResultViewModel.ResultItem]) {
         resultView.reloadTableView()
     }
     

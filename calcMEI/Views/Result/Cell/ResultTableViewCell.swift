@@ -87,7 +87,7 @@ class ResultTableViewCell: UITableViewCell {
     // MARK: - Private Actions
     
     // MARK: - Public Actions
-    public func setupCell(data: ResultViewModel.NestedResult?) {
+    public func setupCell(data: ResultViewModel.ResultItem?) {
         titleLabel.text = data?.title
         resultLabel.text = data?.result
         

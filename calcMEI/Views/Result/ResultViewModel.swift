@@ -11,10 +11,11 @@ import CalcMEI_Core
 protocol ResultViewModelCoordinatorDelegate: AnyObject {
     func resultViewModelDidSelectReset(_ resultViewModel: ResultViewModel)
     func resultViewModelDidSelectSaveConsult(_ resultViewModel: ResultViewModel, count: Count)
+    func resultViewModelDidSelectItemDetail(_ resultViewModel: ResultViewModel, resultItem: ResultViewModel.ResultItem)
 }
 
 protocol ResultViewModelViewDelegate: AnyObject {
-    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: [ResultViewModel.NestedResult])
+    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: [ResultViewModel.ResultItem])
 }
 
 class ResultViewModel {
@@ -23,10 +24,15 @@ class ResultViewModel {
     weak var viewDelegate: ResultViewModelViewDelegate?
     
     private var count: Count
-    var data: [NestedResult] = []
-    
+
     init(count: Count) {
         self.count = count
+    }
+    
+    var resultItems: [ResultItem] = [] {
+        didSet {
+            viewDelegate?.resultViewModel(self, updateViewWithCount: resultItems)
+        }
     }
     
     var title: String = S.Result.title
@@ -34,35 +40,43 @@ class ResultViewModel {
     func updateViewWithCount() {
         calculateAll()
         
-        for i in 0..<5 {
-            var new = NestedResult()
-            switch i {
-            case 0:
-                new.title = "Precisa Declarar:"
-                new.result = count.hasToDeclare ? "Sim" : "Não"
-                new.resultColor = count.hasToDeclare ? A.Colors.red.color : A.Colors.green.color
-            case 1:
-                new.title = "Receita Bruta Anual:"
-                new.result = count.receitaBrutaAnual.currencyFormatFromDouble()
-            case 2:
-                new.title = "Lucro Apurado:"
-                new.result = count.lucroApurado.currencyFormatFromDouble()
-            case 3:
-                new.title = "Rendimento Isento:"
-                new.result = count.rendimentoIsento.currencyFormatFromDouble()
-                new.resultColor = count.rendimentoIsento > 0 ? A.Colors.green.color : nil
-            case 4:
-                new.title = "Rendimento Tributável:"
-                new.result = count.rendimentoTributavel.currencyFormatFromDouble()
-                new.resultColor = count.rendimentoTributavel > 0 ? count.rendimentoTributavel > Configuration.rendimentoTributavelLimite ? A.Colors.red.color : A.Colors.green.color : nil
-            default:
-                break
-            }
-            
-            data.append(new)
-        }
+        let data = [
+            ResultItem(
+                title: "Precisa Declarar:",
+                result: count.hasToDeclare ? "Sim" : "Não",
+                resultColor: count.hasToDeclare ? A.Colors.red.color : A.Colors.green.color,
+                description: "a"
+            ),
+            ResultItem(
+                title: "Receita Bruta Anual:",
+                result: count.receitaBrutaAnual.currencyFormatFromDouble(),
+                description: "a"
+            ),
+            ResultItem(
+                title: "Lucro Apurado:",
+                result: count.lucroApurado.currencyFormatFromDouble(),
+                description: "a"
+            ),
+            ResultItem(
+                title: "Rendimento Isento:",
+                result: count.rendimentoIsento.currencyFormatFromDouble(),
+                resultColor: count.rendimentoIsento > 0 ? A.Colors.green.color : nil,
+                description: "a"
+            ),
+            ResultItem(
+                title: "Rendimento Tributável:",
+                result: count.rendimentoTributavel.currencyFormatFromDouble(),
+                resultColor: count.rendimentoTributavel > 0 ? count.rendimentoTributavel > Configuration.rendimentoTributavelLimite ? A.Colors.red.color : A.Colors.green.color : nil,
+                description: "a"
+            )
+        ]
         
-        viewDelegate?.resultViewModel(self, updateViewWithCount: data)
+        resultItems = data
+    }
+    
+    func didSelectRow(indexPath: IndexPath) {
+        let selected = resultItems[indexPath.row]
+        coordinatorDelegate?.resultViewModelDidSelectItemDetail(self, resultItem: selected)
     }
 }
 
@@ -120,10 +134,11 @@ extension ResultViewModel {
 // MARK: - Nested Type
 extension ResultViewModel {
     
-    struct NestedResult {
-        var title: String? = nil
-        var result: String? = nil
+    struct ResultItem {
+        var title: String
+        var result: String
         var resultColor: UIColor? = nil
+        var description: String? = nil
     }
     
 }
