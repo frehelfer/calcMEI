@@ -230,7 +230,7 @@
 				8D036C4A29EE05FF0079F4B1 /* Income */,
 				8D036C4B29EE06140079F4B1 /* Expenses */,
 				8D036C4C29EE06240079F4B1 /* Result */,
-				8D036C4D29EE062D0079F4B1 /* SaveConsult */,
+				8D036C4D29EE062D0079F4B1 /* ItemDetail */,
 				8D036C4E29EE063A0079F4B1 /* Consults */,
 				8D036C5029EE06550079F4B1 /* Details */,
 			);
@@ -298,14 +298,14 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
-		8D036C4D29EE062D0079F4B1 /* SaveConsult */ = {
+		8D036C4D29EE062D0079F4B1 /* ItemDetail */ = {
 			isa = PBXGroup;
 			children = (
 				8DFCB00B29CCDC120053D852 /* ItemDetailViewModel.swift */,
 				8DFCB00929CCDC070053D852 /* ItemDetailViewController.swift */,
 				8DFCB00729CCDBFE0053D852 /* ItemDetailView.swift */,
 			);
-			path = SaveConsult;
+			path = ItemDetail;
 			sourceTree = "<group>";
 		};
 		8D036C4E29EE063A0079F4B1 /* Consults */ = {

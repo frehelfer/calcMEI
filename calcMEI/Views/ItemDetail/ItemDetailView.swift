@@ -14,7 +14,7 @@ class ItemDetailView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .justified
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.textColor = A.Colors.labelPrimary.color
         label.numberOfLines = 0
         return label
