@@ -35,11 +35,6 @@
 "Result.SaveButton.Title" = "Salvar Consulta";
 "Result.PopButton.Title" = "Início";
 
-// SaveConsult Screen
-"SaveConsult.Title" = "Salvar Consulta";
-"SaveConsult.NameTextField.PlaceHolder" = "Insira um nome para sua consulta";
-"SaveConsult.SaveConsultButton.Title" = "Salvar";
-
 // Consults Screen
 "Consults.Title" = "Consultas Salvas";
 "Consults.EmptyTitleLabel.text" = "Nenhuma consulta salva";

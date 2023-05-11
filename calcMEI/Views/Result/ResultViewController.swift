@@ -94,18 +94,6 @@ extension ResultViewController: ResultViewModelViewDelegate {
     
 }
 
-//extension ResultViewController: UIGestureRecognizerDelegate {
-//    
-//    gesture
-//    
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-//        if touch.view != nil && (touch.view!.isDescendant(of: resultView.tableView)) {
-//            return false
-//        }
-//        return true
-//    }
-//}
-
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 

@@ -117,18 +117,6 @@ internal enum S {
       internal static let title = S.tr("Localizable", "Result.SaveButton.Title", fallback: "Salvar Consulta")
     }
   }
-  internal enum SaveConsult {
-    /// Salvar Consulta
-    internal static let title = S.tr("Localizable", "SaveConsult.Title", fallback: "Salvar Consulta")
-    internal enum NameTextField {
-      /// Insira um nome para sua consulta
-      internal static let placeHolder = S.tr("Localizable", "SaveConsult.NameTextField.PlaceHolder", fallback: "Insira um nome para sua consulta")
-    }
-    internal enum SaveConsultButton {
-      /// Salvar
-      internal static let title = S.tr("Localizable", "SaveConsult.SaveConsultButton.Title", fallback: "Salvar")
-    }
-  }
   internal enum Settings {
     /// Configurações
     internal static let title = S.tr("Localizable", "Settings.Title", fallback: "Configurações")

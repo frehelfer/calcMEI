@@ -43,23 +43,23 @@ class ResultViewModel {
         
         let data = [
             ResultItem(
-                title: "Precisa Declarar:",
+                title: "Precisa Declarar",
                 result: count.hasToDeclare ? "Sim" : "Não",
                 resultColor: count.hasToDeclare ? A.Colors.red.color : A.Colors.green.color,
                 description: "a"
             ),
             ResultItem(
-                title: "Receita Bruta Anual:",
+                title: "Receita Bruta Anual",
                 result: count.receitaBrutaAnual.currencyFormatFromDouble(),
                 description: "É a soma de todos os valores recebidos ao longo do ano."
             ),
             ResultItem(
-                title: "Lucro Apurado:",
+                title: "Lucro Apurado",
                 result: count.lucroApurado.currencyFormatFromDouble(),
                 description: "O Lucro Apurado é a Receita Bruta menos as despesas do ano."
             ),
             ResultItem(
-                title: "Rendimento Isento:",
+                title: "Rendimento Isento",
                 result: count.rendimentoIsento.currencyFormatFromDouble(),
                 resultColor: count.rendimentoIsento > 0 ? A.Colors.green.color : nil,
                 description: """
@@ -71,7 +71,7 @@ class ResultViewModel {
                 """
             ),
             ResultItem(
-                title: "Rendimento Tributável:",
+                title: "Rendimento Tributável",
                 result: count.rendimentoTributavel.currencyFormatFromDouble(),
                 resultColor: count.rendimentoTributavel > 0 ? count.rendimentoTributavel > Configuration.rendimentoTributavelLimite ? A.Colors.red.color : A.Colors.green.color : nil,
                 description: """

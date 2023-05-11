@@ -22,7 +22,9 @@ class ItemDetailViewModel {
         self.itemDetail = itemDetail
     }
     
-    var title: String = "Detail"
+    var title: String {
+        itemDetail.title
+    }
     
     func updateViewWithData() {
         viewDelegate?.itemDetailViewModel(self, updateViewWithData: itemDetail)
