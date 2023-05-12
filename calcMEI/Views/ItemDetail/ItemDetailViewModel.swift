@@ -9,16 +9,16 @@ import Foundation
 import CalcMEI_Core
 
 protocol ItemDetailViewModelViewDelegate: AnyObject {
-    func itemDetailViewModel(_ itemDetailViewModel: ItemDetailViewModel, updateViewWithData: ResultViewModel.ResultItem)
+    func itemDetailViewModel(_ itemDetailViewModel: ItemDetailViewModel, updateViewWithData: ResultItem)
 }
 
 class ItemDetailViewModel {
 
     weak var viewDelegate: ItemDetailViewModelViewDelegate?
 
-    var itemDetail: ResultViewModel.ResultItem
+    var itemDetail: ResultItem
     
-    init(itemDetail: ResultViewModel.ResultItem) {
+    init(itemDetail: ResultItem) {
         self.itemDetail = itemDetail
     }
     

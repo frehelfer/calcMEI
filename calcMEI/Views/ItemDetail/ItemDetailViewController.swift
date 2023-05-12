@@ -42,7 +42,7 @@ class ItemDetailViewController: UIViewController {
 // MARK: - ItemDetailViewModelViewDelegate
 extension ItemDetailViewController: ItemDetailViewModelViewDelegate {
     
-    func itemDetailViewModel(_ itemDetailViewModel: ItemDetailViewModel, updateViewWithData: ResultViewModel.ResultItem) {
+    func itemDetailViewModel(_ itemDetailViewModel: ItemDetailViewModel, updateViewWithData: ResultItem) {
         itemDetailView.updateView(with: updateViewWithData)
     }
     

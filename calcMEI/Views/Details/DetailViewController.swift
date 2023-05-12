@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
     // MARK: - Properties
     lazy var detailView: DetailView = {
         let view = DetailView()
-        view.delegate = self
+        view.setupView(delegate: self, dataSource: self)
         return view
     }()
     
@@ -32,6 +32,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationItem()
+        viewModel?.updateViewWithData()
     }
     
     // MARK: - Private Functions
@@ -48,16 +49,40 @@ class DetailViewController: UIViewController {
     }
     
 }
+
 // MARK: - DetailViewDelegate
-extension DetailViewController: DetailViewDelegate {
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        viewModel?.resultItems.count ?? 0
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel?.resultItems[section].items.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as? ResultTableViewCell
+        let data = viewModel?.resultItems[indexPath.section].items[indexPath.row]
+        cell?.setupCell(data: data)
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        48
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        viewModel?.resultItems[section].title
+    }
     
 }
 
 // MARK: - DetailViewModelViewDelegate
 extension DetailViewController: DetailViewModelViewDelegate {
     
-    
+    func detailViewModel(_ detailViewModel: DetailViewModel, updateViewWithItem: [DetailViewModel.ItemsGroup]) {
+        detailView.reloadTableView()
+    }
     
 }

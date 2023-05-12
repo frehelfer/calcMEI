@@ -11,7 +11,7 @@ class ResultTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     private lazy var stackView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [titleLabel, resultLabel, chevronImage])
+        let view = UIStackView(arrangedSubviews: [titleLabel, resultLabel])
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .horizontal
         view.alignment = .center
@@ -59,6 +59,7 @@ class ResultTableViewCell: UITableViewCell {
     
     // MARK: - SetupCell
     private func setupView() {
+        selectionStyle = .none
         backgroundColor = A.Colors.blue50.color.withAlphaComponent(0.8)
         configureSubviews()
         configureConstraints()
@@ -77,21 +78,31 @@ class ResultTableViewCell: UITableViewCell {
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -13),
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-            chevronImage.heightAnchor.constraint(equalToConstant: 8),
-            chevronImage.widthAnchor.constraint(equalToConstant: 8),
-            
         ])
     }
     
     // MARK: - Private Actions
     
     // MARK: - Public Actions
-    public func setupCell(data: ResultViewModel.ResultItem?) {
+    public func setupCell(data: ResultItem?) {
         titleLabel.text = data?.title
         resultLabel.text = data?.result
         
         if data?.resultColor != nil {
             resultLabel.textColor = data?.resultColor
+        }
+        
+        if data?.description != nil {
+            stackView.addArrangedSubview(chevronImage)
+            
+            NSLayoutConstraint.activate([
+                chevronImage.heightAnchor.constraint(equalToConstant: 8),
+                chevronImage.widthAnchor.constraint(equalToConstant: 8),
+            ])
+        }
+        
+        if data?.backgroundColor != nil {
+            backgroundColor = data?.backgroundColor
         }
     }
 }

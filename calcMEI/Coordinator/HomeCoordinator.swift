@@ -62,7 +62,7 @@ private extension HomeCoordinator {
             animated: true)
     }
     
-    func showItemDetail(itemDetail: ResultViewModel.ResultItem) {
+    func showItemDetail(itemDetail: ResultItem) {
         navigationController.pushViewController(
             itemDetailViewController(itemDetail: itemDetail),
             animated: true
@@ -158,7 +158,7 @@ private extension HomeCoordinator {
         return viewController
     }
     
-    func itemDetailViewController(itemDetail: ResultViewModel.ResultItem) -> UIViewController {
+    func itemDetailViewController(itemDetail: ResultItem) -> UIViewController {
         let viewController = ItemDetailViewController()
         
         viewController.viewModel = {
@@ -240,7 +240,7 @@ extension HomeCoordinator: ExpensesViewModelCoordinatorDelegate {
 // MARK: - ResultViewModelCoordinatorDelegate
 extension HomeCoordinator: ResultViewModelCoordinatorDelegate {
     
-    func resultViewModelDidSelectItemDetail(_ resultViewModel: ResultViewModel, resultItem: ResultViewModel.ResultItem) {
+    func resultViewModelDidSelectItemDetail(_ resultViewModel: ResultViewModel, resultItem: ResultItem) {
         showItemDetail(itemDetail: resultItem)
     }
     
@@ -272,6 +272,10 @@ extension HomeCoordinator: ConsultsViewModelCoordinatorDelegate {
 
 // MARK: - DetailViewModelCoordinatorDelegate
 extension HomeCoordinator: DetailViewModelCoordinatorDelegate {
+    
+    func detailViewModelDidSelectItemDetail(_ detailViewModel: DetailViewModel, resultItem: ResultItem) {
+        showItemDetail(itemDetail: resultItem)
+    }
     
     func detailViewModelDidSelectDismiss(_ detailViewModel: DetailViewModel) {
         pop(index: 1)

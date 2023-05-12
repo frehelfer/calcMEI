@@ -7,24 +7,18 @@
 
 import UIKit
 
-protocol DetailViewDelegate: AnyObject {
-    
-}
-
 class DetailView: UIView {
     
-    weak var delegate: DetailViewDelegate?
-    
     // MARK: - Properties
-    private lazy var stackView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .vertical
-        view.alignment = .center
-        view.spacing = 10
-        view.distribution = .fill
-        return view
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(ResultTableViewCell.self, forCellReuseIdentifier: ResultTableViewCell.identifier)
+        tableView.backgroundColor = .clear
+        tableView.isScrollEnabled = false
+        return tableView
     }()
+
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -38,17 +32,23 @@ class DetailView: UIView {
     
     // MARK: - SetupView
     private func setupView() {
-        backgroundColor = .red
+        backgroundColor = A.Colors.background.color
         configureSubviews()
         configureConstraints()
     }
     
     private func configureSubviews() {
-        
+        addSubview(tableView)
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
+            
+            // tableView
+            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
             
         ])
     }
@@ -56,5 +56,13 @@ class DetailView: UIView {
     // MARK: - Private Actions
     
     // MARK: - Public Actions
+    func setupView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
+    }
+    
+    func reloadTableView() {
+        tableView.reloadData()
+    }
     
 }

@@ -10,11 +10,11 @@ import CalcMEI_Core
 
 protocol ResultViewModelCoordinatorDelegate: AnyObject {
     func resultViewModelDidSelectReset(_ resultViewModel: ResultViewModel)
-    func resultViewModelDidSelectItemDetail(_ resultViewModel: ResultViewModel, resultItem: ResultViewModel.ResultItem)
+    func resultViewModelDidSelectItemDetail(_ resultViewModel: ResultViewModel, resultItem: ResultItem)
 }
 
 protocol ResultViewModelViewDelegate: AnyObject {
-    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: [ResultViewModel.ResultItem])
+    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: [ResultItem])
 }
 
 class ResultViewModel {
@@ -46,7 +46,7 @@ class ResultViewModel {
                 title: "Precisa Declarar",
                 result: count.hasToDeclare ? "Sim" : "Não",
                 resultColor: count.hasToDeclare ? A.Colors.red.color : A.Colors.green.color,
-                description: "a"
+                description: "Se você recebeu outros valores como Pessoa Física e a soma desses valores com o Rendimento Tributável ficou maior que R$ 28.559,70, será necessário realizar o IRPF."
             ),
             ResultItem(
                 title: "Receita Bruta Anual",
@@ -146,13 +146,11 @@ extension ResultViewModel {
 }
 
 // MARK: - Nested Type
-extension ResultViewModel {
-    
-    struct ResultItem {
-        var title: String
-        var result: String
-        var resultColor: UIColor? = nil
-        var description: String? = nil
-    }
-    
+
+struct ResultItem {
+    var title: String
+    var result: String
+    var resultColor: UIColor? = nil
+    var description: String? = nil
+    var backgroundColor: UIColor? = nil
 }

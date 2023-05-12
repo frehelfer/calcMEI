@@ -56,7 +56,7 @@ class ItemDetailView: UIView {
     
     
     // MARK: - Public Actions
-    func updateView(with data: ResultViewModel.ResultItem) {
+    func updateView(with data: ResultItem) {
         descriptionLabel.text = data.description
     }
     

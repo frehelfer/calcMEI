@@ -88,7 +88,7 @@ extension ResultViewController: ResultViewDelegate {
 // MARK: - ResultViewModelViewDelegate
 extension ResultViewController: ResultViewModelViewDelegate {
     
-    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: [ResultViewModel.ResultItem]) {
+    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: [ResultItem]) {
         resultView.reloadTableView()
     }
     
