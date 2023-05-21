@@ -56,12 +56,12 @@ class DetailViewModel {
                 ),
                 ResultItem(
                     title: "Comércio e Indústria",
-                    result: consult.inServiceProvision.currencyFormatFromDouble(),
+                    result: consult.inCommerce.currencyFormatFromDouble(),
                     backgroundColor: A.Colors.green50.color
                 ),
                 ResultItem(
                     title: "Trans. de Passageiros",
-                    result: consult.inServiceProvision.currencyFormatFromDouble(),
+                    result: consult.inPassengerTransport.currencyFormatFromDouble(),
                     backgroundColor: A.Colors.green50.color
                 ),
                 ResultItem(
