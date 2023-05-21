@@ -29,7 +29,6 @@ internal enum A {
     internal static let blue50 = ColorAsset(name: "Blue50")
     internal static let blue75 = ColorAsset(name: "Blue75")
     internal static let buttonBlue = ColorAsset(name: "ButtonBlue")
-    internal static let grayDark = ColorAsset(name: "GrayDark")
     internal static let green = ColorAsset(name: "Green")
     internal static let green25 = ColorAsset(name: "Green25")
     internal static let green50 = ColorAsset(name: "Green50")
