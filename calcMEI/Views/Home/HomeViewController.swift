@@ -18,7 +18,6 @@ class HomeViewController: UIViewController {
     
     var viewModel: HomeViewModel? {
         didSet {
-            viewModel?.viewDelegate = self
             title = viewModel?.title
         }
     }
@@ -82,17 +81,8 @@ extension HomeViewController: HomeViewDelegate {
         let value = label.attributedText?.attribute(attributeName, at: characterIndex, effectiveRange: nil) as? NSURL
         
         if let url = value as URL? {
-            // Handle the tap on the hyperlink
-            print("Tapped URL: \(url)")
             UIApplication.shared.open(url)
         }
     }
-    
-}
-
-// MARK: - HomeViewModelViewDelegate
-extension HomeViewController: HomeViewModelViewDelegate {
-    
-    
     
 }

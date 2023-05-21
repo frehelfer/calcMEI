@@ -13,14 +13,9 @@ protocol HomeViewModelCoordinatorDelegate: AnyObject {
     func homeViewModelDidSelectConsults(_ homeViewModel: HomeViewModel)
 }
 
-protocol HomeViewModelViewDelegate: AnyObject {
-//    func homeViewModel(_ homeViewModel: HomeViewModel, didReceiveError error: Error)
-}
-
 class HomeViewModel {
     
     weak var coordinatorDelegate: HomeViewModelCoordinatorDelegate?
-    weak var viewDelegate: HomeViewModelViewDelegate?
     
     init() {
         
