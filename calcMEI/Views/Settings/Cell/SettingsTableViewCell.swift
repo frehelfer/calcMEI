@@ -66,7 +66,7 @@ class SettingsTableViewCell: UITableViewCell {
     // MARK: - SetupCell
     private func setupView() {
         selectionStyle = .none
-        backgroundColor = .white
+        backgroundColor = A.Colors.blue50.color.withAlphaComponent(0.7)
         configureSubviews()
         configureConstraints()
     }
@@ -102,9 +102,10 @@ class SettingsTableViewCell: UITableViewCell {
     
     // MARK: - Public Actions
     public func setupCell(with data: SettingsViewModel.SettingsDetail?) {
-        titleLabel.text = data?.title
-        imageBackground.backgroundColor = data?.color
-        iconImageView.image = UIImage(systemName: data?.icon ?? "person")
+        guard let data else { return }
+        titleLabel.text = data.title
+        imageBackground.backgroundColor = data.color
+        iconImageView.image = UIImage(systemName: data.icon)
     }
 }
 

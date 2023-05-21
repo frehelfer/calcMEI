@@ -28,7 +28,7 @@ class SettingsViewModel {
     
     func updateViewWithData() {
         let data = [
-            SettingsSection(title: "Mídias Sociais", details: [
+            SettingsSection(title: "Links", details: [
                 SettingsDetail(title: "Website", icon: "house.fill", color: A.Colors.blue.color, link: "https://calcmei.com.br"),
                 SettingsDetail(title: "Linkedin", icon: "link", color: A.Colors.blue.color, link: "https://www.linkedin.com/in/fre-helfer")
             ]),
