@@ -43,31 +43,35 @@ class ResultViewModel {
         
         let data = [
             ResultItem(
-                title: "Precisa Declarar",
+                title: "Precisa Declarar?",
                 result: count.hasToDeclare ? "Sim" : "Não",
                 resultColor: count.hasToDeclare ? A.Colors.red.color : A.Colors.green.color,
-                description: "Se você recebeu outros valores como Pessoa Física e a soma desses valores com o Rendimento Tributável ficou maior que R$ 28.559,70, será necessário realizar o IRPF."
+                description: """
+                Se você recebeu outros valores como Pessoa Física e a soma desses valores juntamente com o Rendimento Tributável ultrapassou o limite de \(Configuration.rendimentoTributavelLimite.currencyFormatFromDouble()), será necessário fazer a Declaração de Imposto de Renda de Pessoa Física (IRPF).
+                
+                A declaração deve ser realizada por meio do software disponibilizado pela Receita Federal. É necessário acessar o software e preencher duas fichas de declaração: "Rendimentos isentos e não tributáveis" e "Rendimentos tributáveis recebidos de pessoa jurídica". Nessas fichas, você deverá inserir a parcela isenta do lucro e o lucro tributável, respectivamente.
+                """
             ),
             ResultItem(
                 title: "Receita Bruta Anual",
                 result: count.receitaBrutaAnual.currencyFormatFromDouble(),
-                description: "É a soma de todos os valores recebidos ao longo do ano."
+                description: "A Receita Bruta Anual representa a soma de todos os valores recebidos ao longo do ano."
             ),
             ResultItem(
                 title: "Lucro Apurado",
                 result: count.lucroApurado.currencyFormatFromDouble(),
-                description: "O Lucro Apurado é a Receita Bruta menos as despesas do ano."
+                description: "O Lucro Apurado é o montante remanescente após subtrair todos os gastos e custos necessários para gerar a receita do período considerado. É a Receita Bruta menos as despesas do ano."
             ),
             ResultItem(
                 title: "Rendimento Isento",
                 result: count.rendimentoIsento.currencyFormatFromDouble(),
                 resultColor: count.rendimentoIsento > 0 ? A.Colors.green.color : nil,
                 description: """
-                Para cada categoria de MEI existe uma parcela isenta de tributação, sendo:
-                
-                32% - Prestação de Serviços.
-                8% - Comércio, Indústria e Transporte de Cargas.
-                16% - Transporte de Passageiros.
+                Para cada categoria de MEI, existe uma parcela isenta de tributação conforme as seguintes porcentagens:
+
+                - Prestação de Serviços: \(Configuration.rendimentoIsentoServico * 100)%.
+                - Comércio, Indústria e Transporte de Cargas: \(Configuration.rendimentoIsentoComercio * 100)%.
+                - Transporte de Passageiros: \(Configuration.rendimentoIsentoTransporte * 100)%.
                 """
             ),
             ResultItem(
@@ -75,9 +79,9 @@ class ResultViewModel {
                 result: count.rendimentoTributavel.currencyFormatFromDouble(),
                 resultColor: count.rendimentoTributavel > 0 ? count.rendimentoTributavel > Configuration.rendimentoTributavelLimite ? A.Colors.red.color : A.Colors.green.color : nil,
                 description: """
-                O Rendimento Tributável é o valor considerado para saber se você deve ou não pagar o imposto de renda pessoa física. Para chegar nessa conta deve se fazer o Lucro Apurado menos o Rendimento Isento.
+                O Rendimento Tributável é o valor utilizado para determinar se você está sujeito ao pagamento do Imposto de Renda Pessoa Física. Para calcular esse valor, é necessário subtrair o Rendimento Isento do Lucro Apurado.
 
-                Se o valor ficar acima de \(Configuration.rendimentoTributavelLimite.currencyFormatFromDouble()), você é obrigado a declarar o IRPF.
+                Caso o resultado seja superior a \(Configuration.rendimentoTributavelLimite.currencyFormatFromDouble()), é obrigatória a declaração do Imposto de Renda Pessoa Física (IRPF).
                 """
             )
         ]
