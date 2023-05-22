@@ -33,6 +33,11 @@ class ConsultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.setupNavigationAppearance(
+            prefersLargeTitles: true,
+            backgroundColor: A.Colors.navBar.color,
+            isTranslucent: false
+        )
         setupNavigationItem()
     }
     

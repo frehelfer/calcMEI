@@ -32,6 +32,10 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.setupNavigationAppearance(
+            prefersLargeTitles: false,
+            backgroundColor: A.Colors.navBar.color
+        )
         setupNavigationItem()
         viewModel?.updateViewWithData()
     }
@@ -44,7 +48,6 @@ class SettingsViewController: UIViewController {
             target: self,
             action: #selector(dismissButtonPressed)
         )
-        navigationController?.navigationBar.tintColor = A.Colors.blue.color
     }
     
     @objc

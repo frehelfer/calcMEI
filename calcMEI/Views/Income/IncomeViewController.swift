@@ -34,6 +34,13 @@ class IncomeViewController: UIViewController {
         setupKeyboardHiding()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.setupNavigationAppearance(
+            backgroundColor: A.Colors.navBar.color
+        )
+    }
+    
     // MARK: - Private Functions
     private func setupKeyboardHiding() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
