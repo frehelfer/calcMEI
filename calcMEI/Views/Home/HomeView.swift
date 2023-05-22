@@ -132,7 +132,7 @@ class HomeView: UIView {
         addSubview(mainStackView)
         
         mainStackView.addArrangedSubview(titleLabel)
-        mainStackView.setCustomSpacing(25, after: titleLabel)
+        mainStackView.setCustomSpacing(40, after: titleLabel)
         mainStackView.addArrangedSubview(infoLabel)
         mainStackView.addArrangedSubview(lawLabel)
         
@@ -144,7 +144,7 @@ class HomeView: UIView {
         NSLayoutConstraint.activate([
             
             // mainStackView
-            mainStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
+            mainStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 70),
             mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             
@@ -155,7 +155,7 @@ class HomeView: UIView {
             savedConsultsButton.heightAnchor.constraint(equalToConstant: 45),
             
             // newConsultButton
-            newConsultButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
+            newConsultButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             newConsultButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             newConsultButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             newConsultButton.heightAnchor.constraint(equalToConstant: 65),
