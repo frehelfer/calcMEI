@@ -98,8 +98,13 @@ class ConsultTableViewCell: UITableViewCell {
     
     // MARK: - Public Actions
     public func setupCell(with consult: Consult?) {
-        nameLabel.text = consult?.name ?? ""
-        dateLabel.text = "22/22/22 implementar"
+        guard let consult, let date = consult.date else { return }
+        nameLabel.text = consult.name
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+
+        dateLabel.text = dateFormatter.string(from: date)
     }
     
     
