@@ -14,7 +14,7 @@ class ResultViewController: UIViewController {
     private lazy var resultView: ResultView = {
         let resultView = ResultView()
         resultView.delegate = self
-        resultView.setupView(delegate: self, dataSource: self)
+        resultView.setupView(delegate: self, dataSource: self, textfield: self)
         return resultView
     }()
     
@@ -68,6 +68,16 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel?.didSelectRow(indexPath: indexPath)
+    }
+    
+}
+
+// MARK: - UITextFieldDelegate
+extension ResultViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 }

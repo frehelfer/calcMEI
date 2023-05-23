@@ -138,9 +138,10 @@ class ResultView: UIView {
     }
     
     // MARK: - Public Actions
-    func setupView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+    func setupView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource, textfield: UITextFieldDelegate) {
         tableView.delegate = delegate
         tableView.dataSource = dataSource
+        saveTextField.delegate = textfield
     }
     
     func reloadTableView() {
