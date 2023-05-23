@@ -66,7 +66,7 @@ class SettingsTableViewCell: UITableViewCell {
     // MARK: - SetupCell
     private func setupView() {
         selectionStyle = .none
-        backgroundColor = A.Colors.blue50.color.withAlphaComponent(0.7)
+        backgroundColor = .systemGray5
         configureSubviews()
         configureConstraints()
     }

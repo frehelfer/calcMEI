@@ -67,7 +67,7 @@ class CustomFormContainer: UIView {
     private lazy var chevronButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "chevron.compact.down"), for: .normal)
-        button.tintColor = A.Colors.buttonBlue.color
+        button.tintColor = A.Colors.labelPrimary.color.withAlphaComponent(0.6)
         button.addTarget(self, action: #selector(chevronTapped), for: .touchUpInside)
         return button
     }()
