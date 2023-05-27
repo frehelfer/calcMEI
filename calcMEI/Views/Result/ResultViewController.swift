@@ -35,6 +35,7 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         setupKeyboardHiding()
+        setupNavigationItem()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +47,19 @@ class ResultViewController: UIViewController {
     private func setupKeyboardHiding() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func setupNavigationItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: S.Result.PopButton.title,
+            style: .plain,
+            target: self,
+            action: #selector(nextNavButtonPressed)
+        )
+    }
+    
+    @objc private func nextNavButtonPressed() {
+        viewModel?.resetSelected()
     }
 }
 
