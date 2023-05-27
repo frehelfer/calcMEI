@@ -100,4 +100,7 @@ class ExpensesView: UIView {
     }
     
     // MARK: - Public Actions
+    func nextNavButtonPressed() {
+        nextButtonPressed()
+    }
 }

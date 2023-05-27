@@ -32,12 +32,26 @@ class ExpensesViewController: UIViewController {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         setupKeyboardHiding()
+        setupNavigationItem()
     }
     
     // MARK: - Private Functions
     private func setupKeyboardHiding() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    private func setupNavigationItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: S.Expenses.NextButton.title,
+            style: .plain,
+            target: self,
+            action: #selector(nextNavButtonPressed)
+        )
+    }
+    
+    @objc private func nextNavButtonPressed() {
+        expensesView.nextNavButtonPressed()
     }
 }
 

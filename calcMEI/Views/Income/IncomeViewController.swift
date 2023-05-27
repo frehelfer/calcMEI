@@ -32,6 +32,7 @@ class IncomeViewController: UIViewController {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         setupKeyboardHiding()
+        setupNavigationItem()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +40,20 @@ class IncomeViewController: UIViewController {
         navigationController?.navigationBar.setupNavigationAppearance(
             backgroundColor: A.Colors.navBar.color
         )
+    }
+    
+    // MARK: - Private Functions
+    private func setupNavigationItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: S.Income.NextButton.title,
+            style: .plain,
+            target: self,
+            action: #selector(nextNavButtonPressed)
+        )
+    }
+    
+    @objc private func nextNavButtonPressed() {
+        incomeView.nextNavButtonPressed()
     }
     
     // MARK: - Private Functions

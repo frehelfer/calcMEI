@@ -128,4 +128,9 @@ class IncomeView: UIView {
         
         self.delegate?.nextButtonPressed(incomeData: incomeData)
     }
+    
+    // MARK: - Public Actions
+    func nextNavButtonPressed() {
+        nextButtonPressed()
+    }
 }
