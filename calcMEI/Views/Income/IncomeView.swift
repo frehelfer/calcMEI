@@ -18,6 +18,13 @@ class IncomeView: UIView {
     weak var delegate: IncomeViewDelegate?
     
     // MARK: - Properties
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsVerticalScrollIndicator = false
+        return scrollView
+    }()
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [servicesFormContainer, commerceFormContainer, transportFormContainer])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -82,26 +89,36 @@ class IncomeView: UIView {
     }
     
     private func configureSubviews() {
-        addSubview(stackView)
+        addSubview(scrollView)
+        scrollView.addSubview(stackView)
         addSubview(nextButton)
     }
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             
+            // scrollView
+            scrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -10),
+            scrollView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor),
+            
             // stackView
-            stackView.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor, constant: -40),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 120),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
-            servicesFormContainer.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            servicesFormContainer.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            servicesFormContainer.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 30),
+            servicesFormContainer.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -30),
             
-            commerceFormContainer.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            commerceFormContainer.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            commerceFormContainer.leadingAnchor.constraint(equalTo: servicesFormContainer.leadingAnchor),
+            commerceFormContainer.trailingAnchor.constraint(equalTo: servicesFormContainer.trailingAnchor),
             
-            transportFormContainer.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            transportFormContainer.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            transportFormContainer.leadingAnchor.constraint(equalTo: servicesFormContainer.leadingAnchor),
+            transportFormContainer.trailingAnchor.constraint(equalTo: servicesFormContainer.trailingAnchor),
             
             // nextButton
             nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -18),
@@ -132,5 +149,10 @@ class IncomeView: UIView {
     // MARK: - Public Actions
     func nextNavButtonPressed() {
         nextButtonPressed()
+    }
+    
+    func updateScrollView(contentInsets: UIEdgeInsets) {
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
     }
 }

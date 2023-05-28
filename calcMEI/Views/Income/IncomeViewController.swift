@@ -31,7 +31,6 @@ class IncomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
-        setupKeyboardHiding()
         setupNavigationItem()
     }
     
@@ -40,6 +39,12 @@ class IncomeViewController: UIViewController {
         navigationController?.navigationBar.setupNavigationAppearance(
             backgroundColor: A.Colors.navBar.color
         )
+        setupKeyboardObserver()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeKeyboardObserver()
     }
     
     // MARK: - Private Functions
@@ -56,11 +61,34 @@ class IncomeViewController: UIViewController {
         incomeView.nextNavButtonPressed()
     }
     
-    // MARK: - Private Functions
-    private func setupKeyboardHiding() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+}
+
+// MARK: - KeyboardObserving
+extension IncomeViewController {
+    
+    private func setupKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowPrivate), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHidePrivate), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    private func removeKeyboardObserver() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardWillShowPrivate(notification: Notification) {
+        let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
+        guard let keyboardSize = (keyboardFrame as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        incomeView.updateScrollView(contentInsets: contentInsets)
+    }
+
+    @objc func keyboardWillHidePrivate(notification: Notification) {
+        incomeView.updateScrollView(contentInsets: .zero)
+    }
+    
 }
 
 // MARK: - IncomeViewDelegate
