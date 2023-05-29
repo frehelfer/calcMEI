@@ -107,7 +107,7 @@ class IncomeView: UIView {
             // stackView
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 120),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 90),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             
