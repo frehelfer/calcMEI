@@ -4,10 +4,10 @@
 <dict>
 	<key>ANO_CALENDARIO</key>
 	<string>$(ANO_CALENDARIO)</string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
 	<key>ANO_EXERCICIO</key>
 	<string>$(ANO_EXERCICIO)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>RENDIMENTO_ISENTO_COMERCIO</key>
 	<string>$(RENDIMENTO_ISENTO_COMERCIO)</string>
 	<key>RENDIMENTO_ISENTO_SERVICO</key>
