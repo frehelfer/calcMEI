@@ -43,6 +43,14 @@
 // Settings Screen
 "Settings.Title" = "Configurações";
 
+// Detail Screen
+"Detail.Alert.Title" = "Confirmação de exclusão";
+"Detail.Alert.Message" = "Você tem certeza de que deseja excluir este item? Essa ação não pode ser desfeita.";
 
 // TextField Geral
 "TextField.MoneyPlaceHolder.Text" = "R$ 0,00";
+
+// UIAlertController
+"UIAlertController.Ok.Text" = "Ok";
+"UIAlertController.Cancel.Text" = "Cancelar";
+"UIAlertController.Delete.Text" = "Excluir";

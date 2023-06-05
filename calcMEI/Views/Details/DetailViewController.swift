@@ -45,7 +45,9 @@ class DetailViewController: UIViewController {
     }
     
     @objc private func deletePressed() {
-        viewModel?.deleteSelected()
+        presentDeleteAlert(title: S.Detail.Alert.title, message: S.Detail.Alert.message) { [weak self] in
+            self?.viewModel?.deleteSelected()
+        }
     }
     
 }
