@@ -18,11 +18,20 @@ extension UIViewController {
     // MARK: - Alert
     func presentAlert(title: String, message : String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(OKAction)
+        let okAction = UIAlertAction(title: S.UIAlertController.Ok.text, style: .default)
+        alertController.addAction(okAction)
         self.present(alertController, animated: true)
     }
     
+    func presentDeleteAlert(title: String, message : String, completion: @escaping () -> ()) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: S.UIAlertController.Cancel.text, style: .cancel))
+        alertController.addAction(UIAlertAction(title: S.UIAlertController.Delete.text, style: .destructive, handler: { _ in
+            completion()
+        }))
+        present(alertController, animated: true)
+    }
+
 }
 
 // MARK: - Keyboard

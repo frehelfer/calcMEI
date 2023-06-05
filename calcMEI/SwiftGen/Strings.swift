@@ -22,6 +22,14 @@ internal enum S {
       internal static let title = S.tr("Localizable", "Consults.NewConsultButton.title", fallback: "Comece aqui")
     }
   }
+  internal enum Detail {
+    internal enum Alert {
+      /// Você tem certeza de que deseja excluir este item? Essa ação não pode ser desfeita.
+      internal static let message = S.tr("Localizable", "Detail.Alert.Message", fallback: "Você tem certeza de que deseja excluir este item? Essa ação não pode ser desfeita.")
+      /// Confirmação de exclusão
+      internal static let title = S.tr("Localizable", "Detail.Alert.Title", fallback: "Confirmação de exclusão")
+    }
+  }
   internal enum Expenses {
     /// Despesas Anuais
     internal static let title = S.tr("Localizable", "Expenses.Title", fallback: "Despesas Anuais")
@@ -125,6 +133,20 @@ internal enum S {
     internal enum MoneyPlaceHolder {
       /// R$ 0,00
       internal static let text = S.tr("Localizable", "TextField.MoneyPlaceHolder.Text", fallback: "R$ 0,00")
+    }
+  }
+  internal enum UIAlertController {
+    internal enum Cancel {
+      /// Cancelar
+      internal static let text = S.tr("Localizable", "UIAlertController.Cancel.Text", fallback: "Cancelar")
+    }
+    internal enum Delete {
+      /// Excluir
+      internal static let text = S.tr("Localizable", "UIAlertController.Delete.Text", fallback: "Excluir")
+    }
+    internal enum Ok {
+      /// Ok
+      internal static let text = S.tr("Localizable", "UIAlertController.Ok.Text", fallback: "Ok")
     }
   }
 }

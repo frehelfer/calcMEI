@@ -107,12 +107,15 @@ extension ConsultsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            viewModel?.remove(at: indexPath)
-            consultsView.deleteTableViewRow(at: [indexPath])
-            
-            if let consults = viewModel?.consults, consults.isEmpty {
-                UIView.animate(withDuration: 0.7) {
-                    self.consultsView.showEmptyView()
+            presentDeleteAlert(title: S.Detail.Alert.title, message: S.Detail.Alert.message) { [weak self] in
+                guard let self else { return }
+                viewModel?.remove(at: indexPath)
+                consultsView.deleteTableViewRow(at: [indexPath])
+                
+                if let consults = viewModel?.consults, consults.isEmpty {
+                    UIView.animate(withDuration: 0.7) { [weak self] in
+                        self?.consultsView.showEmptyView()
+                    }
                 }
             }
         }
