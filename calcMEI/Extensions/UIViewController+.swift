@@ -52,7 +52,7 @@ extension UIViewController {
         // if textField bottom is below keyboard bottom - bump the frame up
         if textFieldBottomY > keyboardTopY {
             let textBoxY = convertedTextFieldFrame.origin.y
-            let newFrameY = ((textBoxY - keyboardTopY / 2) * -1) + 150
+            let newFrameY = (textBoxY / 2) * -1
             view.frame.origin.y = newFrameY
         }
     }
