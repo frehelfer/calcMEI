@@ -38,6 +38,8 @@
 		8D4716EE29A0434000079790 /* ExpensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716ED29A0434000079790 /* ExpensesViewModel.swift */; };
 		8D4716F029A0486300079790 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716EF29A0486300079790 /* ResultViewModel.swift */; };
 		8D4716F429A3C9EB00079790 /* Currency+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716F329A3C9EB00079790 /* Currency+.swift */; };
+		8D55DD0E2A43A18F00ADAB72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D55DD0D2A43A18F00ADAB72 /* GoogleService-Info.plist */; };
+		8D55DD112A43A30900ADAB72 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8D55DD102A43A30900ADAB72 /* FirebaseCrashlytics */; };
 		8D740227299D494E008BFE17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740226299D494E008BFE17 /* AppDelegate.swift */; };
 		8D740229299D494E008BFE17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740228299D494E008BFE17 /* SceneDelegate.swift */; };
 		8D740233299D4950008BFE17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D740231299D4950008BFE17 /* LaunchScreen.storyboard */; };
@@ -113,6 +115,7 @@
 		8D4716ED29A0434000079790 /* ExpensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewModel.swift; sourceTree = "<group>"; };
 		8D4716EF29A0486300079790 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		8D4716F329A3C9EB00079790 /* Currency+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+.swift"; sourceTree = "<group>"; };
+		8D55DD0D2A43A18F00ADAB72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D740226299D494E008BFE17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D740228299D494E008BFE17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8D740232299D4950008BFE17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC48AED29F81E5900594A46 /* CalcMEI_Core in Frameworks */,
+				8D55DD112A43A30900ADAB72 /* FirebaseCrashlytics in Frameworks */,
 				8D4716DF299E79BB00079790 /* CurrencyText in Frameworks */,
 				8D4716DD299E79BB00079790 /* CurrencyFormatter in Frameworks */,
 			);
@@ -389,6 +393,7 @@
 				8D036C4429EE05750079F4B1 /* Coordinator */,
 				8D036C4529EE05910079F4B1 /* Views */,
 				8D740234299D4950008BFE17 /* Info.plist */,
+				8D55DD0D2A43A18F00ADAB72 /* GoogleService-Info.plist */,
 			);
 			path = calcMEI;
 			sourceTree = "<group>";
@@ -520,6 +525,7 @@
 				8D4716DC299E79BB00079790 /* CurrencyFormatter */,
 				8D4716DE299E79BB00079790 /* CurrencyText */,
 				8DC48AEC29F81E5900594A46 /* CalcMEI_Core */,
+				8D55DD102A43A30900ADAB72 /* FirebaseCrashlytics */,
 			);
 			productName = calcMEI;
 			productReference = 8DC48AEF29F85CBF00594A46 /* calcMEI.app */;
@@ -555,6 +561,7 @@
 			mainGroup = 8D74021A299D494E008BFE17;
 			packageReferences = (
 				8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */,
+				8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8D74021A299D494E008BFE17;
 			projectDirPath = "";
@@ -583,6 +590,7 @@
 				8D036C3929EDDE6F0079F4B1 /* Localizable.strings in Resources */,
 				8D036C3329EDDD670079F4B1 /* swiftgen.yml in Resources */,
 				8D036C3D29EDDFEC0079F4B1 /* Images.xcassets in Resources */,
+				8D55DD0E2A43A18F00ADAB72 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -972,6 +980,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -984,6 +1000,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */;
 			productName = CurrencyText;
+		};
+		8D55DD102A43A30900ADAB72 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 		8DC48AEC29F81E5900594A46 /* CalcMEI_Core */ = {
 			isa = XCSwiftPackageProductDependency;
