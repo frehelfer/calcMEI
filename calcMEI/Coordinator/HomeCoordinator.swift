@@ -97,7 +97,9 @@ private extension HomeCoordinator {
         let viewController = HomeViewController()
         
         viewController.viewModel = {
-            let viewModel = HomeViewModel()
+            let viewModel = HomeViewModel(
+                analyticsService: calcMEI_core.analyticsService
+            )
             viewModel.coordinatorDelegate = self
             return viewModel
         }()
