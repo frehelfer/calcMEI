@@ -16,8 +16,10 @@ class IncomeViewModel {
     
     weak var coordinatorDelegate: IncomeViewModelCoordinatorDelegate?
     
-    init() {
-        
+    private let analyticsService: AnalyticsServiceProtocol
+    
+    init(analyticsService: AnalyticsServiceProtocol) {
+        self.analyticsService = analyticsService
     }
     
     var title: String = S.Income.title
@@ -26,7 +28,7 @@ class IncomeViewModel {
 // MARK: - Navigation
 extension IncomeViewModel {
     
-    func nextSelected(incomeData: IncomeData) {
+    private func nextSelected(incomeData: IncomeData) {
         
         let count = Count(
             inServiceProvision: incomeData.inServiceProvision,
@@ -35,6 +37,20 @@ extension IncomeViewModel {
         )
         
         coordinatorDelegate?.incomeViewModelDidSelectNext(self, count: count)
+    }
+    
+    func nextBottomButtonSelected(incomeData: IncomeData) {
+        analyticsService.logEvent(name: "IncomeView_NextBottomButtonSelected", params: nil)
+        nextSelected(incomeData: incomeData)
+    }
+    
+    func nextNavButtonSelected(incomeData: IncomeData) {
+        analyticsService.logEvent(name: "IncomeView_NextNavButtonSelected", params: nil)
+        nextSelected(incomeData: incomeData)
+    }
+    
+    func backButtonSelected() {
+        analyticsService.logEvent(name: "IncomeView_BackButtonSelected", params: nil)
     }
     
 }

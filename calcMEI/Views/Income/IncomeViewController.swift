@@ -45,6 +45,10 @@ class IncomeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeKeyboardObserver()
+        
+        if self.isMovingFromParent {
+            viewModel?.backButtonSelected()
+        }
     }
     
     // MARK: - Private Functions
@@ -95,6 +99,11 @@ extension IncomeViewController {
 extension IncomeViewController: IncomeViewDelegate {
     
     func nextButtonPressed(incomeData: IncomeViewModel.IncomeData) {
-        viewModel?.nextSelected(incomeData: incomeData)
+        viewModel?.nextBottomButtonSelected(incomeData: incomeData)
     }
+    
+    func nextNavButtonSelected(incomeData: IncomeViewModel.IncomeData) {
+        viewModel?.nextNavButtonSelected(incomeData: incomeData)
+    }
+
 }

@@ -111,7 +111,9 @@ private extension HomeCoordinator {
         let viewController = IncomeViewController()
         
         viewController.viewModel = {
-            let viewModel = IncomeViewModel()
+            let viewModel = IncomeViewModel(
+                analyticsService: self.calcMEI_core.analyticsService
+            )
             viewModel.coordinatorDelegate = self
             return viewModel
         }()
