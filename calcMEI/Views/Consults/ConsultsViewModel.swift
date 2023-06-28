@@ -24,11 +24,13 @@ class ConsultsViewModel {
     weak var viewDelegate: ConsultsViewModelViewDelegate?
     
     private let consultService: ConsultServiceProtocol
+    private let analyticsSerivce: AnalyticsServiceProtocol
     
     private(set) var consults: [Consult] = []
     
-    init(consultService: ConsultServiceProtocol) {
+    init(consultService: ConsultServiceProtocol, analyticsService: AnalyticsServiceProtocol) {
         self.consultService = consultService
+        self.analyticsSerivce = analyticsService
     }
     
     var title: String = S.Consults.title
@@ -53,10 +55,12 @@ class ConsultsViewModel {
 extension ConsultsViewModel {
     
     func newConsultSelected() {
+        analyticsSerivce.logEvent(name: "ConsultsView_NewConsultSelected", params: nil)
         coordinatorDelegate?.consultsViewModelDidSelectNewConsult(self)
     }
     
     func detailSelected(consult: Consult) {
+        analyticsSerivce.logEvent(name: "ConsultsView_DetailSelected", params: nil)
         coordinatorDelegate?.consultsViewModelDidSelectDetail(self, consult: consult)
     }
     
