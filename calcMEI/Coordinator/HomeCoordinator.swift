@@ -156,8 +156,9 @@ private extension HomeCoordinator {
         let viewController = SettingsViewController()
         
         viewController.viewModel = {
-            let viewModel = SettingsViewModel()
-            viewModel.coordinatorDelegate = self
+            let viewModel = SettingsViewModel(
+                analyticsService: self.calcMEI_core.analyticsService
+            )
             return viewModel
         }()
         
@@ -254,13 +255,6 @@ extension HomeCoordinator: ResultViewModelCoordinatorDelegate {
         pop()
     }
 
-}
-
-// MARK: - SettingsViewModelCoordinatorDelegate
-extension HomeCoordinator: SettingsViewModelCoordinatorDelegate {
-    
-    
-    
 }
 
 // MARK: - ConsultsViewModelCoordinatorDelegate
