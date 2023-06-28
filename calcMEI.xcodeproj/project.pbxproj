@@ -38,6 +38,10 @@
 		8D4716EE29A0434000079790 /* ExpensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716ED29A0434000079790 /* ExpensesViewModel.swift */; };
 		8D4716F029A0486300079790 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716EF29A0486300079790 /* ResultViewModel.swift */; };
 		8D4716F429A3C9EB00079790 /* Currency+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4716F329A3C9EB00079790 /* Currency+.swift */; };
+		8D55DD0E2A43A18F00ADAB72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D55DD0D2A43A18F00ADAB72 /* GoogleService-Info.plist */; };
+		8D55DD112A43A30900ADAB72 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8D55DD102A43A30900ADAB72 /* FirebaseCrashlytics */; };
+		8D55DD212A44CE2700ADAB72 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8D55DD202A44CE2700ADAB72 /* FirebaseAnalytics */; };
+		8D55DD232A44CE2700ADAB72 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8D55DD222A44CE2700ADAB72 /* FirebaseAnalyticsSwift */; };
 		8D740227299D494E008BFE17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740226299D494E008BFE17 /* AppDelegate.swift */; };
 		8D740229299D494E008BFE17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D740228299D494E008BFE17 /* SceneDelegate.swift */; };
 		8D740233299D4950008BFE17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D740231299D4950008BFE17 /* LaunchScreen.storyboard */; };
@@ -113,6 +117,7 @@
 		8D4716ED29A0434000079790 /* ExpensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewModel.swift; sourceTree = "<group>"; };
 		8D4716EF29A0486300079790 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		8D4716F329A3C9EB00079790 /* Currency+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+.swift"; sourceTree = "<group>"; };
+		8D55DD0D2A43A18F00ADAB72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D740226299D494E008BFE17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D740228299D494E008BFE17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8D740232299D4950008BFE17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -166,8 +171,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D55DD232A44CE2700ADAB72 /* FirebaseAnalyticsSwift in Frameworks */,
 				8DC48AED29F81E5900594A46 /* CalcMEI_Core in Frameworks */,
+				8D55DD112A43A30900ADAB72 /* FirebaseCrashlytics in Frameworks */,
 				8D4716DF299E79BB00079790 /* CurrencyText in Frameworks */,
+				8D55DD212A44CE2700ADAB72 /* FirebaseAnalytics in Frameworks */,
 				8D4716DD299E79BB00079790 /* CurrencyFormatter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +374,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		8D55DD1F2A44CE2700ADAB72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8D74021A299D494E008BFE17 = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +389,7 @@
 				8DC48AEB29F81A2600594A46 /* CalcMEI_Core */,
 				8DC48AEF29F85CBF00594A46 /* calcMEI.app */,
 				8DC48AF029F85CBF00594A46 /* calcMEITests.xctest */,
+				8D55DD1F2A44CE2700ADAB72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -389,6 +405,7 @@
 				8D036C4429EE05750079F4B1 /* Coordinator */,
 				8D036C4529EE05910079F4B1 /* Views */,
 				8D740234299D4950008BFE17 /* Info.plist */,
+				8D55DD0D2A43A18F00ADAB72 /* GoogleService-Info.plist */,
 			);
 			path = calcMEI;
 			sourceTree = "<group>";
@@ -510,6 +527,7 @@
 				8D74021F299D494E008BFE17 /* Sources */,
 				8D740220299D494E008BFE17 /* Frameworks */,
 				8D740221299D494E008BFE17 /* Resources */,
+				8D55DD122A44905C00ADAB72 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -520,6 +538,9 @@
 				8D4716DC299E79BB00079790 /* CurrencyFormatter */,
 				8D4716DE299E79BB00079790 /* CurrencyText */,
 				8DC48AEC29F81E5900594A46 /* CalcMEI_Core */,
+				8D55DD102A43A30900ADAB72 /* FirebaseCrashlytics */,
+				8D55DD202A44CE2700ADAB72 /* FirebaseAnalytics */,
+				8D55DD222A44CE2700ADAB72 /* FirebaseAnalyticsSwift */,
 			);
 			productName = calcMEI;
 			productReference = 8DC48AEF29F85CBF00594A46 /* calcMEI.app */;
@@ -555,6 +576,7 @@
 			mainGroup = 8D74021A299D494E008BFE17;
 			packageReferences = (
 				8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */,
+				8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8D74021A299D494E008BFE17;
 			projectDirPath = "";
@@ -583,6 +605,7 @@
 				8D036C3929EDDE6F0079F4B1 /* Localizable.strings in Resources */,
 				8D036C3329EDDD670079F4B1 /* swiftgen.yml in Resources */,
 				8D036C3D29EDDFEC0079F4B1 /* Images.xcassets in Resources */,
+				8D55DD0E2A43A18F00ADAB72 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +630,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftgen >/dev/null; then\n  swiftgen config run --config calcMEI/SwiftGen/swiftgen.yml\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
+		8D55DD122A44905C00ADAB72 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -775,7 +818,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -865,6 +908,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = T68CB4R9H5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = calcMEI/Info.plist;
@@ -972,6 +1016,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -984,6 +1036,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */;
 			productName = CurrencyText;
+		};
+		8D55DD102A43A30900ADAB72 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		8D55DD202A44CE2700ADAB72 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		8D55DD222A44CE2700ADAB72 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
 		};
 		8DC48AEC29F81E5900594A46 /* CalcMEI_Core */ = {
 			isa = XCSwiftPackageProductDependency;

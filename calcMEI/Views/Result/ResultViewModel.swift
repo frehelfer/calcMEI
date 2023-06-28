@@ -22,12 +22,14 @@ class ResultViewModel {
     weak var coordinatorDelegate: ResultViewModelCoordinatorDelegate?
     weak var viewDelegate: ResultViewModelViewDelegate?
     
-    private let consultService: ConsultServiceProtocol
     private var count: Count
+    private let consultService: ConsultServiceProtocol
+    private let analyticsService: AnalyticsServiceProtocol
 
-    init(count: Count, consultService: ConsultServiceProtocol) {
+    init(count: Count, consultService: ConsultServiceProtocol, analyticsService: AnalyticsServiceProtocol) {
         self.count = count
         self.consultService = consultService
+        self.analyticsService = analyticsService
     }
     
     var resultItems: [ResultItem] = [] {
@@ -91,6 +93,8 @@ class ResultViewModel {
     
     func didSelectRow(indexPath: IndexPath) {
         let selected = resultItems[indexPath.row]
+        
+        analyticsService.logEvent(name: "ResultView_DidSelectRow", params: ["row" : "\(selected.title)"])
         coordinatorDelegate?.resultViewModelDidSelectItemDetail(self, resultItem: selected)
     }
 }
@@ -137,6 +141,7 @@ extension ResultViewModel {
 extension ResultViewModel {
     
     func resetSelected() {
+        analyticsService.logEvent(name: "ResultView_RestartSelected", params: nil)
         coordinatorDelegate?.resultViewModelDidSelectReset(self)
     }
     
@@ -144,7 +149,13 @@ extension ResultViewModel {
         let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
         count.name = trimmed
         consultService.createConsult(count: count)
+        
+        analyticsService.logEvent(name: "ResultView_SaveConsultSelected", params: nil)
         coordinatorDelegate?.resultViewModelDidSelectReset(self)
+    }
+    
+    func backButtonPressed() {
+        analyticsService.logEvent(name: "ResultView_BackButtonSelected", params: nil)
     }
     
 }

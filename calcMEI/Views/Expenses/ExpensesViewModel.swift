@@ -17,9 +17,11 @@ class ExpensesViewModel {
     weak var coordinatorDelegate: ExpensesViewModelCoordinatorDelegate?
     
     var count: Count
+    private let analyticsService: AnalyticsServiceProtocol
     
-    init(count: Count) {
+    init(count: Count, analyticsService: AnalyticsServiceProtocol) {
         self.count = count
+        self.analyticsService = analyticsService
     }
     
     var title: String = S.Expenses.title
@@ -32,8 +34,21 @@ class ExpensesViewModel {
 // MARK: - Navigation
 extension ExpensesViewModel {
     
-    func nextSelected() {
+    private func nextSelected() {
         coordinatorDelegate?.expensesViewModelDidSelectNext(self, count: self.count)
     }
     
+    func nextBottomButtonSelected() {
+        analyticsService.logEvent(name: "ExpensesView_ResultBottomButtonSelected", params: nil)
+        nextSelected()
+    }
+    
+    func nextNavButtonSelected() {
+        analyticsService.logEvent(name: "ExpensesView_ResultNavButtonSelected", params: nil)
+        nextSelected()
+    }
+    
+    func backButtonSelected() {
+        analyticsService.logEvent(name: "ExpensesView_BackButtonSelected", params: nil)
+    }
 }

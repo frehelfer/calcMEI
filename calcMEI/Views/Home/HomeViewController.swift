@@ -88,7 +88,7 @@ extension HomeViewController: HomeViewDelegate {
         let value = label.attributedText?.attribute(attributeName, at: characterIndex, effectiveRange: nil) as? NSURL
         
         if let url = value as URL? {
-            UIApplication.shared.open(url)
+            viewModel?.openUrl(url: url)
         }
     }
     

@@ -10,7 +10,8 @@ import CurrencyUITextFieldDelegate
 import CurrencyFormatter
 
 protocol ExpensesViewDelegate: AnyObject {
-    func nextButtonPressed(expenses: Double)
+    func nextBottomButtonPressed(expenses: Double)
+    func nextNavButtonPressed(expenses: Double)
 }
 
 class ExpensesView: UIView {
@@ -45,7 +46,7 @@ class ExpensesView: UIView {
         button.setBackgroundColor(A.Colors.background.color.withAlphaComponent(0.5), for: .highlighted)
         
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(nextBottomButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -92,15 +93,19 @@ class ExpensesView: UIView {
     }
     
     // MARK: - Private Actions
+    private func getTextFieldData() -> Double? {
+        return expensesFormContainer.getTextFieldValue()?.currencyFormattedToDouble() ?? nil
+    }
+    
     @objc
-    private func nextButtonPressed() {
-        guard let expenses = expensesFormContainer.getTextFieldValue() else { return }
-        
-        self.delegate?.nextButtonPressed(expenses: expenses.currencyFormattedToDouble())
+    private func nextBottomButtonPressed() {
+        guard let data = getTextFieldData() else { return }
+        self.delegate?.nextBottomButtonPressed(expenses: data)
     }
     
     // MARK: - Public Actions
     func nextNavButtonPressed() {
-        nextButtonPressed()
+        guard let data = getTextFieldData() else { return }
+        self.delegate?.nextNavButtonPressed(expenses: data)
     }
 }

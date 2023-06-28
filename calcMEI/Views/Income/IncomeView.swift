@@ -11,6 +11,7 @@ import CurrencyFormatter
 
 protocol IncomeViewDelegate: AnyObject {
     func nextButtonPressed(incomeData: IncomeViewModel.IncomeData)
+    func nextNavButtonSelected(incomeData: IncomeViewModel.IncomeData)
 }
 
 class IncomeView: UIView {
@@ -131,11 +132,16 @@ class IncomeView: UIView {
     // MARK: - Private Actions
     @objc
     private func nextButtonPressed() {
+        guard let data = textFieldData() else { return }
+        self.delegate?.nextButtonPressed(incomeData: data)
+    }
+    
+    private func textFieldData() -> IncomeViewModel.IncomeData? {
         guard
             let servicesText = servicesFormContainer.getTextFieldValue(),
             let commerceText = commerceFormContainer.getTextFieldValue(),
             let transportText = transportFormContainer.getTextFieldValue()
-        else { return }
+        else { return nil }
 
         let incomeData = IncomeViewModel.IncomeData(
             inServiceProvision: servicesText.currencyFormattedToDouble(),
@@ -143,12 +149,13 @@ class IncomeView: UIView {
             inPassengerTransport: transportText.currencyFormattedToDouble()
         )
         
-        self.delegate?.nextButtonPressed(incomeData: incomeData)
+        return incomeData
     }
     
     // MARK: - Public Actions
     func nextNavButtonPressed() {
-        nextButtonPressed()
+        guard let data = textFieldData() else { return }
+        self.delegate?.nextNavButtonSelected(incomeData: data)
     }
     
     func updateScrollView(contentInsets: UIEdgeInsets) {

@@ -6,10 +6,7 @@
 //
 
 import UIKit
-
-protocol SettingsViewModelCoordinatorDelegate: AnyObject {
-    
-}
+import CalcMEI_Core
 
 protocol SettingsViewModelViewDelegate: AnyObject {
     func settingsViewModel(_ settingsViewModel: SettingsViewModel, updateViewWith: [SettingsViewModel.SettingsSection])
@@ -17,10 +14,13 @@ protocol SettingsViewModelViewDelegate: AnyObject {
 
 class SettingsViewModel {
     
-    weak var coordinatorDelegate: SettingsViewModelCoordinatorDelegate?
     weak var viewDelegate: SettingsViewModelViewDelegate?
     
-    init() {}
+    private let analyticsService: AnalyticsServiceProtocol
+    
+    init(analyticsService: AnalyticsServiceProtocol) {
+        self.analyticsService = analyticsService
+    }
     
     var settingsData: [SettingsSection] = []
     
@@ -55,7 +55,10 @@ class SettingsViewModel {
     }
     
     func didSelectRow(indexPath: IndexPath) {
-        let link = settingsData[indexPath.section].details[indexPath.row].link
+        let item = settingsData[indexPath.section].details[indexPath.row]
+        let link = item.link
+        
+        analyticsService.logEvent(name: "SettingsView_DidSelectRow", params: ["Row" : "\(item.title)"])
         
         guard let url = URL(string: link) else { return }
         
