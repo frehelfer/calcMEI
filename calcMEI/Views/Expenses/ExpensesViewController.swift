@@ -35,6 +35,14 @@ class ExpensesViewController: UIViewController {
         setupNavigationItem()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if self.isMovingFromParent {
+            viewModel?.backButtonSelected()
+        }
+    }
+    
     // MARK: - Private Functions
     private func setupKeyboardHiding() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -46,11 +54,11 @@ class ExpensesViewController: UIViewController {
             title: S.Expenses.NextButton.title,
             style: .plain,
             target: self,
-            action: #selector(nextNavButtonPressed)
+            action: #selector(nextNavButtonSelected)
         )
     }
     
-    @objc private func nextNavButtonPressed() {
+    @objc private func nextNavButtonSelected() {
         expensesView.nextNavButtonPressed()
     }
 }
@@ -58,9 +66,14 @@ class ExpensesViewController: UIViewController {
 // MARK: - ExpensesViewDelegate
 extension ExpensesViewController: ExpensesViewDelegate {
     
-    func nextButtonPressed(expenses: Double) {
+    func nextBottomButtonPressed(expenses: Double) {
         viewModel?.updateCount(expenses: expenses)
-        viewModel?.nextSelected()
+        viewModel?.nextBottomButtonSelected()
+    }
+    
+    func nextNavButtonPressed(expenses: Double) {
+        viewModel?.updateCount(expenses: expenses)
+        viewModel?.nextNavButtonSelected()
     }
     
 }
