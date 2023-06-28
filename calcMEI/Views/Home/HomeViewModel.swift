@@ -45,4 +45,9 @@ extension HomeViewModel {
         coordinatorDelegate?.homeViewModelDidSelectConsults(self)
     }
     
+    func openUrl(url: URL) {
+        analyticsService.logEvent(name: "HomeView_InstruçãoNormativaSelected", params: nil)
+        UIApplication.shared.open(url)
+    }
+    
 }
