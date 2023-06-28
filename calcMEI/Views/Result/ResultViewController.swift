@@ -43,6 +43,14 @@ class ResultViewController: UIViewController {
         viewModel?.updateViewWithCount()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if self.isMovingFromParent {
+            viewModel?.backButtonPressed()
+        }
+    }
+    
     // MARK: - Private Functions
     private func setupKeyboardHiding() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)

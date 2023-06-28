@@ -142,7 +142,8 @@ private extension HomeCoordinator {
         viewController.viewModel = {
             let viewModel = ResultViewModel(
                 count: count,
-                consultService: calcMEI_core.consultService
+                consultService: self.calcMEI_core.consultService,
+                analyticsService: self.calcMEI_core.analyticsService
             )
             viewModel.coordinatorDelegate = self
             return viewModel
