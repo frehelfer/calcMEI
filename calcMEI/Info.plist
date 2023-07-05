@@ -6,6 +6,17 @@
 	<string>$(ANO_CALENDARIO)</string>
 	<key>ANO_EXERCICIO</key>
 	<string>$(ANO_EXERCICIO)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.113866804734-rovilec9rlap2f9fn5tg4ko7dhs30qrk</string>
+			</array>
+		</dict>
+	</array>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>RENDIMENTO_ISENTO_COMERCIO</key>
@@ -33,6 +44,12 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 </dict>
