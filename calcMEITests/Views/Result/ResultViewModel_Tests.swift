@@ -10,17 +10,11 @@ import CalcMEI_Core
 @testable import calcMEI
 
 final class ResultViewModel_Tests: XCTestCase {
-
-    func test_ResultViewModel_count_shouldBeInjectedValue() {
-        // given
-        let count = Count()
-        
-        // when
-        let sut = makeSUT(count: count)
-        
-        // then
-        XCTAssertEqual(sut.count.id, count.id)
-    }
+    
+    private let resultCoordinatorSpy = ResultCoordinatorSpy()
+    private let resultViewControllerSpy = ResultViewControllerSpy()
+    private let analyticsServiceSpy = AnalyticsServiceSpy()
+    private let consultServiceSpy = ConsultServiceSpy()
     
     func test_ResultViewModel_title_shouldNotBeEmpty() {
         let sut = makeSUT()
@@ -31,8 +25,96 @@ final class ResultViewModel_Tests: XCTestCase {
         XCTAssertGreaterThan(title.count, 0)
     }
     
-    private func makeSUT(count: Count = Count()) -> ExpensesViewModel {
-        ExpensesViewModel(count: count)
+    func test_ResultViewModel_updateViewWithCount_shouldCallUpdateViewWithCount() {
+        let sut = makeSUT()
+        
+        sut.updateViewWithCount()
+        
+        XCTAssertEqual(resultViewControllerSpy.calledMethods, [.updateViewWithCount])
+    }
+    
+    func test_ResultViewModel_resetSelected_shouldCallDidSelectReset() {
+        let sut = makeSUT()
+        
+        sut.resetSelected()
+        
+        XCTAssertEqual(resultCoordinatorSpy.calledMethods, [.resultViewModelDidSelectReset])
+    }
+    
+    func test_ResultViewModel_resetSelected_shouldLogEvent() {
+        let sut = makeSUT()
+        
+        sut.resetSelected()
+        
+        XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+    }
+    
+    func test_ResultViewModel_saveConsultSelected_shouldCallCreateConsult() {
+        let sut = makeSUT()
+        let text = UUID().uuidString
+        
+        sut.saveConsultSelected(text)
+        
+        XCTAssertEqual(consultServiceSpy.calledMethods, [.createConsult])
+        XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(resultCoordinatorSpy.calledMethods, [.resultViewModelDidSelectReset])
+    }
+    
+    func test_ResultViewModel_backButtonPressed_shouldLogEvent() {
+        let sut = makeSUT()
+        
+        sut.backButtonPressed()
+        
+        XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+    }
+    
+    private func makeSUT(count: Count = Count()) -> ResultViewModel {
+        let viewModel = ResultViewModel(
+            count: count,
+            consultService: consultServiceSpy,
+            analyticsService: analyticsServiceSpy
+        )
+        viewModel.coordinatorDelegate = resultCoordinatorSpy
+        viewModel.viewDelegate = resultViewControllerSpy
+        return viewModel
     }
 
 }
+
+private extension ResultViewModel_Tests {
+    
+    class ResultCoordinatorSpy: ResultViewModelCoordinatorDelegate {
+        
+        enum Methods {
+            case resultViewModelDidSelectReset
+            case resultViewModelDidSelectItemDetail
+        }
+        
+        var calledMethods = [Methods]()
+        
+        func resultViewModelDidSelectReset(_ resultViewModel: calcMEI.ResultViewModel) {
+            calledMethods.append(.resultViewModelDidSelectReset)
+        }
+        
+        func resultViewModelDidSelectItemDetail(_ resultViewModel: calcMEI.ResultViewModel, resultItem: calcMEI.ResultItem) {
+            calledMethods.append(.resultViewModelDidSelectItemDetail)
+        }
+        
+    }
+    
+    class ResultViewControllerSpy: ResultViewModelViewDelegate {
+        
+        enum Methods {
+            case updateViewWithCount
+        }
+        
+        var calledMethods = [Methods]()
+        
+        func resultViewModel(_ resultViewMode: calcMEI.ResultViewModel, updateViewWithCount: [calcMEI.ResultItem]) {
+            calledMethods.append(.updateViewWithCount)
+        }
+        
+    }
+}
+
+

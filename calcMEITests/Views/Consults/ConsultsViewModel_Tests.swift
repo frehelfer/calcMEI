@@ -14,6 +14,7 @@ final class ConsultsViewModel_Tests: XCTestCase {
     private let consultServiceSpy = ConsultServiceSpy()
     private let coordinatorSpy = HomeCoordinatorSpy()
     private let viewControllerSpy = ConsultsViewControllerSpy()
+    private let analyticsServiceSpy = AnalyticsServiceSpy()
 
     func test_ConsultsViewModel_title_shouldNotBeEmpty() {
         XCTAssertFalse(makeSUT().title.isEmpty)
@@ -32,17 +33,25 @@ final class ConsultsViewModel_Tests: XCTestCase {
         
         sut.loadConsults()
         
-        XCTAssertEqual(viewControllerSpy.calledMethods, [])
+        XCTAssertEqual(viewControllerSpy.calledMethods, [.hasNoConsults])
     }
     
-    
-    
-    
+    func test_ConsultsViewModel_newConsultSelected_shouldCallNewConsultSelected() {
+        let sut = makeSUT()
+        
+        sut.newConsultSelected()
+        
+        XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(coordinatorSpy.calledMethods, [.consultsViewModelDidSelectNewConsult])
+    }
     
     // MARK: - Helpers
     
     private func makeSUT() -> ConsultsViewModel {
-        let viewModel = ConsultsViewModel(consultService: consultServiceSpy)
+        let viewModel = ConsultsViewModel(
+            consultService: consultServiceSpy,
+            analyticsService: analyticsServiceSpy
+        )
         viewModel.coordinatorDelegate = coordinatorSpy
         viewModel.viewDelegate = viewControllerSpy
         return viewModel
@@ -53,16 +62,21 @@ final class ConsultsViewModel_Tests: XCTestCase {
 private extension ConsultsViewModel_Tests {
     
     class ConsultsViewControllerSpy: ConsultsViewModelViewDelegate {
+        
         enum Methods {
             case didUpdateConsults
+            case hasNoConsults
         }
         
         var calledMethods = [Methods]()
         
+        func consultsViewModelHasNoConsults(_ consultsViewModel: calcMEI.ConsultsViewModel) {
+            calledMethods.append(.hasNoConsults)
+        }
+        
         func consultsViewModel(_ consultsViewModel: ConsultsViewModel, didUpdateConsults: [Consult]) {
             calledMethods.append(.didUpdateConsults)
         }
-        
         
     }
     

@@ -9,6 +9,7 @@ import Foundation
 import CalcMEI_Core
 
 class ConsultServiceSpy: ConsultServiceProtocol {
+    
     enum Methods {
         case createConsult
         case deleteConsult

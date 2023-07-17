@@ -14,43 +14,100 @@ import CalcMEI_Core
 
 final class ExpensesViewModel_Tests: XCTestCase {
     
+    private let expensesCoordinatorSpy = ExpensesCoordinatorSpy()
+    private let analyticsServiceSpy = AnalyticsServiceSpy()
+    
     func test_ExpensesViewModel_count_shouldBeInjectedValue() {
-        // given
         let count = Count()
         
-        // when
         let sut = makeSUT(count: count)
         
-        // then
         XCTAssertEqual(sut.count.id, count.id)
     }
     
     func test_ExpensesViewModel_title_shouldNotBeEmpty() {
-        // given
         let sut = makeSUT()
         
-        // when
         let title = sut.title
         
-        // then
         XCTAssertFalse(title.isEmpty)
         XCTAssertGreaterThan(title.count, 0)
     }
     
     func test_ExpensesViewModel_updateCount_shouldUpdateExpensesCount() {
-        // given
         let sut = makeSUT()
         let value: Double = Double.random(in: 1..<200_000)
         
-        // when
         sut.updateCount(expenses: value)
         
-        // then
         XCTAssertEqual(sut.count.outExpenses, value)
     }
     
+    func test_ExpensesViewModel_nextBottomButtonSelected_shouldCallNextPage() {
+        let sut = makeSUT()
+        
+        sut.nextBottomButtonSelected()
+        
+        XCTAssertEqual(expensesCoordinatorSpy.calledMethods, [.expensesViewModelDidSelectNext])
+    }
+    
+    func test_ExpensesViewModel_nextBottomButtonSelected_shouldLogEvent() {
+        let sut = makeSUT()
+        
+        sut.nextBottomButtonSelected()
+        
+        XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+    }
+    
+    func test_ExpensesViewModel_nextNavButtonSelected_shouldCallNextPage() {
+        let sut = makeSUT()
+        
+        sut.nextNavButtonSelected()
+        
+        XCTAssertEqual(expensesCoordinatorSpy.calledMethods, [.expensesViewModelDidSelectNext])
+    }
+    
+    func test_ExpensesViewModel_nextNavButtonSelected_shouldLogEvent() {
+        let sut = makeSUT()
+        
+        sut.nextNavButtonSelected()
+        
+        XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+    }
+    
+    func test_ExpensesViewModel_backButtonSelected_shouldLogEvent() {
+        let sut = makeSUT()
+        
+        sut.backButtonSelected()
+        
+        XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+    }
+    
     private func makeSUT(count: Count = Count()) -> ExpensesViewModel {
-        ExpensesViewModel(count: count)
+        let viewModel = ExpensesViewModel(
+            count: count,
+            analyticsService: analyticsServiceSpy
+        )
+        viewModel.coordinatorDelegate = expensesCoordinatorSpy
+        return viewModel
     }
 
+}
+
+private extension ExpensesViewModel_Tests {
+    
+    class ExpensesCoordinatorSpy: ExpensesViewModelCoordinatorDelegate {
+        
+        enum Methods {
+            case expensesViewModelDidSelectNext
+        }
+        
+        var calledMethods = [Methods]()
+        
+        func expensesViewModelDidSelectNext(_ expensesViewModel: calcMEI.ExpensesViewModel, count: Count) {
+            calledMethods.append(.expensesViewModelDidSelectNext)
+        }
+        
+    }
+    
 }
