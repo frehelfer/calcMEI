@@ -47,6 +47,8 @@ final class ResultViewModel_Tests: XCTestCase {
         sut.resetSelected()
         
         XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "ResultView_RestartSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     func test_ResultViewModel_saveConsultSelected_shouldCallCreateConsult() {
@@ -56,8 +58,18 @@ final class ResultViewModel_Tests: XCTestCase {
         sut.saveConsultSelected(text)
         
         XCTAssertEqual(consultServiceSpy.calledMethods, [.createConsult])
-        XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
         XCTAssertEqual(resultCoordinatorSpy.calledMethods, [.resultViewModelDidSelectReset])
+    }
+    
+    func test_ResultViewModel_saveConsultSelected_shouldLogEvent() {
+        let sut = makeSUT()
+        let text = UUID().uuidString
+        
+        sut.saveConsultSelected(text)
+        
+        XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "ResultView_SaveConsultSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     func test_ResultViewModel_backButtonPressed_shouldLogEvent() {
@@ -66,6 +78,8 @@ final class ResultViewModel_Tests: XCTestCase {
         sut.backButtonPressed()
         
         XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "ResultView_BackButtonSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     private func makeSUT(count: Count = Count()) -> ResultViewModel {
