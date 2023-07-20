@@ -30,6 +30,8 @@ final class IncomeViewModel_Tests: XCTestCase {
         sut.nextBottomButtonSelected(incomeData: data)
         
         XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "IncomeView_NextBottomButtonSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     func test_IncomeViewModel_nextBottomButtonSelected_shouldCallIncomeViewModelDidSelectNext() {
@@ -48,6 +50,8 @@ final class IncomeViewModel_Tests: XCTestCase {
         sut.nextNavButtonSelected(incomeData: data)
         
         XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "IncomeView_NextNavButtonSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     func test_IncomeViewModel_nextNavButtonSelected_shouldCallIncomeViewModelDidSelectNext() {
@@ -65,6 +69,8 @@ final class IncomeViewModel_Tests: XCTestCase {
         sut.backButtonSelected()
         
         XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "IncomeView_BackButtonSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
 
     private func makeSUT() -> IncomeViewModel {
