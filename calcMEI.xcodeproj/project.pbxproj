@@ -63,10 +63,10 @@
 		8D8A792329D3856500C7A127 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792229D3856500C7A127 /* DetailViewController.swift */; };
 		8D8A792529D3856E00C7A127 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792429D3856E00C7A127 /* DetailViewModel.swift */; };
 		8D8C0A0C2A6565F7008F239C /* ItemDetailViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8C0A0B2A6565F7008F239C /* ItemDetailViewModel_Tests.swift */; };
+		8D8C0A122A676E67008F239C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8D8C0A112A676E67008F239C /* FirebaseMessaging */; };
 		8D9023912A0C177000A61E9C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9023902A0C177000A61E9C /* SettingsTableViewCell.swift */; };
 		8DC48AED29F81E5900594A46 /* CalcMEI_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC48AEC29F81E5900594A46 /* CalcMEI_Core */; };
 		8DC48AF729F866C700594A46 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC48AF629F866C700594A46 /* Configuration.swift */; };
-		8DD24DDA2A60A75000571434 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8DD24DD92A60A75000571434 /* FirebaseMessaging */; };
 		8DD9736A2A1AD26300479F79 /* UINavigationBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD973692A1AD26300479F79 /* UINavigationBar+.swift */; };
 		8DE7C7F529F2EFC800161DFC /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7C7F429F2EFC800161DFC /* UIView+.swift */; };
 		8DE7C7FB29F40CBE00161DFC /* CustomFormContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE7C7FA29F40CBE00161DFC /* CustomFormContainer.swift */; };
@@ -169,7 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD24DDA2A60A75000571434 /* FirebaseMessaging in Frameworks */,
+				8D8C0A122A676E67008F239C /* FirebaseMessaging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +533,7 @@
 			);
 			name = calcMEITests;
 			packageProductDependencies = (
-				8DD24DD92A60A75000571434 /* FirebaseMessaging */,
+				8D8C0A112A676E67008F239C /* FirebaseMessaging */,
 			);
 			productName = calcMEITests;
 			productReference = 8DC48AF029F85CBF00594A46 /* calcMEITests.xctest */;
@@ -1076,14 +1076,14 @@
 			package = 8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsSwift;
 		};
-		8DC48AEC29F81E5900594A46 /* CalcMEI_Core */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CalcMEI_Core;
-		};
-		8DD24DD92A60A75000571434 /* FirebaseMessaging */ = {
+		8D8C0A112A676E67008F239C /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		8DC48AEC29F81E5900594A46 /* CalcMEI_Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CalcMEI_Core;
 		};
 		8DFEE57D2A5445D600FADEC9 /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -10,10 +10,14 @@ import CalcMEI_Core
 
 class AnalyticsServiceSpy: AnalyticsServiceProtocol {
     
-    var calledLogEvent: Bool = false
+    private(set) var calledLogEvent: Bool = false
+    private(set) var eventName: String? = nil
+    private(set) var eventParams: [String: Any]? = nil
     
     func logEvent(name: String, params: [String : Any]?) {
         calledLogEvent = true
+        eventName = name
+        eventParams = params
     }
     
 }

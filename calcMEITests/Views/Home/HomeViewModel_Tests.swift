@@ -36,6 +36,8 @@ final class HomeViewModel_Tests: XCTestCase {
         sut.startSelected()
         
         XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "HomeView_StartSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     func test_homeViewModel_settingsSelected_shouldCallHomeViewModelDidSelectSettings() {
@@ -52,6 +54,8 @@ final class HomeViewModel_Tests: XCTestCase {
         sut.settingsSelected()
         
         XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "HomeView_SettingsSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     func test_homeViewModel_settingsSelected_shouldCallHomeViewModelDidSelectConsults() {
@@ -68,6 +72,8 @@ final class HomeViewModel_Tests: XCTestCase {
         sut.consultsSelected()
         
         XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "HomeView_ConsultsSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     func test_homeViewModel_openUrl_shouldLogEvent() {
@@ -77,6 +83,8 @@ final class HomeViewModel_Tests: XCTestCase {
         sut.openUrl(url: url)
         
         XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "HomeView_InstruçãoNormativaSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     private func makeSUT() -> HomeViewModel {
