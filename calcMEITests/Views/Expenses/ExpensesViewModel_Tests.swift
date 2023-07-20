@@ -19,9 +19,9 @@ final class ExpensesViewModel_Tests: XCTestCase {
     
     func test_ExpensesViewModel_count_shouldBeInjectedValue() {
         let count = Count()
-        
+
         let sut = makeSUT(count: count)
-        
+
         XCTAssertEqual(sut.count.id, count.id)
     }
     
@@ -57,6 +57,8 @@ final class ExpensesViewModel_Tests: XCTestCase {
         sut.nextBottomButtonSelected()
         
         XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "ExpensesView_ResultBottomButtonSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     func test_ExpensesViewModel_nextNavButtonSelected_shouldCallNextPage() {
@@ -73,6 +75,8 @@ final class ExpensesViewModel_Tests: XCTestCase {
         sut.nextNavButtonSelected()
         
         XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "ExpensesView_ResultNavButtonSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     func test_ExpensesViewModel_backButtonSelected_shouldLogEvent() {
@@ -81,6 +85,8 @@ final class ExpensesViewModel_Tests: XCTestCase {
         sut.backButtonSelected()
         
         XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "ExpensesView_BackButtonSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     private func makeSUT(count: Count = Count()) -> ExpensesViewModel {

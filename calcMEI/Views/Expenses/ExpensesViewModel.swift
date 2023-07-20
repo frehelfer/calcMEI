@@ -16,7 +16,7 @@ class ExpensesViewModel {
     
     weak var coordinatorDelegate: ExpensesViewModelCoordinatorDelegate?
     
-    var count: Count
+    private(set) var count: Count
     private let analyticsService: AnalyticsServiceProtocol
     
     init(count: Count, analyticsService: AnalyticsServiceProtocol) {
