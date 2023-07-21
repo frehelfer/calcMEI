@@ -41,8 +41,17 @@ final class ConsultsViewModel_Tests: XCTestCase {
         
         sut.newConsultSelected()
         
-        XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
         XCTAssertEqual(coordinatorSpy.calledMethods, [.consultsViewModelDidSelectNewConsult])
+    }
+    
+    func test_ConsultsViewModel_newConsultSelected_shouldLogEvent() {
+        let sut = makeSUT()
+        
+        sut.newConsultSelected()
+        
+        XCTAssertTrue(analyticsServiceSpy.calledLogEvent)
+        XCTAssertEqual(analyticsServiceSpy.eventName, "ConsultsView_NewConsultSelected")
+        XCTAssertNil(analyticsServiceSpy.eventParams)
     }
     
     // MARK: - Helpers
