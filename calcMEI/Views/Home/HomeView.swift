@@ -108,6 +108,7 @@ class HomeView: UIView {
         
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(newConsultButtonPressed), for: .touchUpInside)
+        button.accessibilityIdentifier = "newConsultButton"
         return button
     }()
     

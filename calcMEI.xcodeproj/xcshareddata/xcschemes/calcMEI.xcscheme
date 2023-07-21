@@ -40,6 +40,17 @@
                ReferencedContainer = "container:calcMEI.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8D8C0A322A6AFF34008F239C"
+               BuildableName = "calcMEI_UITests.xctest"
+               BlueprintName = "calcMEI_UITests"
+               ReferencedContainer = "container:calcMEI.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -65,19 +76,19 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "-FIRDebugEnabled"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "-FIRDebugDisabled"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-FIRAnalyticsDebugEnabled"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-FIRAnalyticsDebugDisabled"
+            argument = "-FIRAnalyticsDebugEnabled"
             isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-FIRAnalyticsDebugDisabled"
+            isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>
