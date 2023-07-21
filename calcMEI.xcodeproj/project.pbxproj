@@ -63,10 +63,9 @@
 		8D8A792329D3856500C7A127 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792229D3856500C7A127 /* DetailViewController.swift */; };
 		8D8A792529D3856E00C7A127 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A792429D3856E00C7A127 /* DetailViewModel.swift */; };
 		8D8C0A0C2A6565F7008F239C /* ItemDetailViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8C0A0B2A6565F7008F239C /* ItemDetailViewModel_Tests.swift */; };
-		8D8C0A122A676E67008F239C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8D8C0A112A676E67008F239C /* FirebaseMessaging */; };
-		8D8C0A362A6AFF34008F239C /* calcMEI_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8C0A352A6AFF34008F239C /* calcMEI_UITests.swift */; };
-		8D8C0A382A6AFF34008F239C /* calcMEI_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8C0A372A6AFF34008F239C /* calcMEI_UITestsLaunchTests.swift */; };
 		8D8C0A412A6B0041008F239C /* HomeView_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8C0A402A6B0041008F239C /* HomeView_UITests.swift */; };
+		8D8C0A492A6B34A3008F239C /* calcMEI_SnapShotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8C0A482A6B34A3008F239C /* calcMEI_SnapShotTests.swift */; };
+		8D8C0A512A6B3537008F239C /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 8D8C0A502A6B3537008F239C /* SnapshotTesting */; };
 		8D9023912A0C177000A61E9C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9023902A0C177000A61E9C /* SettingsTableViewCell.swift */; };
 		8DC48AED29F81E5900594A46 /* CalcMEI_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC48AEC29F81E5900594A46 /* CalcMEI_Core */; };
 		8DC48AF729F866C700594A46 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC48AF629F866C700594A46 /* Configuration.swift */; };
@@ -92,6 +91,13 @@
 			remoteInfo = calcMEI;
 		};
 		8D8C0A392A6AFF34008F239C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D74021B299D494E008BFE17 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D740222299D494E008BFE17;
+			remoteInfo = calcMEI;
+		};
+		8D8C0A4A2A6B34A3008F239C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8D74021B299D494E008BFE17 /* Project object */;
 			proxyType = 1;
@@ -154,9 +160,9 @@
 		8D8A792429D3856E00C7A127 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		8D8C0A0B2A6565F7008F239C /* ItemDetailViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel_Tests.swift; sourceTree = "<group>"; };
 		8D8C0A332A6AFF34008F239C /* calcMEI_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calcMEI_UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D8C0A352A6AFF34008F239C /* calcMEI_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calcMEI_UITests.swift; sourceTree = "<group>"; };
-		8D8C0A372A6AFF34008F239C /* calcMEI_UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calcMEI_UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8D8C0A402A6B0041008F239C /* HomeView_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView_UITests.swift; sourceTree = "<group>"; };
+		8D8C0A462A6B34A3008F239C /* calcMEI_SnapShotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calcMEI_SnapShotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D8C0A482A6B34A3008F239C /* calcMEI_SnapShotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calcMEI_SnapShotTests.swift; sourceTree = "<group>"; };
 		8D9023902A0C177000A61E9C /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		8DC48AEB29F81A2600594A46 /* CalcMEI_Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CalcMEI_Core; sourceTree = "<group>"; };
 		8DC48AEE29F8595800594A46 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -183,7 +189,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D8C0A122A676E67008F239C /* FirebaseMessaging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +210,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D8C0A432A6B34A3008F239C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D8C0A512A6B3537008F239C /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,11 +437,13 @@
 				8D740225299D494E008BFE17 /* calcMEI */,
 				8D09CAE629C0F1B600FB989F /* calcMEITests */,
 				8D8C0A342A6AFF34008F239C /* calcMEI_UITests */,
+				8D8C0A472A6B34A3008F239C /* calcMEI_SnapShotTests */,
 				8DC48AEB29F81A2600594A46 /* CalcMEI_Core */,
 				8DC48AEF29F85CBF00594A46 /* calcMEI.app */,
 				8DC48AF029F85CBF00594A46 /* calcMEITests.xctest */,
 				8D8C0A332A6AFF34008F239C /* calcMEI_UITests.xctest */,
 				8D55DD1F2A44CE2700ADAB72 /* Frameworks */,
+				8D8C0A462A6B34A3008F239C /* calcMEI_SnapShotTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -516,8 +531,6 @@
 			isa = PBXGroup;
 			children = (
 				8D8C0A3E2A6AFFFE008F239C /* Views */,
-				8D8C0A352A6AFF34008F239C /* calcMEI_UITests.swift */,
-				8D8C0A372A6AFF34008F239C /* calcMEI_UITestsLaunchTests.swift */,
 			);
 			path = calcMEI_UITests;
 			sourceTree = "<group>";
@@ -528,6 +541,14 @@
 				8D8C0A402A6B0041008F239C /* HomeView_UITests.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8D8C0A472A6B34A3008F239C /* calcMEI_SnapShotTests */ = {
+			isa = PBXGroup;
+			children = (
+				8D8C0A482A6B34A3008F239C /* calcMEI_SnapShotTests.swift */,
+			);
+			path = calcMEI_SnapShotTests;
 			sourceTree = "<group>";
 		};
 		8D90238F2A0C175900A61E9C /* Cell */ = {
@@ -574,7 +595,6 @@
 			);
 			name = calcMEITests;
 			packageProductDependencies = (
-				8D8C0A112A676E67008F239C /* FirebaseMessaging */,
 			);
 			productName = calcMEITests;
 			productReference = 8DC48AF029F85CBF00594A46 /* calcMEITests.xctest */;
@@ -626,6 +646,27 @@
 			productReference = 8D8C0A332A6AFF34008F239C /* calcMEI_UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8D8C0A452A6B34A3008F239C /* calcMEI_SnapShotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D8C0A4C2A6B34A3008F239C /* Build configuration list for PBXNativeTarget "calcMEI_SnapShotTests" */;
+			buildPhases = (
+				8D8C0A422A6B34A3008F239C /* Sources */,
+				8D8C0A432A6B34A3008F239C /* Frameworks */,
+				8D8C0A442A6B34A3008F239C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D8C0A4B2A6B34A3008F239C /* PBXTargetDependency */,
+			);
+			name = calcMEI_SnapShotTests;
+			packageProductDependencies = (
+				8D8C0A502A6B3537008F239C /* SnapshotTesting */,
+			);
+			productName = calcMEI_SnapShotTests;
+			productReference = 8D8C0A462A6B34A3008F239C /* calcMEI_SnapShotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -647,6 +688,10 @@
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = 8D740222299D494E008BFE17;
 					};
+					8D8C0A452A6B34A3008F239C = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 8D740222299D494E008BFE17;
+					};
 				};
 			};
 			buildConfigurationList = 8D74021E299D494E008BFE17 /* Build configuration list for PBXProject "calcMEI" */;
@@ -661,6 +706,7 @@
 			packageReferences = (
 				8D4716DB299E79BB00079790 /* XCRemoteSwiftPackageReference "CurrencyText" */,
 				8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8D8C0A4F2A6B3537008F239C /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 8D74021A299D494E008BFE17;
 			projectDirPath = "";
@@ -669,6 +715,7 @@
 				8D740222299D494E008BFE17 /* calcMEI */,
 				8D09CAE429C0F1B600FB989F /* calcMEITests */,
 				8D8C0A322A6AFF34008F239C /* calcMEI_UITests */,
+				8D8C0A452A6B34A3008F239C /* calcMEI_SnapShotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -695,6 +742,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8D8C0A312A6AFF34008F239C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D8C0A442A6B34A3008F239C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -821,9 +875,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D8C0A382A6AFF34008F239C /* calcMEI_UITestsLaunchTests.swift in Sources */,
 				8D8C0A412A6B0041008F239C /* HomeView_UITests.swift in Sources */,
-				8D8C0A362A6AFF34008F239C /* calcMEI_UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D8C0A422A6B34A3008F239C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D8C0A492A6B34A3008F239C /* calcMEI_SnapShotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,6 +899,11 @@
 			isa = PBXTargetDependency;
 			target = 8D740222299D494E008BFE17 /* calcMEI */;
 			targetProxy = 8D8C0A392A6AFF34008F239C /* PBXContainerItemProxy */;
+		};
+		8D8C0A4B2A6B34A3008F239C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D740222299D494E008BFE17 /* calcMEI */;
+			targetProxy = 8D8C0A4A2A6B34A3008F239C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -859,17 +924,19 @@
 			baseConfigurationReference = 8DC48AEE29F8595800594A46 /* Debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T68CB4R9H5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fre.calcMEITests;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.calcmei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/calcMEI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/calcMEI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/calcMEI.app/calcMEI";
 			};
 			name = Debug;
 		};
@@ -878,17 +945,19 @@
 			baseConfigurationReference = 8DC48AF829F86A2400594A46 /* Release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T68CB4R9H5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fre.calcMEITests;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.calcmei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/calcMEI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/calcMEI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/calcMEI.app/calcMEI";
 			};
 			name = Release;
 		};
@@ -1036,6 +1105,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.3;
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.calcmei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1074,6 +1145,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.3;
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.calcmei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1095,7 +1168,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "fre.calcMEI-UITests";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.calcmei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -1113,12 +1186,53 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "fre.calcMEI-UITests";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.calcmei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = calcMEI;
+			};
+			name = Release;
+		};
+		8D8C0A4D2A6B34A3008F239C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = T68CB4R9H5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.calcMEI-SnapShotTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/calcMEI.app/calcMEI";
+			};
+			name = Debug;
+		};
+		8D8C0A4E2A6B34A3008F239C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T68CB4R9H5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.calcMEI-SnapShotTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/calcMEI.app/calcMEI";
 			};
 			name = Release;
 		};
@@ -1161,6 +1275,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		8D8C0A4C2A6B34A3008F239C /* Build configuration list for PBXNativeTarget "calcMEI_SnapShotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D8C0A4D2A6B34A3008F239C /* Debug */,
+				8D8C0A4E2A6B34A3008F239C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1178,6 +1301,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 10.0.0;
+			};
+		};
+		8D8C0A4F2A6B3537008F239C /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1208,10 +1339,10 @@
 			package = 8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsSwift;
 		};
-		8D8C0A112A676E67008F239C /* FirebaseMessaging */ = {
+		8D8C0A502A6B3537008F239C /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8D55DD0F2A43A30900ADAB72 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
+			package = 8D8C0A4F2A6B3537008F239C /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 		8DC48AEC29F81E5900594A46 /* CalcMEI_Core */ = {
 			isa = XCSwiftPackageProductDependency;

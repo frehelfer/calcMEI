@@ -38,45 +38,26 @@ final class HomeView_UITests: XCTestCase {
         let servicesFormContainer = app.otherElements["servicesFormContainer"]
         servicesFormContainer.textFields.element(boundBy: 0).tap()
         
-        let key1 = app.keys["1"]
-        key1.tap()
-        
-        let key2 = app.keys["0"]
-        key2.tap()
-        key2.tap()
-        key2.tap()
-        key2.tap()
+        servicesFormContainer.typeText("10000")
 
         let returnButton = app.toolbars["Toolbar"].buttons["Retorno"]
         returnButton.tap()
         
         let commerceFormContainer  = app.otherElements["commerceFormContainer"]
         commerceFormContainer.textFields.element.tap()
-        key1.tap()
-        key2.tap()
-        key2.tap()
-        key2.tap()
-        key2.tap()
+        commerceFormContainer.typeText("10000")
         returnButton.tap()
         
         let transportFormContainer  = app.otherElements["transportFormContainer"]
         transportFormContainer.textFields.element.tap()
-        key1.tap()
-        key2.tap()
-        key2.tap()
-        key2.tap()
-        key2.tap()
+        transportFormContainer.typeText("10000")
         returnButton.tap()
         
         app.buttons["goToExpensesButton"].tap()
         
         let expensesFormContainer  = app.otherElements["expensesFormContainer"]
         expensesFormContainer.textFields.element.tap()
-        key1.tap()
-        key2.tap()
-        key2.tap()
-        key2.tap()
-        key2.tap()
+        expensesFormContainer.typeText("10000")
         returnButton.tap()
 
         app.buttons["goToResultButton"].tap()
