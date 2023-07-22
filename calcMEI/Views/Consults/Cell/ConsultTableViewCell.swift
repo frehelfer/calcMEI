@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CalcMEI_Core
 
 class ConsultTableViewCell: UITableViewCell {
     
@@ -97,14 +96,14 @@ class ConsultTableViewCell: UITableViewCell {
     // MARK: - Private Actions
     
     // MARK: - Public Actions
-    public func setupCell(with consult: Consult?) {
-        guard let consult, let date = consult.date else { return }
-        nameLabel.text = consult.name
+    public func setupCell(with data: ConsultsViewModel.CellData?) {
+        guard let data else { return }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
 
-        dateLabel.text = dateFormatter.string(from: date)
+        nameLabel.text = data.name
+        dateLabel.text = dateFormatter.string(from: data.date)
     }
     
     

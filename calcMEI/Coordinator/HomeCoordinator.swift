@@ -261,11 +261,11 @@ extension HomeCoordinator: ResultViewModelCoordinatorDelegate {
 // MARK: - ConsultsViewModelCoordinatorDelegate
 extension HomeCoordinator: ConsultsViewModelCoordinatorDelegate {
     
-    func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModel) {
+    func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModelProtocol) {
         showIncome()
     }
     
-    func consultsViewModelDidSelectDetail(_ consultsViewModel: ConsultsViewModel, consult: Consult) {
+    func consultsViewModelDidSelectDetail(_ consultsViewModel: ConsultsViewModelProtocol, consult: Consult) {
         showDetail(consult: consult)
     }
 

@@ -8,17 +8,34 @@
 import UIKit
 import CalcMEI_Core
 
+protocol ConsultsViewModelProtocol {
+    var coordinatorDelegate: ConsultsViewModelCoordinatorDelegate? { get set }
+    var viewDelegate: ConsultsViewModelViewDelegate? { get set }
+    
+    var consults: [Consult] { get }
+    var title: String { get }
+    
+    func loadConsults()
+    func getNumberOfRowsInSection() -> Int
+    func getDataToCell(indexPath: IndexPath) -> ConsultsViewModel.CellData?
+    func remove(at index: IndexPath)
+    
+    func newConsultSelected()
+    func detailSelected(consult: Consult)
+    
+}
+
 protocol ConsultsViewModelCoordinatorDelegate: AnyObject{
-    func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModel)
-    func consultsViewModelDidSelectDetail(_ consultsViewModel: ConsultsViewModel, consult: Consult)
+    func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModelProtocol)
+    func consultsViewModelDidSelectDetail(_ consultsViewModel: ConsultsViewModelProtocol, consult: Consult)
 }
 
 protocol ConsultsViewModelViewDelegate: AnyObject {
-    func consultsViewModel(_ consultsViewModel: ConsultsViewModel, didUpdateConsults: [Consult])
-    func consultsViewModelHasNoConsults(_ consultsViewModel: ConsultsViewModel)
+    func consultsViewModel(_ consultsViewModel: ConsultsViewModelProtocol, didUpdateConsults: [Consult])
+    func consultsViewModelHasNoConsults(_ consultsViewModel: ConsultsViewModelProtocol)
 }
 
-class ConsultsViewModel {
+class ConsultsViewModel: ConsultsViewModelProtocol {
     
     weak var coordinatorDelegate: ConsultsViewModelCoordinatorDelegate?
     weak var viewDelegate: ConsultsViewModelViewDelegate?
@@ -44,6 +61,17 @@ class ConsultsViewModel {
         viewDelegate?.consultsViewModel(self, didUpdateConsults: consults)
     }
     
+    func getNumberOfRowsInSection() -> Int {
+        consults.count
+    }
+    
+    func getDataToCell(indexPath: IndexPath) -> CellData? {
+        let consult = consults[indexPath.row]
+        guard let name = consult.name, let date = consult.date else { return nil }
+        
+        return CellData(name: name, date: date)
+    }
+    
     func remove(at index: IndexPath) {
         let consult = consults.remove(at: index.row)
         consultService.deleteConsult(consult: consult)
@@ -64,4 +92,13 @@ extension ConsultsViewModel {
         coordinatorDelegate?.consultsViewModelDidSelectDetail(self, consult: consult)
     }
     
+}
+
+// MARK: - Nested type
+extension ConsultsViewModel {
+    
+    struct CellData {
+        let name: String
+        let date: Date
+    }
 }

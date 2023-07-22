@@ -67,6 +67,8 @@
 		8D8C0A492A6B34A3008F239C /* calcMEI_SnapShotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8C0A482A6B34A3008F239C /* calcMEI_SnapShotTests.swift */; };
 		8D8C0A512A6B3537008F239C /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 8D8C0A502A6B3537008F239C /* SnapshotTesting */; };
 		8D9023912A0C177000A61E9C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9023902A0C177000A61E9C /* SettingsTableViewCell.swift */; };
+		8DA5B7822A6C3695002A49DD /* ResultScreen_SnapShotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA5B7812A6C3695002A49DD /* ResultScreen_SnapShotTests.swift */; };
+		8DA5B7852A6C3785002A49DD /* ConsultsScreen_SnapShotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA5B7842A6C3785002A49DD /* ConsultsScreen_SnapShotTests.swift */; };
 		8DC48AED29F81E5900594A46 /* CalcMEI_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC48AEC29F81E5900594A46 /* CalcMEI_Core */; };
 		8DC48AF729F866C700594A46 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC48AF629F866C700594A46 /* Configuration.swift */; };
 		8DD9736A2A1AD26300479F79 /* UINavigationBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD973692A1AD26300479F79 /* UINavigationBar+.swift */; };
@@ -164,6 +166,8 @@
 		8D8C0A462A6B34A3008F239C /* calcMEI_SnapShotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calcMEI_SnapShotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8C0A482A6B34A3008F239C /* calcMEI_SnapShotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calcMEI_SnapShotTests.swift; sourceTree = "<group>"; };
 		8D9023902A0C177000A61E9C /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		8DA5B7812A6C3695002A49DD /* ResultScreen_SnapShotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreen_SnapShotTests.swift; sourceTree = "<group>"; };
+		8DA5B7842A6C3785002A49DD /* ConsultsScreen_SnapShotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultsScreen_SnapShotTests.swift; sourceTree = "<group>"; };
 		8DC48AEB29F81A2600594A46 /* CalcMEI_Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CalcMEI_Core; sourceTree = "<group>"; };
 		8DC48AEE29F8595800594A46 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		8DC48AEF29F85CBF00594A46 /* calcMEI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calcMEI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -546,6 +550,7 @@
 		8D8C0A472A6B34A3008F239C /* calcMEI_SnapShotTests */ = {
 			isa = PBXGroup;
 			children = (
+				8DA5B77F2A6C3652002A49DD /* Views */,
 				8D8C0A482A6B34A3008F239C /* calcMEI_SnapShotTests.swift */,
 			);
 			path = calcMEI_SnapShotTests;
@@ -557,6 +562,31 @@
 				8D9023902A0C177000A61E9C /* SettingsTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		8DA5B77F2A6C3652002A49DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DA5B7832A6C376E002A49DD /* Consults */,
+				8DA5B7802A6C3658002A49DD /* Result */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8DA5B7802A6C3658002A49DD /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				8DA5B7812A6C3695002A49DD /* ResultScreen_SnapShotTests.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		8DA5B7832A6C376E002A49DD /* Consults */ = {
+			isa = PBXGroup;
+			children = (
+				8DA5B7842A6C3785002A49DD /* ConsultsScreen_SnapShotTests.swift */,
+			);
+			path = Consults;
 			sourceTree = "<group>";
 		};
 		8DC48AF529F866B600594A46 /* Utilities */ = {
@@ -883,6 +913,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DA5B7852A6C3785002A49DD /* ConsultsScreen_SnapShotTests.swift in Sources */,
+				8DA5B7822A6C3695002A49DD /* ResultScreen_SnapShotTests.swift in Sources */,
 				8D8C0A492A6B34A3008F239C /* calcMEI_SnapShotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

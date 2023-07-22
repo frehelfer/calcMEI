@@ -79,11 +79,11 @@ private extension ConsultsViewModel_Tests {
         
         var calledMethods = [Methods]()
         
-        func consultsViewModelHasNoConsults(_ consultsViewModel: calcMEI.ConsultsViewModel) {
+        func consultsViewModelHasNoConsults(_ consultsViewModel: calcMEI.ConsultsViewModelProtocol) {
             calledMethods.append(.hasNoConsults)
         }
         
-        func consultsViewModel(_ consultsViewModel: ConsultsViewModel, didUpdateConsults: [Consult]) {
+        func consultsViewModel(_ consultsViewModel: ConsultsViewModelProtocol, didUpdateConsults: [Consult]) {
             calledMethods.append(.didUpdateConsults)
         }
         
@@ -97,11 +97,11 @@ private extension ConsultsViewModel_Tests {
         
         var calledMethods = [Methods]()
         
-        func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModel) {
+        func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModelProtocol) {
             calledMethods.append(.consultsViewModelDidSelectNewConsult)
         }
         
-        func consultsViewModelDidSelectDetail(_ consultsViewModel: ConsultsViewModel, consult: Consult) {
+        func consultsViewModelDidSelectDetail(_ consultsViewModel: ConsultsViewModelProtocol, consult: Consult) {
             calledMethods.append(.consultsViewModelDidSelectDetail)
         }
         
