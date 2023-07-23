@@ -106,11 +106,11 @@ private extension ResultViewModel_Tests {
         
         var calledMethods = [Methods]()
         
-        func resultViewModelDidSelectReset(_ resultViewModel: calcMEI.ResultViewModel) {
+        func resultViewModelDidSelectReset(_ resultViewModel: calcMEI.ResultViewModelProtocol) {
             calledMethods.append(.resultViewModelDidSelectReset)
         }
         
-        func resultViewModelDidSelectItemDetail(_ resultViewModel: calcMEI.ResultViewModel, resultItem: calcMEI.ResultItem) {
+        func resultViewModelDidSelectItemDetail(_ resultViewModel: calcMEI.ResultViewModelProtocol, resultItem: calcMEI.ResultItem) {
             calledMethods.append(.resultViewModelDidSelectItemDetail)
         }
         
@@ -124,7 +124,7 @@ private extension ResultViewModel_Tests {
         
         var calledMethods = [Methods]()
         
-        func resultViewModel(_ resultViewMode: calcMEI.ResultViewModel, updateViewWithCount: [calcMEI.ResultItem]) {
+        func resultViewModel(_ resultViewMode: calcMEI.ResultViewModelProtocol, updateViewWithCount: [calcMEI.ResultItem]) {
             calledMethods.append(.updateViewWithCount)
         }
         
