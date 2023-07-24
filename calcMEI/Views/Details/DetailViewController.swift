@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
         return view
     }()
     
-    var viewModel: DetailViewModel? {
+    var viewModel: DetailViewModelProtocol? {
         didSet {
             viewModel?.viewDelegate = self
             title = viewModel?.title

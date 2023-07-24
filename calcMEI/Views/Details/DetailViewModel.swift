@@ -8,6 +8,17 @@
 import Foundation
 import CalcMEI_Core
 
+protocol DetailViewModelProtocol {
+    var coordinatorDelegate: DetailViewModelCoordinatorDelegate? { get set }
+    var viewDelegate: DetailViewModelViewDelegate? { get set }
+    
+    var resultItems: [DetailViewModel.ItemsGroup] { get set }
+    var title: String { get }
+    
+    func deleteSelected()
+    func updateViewWithData()
+}
+
 protocol DetailViewModelCoordinatorDelegate: AnyObject {
     func detailViewModelDidSelectDismiss(_ detailViewModel: DetailViewModel)
     func detailViewModelDidSelectItemDetail(_ detailViewModel: DetailViewModel, resultItem: ResultItem)
@@ -17,7 +28,7 @@ protocol DetailViewModelViewDelegate: AnyObject {
     func detailViewModel(_ detailViewModel: DetailViewModel, updateViewWithItem: [DetailViewModel.ItemsGroup])
 }
 
-class DetailViewModel {
+class DetailViewModel: DetailViewModelProtocol {
 
     weak var coordinatorDelegate: DetailViewModelCoordinatorDelegate?
     weak var viewDelegate: DetailViewModelViewDelegate?

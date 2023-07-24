@@ -18,7 +18,7 @@ class ResultViewController: UIViewController {
         return resultView
     }()
     
-    var viewModel: ResultViewModel? {
+    var viewModel: ResultViewModelProtocol? {
         didSet {
             viewModel?.viewDelegate = self
             title = viewModel?.title
@@ -120,7 +120,7 @@ extension ResultViewController: ResultViewDelegate {
 // MARK: - ResultViewModelViewDelegate
 extension ResultViewController: ResultViewModelViewDelegate {
     
-    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: [ResultItem]) {
+    func resultViewModel(_ resultViewMode: ResultViewModelProtocol, updateViewWithCount: [ResultItem]) {
         resultView.reloadTableView()
     }
     

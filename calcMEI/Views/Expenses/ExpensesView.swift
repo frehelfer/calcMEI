@@ -34,6 +34,7 @@ class ExpensesView: UIView {
             description: S.Expenses.ExpensesContainer.Description.text,
             colorType: .red
         )
+        view.accessibilityIdentifier = "expensesFormContainer"
         return view
     }()
     
@@ -47,6 +48,7 @@ class ExpensesView: UIView {
         
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(nextBottomButtonPressed), for: .touchUpInside)
+        button.accessibilityIdentifier = "goToResultButton"
         return button
     }()
     

@@ -248,11 +248,11 @@ extension HomeCoordinator: ExpensesViewModelCoordinatorDelegate {
 // MARK: - ResultViewModelCoordinatorDelegate
 extension HomeCoordinator: ResultViewModelCoordinatorDelegate {
     
-    func resultViewModelDidSelectItemDetail(_ resultViewModel: ResultViewModel, resultItem: ResultItem) {
+    func resultViewModelDidSelectItemDetail(_ resultViewModel: ResultViewModelProtocol, resultItem: ResultItem) {
         showItemDetail(itemDetail: resultItem)
     }
     
-    func resultViewModelDidSelectReset(_ resultViewModel: ResultViewModel) {
+    func resultViewModelDidSelectReset(_ resultViewModel: ResultViewModelProtocol) {
         pop()
     }
 
@@ -261,11 +261,11 @@ extension HomeCoordinator: ResultViewModelCoordinatorDelegate {
 // MARK: - ConsultsViewModelCoordinatorDelegate
 extension HomeCoordinator: ConsultsViewModelCoordinatorDelegate {
     
-    func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModel) {
+    func consultsViewModelDidSelectNewConsult(_ consultsViewModel: ConsultsViewModelProtocol) {
         showIncome()
     }
     
-    func consultsViewModelDidSelectDetail(_ consultsViewModel: ConsultsViewModel, consult: Consult) {
+    func consultsViewModelDidSelectDetail(_ consultsViewModel: ConsultsViewModelProtocol, consult: Consult) {
         showDetail(consult: consult)
     }
 
