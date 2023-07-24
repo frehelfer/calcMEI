@@ -18,7 +18,7 @@ class ConsultsViewController: UIViewController {
         return view
     }()
     
-    var viewModel: ConsultsViewModel? {
+    var viewModel: ConsultsViewModelProtocol? {
         didSet {
             viewModel?.viewDelegate = self
             title = viewModel?.title
@@ -72,11 +72,11 @@ extension ConsultsViewController: ConsultsViewDelegate {
 // MARK: - ConsultsViewModelViewDelegate
 extension ConsultsViewController: ConsultsViewModelViewDelegate {
     
-    func consultsViewModel(_ consultsViewModel: ConsultsViewModel, didUpdateConsults: [Consult]) {
+    func consultsViewModel(_ consultsViewModel: ConsultsViewModelProtocol, didUpdateConsults: [Consult]) {
         consultsView.reloadTableViewData()
     }
     
-    func consultsViewModelHasNoConsults(_ consultsViewModel: ConsultsViewModel) {
+    func consultsViewModelHasNoConsults(_ consultsViewModel: ConsultsViewModelProtocol) {
         consultsView.showEmptyView()
     }
     
@@ -86,13 +86,13 @@ extension ConsultsViewController: ConsultsViewModelViewDelegate {
 extension ConsultsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.consults.count ?? 0
+        return viewModel?.getNumberOfRowsInSection() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ConsultTableViewCell.identifier, for: indexPath) as! ConsultTableViewCell
-        let consult = viewModel?.consults[indexPath.row]
-        cell.setupCell(with: consult)
+        let data = viewModel?.getDataToCell(indexPath: indexPath)
+        cell.setupCell(with: data)
         return cell
     }
     

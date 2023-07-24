@@ -40,6 +40,7 @@ class IncomeView: UIView {
             title: S.Income.ServicesLabel.text,
             colorType: .green
         )
+        view.accessibilityIdentifier = "servicesFormContainer"
         return view
     }()
     
@@ -48,6 +49,7 @@ class IncomeView: UIView {
             title: S.Income.CommerceLabel.text,
             colorType: .green
         )
+        view.accessibilityIdentifier = "commerceFormContainer"
         return view
     }()
     
@@ -56,6 +58,7 @@ class IncomeView: UIView {
             title: S.Income.TransportLabel.text,
             colorType: .green
         )
+        view.accessibilityIdentifier = "transportFormContainer"
         return view
     }()
     
@@ -69,6 +72,7 @@ class IncomeView: UIView {
         
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+        button.accessibilityIdentifier = "goToExpensesButton"
         return button
     }()
     

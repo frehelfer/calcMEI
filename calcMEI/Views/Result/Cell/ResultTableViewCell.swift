@@ -33,6 +33,7 @@ class ResultTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = A.Colors.labelSecondary.color
+        label.accessibilityIdentifier = "resultLabel"
         return label
     }()
     

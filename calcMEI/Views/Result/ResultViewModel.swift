@@ -8,16 +8,33 @@
 import UIKit
 import CalcMEI_Core
 
+protocol ResultViewModelProtocol {
+    var coordinatorDelegate: ResultViewModelCoordinatorDelegate? { get set }
+    var viewDelegate: ResultViewModelViewDelegate? { get set }
+    
+    var resultItems: [ResultItem] { get set }
+    var title: String { get set }
+    
+    func updateViewWithCount()
+    func didSelectRow(indexPath: IndexPath)
+    
+    func calculateAll()
+    
+    func resetSelected()
+    func saveConsultSelected(_ text: String)
+    func backButtonPressed()
+}
+
 protocol ResultViewModelCoordinatorDelegate: AnyObject {
-    func resultViewModelDidSelectReset(_ resultViewModel: ResultViewModel)
-    func resultViewModelDidSelectItemDetail(_ resultViewModel: ResultViewModel, resultItem: ResultItem)
+    func resultViewModelDidSelectReset(_ resultViewModel: ResultViewModelProtocol)
+    func resultViewModelDidSelectItemDetail(_ resultViewModel: ResultViewModelProtocol, resultItem: ResultItem)
 }
 
 protocol ResultViewModelViewDelegate: AnyObject {
-    func resultViewModel(_ resultViewMode: ResultViewModel, updateViewWithCount: [ResultItem])
+    func resultViewModel(_ resultViewMode: ResultViewModelProtocol, updateViewWithCount: [ResultItem])
 }
 
-class ResultViewModel {
+class ResultViewModel: ResultViewModelProtocol {
     
     weak var coordinatorDelegate: ResultViewModelCoordinatorDelegate?
     weak var viewDelegate: ResultViewModelViewDelegate?

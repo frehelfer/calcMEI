@@ -66,6 +66,7 @@ class ResultView: UIView {
         
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(popButtonPressed), for: .touchUpInside)
+        button.accessibilityIdentifier = "popToHomeButton"
         return button
     }()
     

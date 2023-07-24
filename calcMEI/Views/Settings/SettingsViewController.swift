@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController {
         return settingsView
     }()
     
-    var viewModel: SettingsViewModel? {
+    var viewModel: SettingsViewModelProtocol? {
         didSet {
             viewModel?.viewDelegate = self
             title = viewModel?.title
@@ -91,7 +91,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - SettingsViewModelViewDelegate
 extension SettingsViewController: SettingsViewModelViewDelegate {
     
-    func settingsViewModel(_ settingsViewModel: SettingsViewModel, updateViewWith: [SettingsViewModel.SettingsSection]) {
+    func settingsViewModel(_ settingsViewModel: SettingsViewModelProtocol, updateViewWith: [SettingsViewModel.SettingsSection]) {
         settingsView.reloadTableViewData()
     }
     
