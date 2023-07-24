@@ -8,11 +8,22 @@
 import UIKit
 import CalcMEI_Core
 
-protocol SettingsViewModelViewDelegate: AnyObject {
-    func settingsViewModel(_ settingsViewModel: SettingsViewModel, updateViewWith: [SettingsViewModel.SettingsSection])
+protocol SettingsViewModelProtocol {
+    var viewDelegate: SettingsViewModelViewDelegate? { get set }
+    
+    var settingsData: [SettingsViewModel.SettingsSection] { get set }
+    var title: String { get set }
+    
+    func updateViewWithData()
+    var appVersion: String { get }
+    func didSelectRow(indexPath: IndexPath)
 }
 
-class SettingsViewModel {
+protocol SettingsViewModelViewDelegate: AnyObject {
+    func settingsViewModel(_ settingsViewModel: SettingsViewModelProtocol, updateViewWith: [SettingsViewModel.SettingsSection])
+}
+
+class SettingsViewModel: SettingsViewModelProtocol {
     
     weak var viewDelegate: SettingsViewModelViewDelegate?
     

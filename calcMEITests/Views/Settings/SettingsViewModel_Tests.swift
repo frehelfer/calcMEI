@@ -48,7 +48,7 @@ private extension SettingsViewModel_Tests {
         
         var calledMethods = [Methods]()
         
-        func settingsViewModel(_ settingsViewModel: calcMEI.SettingsViewModel, updateViewWith: [calcMEI.SettingsViewModel.SettingsSection]) {
+        func settingsViewModel(_ settingsViewModel: calcMEI.SettingsViewModelProtocol, updateViewWith: [calcMEI.SettingsViewModel.SettingsSection]) {
             calledMethods.append(.updateViewWith)
         }
         
