@@ -13,8 +13,8 @@ final class SettingsScreen_SnapShotTests: XCTestCase {
 
     func test_SettingsViewController_withoutData() {
         let vc = SettingsViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        assertSnapshot(matching: nav, as: .image(precision: 0.99))
+
+        assertSnapshot(matching: vc, as: .image(precision: 0.99))
     }
     
     func test_SettingsViewController_withData() {
@@ -23,8 +23,7 @@ final class SettingsScreen_SnapShotTests: XCTestCase {
         viewModel.viewDelegate = vc
         vc.viewModel = viewModel
         
-        let nav = UINavigationController(rootViewController: vc)
-        assertSnapshot(matching: nav, as: .image(precision: 0.99))
+        assertSnapshot(matching: vc, as: .image(precision: 0.99))
     }
     
 }

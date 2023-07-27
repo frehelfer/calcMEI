@@ -19,16 +19,15 @@ class ConsultsScreen_SnapShotTests: XCTestCase {
     func test_ConsultsViewController_withData() {
         let vc = ConsultsViewController()
         vc.viewModel = ConsultsViewModelMock(showConsults: true)
-        let sut = UINavigationController(rootViewController: vc)
-        assertSnapshot(matching: sut, as: .image(precision: 0.99))
+
+        assertSnapshot(matching: vc, as: .image(precision: 0.99))
     }
     
     func test_ConsultsView_withoutData() {
         let vc = ConsultsViewController()
         vc.viewModel = ConsultsViewModelMock(showConsults: false)
-        let sut = UINavigationController(rootViewController: vc)
         
-        assertSnapshot(matching: sut, as: .image(precision: 0.99))
+        assertSnapshot(matching: vc, as: .image(precision: 0.99))
     }
     
     func test_ConsultsTableViewCell() {

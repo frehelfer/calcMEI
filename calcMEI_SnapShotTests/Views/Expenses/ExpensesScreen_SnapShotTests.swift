@@ -10,14 +10,17 @@ import SnapshotTesting
 @testable import calcMEI
 
 final class ExpensesScreen_SnapShotTests: XCTestCase {
+    
+    override class func setUp() {
+        isRecording = false
+    }
 
     func test_ExpensesViewController() {
         let vc = ExpensesViewController()
-        let nav = UINavigationController(rootViewController: vc)
         vc.title = "Title"
-        _ = vc.view
+        vc.view.frame = CGRect(origin: .zero, size: UIScreen.main.bounds.size)
         
-        assertSnapshot(matching: nav, as: .image(drawHierarchyInKeyWindow: true, precision: 0.99))
+        assertSnapshot(matching: vc, as: .image(drawHierarchyInKeyWindow: true, precision: 0.99))
     }
     
 }

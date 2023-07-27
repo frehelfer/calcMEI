@@ -17,11 +17,10 @@ final class IncomeScreen_SnapShotTests: XCTestCase {
     
     func test_IncomeViewController() {
         let vc = IncomeViewController()
-        let nav = UINavigationController(rootViewController: vc)
         vc.title = "Title"
-        _ = vc.view
+        vc.view.frame = CGRect(origin: .zero, size: UIScreen.main.bounds.size)
         
-        assertSnapshot(matching: nav, as: .image(drawHierarchyInKeyWindow: true, precision: 0.99))
+        assertSnapshot(matching: vc, as: .image(drawHierarchyInKeyWindow: true, precision: 0.99))
     }
     
 }

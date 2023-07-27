@@ -13,9 +13,9 @@ final class DetailScreen_SnapShotTests: XCTestCase {
 
     func test_DetailViewController_withoutData() {
         let vc = DetailViewController()
-        let nav = UINavigationController(rootViewController: vc)
         vc.title = "Title"
-        assertSnapshot(matching: nav, as: .image(precision: 0.99))
+        
+        assertSnapshot(matching: vc, as: .image(precision: 0.99))
     }
     
     func test_SettingsViewController_withData() {
@@ -23,10 +23,9 @@ final class DetailScreen_SnapShotTests: XCTestCase {
         let viewModel = DetailViewModelMock()
         viewModel.viewDelegate = vc
         vc.viewModel = viewModel
-        
-        let nav = UINavigationController(rootViewController: vc)
         _ = vc.view
-        assertSnapshot(matching: nav, as: .image(precision: 0.99))
+        
+        assertSnapshot(matching: vc, as: .image(precision: 0.99))
     }
     
 }

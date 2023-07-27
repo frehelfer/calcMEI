@@ -14,17 +14,15 @@ class ResultScreen_SnapShotTests: XCTestCase {
     
     func test_ResultViewController_withoutData() {
         let vc = ResultViewController()
-        let nav = UINavigationController(rootViewController: vc)
         
-        assertSnapshot(matching: nav, as: .image(precision: 0.99))
+        assertSnapshot(matching: vc, as: .image(precision: 0.99))
     }
     
     func test_ResultViewController_withData() {
         let vc = ResultViewController()
         vc.viewModel = ResultViewModelMock()
-        let nav = UINavigationController(rootViewController: vc)
         
-        assertSnapshot(matching: nav, as: .image(precision: 0.99))
+        assertSnapshot(matching: vc, as: .image(precision: 0.99))
     }
     
     func test_ResultTableViewCell_default() {
