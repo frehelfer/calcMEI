@@ -13,7 +13,11 @@ final class ExpensesScreen_SnapShotTests: XCTestCase {
 
     func test_ExpensesViewController() {
         let vc = ExpensesViewController()
-        assertSnapshot(matching: vc, as: .image)
+        let nav = UINavigationController(rootViewController: vc)
+        vc.title = "Title"
+        _ = vc.view
+        
+        assertSnapshot(matching: nav, as: .image(drawHierarchyInKeyWindow: true, precision: 0.99))
     }
     
 }

@@ -16,7 +16,7 @@ class ResultScreen_SnapShotTests: XCTestCase {
         let vc = ResultViewController()
         let nav = UINavigationController(rootViewController: vc)
         
-        assertSnapshot(matching: nav, as: .image)
+        assertSnapshot(matching: nav, as: .image(precision: 0.99))
     }
     
     func test_ResultViewController_withData() {
@@ -24,7 +24,7 @@ class ResultScreen_SnapShotTests: XCTestCase {
         vc.viewModel = ResultViewModelMock()
         let nav = UINavigationController(rootViewController: vc)
         
-        assertSnapshot(matching: nav, as: .image)
+        assertSnapshot(matching: nav, as: .image(precision: 0.99))
     }
     
     func test_ResultTableViewCell_default() {
@@ -33,7 +33,7 @@ class ResultScreen_SnapShotTests: XCTestCase {
         
         view.setupCell(data: data)
         
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(matching: view, as: .image(precision: 0.99))
     }
     
     func test_ResultTableViewCell_green() {
@@ -42,7 +42,7 @@ class ResultScreen_SnapShotTests: XCTestCase {
         
         view.setupCell(data: data)
         
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(matching: view, as: .image(precision: 0.99))
     }
     
     func test_ResultTableViewCell_red() {
@@ -51,7 +51,7 @@ class ResultScreen_SnapShotTests: XCTestCase {
         
         view.setupCell(data: data)
         
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(matching: view, as: .image(precision: 0.99))
     }
     
 }

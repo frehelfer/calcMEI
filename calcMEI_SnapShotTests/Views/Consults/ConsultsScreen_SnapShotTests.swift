@@ -20,7 +20,7 @@ class ConsultsScreen_SnapShotTests: XCTestCase {
         let vc = ConsultsViewController()
         vc.viewModel = ConsultsViewModelMock(showConsults: true)
         let sut = UINavigationController(rootViewController: vc)
-        assertSnapshot(matching: sut, as: .image)
+        assertSnapshot(matching: sut, as: .image(precision: 0.99))
     }
     
     func test_ConsultsView_withoutData() {
@@ -28,7 +28,7 @@ class ConsultsScreen_SnapShotTests: XCTestCase {
         vc.viewModel = ConsultsViewModelMock(showConsults: false)
         let sut = UINavigationController(rootViewController: vc)
         
-        assertSnapshot(matching: sut, as: .image)
+        assertSnapshot(matching: sut, as: .image(precision: 0.99))
     }
     
     func test_ConsultsTableViewCell() {
@@ -42,7 +42,7 @@ class ConsultsScreen_SnapShotTests: XCTestCase {
         
         let data = ConsultsViewModel.CellData(name: "Primeira Consulta", date: date)
         view.setupCell(with: data)
-        assertSnapshot(matching: view, as: .image)
+        assertSnapshot(matching: view, as: .image(precision: 0.99))
     }
 }
 

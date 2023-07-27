@@ -1,5 +1,5 @@
 //
-//  SnapShot+.swift
+//  XCTestCase+.swift
 //  calcMEI_SnapShotTests
 //
 //  Created by Frédéric Helfer on 26/07/23.

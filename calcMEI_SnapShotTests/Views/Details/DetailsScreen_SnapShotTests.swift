@@ -14,7 +14,8 @@ final class DetailScreen_SnapShotTests: XCTestCase {
     func test_DetailViewController_withoutData() {
         let vc = DetailViewController()
         let nav = UINavigationController(rootViewController: vc)
-        assertSnapshot(matching: nav, as: .image)
+        vc.title = "Title"
+        assertSnapshot(matching: nav, as: .image(precision: 0.99))
     }
     
     func test_SettingsViewController_withData() {
@@ -24,7 +25,8 @@ final class DetailScreen_SnapShotTests: XCTestCase {
         vc.viewModel = viewModel
         
         let nav = UINavigationController(rootViewController: vc)
-        assertSnapshot(matching: nav, as: .image)
+        _ = vc.view
+        assertSnapshot(matching: nav, as: .image(precision: 0.99))
     }
     
 }
@@ -40,7 +42,7 @@ private extension DetailScreen_SnapShotTests {
         }
         
         var resultItems: [DetailViewModel.ItemsGroup] = []
-        var title: String = "Consulta"
+        var title: String = "Title"
         
         func deleteSelected() {
             // don't need

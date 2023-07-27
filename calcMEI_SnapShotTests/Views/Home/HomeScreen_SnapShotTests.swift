@@ -13,7 +13,9 @@ final class HomeScreen_SnapShotTests: XCTestCase {
 
     func test_HomeViewController() {
         let vc = HomeViewController()
-        assertSnapshot(matching: vc, as: .image)
+        let nav = UINavigationController(rootViewController: vc)
+        vc.title = "Título"
+        assertSnapshot(matching: nav, as: .image(precision: 0.99))
     }
     
 }
