@@ -77,7 +77,7 @@ private extension ConsultsScreen_SnapShotTests {
             if showConsults {
                 viewDelegate?.consultsViewModel(self, didUpdateConsults: consults)
             } else {
-                viewDelegate?.consultsViewModelHasNoConsults(self)
+                viewDelegate?.consultsViewModelShowEmptyView(animate: false)
             }
         }
         
@@ -98,6 +98,14 @@ private extension ConsultsScreen_SnapShotTests {
         }
         
         func detailSelected(consult: Consult) {
+            // don't need
+        }
+        
+        func userEditingRow(indexPath: IndexPath, editingStyle: UITableViewCell.EditingStyle) {
+            // don't need
+        }
+        
+        func detailSelected(indexPath: IndexPath) {
             // don't need
         }
         
