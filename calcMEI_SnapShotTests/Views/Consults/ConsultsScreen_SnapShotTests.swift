@@ -12,11 +12,14 @@ import CalcMEI_Core
 
 class ConsultsScreen_SnapShotTests: XCTestCase {
     
+    override class func setUp() {
+        isRecording = false
+    }
+    
     func test_ConsultsViewController_withData() {
         let vc = ConsultsViewController()
         vc.viewModel = ConsultsViewModelMock(showConsults: true)
         let sut = UINavigationController(rootViewController: vc)
-        
         assertSnapshot(matching: sut, as: .image)
     }
     
