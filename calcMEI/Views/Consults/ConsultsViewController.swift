@@ -76,8 +76,18 @@ extension ConsultsViewController: ConsultsViewModelViewDelegate {
         consultsView.reloadTableViewData()
     }
     
-    func consultsViewModelHasNoConsults(_ consultsViewModel: ConsultsViewModelProtocol) {
-        consultsView.showEmptyView()
+    func consultsViewModelShowEmptyView(animate: Bool) {
+        consultsView.showEmptyView(animate: animate)
+    }
+    
+    func consultsViewModelDeleteTableViewRow(indexPath: IndexPath) {
+        consultsView.deleteTableViewRow(at: [indexPath])
+    }
+    
+    func consultsViewModelShowDeleteAlert(title: String, message: String, confirmDeletePressed: @escaping (() -> Void)) {
+        presentDeleteAlert(title: title, message: message) {
+            confirmDeletePressed()
+        }
     }
     
 }
@@ -106,25 +116,11 @@ extension ConsultsViewController: UITableViewDataSource {
 extension ConsultsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            presentDeleteAlert(title: S.Detail.Alert.title, message: S.Detail.Alert.message) { [weak self] in
-                guard let self else { return }
-                viewModel?.remove(at: indexPath)
-                consultsView.deleteTableViewRow(at: [indexPath])
-                
-                if let consults = viewModel?.consults, consults.isEmpty {
-                    UIView.animate(withDuration: 0.7) { [weak self] in
-                        self?.consultsView.showEmptyView()
-                    }
-                }
-            }
-        }
+        viewModel?.userEditingRow(indexPath: indexPath, editingStyle: editingStyle)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let consult = viewModel?.consults[indexPath.row] {        
-            viewModel?.detailSelected(consult: consult)
-        }
+        viewModel?.detailSelected(indexPath: indexPath)
     }
     
 }

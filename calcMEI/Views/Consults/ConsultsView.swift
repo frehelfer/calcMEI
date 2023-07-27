@@ -125,8 +125,10 @@ class ConsultsView: UIView {
         tableView.deleteRows(at: rows, with: .fade)
     }
     
-    func showEmptyView() {
-        emptyView.layer.opacity = 1
+    func showEmptyView(animate: Bool) {
+        UIView.animate(withDuration: 0.7) { [weak self] in
+            self?.emptyView.layer.opacity = 1
+        }
     }
 }
 
