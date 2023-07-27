@@ -33,7 +33,15 @@ final class ConsultsViewModel_Tests: XCTestCase {
         
         sut.loadConsults()
         
-        XCTAssertEqual(viewControllerSpy.calledMethods, [.hasNoConsults])
+        XCTAssertEqual(viewControllerSpy.calledMethods, [.showEmptyView])
+    }
+    
+    func test_ConsultsViewModel_getNumberOfRowsInSection_shouldBeZero() {
+        let sut = makeSUT()
+        
+        let number = sut.getNumberOfRowsInSection()
+        
+        XCTAssertEqual(number, 0)
     }
     
     func test_ConsultsViewModel_newConsultSelected_shouldCallNewConsultSelected() {
@@ -74,17 +82,27 @@ private extension ConsultsViewModel_Tests {
         
         enum Methods {
             case didUpdateConsults
-            case hasNoConsults
+            case showEmptyView
+            case showDeleteAlert
+            case deleteTableViewRow
         }
         
         var calledMethods = [Methods]()
         
-        func consultsViewModelHasNoConsults(_ consultsViewModel: calcMEI.ConsultsViewModelProtocol) {
-            calledMethods.append(.hasNoConsults)
-        }
-        
         func consultsViewModel(_ consultsViewModel: ConsultsViewModelProtocol, didUpdateConsults: [Consult]) {
             calledMethods.append(.didUpdateConsults)
+        }
+        
+        func consultsViewModelShowEmptyView(animate: Bool) {
+            calledMethods.append(.showEmptyView)
+        }
+        
+        func consultsViewModelShowDeleteAlert(title: String, message: String, confirmDeletePressed: @escaping () -> Void) {
+            calledMethods.append(.showDeleteAlert)
+        }
+        
+        func consultsViewModelDeleteTableViewRow(indexPath: IndexPath) {
+            calledMethods.append(.deleteTableViewRow)
         }
         
     }

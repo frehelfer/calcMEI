@@ -12,17 +12,16 @@ protocol ConsultsViewModelProtocol {
     var coordinatorDelegate: ConsultsViewModelCoordinatorDelegate? { get set }
     var viewDelegate: ConsultsViewModelViewDelegate? { get set }
     
-    var consults: [Consult] { get }
     var title: String { get }
     
     func loadConsults()
     func getNumberOfRowsInSection() -> Int
     func getDataToCell(indexPath: IndexPath) -> ConsultsViewModel.CellData?
+    func userEditingRow(indexPath: IndexPath, editingStyle: UITableViewCell.EditingStyle)
     func remove(at index: IndexPath)
     
     func newConsultSelected()
-    func detailSelected(consult: Consult)
-    
+    func detailSelected(indexPath: IndexPath)
 }
 
 protocol ConsultsViewModelCoordinatorDelegate: AnyObject{
@@ -32,7 +31,9 @@ protocol ConsultsViewModelCoordinatorDelegate: AnyObject{
 
 protocol ConsultsViewModelViewDelegate: AnyObject {
     func consultsViewModel(_ consultsViewModel: ConsultsViewModelProtocol, didUpdateConsults: [Consult])
-    func consultsViewModelHasNoConsults(_ consultsViewModel: ConsultsViewModelProtocol)
+    func consultsViewModelShowEmptyView(animate: Bool)
+    func consultsViewModelShowDeleteAlert(title: String, message: String, confirmDeletePressed: @escaping () -> Void)
+    func consultsViewModelDeleteTableViewRow(indexPath: IndexPath)
 }
 
 class ConsultsViewModel: ConsultsViewModelProtocol {
@@ -43,7 +44,7 @@ class ConsultsViewModel: ConsultsViewModelProtocol {
     private let consultService: ConsultServiceProtocol
     private let analyticsSerivce: AnalyticsServiceProtocol
     
-    private(set) var consults: [Consult] = []
+    private var consults: [Consult] = []
     
     init(consultService: ConsultServiceProtocol, analyticsService: AnalyticsServiceProtocol) {
         self.consultService = consultService
@@ -54,7 +55,7 @@ class ConsultsViewModel: ConsultsViewModelProtocol {
     
     func loadConsults() {
         guard let consults = consultService.fetchConsults(), !consults.isEmpty else {
-            viewDelegate?.consultsViewModelHasNoConsults(self)
+            viewDelegate?.consultsViewModelShowEmptyView(animate: false)
             return
         }
         self.consults = consults
@@ -72,9 +73,23 @@ class ConsultsViewModel: ConsultsViewModelProtocol {
         return CellData(name: name, date: date)
     }
     
+    func userEditingRow(indexPath: IndexPath, editingStyle: UITableViewCell.EditingStyle) {
+        if editingStyle == .delete {
+            viewDelegate?.consultsViewModelShowDeleteAlert(title: S.Detail.Alert.title, message: S.Detail.Alert.message) { [weak self] in
+                self?.remove(at: indexPath)
+            }
+        }
+    }
+    
     func remove(at index: IndexPath) {
         let consult = consults.remove(at: index.row)
         consultService.deleteConsult(consult: consult)
+        
+        viewDelegate?.consultsViewModelDeleteTableViewRow(indexPath: index)
+        
+        if consults.isEmpty {
+            viewDelegate?.consultsViewModelShowEmptyView(animate: true)
+        }
     }
     
 }
@@ -87,7 +102,8 @@ extension ConsultsViewModel {
         coordinatorDelegate?.consultsViewModelDidSelectNewConsult(self)
     }
     
-    func detailSelected(consult: Consult) {
+    func detailSelected(indexPath: IndexPath) {
+        let consult = consults[indexPath.row]
         analyticsSerivce.logEvent(name: "ConsultsView_DetailSelected", params: nil)
         coordinatorDelegate?.consultsViewModelDidSelectDetail(self, consult: consult)
     }
