@@ -72,16 +72,12 @@ extension ConsultsViewController: ConsultsViewDelegate {
 // MARK: - ConsultsViewModelViewDelegate
 extension ConsultsViewController: ConsultsViewModelViewDelegate {
     
-    func consultsViewModel(_ consultsViewModel: ConsultsViewModelProtocol, didUpdateConsults: [Consult]) {
+    func consultsViewModelDidUpdateConsults() {
         consultsView.reloadTableViewData()
     }
     
     func consultsViewModelShowEmptyView(animate: Bool) {
         consultsView.showEmptyView(animate: animate)
-    }
-    
-    func consultsViewModelDeleteTableViewRow(indexPath: IndexPath) {
-        consultsView.deleteTableViewRow(at: [indexPath])
     }
     
     func consultsViewModelShowDeleteAlert(title: String, message: String, confirmDeletePressed: @escaping (() -> Void)) {
