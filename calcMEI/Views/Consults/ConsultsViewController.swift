@@ -7,6 +7,7 @@
 
 import UIKit
 import CalcMEI_Core
+import CoreData
 
 class ConsultsViewController: UIViewController {
     
@@ -72,12 +73,34 @@ extension ConsultsViewController: ConsultsViewDelegate {
 // MARK: - ConsultsViewModelViewDelegate
 extension ConsultsViewController: ConsultsViewModelViewDelegate {
     
-    func consultsViewModelDidUpdateConsults() {
-        consultsView.reloadTableViewData()
+    func consultsViewModelWillChangeConsults() {
+        consultsView.tableViewBeginUpdates()
     }
     
-    func consultsViewModelShowEmptyView(animate: Bool) {
-        consultsView.showEmptyView(animate: animate)
+    func consultsViewModelUpdateConsults(_ controller: NSFetchedResultsController<NSFetchRequestResult>, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .insert:
+            consultsView.tableViewInsertRow(at: newIndexPath!)
+        case .delete:
+            consultsView.tableViewDeleteRow(at: indexPath!)
+        case .move:
+            break
+        case .update:
+            consultsView.tableViewUpdateRow(at: indexPath!)
+        default:
+            break
+        }
+        
+        if let controller = controller.fetchedObjects, !controller.isEmpty {
+            consultsView.hideEmptyView(animate: true)
+        } else {
+            consultsView.showEmptyView(animate: true)
+        }
+    }
+    
+    func consultsViewModelDidChangeConsults() {
+        consultsView.tableViewEndUpdates()
     }
     
     func consultsViewModelShowDeleteAlert(title: String, message: String, confirmDeletePressed: @escaping (() -> Void)) {
