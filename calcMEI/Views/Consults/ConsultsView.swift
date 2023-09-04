@@ -116,19 +116,36 @@ class ConsultsView: UIView {
         tableView.dataSource = dataSource
     }
     
-    func reloadTableViewData() {
-        tableView.reloadData()
-        self.emptyView.layer.opacity = 0
-    }
-    
-    func deleteTableViewRow(at rows: [IndexPath]) {
-        tableView.deleteRows(at: rows, with: .fade)
-    }
-    
     func showEmptyView(animate: Bool) {
         UIView.animate(withDuration: 0.7) { [weak self] in
             self?.emptyView.layer.opacity = 1
         }
+    }
+    
+    func hideEmptyView(animate: Bool) {
+        UIView.animate(withDuration: 0.7) { [weak self] in
+            self?.emptyView.layer.opacity = 0
+        }
+    }
+    
+    func tableViewBeginUpdates() {
+        tableView.beginUpdates()
+    }
+    
+    func tableViewInsertRow(at indexPath: IndexPath) {
+        tableView.insertRows(at: [indexPath], with: .fade)
+    }
+    
+    func tableViewDeleteRow(at indexPath: IndexPath) {
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+    
+    func tableViewUpdateRow(at indexPath: IndexPath) {
+        tableView.reloadRows(at: [indexPath], with: .fade)
+    }
+    
+    func tableViewEndUpdates() {
+        tableView.endUpdates()
     }
 }
 

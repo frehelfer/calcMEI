@@ -7,6 +7,7 @@
 
 import UIKit
 import CalcMEI_Core
+import CoreData
 
 protocol ConsultsViewModelProtocol {
     var coordinatorDelegate: ConsultsViewModelCoordinatorDelegate? { get set }
@@ -18,7 +19,6 @@ protocol ConsultsViewModelProtocol {
     func getNumberOfRowsInSection() -> Int
     func getDataToCell(indexPath: IndexPath) -> ConsultsViewModel.CellData?
     func userEditingRow(indexPath: IndexPath, editingStyle: UITableViewCell.EditingStyle)
-    func remove(at index: IndexPath)
     
     func newConsultSelected()
     func detailSelected(indexPath: IndexPath)
@@ -30,13 +30,13 @@ protocol ConsultsViewModelCoordinatorDelegate: AnyObject{
 }
 
 protocol ConsultsViewModelViewDelegate: AnyObject {
-    func consultsViewModel(_ consultsViewModel: ConsultsViewModelProtocol, didUpdateConsults: [Consult])
-    func consultsViewModelShowEmptyView(animate: Bool)
+    func consultsViewModelWillChangeConsults()
+    func consultsViewModelUpdateConsults(_ controller: NSFetchedResultsController<NSFetchRequestResult>, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?)
+    func consultsViewModelDidChangeConsults()
     func consultsViewModelShowDeleteAlert(title: String, message: String, confirmDeletePressed: @escaping () -> Void)
-    func consultsViewModelDeleteTableViewRow(indexPath: IndexPath)
 }
 
-class ConsultsViewModel: ConsultsViewModelProtocol {
+class ConsultsViewModel: NSObject, ConsultsViewModelProtocol {
     
     weak var coordinatorDelegate: ConsultsViewModelCoordinatorDelegate?
     weak var viewDelegate: ConsultsViewModelViewDelegate?
@@ -44,31 +44,30 @@ class ConsultsViewModel: ConsultsViewModelProtocol {
     private let consultService: ConsultServiceProtocol
     private let analyticsSerivce: AnalyticsServiceProtocol
     
-    private var consults: [Consult] = []
+    private var fetchedResultsController: NSFetchedResultsController<Consult>?
     
     init(consultService: ConsultServiceProtocol, analyticsService: AnalyticsServiceProtocol) {
         self.consultService = consultService
         self.analyticsSerivce = analyticsService
+        self.fetchedResultsController = consultService.createFetchedResultsController()
+        super.init()
+        fetchedResultsController?.delegate = self
     }
     
     var title: String = S.Consults.title
     
     func loadConsults() {
-        guard let consults = consultService.fetchConsults(), !consults.isEmpty else {
-            viewDelegate?.consultsViewModelShowEmptyView(animate: false)
-            return
-        }
-        self.consults = consults
-        viewDelegate?.consultsViewModel(self, didUpdateConsults: consults)
+        try? fetchedResultsController?.performFetch()
     }
     
     func getNumberOfRowsInSection() -> Int {
-        consults.count
+        guard let consults = fetchedResultsController?.fetchedObjects else { return 0 }
+        return consults.count
     }
     
     func getDataToCell(indexPath: IndexPath) -> CellData? {
-        let consult = consults[indexPath.row]
-        guard let name = consult.name, let date = consult.date else { return nil }
+        let consult = fetchedResultsController?.object(at: indexPath)
+        guard let name = consult?.name, let date = consult?.date else { return nil }
         
         return CellData(name: name, date: date)
     }
@@ -81,15 +80,26 @@ class ConsultsViewModel: ConsultsViewModelProtocol {
         }
     }
     
-    func remove(at index: IndexPath) {
-        let consult = consults.remove(at: index.row)
+    private func remove(at indexPath: IndexPath) {
+        guard let consult = fetchedResultsController?.object(at: indexPath) else { return }
         consultService.deleteConsult(consult: consult)
-        
-        viewDelegate?.consultsViewModelDeleteTableViewRow(indexPath: index)
-        
-        if consults.isEmpty {
-            viewDelegate?.consultsViewModelShowEmptyView(animate: true)
-        }
+    }
+    
+}
+
+// MARK: - NSFetchedResultsControllerDelegate
+extension ConsultsViewModel: NSFetchedResultsControllerDelegate {
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        viewDelegate?.consultsViewModelWillChangeConsults()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        viewDelegate?.consultsViewModelUpdateConsults(controller, at: indexPath, for: type, newIndexPath: newIndexPath)
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        viewDelegate?.consultsViewModelDidChangeConsults()
     }
     
 }
@@ -103,7 +113,7 @@ extension ConsultsViewModel {
     }
     
     func detailSelected(indexPath: IndexPath) {
-        let consult = consults[indexPath.row]
+        guard let consult = fetchedResultsController?.object(at: indexPath) else { return }
         analyticsSerivce.logEvent(name: "ConsultsView_DetailSelected", params: nil)
         coordinatorDelegate?.consultsViewModelDidSelectDetail(self, consult: consult)
     }
