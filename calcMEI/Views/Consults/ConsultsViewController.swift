@@ -7,6 +7,7 @@
 
 import UIKit
 import CalcMEI_Core
+import CoreData
 
 class ConsultsViewController: UIViewController {
     
@@ -72,12 +73,40 @@ extension ConsultsViewController: ConsultsViewDelegate {
 // MARK: - ConsultsViewModelViewDelegate
 extension ConsultsViewController: ConsultsViewModelViewDelegate {
     
-    func consultsViewModel(_ consultsViewModel: ConsultsViewModelProtocol, didUpdateConsults: [Consult]) {
-        consultsView.reloadTableViewData()
+    func consultsViewModelWillChangeConsults() {
+        consultsView.tableViewBeginUpdates()
     }
     
-    func consultsViewModelHasNoConsults(_ consultsViewModel: ConsultsViewModelProtocol) {
-        consultsView.showEmptyView()
+    func consultsViewModelUpdateConsults(_ controller: NSFetchedResultsController<NSFetchRequestResult>, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .insert:
+            consultsView.tableViewInsertRow(at: newIndexPath!)
+        case .delete:
+            consultsView.tableViewDeleteRow(at: indexPath!)
+        case .move:
+            break
+        case .update:
+            consultsView.tableViewUpdateRow(at: indexPath!)
+        default:
+            break
+        }
+        
+        if let controller = controller.fetchedObjects, !controller.isEmpty {
+            consultsView.hideEmptyView(animate: true)
+        } else {
+            consultsView.showEmptyView(animate: true)
+        }
+    }
+    
+    func consultsViewModelDidChangeConsults() {
+        consultsView.tableViewEndUpdates()
+    }
+    
+    func consultsViewModelShowDeleteAlert(title: String, message: String, confirmDeletePressed: @escaping (() -> Void)) {
+        presentDeleteAlert(title: title, message: message) {
+            confirmDeletePressed()
+        }
     }
     
 }
@@ -106,25 +135,11 @@ extension ConsultsViewController: UITableViewDataSource {
 extension ConsultsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            presentDeleteAlert(title: S.Detail.Alert.title, message: S.Detail.Alert.message) { [weak self] in
-                guard let self else { return }
-                viewModel?.remove(at: indexPath)
-                consultsView.deleteTableViewRow(at: [indexPath])
-                
-                if let consults = viewModel?.consults, consults.isEmpty {
-                    UIView.animate(withDuration: 0.7) { [weak self] in
-                        self?.consultsView.showEmptyView()
-                    }
-                }
-            }
-        }
+        viewModel?.userEditingRow(indexPath: indexPath, editingStyle: editingStyle)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let consult = viewModel?.consults[indexPath.row] {        
-            viewModel?.detailSelected(consult: consult)
-        }
+        viewModel?.detailSelected(indexPath: indexPath)
     }
     
 }

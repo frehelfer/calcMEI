@@ -7,6 +7,7 @@
 
 import XCTest
 import CalcMEI_Core
+import CoreData
 @testable import calcMEI
 
 final class ConsultsViewModel_Tests: XCTestCase {
@@ -20,20 +21,12 @@ final class ConsultsViewModel_Tests: XCTestCase {
         XCTAssertFalse(makeSUT().title.isEmpty)
     }
     
-    func test_ConsultsViewModel_loadConsults_shouldGetConsultsFromService() {
+    func test_ConsultsViewModel_getNumberOfRowsInSection_shouldBeZero() {
         let sut = makeSUT()
         
-        sut.loadConsults()
+        let number = sut.getNumberOfRowsInSection()
         
-        XCTAssertEqual(consultServiceSpy.calledMethods, [.fetchConsults])
-    }
-    
-    func test_ConsultsViewModel_loadConsults_shouldNotCallDidUpdateConsults() {
-        let sut = makeSUT()
-        
-        sut.loadConsults()
-        
-        XCTAssertEqual(viewControllerSpy.calledMethods, [.hasNoConsults])
+        XCTAssertEqual(number, 0)
     }
     
     func test_ConsultsViewModel_newConsultSelected_shouldCallNewConsultSelected() {
@@ -73,18 +66,28 @@ private extension ConsultsViewModel_Tests {
     class ConsultsViewControllerSpy: ConsultsViewModelViewDelegate {
         
         enum Methods {
-            case didUpdateConsults
-            case hasNoConsults
+            case willChangeConsults
+            case updateConsults
+            case didChangeConsults
+            case showDeleteAlert
         }
         
         var calledMethods = [Methods]()
         
-        func consultsViewModelHasNoConsults(_ consultsViewModel: calcMEI.ConsultsViewModelProtocol) {
-            calledMethods.append(.hasNoConsults)
+        func consultsViewModelWillChangeConsults() {
+            calledMethods.append(.willChangeConsults)
         }
         
-        func consultsViewModel(_ consultsViewModel: ConsultsViewModelProtocol, didUpdateConsults: [Consult]) {
-            calledMethods.append(.didUpdateConsults)
+        func consultsViewModelUpdateConsults(_ controller: NSFetchedResultsController<NSFetchRequestResult>, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+            calledMethods.append(.updateConsults)
+        }
+        
+        func consultsViewModelDidChangeConsults() {
+            calledMethods.append(.didChangeConsults)
+        }
+        
+        func consultsViewModelShowDeleteAlert(title: String, message: String, confirmDeletePressed: @escaping () -> Void) {
+            calledMethods.append(.showDeleteAlert)
         }
         
     }
